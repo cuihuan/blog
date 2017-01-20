@@ -5,10 +5,13 @@
 # Site
 title: 靠谱崔小拽
 subtitle: subtitle
-description: 描述文件
+description: 崔小拽的个人博客
 author: 崔小拽
-language:
+language: zh-Hans
 timezone:
+
+# my avatar
+avatar: http://example.com/avatar.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
