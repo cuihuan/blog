@@ -89,9 +89,9 @@
 问题分析思考：应用网站架构的衍化过程中，应用最新的框架和工具技术固然是最优选择；但是，如果能在现有的框架的基础上提出简单可依赖的解决方案，未尝不是一种提升自我的尝试。
 解决：
 
-问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入">
+问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入库没">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合">
+<meta property="og:title" content="【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合">
 <meta property="og:url" content="http://cuihuan.net/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
 <meta property="og:description" content="需求背景：有个调用统计日志存储和统计需求，要求存储到mysql中；存储数据高峰能达到日均千万，瓶颈在于直接入库并发太高，可能会把mysql干垮。
@@ -99,16 +99,16 @@
 问题分析思考：应用网站架构的衍化过程中，应用最新的框架和工具技术固然是最优选择；但是，如果能在现有的框架的基础上提出简单可依赖的解决方案，未尝不是一种提升自我的尝试。
 解决：
 
-问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入">
-<meta property="og:updated_time" content="2017-01-22T07:19:04.000Z">
+问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入库没">
+<meta property="og:updated_time" content="2017-01-22T07:20:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合">
+<meta name="twitter:title" content="【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合">
 <meta name="twitter:description" content="需求背景：有个调用统计日志存储和统计需求，要求存储到mysql中；存储数据高峰能达到日均千万，瓶颈在于直接入库并发太高，可能会把mysql干垮。
 
 问题分析思考：应用网站架构的衍化过程中，应用最新的框架和工具技术固然是最优选择；但是，如果能在现有的框架的基础上提出简单可依赖的解决方案，未尝不是一种提升自我的尝试。
 解决：
 
-问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入">
+问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入库没">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title> 【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合 | 靠谱崔小拽 </title>
+  <title> 【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合 | 靠谱崔小拽 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,6 +150,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -178,7 +188,7 @@
     </a>
   </div>
     
-      <p class="site-subtitle">subtitle</p>
+      <h1 class="site-subtitle" itemprop="description">subtitle</h1>
     
 </div>
 
@@ -227,26 +237,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
@@ -258,9 +248,32 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -305,14 +318,14 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
             
             
               
-                【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合
+                【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -338,6 +351,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -345,6 +368,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -360,9 +388,7 @@
       
 
       
-        <!-- more 网站在开发过程中，高并发是一个非常普遍存在的的问题 -->
-<!-- more 应用最新的框架和工具技术固然是最优选择；但是，如果能在`现有的框架的基础上提出简单可依赖的解决方案`，未尝不是一种提升自我的尝试 -->
-<blockquote>
+        <blockquote>
 <p>需求背景：有个<code>调用统计日志存储和统计需求</code>，要求存储到mysql中；存储数据高峰能达到日均千万，瓶颈在于<code>直接入库并发太高，可能会把mysql干垮</code>。</p>
 </blockquote>
 <h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>思考：应用网站架构的衍化过程中，应用最新的框架和工具技术固然是最优选择；但是，如果能在<code>现有的框架的基础上提出简单可依赖的解决方案</code>，未尝不是一种提升自我的尝试。</p>
@@ -378,11 +404,11 @@
 <li>考虑到log是实时记录的所有数据，数量可能巨大，<code>主键采用bigint，自增即可</code>。</li>
 <li>考虑到log系统<code>以写为主，统计采用离线计算，字段均不要出现索引</code>，因为一方面可能会影响插入数据效率，另外读时候会造成死锁，影响写数据。</li>
 </ul>
-<h2 id="二：redis存储数据形成消息队列"><a href="#二：redis存储数据形成消息队列" class="headerlink" title="二：redis存储数据形成消息队列"></a>二：redis存储数据形成消息队列</h2><p>由于高并发，尽可能简单，直接，上代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/***************************************************************************</div><div class="line">*</div><div class="line">* 获取到的调用日志，存入redis的队列中.</div><div class="line">* $Id$</div><div class="line">*</div><div class="line">**************************************************************************/</div><div class="line"></div><div class="line">/**</div><div class="line">* @file saveLog.php</div><div class="line">* @date 2015/11/06 20:47:13</div><div class="line">* @author:cuihuan</div><div class="line">* @version $Revision$</div><div class="line">* @brief</div><div class="line">*</div><div class="line">**/</div><div class="line"></div><div class="line">// 获取info</div><div class="line">$interface_info = $_GET[&apos;info&apos;];</div><div class="line"></div><div class="line">// 存入redis队列</div><div class="line">$redis = new Redis();</div><div class="line">$redis-&gt;connect(&apos;xx&apos;, 6379);</div><div class="line">$redis-&gt;auth(&quot;password&quot;);</div><div class="line"></div><div class="line">// 加上时间戳存入队列</div><div class="line">$now_time = date(&quot;Y-m-d H:i:s&quot;);</div><div class="line">$redis-&gt;rPush(&quot;call_log&quot;, $interface_info . &quot;%&quot; . $now_time);</div><div class="line">$redis-&gt;close();</div><div class="line"></div><div class="line"></div><div class="line">/* vim: set ts=4 sw=4 sts=4 tw=100 */</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="二：redis存储数据形成消息队列"><a href="#二：redis存储数据形成消息队列" class="headerlink" title="二：redis存储数据形成消息队列"></a>二：redis存储数据形成消息队列</h2><p>由于高并发，尽可能简单，直接，上代码。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"><span class="comment"><span class="markdown">/<span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span></span></span></div><div class="line"><span class="bullet">*</span></div><div class="line"><span class="bullet">* </span>获取到的调用日志，存入redis的队列中.</div><div class="line"><span class="bullet">* </span>$Id$</div><div class="line"><span class="bullet">*</span></div><div class="line"><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="emphasis">***</span>*/</div><div class="line"></div><div class="line"><span class="comment"><span class="markdown">/**</span></span></div><div class="line"><span class="bullet">* </span>@file saveLog.php</div><div class="line"><span class="bullet">* </span>@date 2015/11/06 20:47:13</div><div class="line"><span class="bullet">* </span>@author:cuihuan</div><div class="line"><span class="bullet">* </span>@version $Revision$</div><div class="line"><span class="bullet">* </span>@brief</div><div class="line"><span class="bullet">*</span></div><div class="line">**/</div><div class="line"></div><div class="line"><span class="comment">// 获取info</span></div><div class="line">$interface_info = $_GET[<span class="string">'info'</span>];</div><div class="line"></div><div class="line"><span class="comment">// 存入redis队列</span></div><div class="line">$redis = <span class="keyword">new</span> Redis();</div><div class="line">$redis-&gt;connect(<span class="string">'xx'</span>, <span class="number">6379</span>);</div><div class="line">$redis-&gt;auth(<span class="string">"password"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加上时间戳存入队列</span></div><div class="line">$now_time = date(<span class="string">"Y-m-d H:i:s"</span>);</div><div class="line">$redis-&gt;rPush(<span class="string">"call_log"</span>, $interface_info . <span class="string">"%"</span> . $now_time);</div><div class="line">$redis-&gt;close();</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/* vim: set ts=4 sw=4 sts=4 tw=100 */</span></div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="三：数据定时批量入库。"><a href="#三：数据定时批量入库。" class="headerlink" title="三：数据定时批量入库。"></a>三：数据定时批量入库。</h2><p>定时读取redis消息队列里面的数据，批量入库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> * 获取redis消息队列中的脚本，拼接sql，批量入库。</div><div class="line"> * @update 2015-11-07 添加失败消息队列回滚机制 </div><div class="line"> *</div><div class="line"> * @Author:cuihuan</div><div class="line"> * 2015-11-06</div><div class="line"> * */</div><div class="line"></div><div class="line">// init redis</div><div class="line">$redis_xx = new Redis();</div><div class="line">$redis_xx-&gt;connect(&apos;ip&apos;, port);</div><div class="line">$redis_xx-&gt;auth(&quot;password&quot;);</div><div class="line"></div><div class="line">// 获取现有消息队列的长度</div><div class="line">$count = 0;</div><div class="line">$max = $redis_xx-&gt;lLen(&quot;call_log&quot;);</div><div class="line"></div><div class="line">// 获取消息队列的内容，拼接sql</div><div class="line">$insert_sql = &quot;insert into fb_call_log (`interface_name`, `createtime`) values &quot;;</div><div class="line"></div><div class="line">// 回滚数组</div><div class="line">$roll_back_arr = array();</div><div class="line"></div><div class="line">while ($count &lt; $max) &#123;</div><div class="line">    $log_info = $redis_cq01-&gt;lPop(&quot;call_log&quot;);</div><div class="line">    $roll_back_arr = $log_info;</div><div class="line">    if ($log_info == &apos;nil&apos; || !isset($log_info)) &#123;</div><div class="line">        $insert_sql .= &quot;;&quot;;</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 切割出时间和info</div><div class="line">    $log_info_arr = explode(&quot;%&quot;,$log_info);</div><div class="line">    $insert_sql .= &quot; (&apos;&quot;.$log_info_arr[0].&quot;&apos;,&apos;&quot;.$log_info_arr[1].&quot;&apos;),&quot;;</div><div class="line">    $count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 判定存在数据，批量入库</div><div class="line">if ($count != 0) &#123;</div><div class="line">    $link_2004 = mysql_connect(&apos;ip:port&apos;, &apos;user&apos;, &apos;password&apos;);</div><div class="line">    if (!$link_2004) &#123;</div><div class="line">        die(&quot;Could not connect:&quot; . mysql_error());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    $crowd_db = mysql_select_db(&apos;fb_log&apos;, $link_2004);</div><div class="line">    $insert_sql = rtrim($insert_sql,&quot;,&quot;).&quot;;&quot;;</div><div class="line">    $res = mysql_query($insert_sql);</div><div class="line"></div><div class="line">    // 输出入库log和入库结果;</div><div class="line">    echo date(&quot;Y-m-d H:i:s&quot;).&quot;insert &quot;.$count.&quot; log info result:&quot;;</div><div class="line">    echo json_encode($res);</div><div class="line">    echo &quot;&lt;/br&gt;\n&quot;;</div><div class="line">    </div><div class="line">    // 数据库插入失败回滚</div><div class="line">    if(!$res)&#123;</div><div class="line">       foreach($roll_back_arr as $k)&#123;</div><div class="line">           $redis_xx-&gt;rPush(&quot;call_log&quot;, $k);</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    // 释放连接</div><div class="line">    mysql_free_result($res);</div><div class="line">    mysql_close($link_2004);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 释放redis</div><div class="line">$redis_cq01-&gt;close();</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<h2 id="四：离线天级统计和清理数据脚本"><a href="#四：离线天级统计和清理数据脚本" class="headerlink" title="四：离线天级统计和清理数据脚本"></a>四：离线天级统计和清理数据脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">?php</div><div class="line">/**</div><div class="line">* static log ：每天离线统计代码日志和删除五天前的日志</div><div class="line">*</div><div class="line">* @Author:cuihuan</div><div class="line">* 2015-11-06</div><div class="line">* */</div><div class="line"></div><div class="line">// 离线统计</div><div class="line">$link_2004 = mysql_connect(&apos;ip:port&apos;, &apos;user&apos;, &apos;pwd&apos;);</div><div class="line">if (!$link_2004) &#123;</div><div class="line">    die(&quot;Could not connect:&quot; . mysql_error());</div><div class="line">&#125;</div><div class="line"></div><div class="line">$crowd_db = mysql_select_db(&apos;fb_log&apos;, $link_2004);</div><div class="line"></div><div class="line">// 统计昨天的数据</div><div class="line">$day_time = date(&quot;Y-m-d&quot;, time() - 60 * 60 * 24 * 1);</div><div class="line">$static_sql = &quot;get sql&quot;;</div><div class="line"></div><div class="line">$res = mysql_query($static_sql, $link_2004);</div><div class="line"></div><div class="line">// 获取结果入库略</div><div class="line"></div><div class="line">// 清理15天之前的数据</div><div class="line">$before_15_day = date(&quot;Y-m-d&quot;, time() - 60 * 60 * 24 * 15);</div><div class="line">$delete_sql = &quot;delete from xxx where createtime &lt; &apos;&quot; . $before_15_day . &quot;&apos;&quot;;</div><div class="line">try &#123;</div><div class="line">    $res = mysql_query($delete_sql);</div><div class="line">&#125;catch(Exception $e)&#123;</div><div class="line">    echo json_encode($e).&quot;\n&quot;;</div><div class="line">    echo &quot;delete result:&quot;.json_encode($res).&quot;\n&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">mysql_close($link_2004);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<h2 id="五：代码部署"><a href="#五：代码部署" class="headerlink" title="五：代码部署"></a>五：代码部署</h2><p>主要是部署，批量入库脚本的调用和天级统计脚本，crontab例行运行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 批量入库脚本</div><div class="line">*/2 * * * * /home/cuihuan/xxx/lamp/php5/bin/php /home/cuihuan/xxx/batchLog.php &gt;&gt;/home/cuihuan/xxx/batchlog.log</div><div class="line"></div><div class="line"># 天级统计脚本</div><div class="line">0 5 * * * /home/cuihuan/xxx/php5/bin/php /home/cuihuan/xxx/staticLog.php &gt;&gt;/home/cuihuan/xxx/staticLog.log</div></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 获取redis消息队列中的脚本，拼接sql，批量入库。</div><div class="line"> * <span class="doctag">@update</span> 2015-11-07 添加失败消息队列回滚机制 </div><div class="line"> *</div><div class="line"> * <span class="doctag">@Author</span>:cuihuan</div><div class="line"> * 2015-11-06</div><div class="line"> * */</div><div class="line"></div><div class="line"><span class="comment">// init redis</span></div><div class="line">$redis_xx = <span class="keyword">new</span> Redis();</div><div class="line">$redis_xx-&gt;connect(<span class="string">'ip'</span>, port);</div><div class="line">$redis_xx-&gt;auth(<span class="string">"password"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 获取现有消息队列的长度</span></div><div class="line">$count = <span class="number">0</span>;</div><div class="line">$max = $redis_xx-&gt;lLen(<span class="string">"call_log"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 获取消息队列的内容，拼接sql</span></div><div class="line">$insert_sql = <span class="string">"insert into fb_call_log (`interface_name`, `createtime`) values "</span>;</div><div class="line"></div><div class="line"><span class="comment">// 回滚数组</span></div><div class="line">$roll_back_arr = <span class="keyword">array</span>();</div><div class="line"></div><div class="line"><span class="keyword">while</span> ($count &lt; $max) &#123;</div><div class="line">    $log_info = $redis_cq01-&gt;lPop(<span class="string">"call_log"</span>);</div><div class="line">    $roll_back_arr = $log_info;</div><div class="line">    <span class="keyword">if</span> ($log_info == <span class="string">'nil'</span> || !<span class="keyword">isset</span>($log_info)) &#123;</div><div class="line">        $insert_sql .= <span class="string">";"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 切割出时间和info</span></div><div class="line">    $log_info_arr = explode(<span class="string">"%"</span>,$log_info);</div><div class="line">    $insert_sql .= <span class="string">" ('"</span>.$log_info_arr[<span class="number">0</span>].<span class="string">"','"</span>.$log_info_arr[<span class="number">1</span>].<span class="string">"'),"</span>;</div><div class="line">    $count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 判定存在数据，批量入库</span></div><div class="line"><span class="keyword">if</span> ($count != <span class="number">0</span>) &#123;</div><div class="line">    $link_2004 = mysql_connect(<span class="string">'ip:port'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);</div><div class="line">    <span class="keyword">if</span> (!$link_2004) &#123;</div><div class="line">        <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    $crowd_db = mysql_select_db(<span class="string">'fb_log'</span>, $link_2004);</div><div class="line">    $insert_sql = rtrim($insert_sql,<span class="string">","</span>).<span class="string">";"</span>;</div><div class="line">    $res = mysql_query($insert_sql);</div><div class="line"></div><div class="line">    <span class="comment">// 输出入库log和入库结果;</span></div><div class="line">    <span class="keyword">echo</span> date(<span class="string">"Y-m-d H:i:s"</span>).<span class="string">"insert "</span>.$count.<span class="string">" log info result:"</span>;</div><div class="line">    <span class="keyword">echo</span> json_encode($res);</div><div class="line">    <span class="keyword">echo</span> <span class="string">"&lt;/br&gt;\n"</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 数据库插入失败回滚</span></div><div class="line">    <span class="keyword">if</span>(!$res)&#123;</div><div class="line">       <span class="keyword">foreach</span>($roll_back_arr <span class="keyword">as</span> $k)&#123;</div><div class="line">           $redis_xx-&gt;rPush(<span class="string">"call_log"</span>, $k);</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="comment">// 释放连接</span></div><div class="line">    mysql_free_result($res);</div><div class="line">    mysql_close($link_2004);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 释放redis</span></div><div class="line">$redis_cq01-&gt;close();</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="四：离线天级统计和清理数据脚本"><a href="#四：离线天级统计和清理数据脚本" class="headerlink" title="四：离线天级统计和清理数据脚本"></a>四：离线天级统计和清理数据脚本</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">?php</div><div class="line"><span class="comment">/**</span></div><div class="line">* static log ：每天离线统计代码日志和删除五天前的日志</div><div class="line">*</div><div class="line">* <span class="doctag">@Author</span>:cuihuan</div><div class="line">* 2015-11-06</div><div class="line">* */</div><div class="line"></div><div class="line"><span class="comment">// 离线统计</span></div><div class="line">$link_2004 = mysql_connect(<span class="string">'ip:port'</span>, <span class="string">'user'</span>, <span class="string">'pwd'</span>);</div><div class="line"><span class="keyword">if</span> (!$link_2004) &#123;</div><div class="line">    <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">&#125;</div><div class="line"></div><div class="line">$crowd_db = mysql_select_db(<span class="string">'fb_log'</span>, $link_2004);</div><div class="line"></div><div class="line"><span class="comment">// 统计昨天的数据</span></div><div class="line">$day_time = date(<span class="string">"Y-m-d"</span>, time() - <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">1</span>);</div><div class="line">$static_sql = <span class="string">"get sql"</span>;</div><div class="line"></div><div class="line">$res = mysql_query($static_sql, $link_2004);</div><div class="line"></div><div class="line"><span class="comment">// 获取结果入库略</span></div><div class="line"></div><div class="line"><span class="comment">// 清理15天之前的数据</span></div><div class="line">$before_15_day = date(<span class="string">"Y-m-d"</span>, time() - <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">15</span>);</div><div class="line">$delete_sql = <span class="string">"delete from xxx where createtime &lt; '"</span> . $before_15_day . <span class="string">"'"</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $res = mysql_query($delete_sql);</div><div class="line">&#125;<span class="keyword">catch</span>(<span class="keyword">Exception</span> $e)&#123;</div><div class="line">    <span class="keyword">echo</span> json_encode($e).<span class="string">"\n"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"delete result:"</span>.json_encode($res).<span class="string">"\n"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">mysql_close($link_2004);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="五：代码部署"><a href="#五：代码部署" class="headerlink" title="五：代码部署"></a>五：代码部署</h2><p>主要是部署，批量入库脚本的调用和天级统计脚本，crontab例行运行。<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 批量入库脚本</span></div><div class="line">*<span class="regexp">/2 * * * * /</span>home<span class="regexp">/cuihuan/</span>xxx<span class="regexp">/lamp/</span>php5<span class="regexp">/bin/</span>php <span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>batchLog.php &gt;&gt;<span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>batchlog.log</div><div class="line"></div><div class="line"><span class="comment"># 天级统计脚本</span></div><div class="line"><span class="number">0</span> <span class="number">5</span> * * * <span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>php5<span class="regexp">/bin/</span>php <span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>staticLog.php &gt;&gt;<span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>staticLog.log</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>总结：相对于其他复杂的方式处理高并发，这个解决方案简单有效：通过redis缓存抗压，mysql批量入库解决数据库瓶颈，离线计算解决统计数据，通过定期清理保证库的大小。</p>
 </blockquote>
@@ -394,11 +420,6 @@
     <div>
       
         
-<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
-</div>
-
 
       
     </div>
@@ -406,6 +427,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -430,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/30/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
+              <a href="/2017/01/20/charactor/" rel="next" title="php爬虫：知乎用户数据爬取和分析">
+                <i class="fa fa-chevron-left"></i> php爬虫：知乎用户数据爬取和分析
               </a>
             
           </div>
@@ -463,6 +505,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/"
+           data-title="【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合" data-url="http://cuihuan.net/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/">
+      </div>
     
   </div>
 
@@ -507,8 +553,8 @@
         
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">2</span>
+              <a href="/">
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -518,10 +564,10 @@
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">4</span>
+              
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">标签</span>
-              </a>
+              
             </div>
           
 
@@ -574,7 +620,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -583,19 +629,24 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
-
 
         
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
 
         
       </div>
@@ -673,38 +724,167 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"cuihuan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
-	
 
 
 
-
-
-  
 
 
 
 
 
   
-
   
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
-      <!-- UY END -->
-  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
 
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
 
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
 
-  
-  
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
 
   
 

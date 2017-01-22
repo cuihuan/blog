@@ -1,0 +1,886 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="db,active record,yii2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="初探yii2框架，对增删改查，关联查询等数据库基本操作的简单实践。
+
+数据库配置。/config/db.php 进行数据库配置配置可以参考 yii文档 实践过程中有个test库-》test表-》两条记录如下12345678mysql&amp;gt; select * from test;+----+--------+| id | name   |+----+--------+|  1 | zhuai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YII2数据库查询实践">
+<meta property="og:url" content="http://cuihuan.net/2016/01/10/YII2数据库查询实践/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="初探yii2框架，对增删改查，关联查询等数据库基本操作的简单实践。
+
+数据库配置。/config/db.php 进行数据库配置配置可以参考 yii文档 实践过程中有个test库-》test表-》两条记录如下12345678mysql&amp;gt; select * from test;+----+--------+| id | name   |+----+--------+|  1 | zhuai">
+<meta property="og:updated_time" content="2017-01-22T09:21:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="YII2数据库查询实践">
+<meta name="twitter:description" content="初探yii2框架，对增删改查，关联查询等数据库基本操作的简单实践。
+
+数据库配置。/config/db.php 进行数据库配置配置可以参考 yii文档 实践过程中有个test库-》test表-》两条记录如下12345678mysql&amp;gt; select * from test;+----+--------+| id | name   |+----+--------+|  1 | zhuai">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2016/01/10/YII2数据库查询实践/"/>
+
+
+
+
+
+  <title> YII2数据库查询实践 | 靠谱崔小拽 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">靠谱崔小拽</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">subtitle</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2016/01/10/YII2数据库查询实践/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="崔小拽">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/wp_content/base/favicon.ico">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="靠谱崔小拽">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                YII2数据库查询实践
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-10T17:21:35+08:00">
+                2016-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/01/10/YII2数据库查询实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/10/YII2数据库查询实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>初探yii2框架，对增删改查，关联查询等数据库基本操作的简单实践。</p>
+</blockquote>
+<h2 id="数据库配置。"><a href="#数据库配置。" class="headerlink" title="数据库配置。"></a>数据库配置。</h2><p>/config/db.php 进行数据库配置<br>配置可以参考<a href="http://www.yiichina.com/doc/guide/2.0/start-databases" target="_blank" rel="external"> yii文档 </a><br>实践过程中有个test库-》test表-》两条记录如下<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section">mysql&gt; select * from test;</span></div><div class="line">+----+--------+</div><div class="line"><span class="section">| id | name   |</span></div><div class="line">+----+--------+</div><div class="line">|  1 | zhuai  |</div><div class="line"><span class="section">|  2 | heng   | </span></div><div class="line">+----+--------+</div><div class="line">18 rows in set (0.00 sec)</div></pre></td></tr></table></figure></p>
+<h2 id="sql-查询方式"><a href="#sql-查询方式" class="headerlink" title="sql 查询方式"></a>sql 查询方式</h2><p>yii2 提供了原始的数据库查询方式findBySql；同时，<code>通过占位符的方式，自动进行了基本的sql注入防御</code>。上码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 最基本的查询方式</span></div><div class="line">$sql = <span class="string">"select * from test where 1"</span>;</div><div class="line">$res = Test::findBySql($sql)-&gt;all();</div><div class="line">var_dump(count($res));    <span class="comment">// res-&gt;2 </span></div><div class="line"></div><div class="line"><span class="comment">// findbysql 防止sql注入方式</span></div><div class="line">$id = <span class="string">'1 or 1=1'</span>;</div><div class="line">$sql = <span class="string">"select * from test where id = "</span> . $id;</div><div class="line">$res = Test::findBySql($sql)-&gt;all();</div><div class="line">var_dump(count($res));   <span class="comment">// res-&gt; 2</span></div><div class="line"></div><div class="line">$sql = <span class="string">"select * from test where id = :id"</span>;</div><div class="line"><span class="comment">// 定位符会自动防止sql 注入</span></div><div class="line">$res = Test::findBySql($sql,<span class="keyword">array</span>(<span class="string">":id"</span>=&gt;$id))-&gt;all();</div><div class="line">var_dump(count($res));  <span class="comment">// res-&gt;1</span></div></pre></td></tr></table></figure></p>
+<h2 id="activeRecord查询方式"><a href="#activeRecord查询方式" class="headerlink" title="activeRecord查询方式"></a>activeRecord查询方式</h2><p>每个框架除了原有的sql方式，都会提供相应的封装的查询方式，yii2亦然。</p>
+<h3 id="创建model"><a href="#创建model" class="headerlink" title="创建model"></a>创建model</h3><p>yii的model基本方式如下，代码如下不赘述。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">models</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">ActiveRecord</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">ActiveRecord</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 可无，对应表：默认类名和表名匹配，则无需此函数</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">tableName</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'test'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 可无，验证器：主要用于校验各个字段</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rules</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> [</div><div class="line">            [<span class="string">'id'</span>, <span class="string">'integer'</span>],</div><div class="line">            [<span class="string">'name'</span>, <span class="string">'string'</span>, <span class="string">'length'</span> =&gt; [<span class="number">0</span>, <span class="number">100</span>]],</div><div class="line">        ];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用的时候需要引入model<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> app\models\<span class="keyword">Test</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="增加操作"><a href="#增加操作" class="headerlink" title="增加操作"></a>增加操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// add 操作</span></div><div class="line">$test = <span class="keyword">new</span> Test();</div><div class="line">$test-&gt;name = <span class="string">'test'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 合法性校验</span></div><div class="line">$test-&gt;validate();</div><div class="line"><span class="keyword">if</span>($test-&gt;hasErrors())&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"数据不合法"</span>;</div><div class="line">    <span class="keyword">die</span>;</div><div class="line">&#125;</div><div class="line">$test-&gt;save();</div></pre></td></tr></table></figure>
+<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>查询操作先上官方文档<br><a href="http://www.yiichina.com/doc/api/2.0/yii-db-activerecord" target="_blank" rel="external"> activeRecord doc</a><br><a href="http://www.yiichina.com/doc/api/2.0/yii-db-query#where(-detail" target="_blank" rel="external"> where doc</a><br>需要强调的是：yii查询提供了特别多丰富的库，例如代码中的批量查询处理等等，细节可以看文档。</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">// select</span></div><div class="line">// id = <span class="number">1</span></div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'id'</span> =&gt; <span class="number">1</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//1</span></div><div class="line"></div><div class="line">// id &gt; <span class="number">0</span></div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'&gt;'</span>,<span class="string">'id'</span>,<span class="number">0</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//2</span></div><div class="line"></div><div class="line">// id &gt; =<span class="number">1</span> id &lt;=<span class="number">2</span></div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'between'</span>,<span class="string">'id'</span>,<span class="number">1</span>,<span class="number">2</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//2</span></div><div class="line"></div><div class="line">// name字段like</div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'like'</span>, <span class="string">'name'</span>, <span class="string">'cuihuan'</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//2</span></div><div class="line"></div><div class="line"></div><div class="line">// 查询的使用 obj-&gt;array</div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'between'</span>,<span class="string">'id'</span>,<span class="number">1</span>,<span class="number">2</span>])</span>-&gt;</span>asArray<span class="function"><span class="params">()</span>-&gt;</span>all();</div><div class="line">var_dump($res[<span class="number">0</span>][<span class="string">'id'</span>]);  <span class="regexp">//2</span></div><div class="line"></div><div class="line">// 批量查询,对于大内存操作的批量查询</div><div class="line">foreach <span class="function"><span class="params">(Test::find()-&gt;batch(<span class="number">1</span>) as $test)</span> &#123;</span></div><div class="line">    <span class="title">var_dump</span><span class="params">(count($test))</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// delete </span></div><div class="line"><span class="comment">// 选出来删除</span></div><div class="line">$res = Test::find()-&gt;where([<span class="string">'id'</span>=&gt;<span class="number">1</span>])-&gt;all();</div><div class="line">$res[<span class="number">0</span>]-&gt;delete();</div><div class="line"></div><div class="line"><span class="comment">// 直接删除</span></div><div class="line">var_dump(Test::deleteAll(<span class="string">'id&gt;:id'</span>, <span class="keyword">array</span>(<span class="string">':id'</span> =&gt; <span class="number">2</span>)));</div></pre></td></tr></table></figure>
+<h3 id="修改操作"><a href="#修改操作" class="headerlink" title="修改操作"></a>修改操作</h3><p>除了代码中方式，yii2直接提供update操作。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 活动记录修改</span></div><div class="line">$res = Test::find()-&gt;where([<span class="string">'id'</span>=&gt;<span class="number">4</span>])-&gt;one();</div><div class="line">$res-&gt;name = <span class="string">"update"</span>;</div><div class="line">$res-&gt;save();</div></pre></td></tr></table></figure></p>
+<h3 id="关联查询操作"><a href="#关联查询操作" class="headerlink" title="关联查询操作"></a>关联查询操作</h3><p>关联查询示例中两个表:<br>一个学生表(student):id ，name;<br>一个分数表(score)：id,stu_id,score<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 相应学生的所有score</span></div><div class="line">$stu = Student::find()-&gt;where([<span class="string">'name'</span>=&gt;<span class="string">'xiaozhuai'</span>])-&gt;one();</div><div class="line">var_dump($stu-&gt;id);</div><div class="line"></div><div class="line"><span class="comment">// 基本获取</span></div><div class="line">$scores_1 = $stu-&gt;hasMany(<span class="string">'app\model\Score'</span>,[<span class="string">'stu_id'</span>=&gt;$stu-&gt;id])-&gt;asArray()-&gt;all();</div><div class="line">$scores_2 = $stu-&gt;hasMany(Score::className(),[<span class="string">'stu_id'</span>=&gt;<span class="string">'id'</span>])-&gt;asArray()-&gt;all();</div><div class="line">var_dump($scores_1);</div><div class="line">var_dump($scores_2);</div></pre></td></tr></table></figure></p>
+<p>两种关联查询方式；但是，在controller进行相关操作，代码显的过于混乱，在model中封装调用</p>
+<p>首先在student model中封装相关关联调用函数<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">models</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">ActiveRecord</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">ActiveRecord</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">tableName</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'student'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 获取分数信息</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getScores</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $scores = <span class="keyword">$this</span>-&gt;hasMany(Score::className(), [<span class="string">'stu_id'</span> =&gt; <span class="string">'id'</span>])-&gt;asArray()-&gt;all();</div><div class="line"></div><div class="line">        <span class="keyword">return</span> $scores;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>之后直接调用，两种调用方式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 函数封装之后调用</span></div><div class="line">$scores = $stu-&gt;getScores();</div><div class="line">var_dump($scores);</div><div class="line"></div><div class="line"><span class="comment">// 利用__get 的自动调用的方式</span></div><div class="line">$scores = $stu-&gt;scores;</div><div class="line">var_dump($scores);</div></pre></td></tr></table></figure></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>上面在yii2的部署和使用过程中的一些基本的增删改查，关联查询等操作。但是如果想要将yii2的db操作使用好，还要看文档大法：<br><a href="http://www.yiichina.com/doc/api/2.0/yii-db-activerecord" target="_blank" rel="external"> activeRecord doc</a></p>
+<p>【转载请注明：<a href="http://cuihuan.net/article/yii2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E8%B7%B5.html">YII2数据库查询实践</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/db/" rel="tag"># db</a>
+          
+            <a href="/tags/active-record/" rel="tag"># active record</a>
+          
+            <a href="/tags/yii2/" rel="tag"># yii2</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/07/机器多次恶意提交攻击/" rel="next" title="机器多次恶意提交攻击简单防范">
+                <i class="fa fa-chevron-left"></i> 机器多次恶意提交攻击简单防范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/29/postMessage处理iframe 跨域问题/" rel="prev" title="postMessage处理iframe 跨域问题">
+                postMessage处理iframe 跨域问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/10/YII2数据库查询实践/"
+           data-title="YII2数据库查询实践" data-url="http://cuihuan.net/2016/01/10/YII2数据库查询实践/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/favicon.ico"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+          <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库配置。"><span class="nav-number">1.</span> <span class="nav-text">数据库配置。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql-查询方式"><span class="nav-number">2.</span> <span class="nav-text">sql 查询方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#activeRecord查询方式"><span class="nav-number">3.</span> <span class="nav-text">activeRecord查询方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建model"><span class="nav-number">3.1.</span> <span class="nav-text">创建model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加操作"><span class="nav-number">3.2.</span> <span class="nav-text">增加操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询操作"><span class="nav-number">3.3.</span> <span class="nav-text">查询操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除操作"><span class="nav-number">3.4.</span> <span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改操作"><span class="nav-number">3.5.</span> <span class="nav-text">修改操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联查询操作"><span class="nav-number">3.6.</span> <span class="nav-text">关联查询操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"cuihuan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
