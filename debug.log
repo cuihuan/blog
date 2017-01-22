@@ -1,4 +1,5 @@
 {"name":"hexo","hostname":"iZ25xlozdf2Z","pid":16903,"level":20,"msg":"Hexo version: \u001b[35m3.2.2\u001b[39m","time":"2016-12-30T09:15:04.594Z","v":0}
+
 {"name":"hexo","hostname":"iZ25xlozdf2Z","pid":16903,"level":20,"msg":"Working directory: \u001b[35m~/workspace/hexo/blog/\u001b[39m","time":"2016-12-30T09:15:04.597Z","v":0}
 {"name":"hexo","hostname":"iZ25xlozdf2Z","pid":16903,"level":20,"msg":"Config loaded: \u001b[35m~/workspace/hexo/blog/_config.yml\u001b[39m","time":"2016-12-30T09:15:04.808Z","v":0}
 {"name":"hexo","hostname":"iZ25xlozdf2Z","pid":16903,"level":20,"msg":"Plugin loaded: \u001b[35mhexo-generator-archive\u001b[39m","time":"2016-12-30T09:15:04.829Z","v":0}
