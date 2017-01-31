@@ -39,10 +39,12 @@ menu:
   home: /
 #  categories: /categories
   tags: /tags
-  about: /about
+#  about: /about
 #  archives: /archives
 #  sitemap: /sitemap.xml
   commonweal: /404.html
+  old: http://cuihuan.com:8222
+
 
 
 # Enable/Disable menu icons.
@@ -61,6 +63,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  old: camera-retro
 
 
 
