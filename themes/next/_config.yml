@@ -37,10 +37,10 @@ seo: true
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  categories: /categories
+#  categories: /categories
+  tags: /tags
   about: /about
 #  archives: /archives
-#  tags: /tags
 #  sitemap: /sitemap.xml
   commonweal: /404.html
 
@@ -327,7 +327,7 @@ duoshuo_info:
   ua_enable: true
   admin_enable: false
   user_id: 0
-  #admin_nickname: Author
+  admin_nickname: 小拽
 
 
 # Facebook SDK Support.
