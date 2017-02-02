@@ -18,7 +18,7 @@ avatar: /wp_content/base/favicon.ico
 url: http://cuihuan.net
 root: /
 permalink: :year/:month/:day/:title/
-permalink_defaults:
+permalink_defaults: /404.html
 
 # Directory
 source_dir: source
