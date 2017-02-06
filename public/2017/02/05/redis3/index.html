@@ -1,0 +1,922 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="php,redis,高可用架构,容灾," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。
+
+一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
+
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Red">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【redis学习三】简单高可用redis架构实践">
+<meta property="og:url" content="http://cuihuan.net/2017/02/05/redis3/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。
+
+一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
+
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Red">
+<meta property="og:image" content="http://cuihuan.net/img/bVIPha">
+<meta property="og:image" content="http://cuihuan.net/img/bVIPm9">
+<meta property="og:image" content="http://cuihuan.net/img/bVIPmY">
+<meta property="og:image" content="http://cuihuan.net/img/bVIPnA">
+<meta property="og:updated_time" content="2017-02-06T05:15:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【redis学习三】简单高可用redis架构实践">
+<meta name="twitter:description" content="背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。
+
+一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
+
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Red">
+<meta name="twitter:image" content="http://cuihuan.net/img/bVIPha">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2017/02/05/redis3/"/>
+
+
+
+
+
+  <title> 【redis学习三】简单高可用redis架构实践 | 靠谱崔小拽 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">靠谱崔小拽</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">subtitle</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-old">
+          <a href="http://cuihuan.net:8222" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
+            
+            旧版
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2017/02/05/redis3/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="崔小拽">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/wp_content/base/favicon.ico">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="靠谱崔小拽">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                【redis学习三】简单高可用redis架构实践
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T17:21:35+08:00">
+                2017-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/05/redis3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/05/redis3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。</p>
+</blockquote>
+<h1 id="一、方案调研"><a href="#一、方案调研" class="headerlink" title="一、方案调研"></a>一、方案调研</h1><h2 id="1-1-redis版本选择"><a href="#1-1-redis版本选择" class="headerlink" title="1.1 redis版本选择"></a>1.1 redis版本选择</h2><p>redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：</p>
+<blockquote>
+<p>Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Redis 3.0的最重要特征是对Redis集群的支持，此外，该版本相对于2.8版本在性能、稳定性等方面都有了重大提高。</p>
+</blockquote>
+<p>综合考虑之后扩展性和稳定性之后，选择版本 <code>redis 3.2.3-1</code>版本进行部署</p>
+<h2 id="1-2-是否选择搭建集群"><a href="#1-2-是否选择搭建集群" class="headerlink" title="1.2 是否选择搭建集群"></a>1.2 是否选择搭建集群</h2><p>是否搭建集群关键要看单机是否能够满足业务需求，做了个简单的数据评估。</p>
+<h3 id="数据量评估"><a href="#数据量评估" class="headerlink" title="数据量评估"></a>数据量评估</h3><ul>
+<li><strong>测试</strong>：单机写入2000w业务数据，占用内存1.5g，本机126g内存</li>
+<li><strong>评估</strong>：单机的稳定数据承载量：2000w <em> （126/1.56）</em> 0.6 = 96923w </li>
+<li><strong>结论</strong>：9T 的数据承载量，远超当前千万级别的数据量</li>
+</ul>
+<h3 id="性能评估"><a href="#性能评估" class="headerlink" title="性能评估"></a>性能评估</h3><ul>
+<li><p><strong>测试</strong>：简单压测了下</p>
+<ul>
+<li>写操作 1000w，80% 在20ms一下 ，98%在30ms，最大218ms，qps 5w/s，总耗时197s</li>
+<li>读操作 1000w，97% 在10ms一下 ，99.99%在24ms，qps 6w/s，总耗时160s</li>
+</ul>
+</li>
+<li><p><strong>评估</strong>：当前的调用量在千万每天，qps的话在百/s。 </p>
+</li>
+<li><strong>结论</strong>：当前单机的redis完全满足需求</li>
+</ul>
+<p>因此：在单机远能够满足当下业务需求的情况下，决定不采用的集群的方式来部署redis，减少技术债务风险。</p>
+<h2 id="1-3-初定方案和架构图"><a href="#1-3-初定方案和架构图" class="headerlink" title="1.3 初定方案和架构图"></a>1.3 初定方案和架构图</h2><p>选定了版本和基本部署方案之后，主要考虑服务的<code>容灾和稳定性</code>，经过思考之后采用<code>采用极简的主从从结构，001实时同步数据002和003；001读写，002，003只读</code>，机构图如下</p>
+<p><img src="/img/bVIPha" alt="clipboard.png"></p>
+<h1 id="二、实现过程"><a href="#二、实现过程" class="headerlink" title="二、实现过程"></a>二、实现过程</h1><h2 id="2-1-redis安装"><a href="#2-1-redis安装" class="headerlink" title="2.1 redis安装"></a>2.1 redis安装</h2><p>此处略去，参考官方文档 <a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
+<h2 id="2-2-配置读写master"><a href="#2-2-配置读写master" class="headerlink" title="2.2 配置读写master"></a>2.2 配置读写master</h2><ul>
+<li>修改端口：port 【目的：简单的修改默认端口是最好的防攻击】</li>
+<li>添加密码：pwd</li>
+<li>关闭压缩：rdbcompression no 【硬盘最够，降低cpu的能耗更利于提升性能】</li>
+<li>开启守护进程：daemonize yes 【master开启守护，增加稳定性】</li>
+<li>关闭protect-mode :允许他机器访问</li>
+<li>添加白名单：bind xxx</li>
+<li>修改log地址，pid地址和数据存储地址：logfile pidfile 【便于维护和安全】</li>
+<li>添加慢查询：slowlog-log-slower-than 500 【根据业务需求，便于优化】</li>
+<li>最大内存限制：maxmemory 【考虑稳定性和性能，一般不超过最大内存的60%】</li>
+</ul>
+<h2 id="2-3-配置只读slave"><a href="#2-3-配置只读slave" class="headerlink" title="2.3 配置只读slave"></a>2.3 配置只读slave</h2><ul>
+<li>同master</li>
+<li>设置主库:slaveof ip:port</li>
+<li>主库密码：masterauth masterpwd</li>
+<li>只读：slave-read-only yes</li>
+</ul>
+<h2 id="2-4-启动测试"><a href="#2-4-启动测试" class="headerlink" title="2.4 启动测试"></a>2.4 启动测试</h2><h3 id="启动主库写入数据"><a href="#启动主库写入数据" class="headerlink" title="启动主库写入数据"></a>启动主库写入数据</h3><p><img src="/img/bVIPm9" alt="clipboard.png"></p>
+<h3 id="进入从库查看"><a href="#进入从库查看" class="headerlink" title="进入从库查看"></a>进入从库查看</h3><p>最初没有数据，主库写入之后，从库去到数据</p>
+<p><img src="/img/bVIPmY" alt="clipboard.png"></p>
+<h3 id="查看log确认过程"><a href="#查看log确认过程" class="headerlink" title="查看log确认过程"></a>查看log确认过程</h3><p><img src="/img/bVIPnA" alt="clipboard.png"></p>
+<h1 id="三、架构能力评估"><a href="#三、架构能力评估" class="headerlink" title="三、架构能力评估"></a>三、架构能力评估</h1><h2 id="3-1-容灾能力"><a href="#3-1-容灾能力" class="headerlink" title="3.1 容灾能力"></a>3.1 容灾能力</h2><ul>
+<li>主动容灾<ul>
+<li>备份：master 全量备份，slave全量备份。</li>
+<li>备份安全：本机保存，hadoop同步保存一份。</li>
+<li>监控和探活：监控机分钟级探活和预警</li>
+</ul>
+</li>
+<li>被动容灾：<ul>
+<li>slave 宕机：重启之后直接从master恢复</li>
+<li>master 宕机且硬盘数据为损坏：重启后数据自动恢复且和从库一致。</li>
+<li>master 宕机且数据损坏：删除损坏数据，使用slave1的数据恢复，保证数据一致。</li>
+<li>master 和slave 1 同时宕机：slave2 保证读正常，业务不影响，利用slave2 数据备份恢复master，启动slave 即可</li>
+<li>三台全宕机：服务挂掉，从hadoop获取数据恢复服务。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-性能评估"><a href="#3-2-性能评估" class="headerlink" title="3.2 性能评估"></a>3.2 性能评估</h2><p>压测数据，参见方案选择，完全hold住。</p>
+<h1 id="四、问题思考"><a href="#四、问题思考" class="headerlink" title="四、问题思考"></a>四、问题思考</h1><h2 id="4-1-内存清理策略"><a href="#4-1-内存清理策略" class="headerlink" title="4.1 内存清理策略"></a>4.1 内存清理策略</h2><p>暂时采用：<br>noeviction -&gt; 谁也不删，直接在写操作时返回错误。<br>之后采用：<br>volatile-lru -&gt; 根据LRU算法删除带有过期时间的key。 最少使用算法删除。<br>如果达到内存限制，手工清理，通过监控脚本监控内存情况</p>
+<h2 id="4-2-伸缩性和单节点问题"><a href="#4-2-伸缩性和单节点问题" class="headerlink" title="4.2 伸缩性和单节点问题"></a>4.2 伸缩性和单节点问题</h2><p>扩展slave可以直接扩展，扩展master需要master之间数据同步，暂时是个瓶颈。对于主读业务的需求，暂时问题不大；写需求的话，暂时的想法是代码转写的方式。</p>
+<h2 id="4-3-采用redis-sentinal-监听"><a href="#4-3-采用redis-sentinal-监听" class="headerlink" title="4.3 采用redis sentinal 监听"></a>4.3 采用redis sentinal 监听</h2><p>默认不错的监听，尝试了下效果不错，还在调研中，配置conf即可，完成后可以查看监听的情况<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:port&gt; INFO Sentinel</div><div class="line"><span class="meta"># Sentinel</span></div><div class="line"><span class="symbol">sentinel_masters:</span><span class="number">1</span></div><div class="line"><span class="symbol">sentinel_tilt:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_running_scripts:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_scripts_queue_length:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_simulate_failure_flags:</span><span class="number">0</span></div><div class="line"><span class="symbol">master0:</span>name=redis115,status=ok,address=ip:port,slaves=<span class="number">2</span>,sentinels=<span class="number">1</span></div></pre></td></tr></table></figure></p>
+<h1 id="五：常用代码"><a href="#五：常用代码" class="headerlink" title="五：常用代码"></a>五：常用代码</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 强制杀死redis，模仿宕机</span></div><div class="line">ps aux |grep redis |awk <span class="string">'&#123;print $2&#125;'</span>|xargs kill -<span class="number">9</span></div><div class="line"></div><div class="line"><span class="comment"># 重启，指定conf</span></div><div class="line"><span class="regexp">/home/</span>work<span class="regexp">/xxx/</span>bin<span class="regexp">/redis-server /</span>home<span class="regexp">/work/</span>xxx<span class="regexp">/etc/</span>redis.conf</div><div class="line"></div><div class="line"><span class="comment"># 压测，具体参数可以参考benchmark</span></div><div class="line">[cuihuan@cuihuan bin]$  .<span class="regexp">/redis-benchmark -h 127.0.0.1  -p 端口 -a 密码  -c 1000 -n 10000000  -d 1024 -r 100000 -t set,get,incr,del</span></div></pre></td></tr></table></figure>
+<p>【转载请注明：<a href="http://cuihuan.net/?p=527">【redis学习三】简单高可用redis架构实践</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/redis/" rel="tag"># redis</a>
+          
+            <a href="/tags/高可用架构/" rel="tag"># 高可用架构</a>
+          
+            <a href="/tags/容灾/" rel="tag"># 容灾</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/" rel="next" title="【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合">
+                <i class="fa fa-chevron-left"></i> 【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/05/redis3/"
+           data-title="【redis学习三】简单高可用redis架构实践" data-url="http://cuihuan.net/2017/02/05/redis3/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/favicon.ico"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+          <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、方案调研"><span class="nav-number">1.</span> <span class="nav-text">一、方案调研</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-redis版本选择"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 redis版本选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-是否选择搭建集群"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 是否选择搭建集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据量评估"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据量评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能评估"><span class="nav-number">1.2.2.</span> <span class="nav-text">性能评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-初定方案和架构图"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 初定方案和架构图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、实现过程"><span class="nav-number">2.</span> <span class="nav-text">二、实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-redis安装"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 redis安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-配置读写master"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 配置读写master</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-配置只读slave"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 配置只读slave</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-启动测试"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 启动测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动主库写入数据"><span class="nav-number">2.4.1.</span> <span class="nav-text">启动主库写入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入从库查看"><span class="nav-number">2.4.2.</span> <span class="nav-text">进入从库查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看log确认过程"><span class="nav-number">2.4.3.</span> <span class="nav-text">查看log确认过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、架构能力评估"><span class="nav-number">3.</span> <span class="nav-text">三、架构能力评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-容灾能力"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 容灾能力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-性能评估"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 性能评估</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、问题思考"><span class="nav-number">4.</span> <span class="nav-text">四、问题思考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-内存清理策略"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 内存清理策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-伸缩性和单节点问题"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 伸缩性和单节点问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-采用redis-sentinal-监听"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 采用redis sentinal 监听</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五：常用代码"><span class="nav-number">5.</span> <span class="nav-text">五：常用代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"cuihuan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
