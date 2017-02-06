@@ -157,10 +157,10 @@ social_icons:
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 #avatar:
-
-reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
-wechatpay: /wp_content/base/qrcode.jpg
-alipay: /wp_content/base/qrcode.jpg
+#
+#reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+#wechatpay: /wp_content/base/qrcode.jpg
+#alipay: /wp_content/base/qrcode.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -248,9 +248,9 @@ custom_logo:
 
 # wechat
 wechat_subscriber:
-   enabled: false
+   enabled: true
    qcode: /wp_content/base/qrcode.jpg
-   description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
+   description: 欢迎您扫一扫上面的微信公众号，订阅小拽的博客！
 
 # Code Highlight theme
 # Available value:
