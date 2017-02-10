@@ -44,6 +44,7 @@ menu:
 #  sitemap: /sitemap.xml
   commonweal: /404.html
   old: http://cuihuan.net:8222
+  demo: http://cuihuan.net:1015
 
 
 
@@ -64,6 +65,7 @@ menu_icons:
   sitemap: sitemap
   commonweal: heartbeat
   old: camera-retro
+  demo: cubes
 
 
 

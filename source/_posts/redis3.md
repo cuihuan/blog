@@ -117,6 +117,8 @@ master0:name=redis115,status=ok,address=ip:port,slaves=2,sentinels=1
 ```
 # 强制杀死redis，模仿宕机
 ps aux |grep redis |awk '{print $2}'|xargs kill -9
+# 优化模拟宕机 【根据Dual-X-raY提示-_-】
+redis> DEBUG SEGFAULT
 
 # 重启，指定conf
 /home/work/xxx/bin/redis-server /home/work/xxx/etc/redis.conf

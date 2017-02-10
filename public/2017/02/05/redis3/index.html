@@ -42,7 +42,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="php,redis,高可用架构,容灾," />
+  <meta name="keywords" content="redis,高可用架构,容灾方案,redis主从," />
 
 
 
@@ -58,33 +58,33 @@
 
 
 
-<meta name="description" content="背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。
+<meta name="description" content="背景：支撑线上千万级别的天级查询请求，要求高可用。
 
 一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
 
-Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Red">
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Redis 3.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【redis学习三】简单高可用redis架构实践">
 <meta property="og:url" content="http://cuihuan.net/2017/02/05/redis3/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
-<meta property="og:description" content="背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。
+<meta property="og:description" content="背景：支撑线上千万级别的天级查询请求，要求高可用。
 
 一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
 
-Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Red">
-<meta property="og:image" content="http://cuihuan.net/img/bVIPha">
-<meta property="og:image" content="http://cuihuan.net/img/bVIPm9">
-<meta property="og:image" content="http://cuihuan.net/img/bVIPmY">
-<meta property="og:image" content="http://cuihuan.net/img/bVIPnA">
-<meta property="og:updated_time" content="2017-02-06T05:15:12.000Z">
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Redis 3.">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/redis/redis_3_framework.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/redis/redis_3_master.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/redis/redis_3_slave.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/redis/redis_3_log.png">
+<meta property="og:updated_time" content="2017-02-07T02:19:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【redis学习三】简单高可用redis架构实践">
-<meta name="twitter:description" content="背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。
+<meta name="twitter:description" content="背景：支撑线上千万级别的天级查询请求，要求高可用。
 
 一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
 
-Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Red">
-<meta name="twitter:image" content="http://cuihuan.net/img/bVIPha">
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Redis 3.">
+<meta name="twitter:image" content="http://cuihuan.net/wp_content/new/redis/redis_3_framework.png">
 
 
 
@@ -208,7 +208,7 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
-            公益404
+            公益
           </a>
         </li>
       
@@ -219,6 +219,16 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
               <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
             
             旧版
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cube"></i> <br />
+            
+            demo
           </a>
         </li>
       
@@ -365,7 +375,7 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
 
       
         <blockquote>
-<p>背景：支撑线上千万级别的天级查询请求，要求高可用，无写需求。</p>
+<p>背景：支撑线上千万级别的天级查询请求，要求高可用。</p>
 </blockquote>
 <h1 id="一、方案调研"><a href="#一、方案调研" class="headerlink" title="一、方案调研"></a>一、方案调研</h1><h2 id="1-1-redis版本选择"><a href="#1-1-redis版本选择" class="headerlink" title="1.1 redis版本选择"></a>1.1 redis版本选择</h2><p>redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：</p>
 <blockquote>
@@ -379,19 +389,17 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
 <li><strong>结论</strong>：9T 的数据承载量，远超当前千万级别的数据量</li>
 </ul>
 <h3 id="性能评估"><a href="#性能评估" class="headerlink" title="性能评估"></a>性能评估</h3><ul>
-<li><p><strong>测试</strong>：简单压测了下</p>
-<ul>
+<li><strong>测试</strong>：简单压测了下<ul>
 <li>写操作 1000w，80% 在20ms一下 ，98%在30ms，最大218ms，qps 5w/s，总耗时197s</li>
 <li>读操作 1000w，97% 在10ms一下 ，99.99%在24ms，qps 6w/s，总耗时160s</li>
 </ul>
 </li>
-<li><p><strong>评估</strong>：当前的调用量在千万每天，qps的话在百/s。 </p>
-</li>
+<li><strong>评估</strong>：当前的调用量在千万每天，qps的话在百/s。 </li>
 <li><strong>结论</strong>：当前单机的redis完全满足需求</li>
 </ul>
 <p>因此：在单机远能够满足当下业务需求的情况下，决定不采用的集群的方式来部署redis，减少技术债务风险。</p>
 <h2 id="1-3-初定方案和架构图"><a href="#1-3-初定方案和架构图" class="headerlink" title="1.3 初定方案和架构图"></a>1.3 初定方案和架构图</h2><p>选定了版本和基本部署方案之后，主要考虑服务的<code>容灾和稳定性</code>，经过思考之后采用<code>采用极简的主从从结构，001实时同步数据002和003；001读写，002，003只读</code>，机构图如下</p>
-<p><img src="/img/bVIPha" alt="clipboard.png"></p>
+<p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_framework.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_framework.png" alt="redis 框架架构"></a></p>
 <h1 id="二、实现过程"><a href="#二、实现过程" class="headerlink" title="二、实现过程"></a>二、实现过程</h1><h2 id="2-1-redis安装"><a href="#2-1-redis安装" class="headerlink" title="2.1 redis安装"></a>2.1 redis安装</h2><p>此处略去，参考官方文档 <a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
 <h2 id="2-2-配置读写master"><a href="#2-2-配置读写master" class="headerlink" title="2.2 配置读写master"></a>2.2 配置读写master</h2><ul>
 <li>修改端口：port 【目的：简单的修改默认端口是最好的防攻击】</li>
@@ -410,10 +418,10 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
 <li>主库密码：masterauth masterpwd</li>
 <li>只读：slave-read-only yes</li>
 </ul>
-<h2 id="2-4-启动测试"><a href="#2-4-启动测试" class="headerlink" title="2.4 启动测试"></a>2.4 启动测试</h2><h3 id="启动主库写入数据"><a href="#启动主库写入数据" class="headerlink" title="启动主库写入数据"></a>启动主库写入数据</h3><p><img src="/img/bVIPm9" alt="clipboard.png"></p>
+<h2 id="2-4-启动测试"><a href="#2-4-启动测试" class="headerlink" title="2.4 启动测试"></a>2.4 启动测试</h2><h3 id="启动主库写入数据"><a href="#启动主库写入数据" class="headerlink" title="启动主库写入数据"></a>启动主库写入数据</h3><p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_master.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_master.png" alt="redis 写入主库"></a></p>
 <h3 id="进入从库查看"><a href="#进入从库查看" class="headerlink" title="进入从库查看"></a>进入从库查看</h3><p>最初没有数据，主库写入之后，从库去到数据</p>
-<p><img src="/img/bVIPmY" alt="clipboard.png"></p>
-<h3 id="查看log确认过程"><a href="#查看log确认过程" class="headerlink" title="查看log确认过程"></a>查看log确认过程</h3><p><img src="/img/bVIPnA" alt="clipboard.png"></p>
+<p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_slave.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_slave.png" alt="redis 写入从库"></a></p>
+<h3 id="查看log确认过程"><a href="#查看log确认过程" class="headerlink" title="查看log确认过程"></a>查看log确认过程</h3><p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_log.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_log.png" alt="redis log"></a></p>
 <h1 id="三、架构能力评估"><a href="#三、架构能力评估" class="headerlink" title="三、架构能力评估"></a>三、架构能力评估</h1><h2 id="3-1-容灾能力"><a href="#3-1-容灾能力" class="headerlink" title="3.1 容灾能力"></a>3.1 容灾能力</h2><ul>
 <li>主动容灾<ul>
 <li>备份：master 全量备份，slave全量备份。</li>
@@ -434,8 +442,8 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
 <h1 id="四、问题思考"><a href="#四、问题思考" class="headerlink" title="四、问题思考"></a>四、问题思考</h1><h2 id="4-1-内存清理策略"><a href="#4-1-内存清理策略" class="headerlink" title="4.1 内存清理策略"></a>4.1 内存清理策略</h2><p>暂时采用：<br>noeviction -&gt; 谁也不删，直接在写操作时返回错误。<br>之后采用：<br>volatile-lru -&gt; 根据LRU算法删除带有过期时间的key。 最少使用算法删除。<br>如果达到内存限制，手工清理，通过监控脚本监控内存情况</p>
 <h2 id="4-2-伸缩性和单节点问题"><a href="#4-2-伸缩性和单节点问题" class="headerlink" title="4.2 伸缩性和单节点问题"></a>4.2 伸缩性和单节点问题</h2><p>扩展slave可以直接扩展，扩展master需要master之间数据同步，暂时是个瓶颈。对于主读业务的需求，暂时问题不大；写需求的话，暂时的想法是代码转写的方式。</p>
 <h2 id="4-3-采用redis-sentinal-监听"><a href="#4-3-采用redis-sentinal-监听" class="headerlink" title="4.3 采用redis sentinal 监听"></a>4.3 采用redis sentinal 监听</h2><p>默认不错的监听，尝试了下效果不错，还在调研中，配置conf即可，完成后可以查看监听的情况<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:port&gt; INFO Sentinel</div><div class="line"><span class="meta"># Sentinel</span></div><div class="line"><span class="symbol">sentinel_masters:</span><span class="number">1</span></div><div class="line"><span class="symbol">sentinel_tilt:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_running_scripts:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_scripts_queue_length:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_simulate_failure_flags:</span><span class="number">0</span></div><div class="line"><span class="symbol">master0:</span>name=redis115,status=ok,address=ip:port,slaves=<span class="number">2</span>,sentinels=<span class="number">1</span></div></pre></td></tr></table></figure></p>
-<h1 id="五：常用代码"><a href="#五：常用代码" class="headerlink" title="五：常用代码"></a>五：常用代码</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 强制杀死redis，模仿宕机</span></div><div class="line">ps aux |grep redis |awk <span class="string">'&#123;print $2&#125;'</span>|xargs kill -<span class="number">9</span></div><div class="line"></div><div class="line"><span class="comment"># 重启，指定conf</span></div><div class="line"><span class="regexp">/home/</span>work<span class="regexp">/xxx/</span>bin<span class="regexp">/redis-server /</span>home<span class="regexp">/work/</span>xxx<span class="regexp">/etc/</span>redis.conf</div><div class="line"></div><div class="line"><span class="comment"># 压测，具体参数可以参考benchmark</span></div><div class="line">[cuihuan@cuihuan bin]$  .<span class="regexp">/redis-benchmark -h 127.0.0.1  -p 端口 -a 密码  -c 1000 -n 10000000  -d 1024 -r 100000 -t set,get,incr,del</span></div></pre></td></tr></table></figure>
-<p>【转载请注明：<a href="http://cuihuan.net/?p=527">【redis学习三】简单高可用redis架构实践</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
+<h1 id="五：常用代码"><a href="#五：常用代码" class="headerlink" title="五：常用代码"></a>五：常用代码</h1><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 强制杀死redis，模仿宕机</span></div><div class="line">ps aux |grep redis |awk <span class="string">'&#123;print $2&#125;'</span>|xargs kill <span class="number">-9</span></div><div class="line"><span class="meta"># 优化模拟宕机 【根据Dual-X-raY提示-_-】</span></div><div class="line">redis&gt; DEBUG SEGFAULT</div><div class="line"></div><div class="line"><span class="meta"># 重启，指定conf</span></div><div class="line">/home/work/xxx/bin/redis-server /home/work/xxx/etc/redis.conf</div><div class="line"></div><div class="line"><span class="meta"># 压测，具体参数可以参考benchmark</span></div><div class="line">[cuihuan@cuihuan bin]$  ./redis-benchmark -h <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>  -p 端口 -a 密码  -c <span class="number">1000</span> -n <span class="number">10000000</span>  -d <span class="number">1024</span> -r <span class="number">100000</span> -t <span class="keyword">set</span>,<span class="keyword">get</span>,incr,del</div></pre></td></tr></table></figure>
+<p>【转载请注明：<a href="http://cuihuan.net/2017/02/05/redis3/">【redis学习三】简单高可用redis架构实践</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
 
       
     </div>
@@ -443,6 +451,11 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
     <div>
       
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
 
       
     </div>
@@ -450,27 +463,6 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
     <div>
       
         
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/wp_content/base/qrcode.jpg" alt="崔小拽 Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
 
       
     </div>
@@ -480,13 +472,13 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
       
         <div class="post-tags">
           
-            <a href="/tags/php/" rel="tag"># php</a>
-          
             <a href="/tags/redis/" rel="tag"># redis</a>
           
             <a href="/tags/高可用架构/" rel="tag"># 高可用架构</a>
           
-            <a href="/tags/容灾/" rel="tag"># 容灾</a>
+            <a href="/tags/容灾方案/" rel="tag"># 容灾方案</a>
+          
+            <a href="/tags/redis主从/" rel="tag"># redis主从</a>
           
         </div>
       
@@ -588,7 +580,7 @@ Redis是一个开源、基于C语言、基于内存亦可持久化的高性能No
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
