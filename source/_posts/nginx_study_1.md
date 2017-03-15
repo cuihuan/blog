@@ -125,4 +125,4 @@ epoll详解：[【跳转】](http://man7.org/linux/man-pages/man7/epoll.7.html)
 - 线程池：https://www.nginx.com/blog/thread-pools-boost-performance-9x/
 
 
-【转载请注明：[【【nginx学习一】基本原理学习 ](http://localhost:4000/2017/03/14/nginx_study_1/) | [靠谱崔小拽](http://cuihuan.net) 】
+【转载请注明：[【【nginx学习一】基本原理学习 ](http://cuihuan.net/2017/03/14/nginx_study_1/) | [靠谱崔小拽](http://cuihuan.net) 】
