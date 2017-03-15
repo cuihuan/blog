@@ -108,7 +108,7 @@ epoll详解：[【跳转】](http://man7.org/linux/man-pages/man7/epoll.7.html)
 [![nginx 事件](http://cuihuan.net/wp_content/new/nginx1/nginx_event_.png)](http://cuihuan.net/wp_content/new/nginx1/nginx_event_.png)
 [![nginx epoll](http://cuihuan.net/wp_content/new/nginx1/nginx_epoll.png)](http://cuihuan.net/wp_content/new/nginx1/nginx_epoll.png)
 
-## 简单总结
+## 四、简单总结
 - 性能：nginx 工作模式是master-worker进程方式，执行请求是有更轻量线程完成。
 - 热加载：nginx 替换非更新的方式是nginx热加载的本质
 - 功能强大：nginx upstream是在线程层面调度，兼容多种，所以可以扩展很多功能强大
@@ -117,7 +117,7 @@ epoll详解：[【跳转】](http://man7.org/linux/man-pages/man7/epoll.7.html)
 
 再次强调：初探nginx，有疑问或不准确的地方，请直接开炮！！！
 
-## 参考文章
+## 五、参考文章
 - netcraft：https://news.netcraft.com/archives/2017/01/12/january-2017-web-server-survey.html
 - nginx的线程调度设计：https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/
 - epoll详述：http://man7.org/linux/man-pages/man7/epoll.7.html
