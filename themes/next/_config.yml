@@ -279,9 +279,13 @@ mathjax:
 baidu_analytics:
   15d3caeed62b266d96dd734894786f13
 #Duoshuo ShortName
-duoshuo_shortname:
-  cuihuan
+#duoshuo_shortname:
+#  cuihuan
 
+changyan:
+   enable: true
+   appid: cyt4yCrLQ
+   appkey: b93e7476cddc60d0ecda38b6929b86e6
 # Disqus
 #disqus_shortname:
 
