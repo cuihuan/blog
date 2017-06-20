@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,8 +13,17 @@
 
 
 
+
+
+
+
+
+
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
 
 
 
@@ -34,24 +43,50 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="靠谱崔小拽, 崔小拽" />
-
-
-
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -74,13 +109,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: '小拽'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -100,64 +135,60 @@
 
 
 
-  <title> 靠谱崔小拽 </title>
+  <title>靠谱崔小拽</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">靠谱崔小拽</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">subtitle</p>
+      
   </div>
-    
-      <h1 class="site-subtitle" itemprop="description">subtitle</h1>
-    
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -177,8 +208,18 @@
         </li>
       
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -186,64 +227,11 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-old">
-          <a href="http://cuihuan.net:8222" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
-            
-            旧版
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-demo">
-          <a href="http://cuihuan.net:1015" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
-            
-            demo
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
   
 </nav>
 
@@ -268,37 +256,26 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/18/Nginx实践一：centos apache更换为nginx/" itemprop="url">
-                  Nginx实践一：centos apache更换为nginx
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/" itemprop="url">Nginx实践二：nginx端口配置，域名重定向设置</a></h1>
         
 
         <div class="post-meta">
@@ -310,7 +287,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-18T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-18T17:21:35+08:00">
                 2015-11-18
               </time>
             
@@ -327,8 +304,8 @@
           
 
           
-
           
+
           
 
           
@@ -339,7 +316,6 @@
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -348,18 +324,24 @@
       
         
           
-          
-背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。
+            <blockquote>
+<p>nginx替换apache之后，需要进行两个基本设置，一是：域名绑定和重定向，防止盗链，死链，参考文章<a href="http://cuihuan.net/?p=154"> apache 防盗链 </a>；二是：设置多个端口，一个端口显然无法满足需求。</p>
+</blockquote>
+<h3 id="域名防盗链设置"><a href="#域名防盗链设置" class="headerlink" title="域名防盗链设置"></a>域名防盗链设置</h3><p>域名防盗链主要通过，设定服务器域名，非域名重定向到现有域名（相对于之前的黑名单，我太单纯了，流量可以重定向利用一下）。</p>
+<p>配置nginx.conf</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># default 默认只能server_name 访问</span></div><div class="line"><span class="attribute">listen</span> <span class="number">80</span> default ;</div><div class="line"><span class="attribute">server_name</span> cuihuan.net;</div><div class="line"></div><div class="line"><span class="comment"># 重定向</span></div><div class="line"><span class="attribute">if</span> (<span class="variable">$host</span> != <span class="string">"cuihuan.net"</span>) &#123;</div><div class="line">    <span class="attribute">rewrite</span><span class="regexp"> ^/(.*)$</span> http://cuihuan.net/<span class="variable">$1</span> <span class="literal">permanent</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>解释：首先80端口默认只能域名访问 ，默认的域名cuihuan.net。 对于所有非cuihuan.net 的过来的数据直接引流的cuihuan.net。如下图【这个战斗力为五的渣渣还挂在我的页面】</p>
+<p><img src="http://cuihuan.net/wp-content/uploads/2015/11/4BF263AE-6ACD-4634-9000-795C0FB5F323-1024x851.png" alt="4BF263AE-6ACD-4634-9000-795C0FB5F323"></p>
+<p>进行了转码后还可以避免搜索引擎抓的域名出现死链。</p>
+<p><a href="http://cuihuan.net/wp-content/uploads/2015/11/18AC69FB-9C9D-4CE6-8D9A-8F3BFC40D75C.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/18AC69FB-9C9D-4CE6-8D9A-8F3BFC40D75C-1024x467.png" alt="18AC69FB-9C9D-4CE6-8D9A-8F3BFC40D75C"></a></p>
+<h3 id="配置多端口："><a href="#配置多端口：" class="headerlink" title="配置多端口："></a>配置多端口：</h3><p> 这个就简单了，直接把上面配置好的server copy一个挂上其他web服务或者phpadmin等等<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="section">server</span> &#123;</div><div class="line">    <span class="attribute">listen</span> <span class="number">8002</span> default ;</div><div class="line">    <span class="attribute">server_name</span> cuihuan.net;</div><div class="line"></div><div class="line">    <span class="attribute">if</span> (<span class="variable">$host</span> != <span class="string">"cuihuan.net"</span>) &#123;</div><div class="line">        <span class="attribute">rewrite</span><span class="regexp"> ^/(.*)$</span> http://cuihuan.net/<span class="variable">$1</span> <span class="literal">permanent</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="attribute">location</span> / &#123;</div><div class="line">        <span class="attribute">root</span> /var/www/weixin;</div><div class="line">        <span class="attribute">index</span> index.php;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</div><div class="line">        <span class="attribute">root</span> /var/www/weixin;</div><div class="line">        <span class="attribute">fastcgi_pass</span> <span class="number">127.0.0.1:9000</span>;</div><div class="line">        <span class="attribute">fastcgi_index</span> index.php;</div><div class="line">        <span class="attribute">fastcgi_param</span> SCRIPT_FILENAME /var/www/weixin<span class="variable">$fastcgi_script_name</span>;</div><div class="line">        <span class="attribute">include</span> fastcgi_params;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">   <span class="comment"># set nginx stutus</span></div><div class="line">   <span class="attribute">location</span> /NginxStatus&#123;</div><div class="line">        <span class="attribute">stub_status</span> <span class="literal">on</span>;</div><div class="line">        <span class="attribute">access_log</span> <span class="literal">on</span>;</div><div class="line">        <span class="attribute">auth_basic</span> <span class="string">"NginxStatus"</span>;</div><div class="line">        <span class="attribute">auth_basic_user_file</span> conf/htpasswd;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">#set deny all file</span></div><div class="line">    <span class="attribute">error_page</span> <span class="number">404</span> /<span class="number">404</span>.html;</div><div class="line">    <span class="attribute">location</span> = /var/www/wordpress/40x.html &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="attribute">error_page</span> <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> /50x.html;</div><div class="line">    <span class="attribute">location</span> = /home/www/wordpress/50x.html &#123;</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>对于nginx搭建小网站来说，这个是基本的配置。个人感觉相对于之前<a href="http://cuihuan.net/?p=154"> apache 防盗链配置 </a>来说难易差不多。</p>
+</blockquote>
+<p> <a href="http://cuihuan.net/?p=225"> 相关文章：Nginx实践一：centos apache更换为nginx </a></p>
+<p><a href="http://cuihuan.net/?p=241"> 个人小站原文链接 </a></p>
 
-背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/18/Nginx实践一：centos apache更换为nginx/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -372,8 +354,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -396,37 +383,26 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/" itemprop="url">
-                  Nginx实践二：nginx端口配置，域名重定向设置
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/18/Nginx实践一：centos apache更换为nginx/" itemprop="url">Nginx实践一：centos apache更换为nginx</a></h1>
         
 
         <div class="post-meta">
@@ -438,7 +414,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-18T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-18T17:21:35+08:00">
                 2015-11-18
               </time>
             
@@ -455,8 +431,8 @@
           
 
           
-
           
+
           
 
           
@@ -467,7 +443,6 @@
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -476,18 +451,47 @@
       
         
           
-          
-nginx替换apache之后，需要进行两个基本设置，一是：域名绑定和重定向，防止盗链，死链，参考文章 apache 防盗链 ；二是：设置多个端口，一个端口显然无法满足需求。
+            <blockquote>
+<p>背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。</p>
+</blockquote>
+<h3 id="背景数据"><a href="#背景数据" class="headerlink" title="背景数据"></a>背景数据</h3><p>如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉的不是治本之策</p>
+<pre><code># 统计apache 进程个数
+ps aux|grep httpd | wc –l
+</code></pre><p><a href="http://cuihuan.net/wp-content/uploads/2015/11/8C2E5AE4-0A5E-479E-8C20-1CFF0C35F6D7.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/8C2E5AE4-0A5E-479E-8C20-1CFF0C35F6D7-1024x621.png" alt="ngnix 服务器占用"></a></p>
+<h3 id="解决策略"><a href="#解决策略" class="headerlink" title="解决策略"></a>解决策略</h3><ul>
+<li>1：针对Apache进行优化。包括优化worker运行方式等等。可以参考<a href="https://linux.cn/article-5294-2.html" target="_blank" rel="external"> apache优化 </a></li>
+<li>2 :更换轻量级服务器。采用nginx 或者lighthttpd等更轻量的服务器。传说中Nginx大法负载均衡和高并发略胜一筹，决定实践一把。</li>
+</ul>
+<h3 id="apache替换为nginx"><a href="#apache替换为nginx" class="headerlink" title="apache替换为nginx"></a>apache替换为nginx</h3><ul>
+<li><p>1： 停掉apache<br>  sudo service httpd stop</p>
+<p>注意：以防万一，最好不好提前卸掉。</p>
+</li>
+<li><p>2：安装nginx<br>  yum install nginx</p>
+</li>
+<li><p>3：启动nginx<br>  sudo nginx</p>
+<p>安装成功之后，启动成功如下图 <a href="http://cuihuan.net/wp-content/uploads/2015/11/CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2-1024x302.png" alt="CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2"></a></p>
+</li>
+<li>4：简单配置nginx<br>主要是简单修改下log【方便追查问题】 和 web_root 对应文件【快速启用网站】</li>
+<li><p>5：重启nginx<br>  [root@iZ25xlozdf2Z nginx]# nginx -s quit<br>  [root@iZ25xlozdf2Z nginx]# nginx</p>
+<p>如下图，配置web目录成功！ <a href="http://cuihuan.net/wp-content/uploads/2015/11/BAEF603F-CA9C-436E-B870-3E70C11542D0.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/BAEF603F-CA9C-436E-B870-3E70C11542D0.png" alt="BAEF603F-CA9C-436E-B870-3E70C11542D0"></a></p>
+</li>
+<li><p>6：添加php 支持<br>安装php-fpm<br>  yum install php-fpm</p>
+<p>nginx.conf设置<br>  location ~ .php$ {</p>
+<pre><code>root /var/www/html;
+fastcgi_pass 127.0.0.1:9000;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME         /var/www/html$fastcgi_script_name;
+include fastcgi_params;
+</code></pre><p>  }</p>
+</li>
+<li><p>7：重新启动服务，网站回复。<br><a href="http://cuihuan.net/wp-content/uploads/2015/11/A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3-1024x718.png" alt="A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3"></a></p>
+</li>
+<li>8：耗存简单对比 如下图：基本上节省了200M，虽然这个可能是运行初期数据；但是，还是确实轻了不少，每个服务占存基本上1/4，线程也少了不少。内存占用方面表现，感觉尚可，接下就看性能了 <a href="http://cuihuan.net/wp-content/uploads/2015/11/E773D2EE-2F51-4113-AAE1-939CD88DCAEE.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/E773D2EE-2F51-4113-AAE1-939CD88DCAEE-1024x667.png" alt="E773D2EE-2F51-4113-AAE1-939CD88DCAEE"></a></li>
+</ul>
+<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>初次接触nginx，整体感觉还不错。后续，进行基本的防攻击，多端口设置，和性能配置。</p>
+<p><a href="http://cuihuan.net/?p=225"> 个人小站原文链接 </a></p>
 
-域名防盗链设置域名防盗链主要通过，设定服务器域名，非域名重定向到现有域名（相对于之前的黑名单，我太单纯了，流量可以重定向
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -500,8 +504,13 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -523,7 +532,7 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
   </nav>
 
 
-          
+
           </div>
           
 
@@ -555,13 +564,15 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
                src="/wp_content/base/favicon.ico"
                alt="崔小拽" />
           <p class="site-author-name" itemprop="name">崔小拽</p>
-          <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
+           
+              <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
+          
         </div>
         <nav class="site-state motion-element">
-        
+
           
             <div class="site-state-item site-state-posts">
-              <a href="/">
+              <a href="/archives/">
                 <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -571,8 +582,10 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -600,6 +613,8 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
 
       
 
+      
+
     </div>
   </aside>
 
@@ -612,7 +627,7 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2015 - 
+  &copy; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -621,32 +636,31 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
 </div>
 
 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-        
-
-<div class="busuanzi-count">
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
-  
-
-  
-    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
-  
-  
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
 </div>
 
 
+        
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -666,6 +680,14 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
 
 
   
+
+
+
+
+
+
+
+
 
 
 
@@ -692,26 +714,29 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
 
 
 
   
+  
 
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
 
 
   
@@ -733,136 +758,21 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
 
   
 
-  
 
 
 
 
   
+
+
+
+
+
+
   
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
 
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
 
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
 
 
   
@@ -873,6 +783,9 @@ nginx替换apache之后，需要进行两个基本设置，一是：域名绑定
 
   
 
+  
+
+  
 
 </body>
 </html>

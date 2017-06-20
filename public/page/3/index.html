@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,8 +13,17 @@
 
 
 
+
+
+
+
+
+
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
 
 
 
@@ -34,24 +43,50 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="靠谱崔小拽, 崔小拽" />
-
-
-
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -74,13 +109,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: '小拽'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -100,64 +135,60 @@
 
 
 
-  <title> 靠谱崔小拽 </title>
+  <title>靠谱崔小拽</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">靠谱崔小拽</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">subtitle</p>
+      
   </div>
-    
-      <h1 class="site-subtitle" itemprop="description">subtitle</h1>
-    
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -177,8 +208,18 @@
         </li>
       
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -186,64 +227,11 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-old">
-          <a href="http://cuihuan.net:8222" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
-            
-            旧版
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-demo">
-          <a href="http://cuihuan.net:1015" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
-            
-            demo
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
   
 </nav>
 
@@ -268,37 +256,26 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/06/【wordpress优化】压缩和使用静态缓存/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/06/【wordpress优化】压缩和使用静态缓存/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/06/【wordpress优化】压缩和使用静态缓存/" itemprop="url">
-                  【wordpress优化】压缩和使用静态缓存
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/12/06/【wordpress优化】压缩和使用静态缓存/" itemprop="url">【wordpress优化】压缩和使用静态缓存</a></h1>
         
 
         <div class="post-meta">
@@ -310,7 +287,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-06T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-06T17:21:35+08:00">
                 2015-12-06
               </time>
             
@@ -327,8 +304,8 @@
           
 
           
-
           
+
           
 
           
@@ -339,7 +316,6 @@
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -348,17 +324,34 @@
       
         
           
+            <blockquote>
+<p>先说背景：wordpress个人网站，整体性能挺不错；但是，由于采用php动态获取数据，构成页面的方式，势必会影响页面加载速度。对于一些最常用的页面[例如首页]等等，完全可以采用生成伪静态页面缓存的方式加载。</p>
+<p>针对现有的缓存方式调研了一下：本文使用<code>wp super cache</code>进行了优化，提升加载速度200%以上。</p>
+</blockquote>
+<h2 id="无图无真想，先看效果"><a href="#无图无真想，先看效果" class="headerlink" title="无图无真想，先看效果"></a>无图无真想，先看效果</h2><p>针对相同页面在chrome下做了个加载时间，大小的对比，如下图</p>
+<p>优化前数据：23ms感知页面；3.62s加载完成；页面大小：419k；请求个数：25个；<br><a href="http://cuihuan.net/wp-content/uploads/2015/12/E6B50C39-73D4-4397-9A79-794C58FC8A6A.png"><img src="http://cuihuan.net/wp-content/uploads/2015/12/E6B50C39-73D4-4397-9A79-794C58FC8A6A-1024x490.png" alt="原始加载时间"></a></p>
+<p>优化后数据：106ms感知页面；<code>1.81s</code>加载完成；页面大小<code>13.9k</code>；请求个数24个；<br><img src="http://cuihuan.net/wp-content/uploads/2015/12/1FDB64C3-369A-47E4-8CF7-FE2E7676FC4C1-1024x482.png" alt="原始加载时间"></p>
+<p>效果不错，后文做个详细分析。</p>
+<h2 id="了解-wp-super-cache"><a href="#了解-wp-super-cache" class="headerlink" title="了解 wp super cache"></a>了解 wp super cache</h2><p><a href="http://z9.io/wp-super-cache/" target="_blank" rel="external"> wp super cache </a> 是wordpress的一种缓存优化插件，本质是利用缓存机制提升页面加载速度。<br><strong>实现原理:</strong> php最终在前端展现时需要转换为html，然后获取响应的数据；wp super cache 则提前将php文件转换为的html伪静态文件进行存储，一旦发生请求，直接返回生成的页面；减少了数据库取数据，转换等过程，来增加加载速度。<br><strong>优 点:</strong> 增加了加载速度。<br><strong>缺 点:</strong> 增加了存储成本，而且要不断的更新，如果用户量大，个人感觉存储和离线成本增加会挺多。</p>
+<h2 id="安装-wp-super-cache"><a href="#安装-wp-super-cache" class="headerlink" title="安装 wp super cache"></a>安装 wp super cache</h2><p>官网下载地址：<a href="http://z9.io/wp-super-cache/" target="_blank" rel="external"> http://z9.io/wp-super-cache/ </a><br>【无法翻墙可参考小拽博文：<a href="http://cuihuan.net/article/%E4%B8%8D%E7%BF%BB%E5%A2%99%EF%BC%8C%E4%B8%8B%E8%BD%BDwordpress%E5%AE%98%E6%96%B9%E6%8F%92%E4%BB%B6%E5%B0%8F%E6%8A%80%E5%B7%A7.html"> 不翻墙，下载wordpress官方主题和插件小技巧 </a>】</p>
+<p>注意：安装wp super cache 需要设定固定连接 如下图<br>推荐采用【自定义结果】：<a href="http://cuihuan.net/article/%postname%.html">http://cuihuan.net/article/%postname%.html</a><br>原因在于其他包含字母或者日期不太容易表意，也不利于阅读和seo等等。<br><a href="http://cuihuan.net/wp-content/uploads/2015/12/BEA1E968-7B4D-4CED-AC56-8E3F4A5A6F2C.png"><img src="http://cuihuan.net/wp-content/uploads/2015/12/BEA1E968-7B4D-4CED-AC56-8E3F4A5A6F2C-1024x546.png" alt="修改链接格式"></a></p>
+<p>如果最初采用的是<a href="http://xxx/?p=xxx的方式，需要对服务器进行相关设置，否则会一直出现404。解决和设置办法，在另一篇文章中，此处不赘述（[wp" target="_blank" rel="external">http://xxx/?p=xxx的方式，需要对服务器进行相关设置，否则会一直出现404。解决和设置办法，在另一篇文章中，此处不赘述（[wp</a> super cache 安装和问题解决](<a href="http://cuihuan.net/article/wp%20super%20cache%20%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html)）。">http://cuihuan.net/article/wp%20super%20cache%20%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.html)）。</a></p>
+<p>安装成功后，后台设置中会出现wp super cache</p>
+<h2 id="配置-wp-super-cache"><a href="#配置-wp-super-cache" class="headerlink" title="配置 wp super cache"></a>配置 wp super cache</h2><p>安装成功后的简单个人推荐设置。</p>
+<p>通用-》启用cache：开启<br>高级-》启用缓存：开启<br>高级-》模式选择：推荐mode_rewrite 这个需要apache或者nginx进行相关设置，这个速度最快；如果不想设置，可以选择php缓存模式。<br>高级-》压缩页面：必选。<br>高级-》页面更新清除，评论更新清楚：推荐。作用是更新文章，评论之后触发缓存更新。<br>高级-》移动支持：推荐。<br>其他一些设置根据个人需求增加。</p>
+<p>配置，更新之后，进入网站cache目录下会出现缓存的html文件和gzip的压缩文件（前提是设置了giz压缩）。</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@cuixiaohuan cuihuan.<span class="keyword">net</span>]# <span class="keyword">pwd</span></div><div class="line">xxx/wp-content/cache/supercache/cuihuan.<span class="keyword">net</span></div><div class="line">[root@cuixiaohuan cuihuan.<span class="keyword">net</span>]# <span class="keyword">ls</span> -lh</div><div class="line"><span class="keyword">total</span> 52K</div><div class="line">-rw-r--r-- 1 apache apache 40K <span class="keyword">Dec</span> 5 11:33 index.html</div><div class="line">-rw-r--r-- 1 apache apache 9.5K <span class="keyword">Dec</span> 5 11:33 index.html.gz</div></pre></td></tr></table></figure>
+<h2 id="效果分析"><a href="#效果分析" class="headerlink" title="效果分析"></a>效果分析</h2><p>优化前数据：23ms感知页面；3.62s加载完成；页面大小：419k；请求个数：25个；<br>优化后数据：106ms感知页面；<code>1.81s</code>加载完成；页面大小<code>13.9k</code>；请求个数24个；</p>
+<p>感知页面变慢：原因在于，原始php页面相对较小，传输也相对较快，传输基本框架之后，才进行页面dom绘制，js渲染，数据获取和再次渲染，所以感知时间原始的快。但是对于750ms以下的对于用户几乎都是无感知。</p>
+<p>加载完成变快：最主要达到的效果，节省最多的时间在于数据库获取数据的时间。</p>
+<p>页面大小变小：<code>这块小的有点出乎意外</code>，小是应该的，但是小这么多就有点🐂了；之后分析了下页面，可能和文章异步获取，存储的html只获取了部分页面的文章，同时，对jquery等等组件肯定是利用缓存，不计入数据大小了。</p>
+<p>请求数目变化不大。</p>
+<blockquote>
+<p>整体效果：加载快了，页面小了。</p>
+</blockquote>
+<p>【转载请注明：<a href="http://cuihuan.net/article/%E3%80%90wordpress%E4%BC%98%E5%8C%96%E3%80%91wp-super-cache-%E9%9D%99%E6%80%81%E7%BC%93%E5%AD%98.html">【wordpress优化】压缩和使用静态缓存 </a> | <a href="http://cuihuan.net"> 靠谱崔小拽 </a>】</p>
+
           
-先说背景：wordpress个人网站，整体性能挺不错；但是，由于采用php动态获取数据，构成页面的方式，势必会影响页面加载速度。对于一些最常用的页面[例如首页]等等，完全可以采用生成伪静态页面缓存的方式加载。
-针对现有的缓存方式调研了一下：本文使用wp super cache进行了优化，提升加载速
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/12/06/【wordpress优化】压缩和使用静态缓存/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -371,8 +364,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -395,37 +393,26 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/06/echarts动态获取数据实例/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/06/echarts动态获取数据实例/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/06/echarts动态获取数据实例/" itemprop="url">
-                  echarts动态获取数据实例
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/12/06/echarts动态获取数据实例/" itemprop="url">echarts动态获取数据实例</a></h1>
         
 
         <div class="post-meta">
@@ -437,7 +424,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-06T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-06T17:21:35+08:00">
                 2015-12-06
               </time>
             
@@ -454,8 +441,8 @@
           
 
           
-
           
+
           
 
           
@@ -466,7 +453,6 @@
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -475,19 +461,17 @@
       
         
           
-          
-echarts动态获取数据库的实时数据的简单实例。实例演示：  跳转demo 
+            <blockquote>
+<p>echarts动态获取数据库的实时数据的简单实例。实例演示： <a href="http://cuihuan.net:1015/demo_file/echarts_realtime_demo/demo.html"> 跳转demo </a></p>
+</blockquote>
+<h2 id="引入echarts-文件。"><a href="#引入echarts-文件。" class="headerlink" title="引入echarts 文件。"></a>引入echarts 文件。</h2><p>引入echarts的文件方式有多种，比较推荐模块化的引入方式。<br>小拽的简单demo是直接引入文件，提供一个下载地址 ：<a href="http://cuihuan.net:1015/component/echarts/build/echarts-all.js"> 点击下载 </a></p>
+<h2 id="html-部分代码"><a href="#html-部分代码" class="headerlink" title="html 部分代码"></a>html 部分代码</h2><p>一块div 用于echart的展现。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"echart_show"</span> style=<span class="string">"height:500px"</span>&gt;这里是一个布局展现&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="js-部分代码"><a href="#js-部分代码" class="headerlink" title="js 部分代码"></a>js 部分代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 绘制反馈量图形</span></div><div class="line">    <span class="keyword">var</span> init_echarts = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> refreshChart = <span class="function"><span class="keyword">function</span> (<span class="params">show_data</span>) </span>&#123;</div><div class="line">            my_demo_chart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'echart_show'</span>));</div><div class="line">            my_demo_chart.showLoading(&#123;</div><div class="line">                <span class="attr">text</span>: <span class="string">'加载中...'</span>,</div><div class="line">                <span class="attr">effect</span>: <span class="string">'whirling'</span></div><div class="line">            &#125;);</div><div class="line"></div><div class="line"></div><div class="line">            <span class="keyword">var</span> echarts_all_option = &#123;</div><div class="line">                <span class="attr">title</span>: &#123;</div><div class="line">                    <span class="attr">text</span>: <span class="string">'动态数据'</span>,</div><div class="line">                    <span class="attr">subtext</span>: <span class="string">'纯属虚构'</span></div><div class="line">                &#125;,</div><div class="line">                <span class="attr">tooltip</span>: &#123;</div><div class="line">                    <span class="attr">trigger</span>: <span class="string">'axis'</span></div><div class="line">                &#125;,</div><div class="line">                <span class="attr">legend</span>: &#123;</div><div class="line">                    <span class="attr">data</span>: [<span class="string">'最新成交价'</span>, <span class="string">'预购队列'</span>]</div><div class="line">                &#125;,</div><div class="line">                <span class="attr">toolbox</span>: &#123;</div><div class="line">                    <span class="attr">show</span>: <span class="literal">true</span>,</div><div class="line">                    <span class="attr">feature</span>: &#123;</div><div class="line">                        <span class="attr">mark</span>: &#123;<span class="attr">show</span>: <span class="literal">true</span>&#125;,</div><div class="line">                        <span class="attr">dataView</span>: &#123;<span class="attr">show</span>: <span class="literal">true</span>, <span class="attr">readOnly</span>: <span class="literal">false</span>&#125;,</div><div class="line">                        <span class="attr">magicType</span>: &#123;<span class="attr">show</span>: <span class="literal">true</span>, <span class="attr">type</span>: [<span class="string">'line'</span>, <span class="string">'bar'</span>]&#125;,</div><div class="line">                        <span class="attr">restore</span>: &#123;<span class="attr">show</span>: <span class="literal">true</span>&#125;,</div><div class="line">                        <span class="attr">saveAsImage</span>: &#123;<span class="attr">show</span>: <span class="literal">true</span>&#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;,</div><div class="line">                <span class="attr">dataZoom</span>: &#123;</div><div class="line">                    <span class="attr">show</span>: <span class="literal">false</span>,</div><div class="line">                    <span class="attr">start</span>: <span class="number">0</span>,</div><div class="line">                    <span class="attr">end</span>: <span class="number">100</span></div><div class="line">                &#125;,</div><div class="line">                <span class="attr">xAxis</span>: [</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">type</span>: <span class="string">'category'</span>,</div><div class="line">                        <span class="attr">boundaryGap</span>: <span class="literal">true</span>,</div><div class="line">                        <span class="attr">data</span>: (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                            <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">                            <span class="keyword">var</span> res = [];</div><div class="line">                            <span class="keyword">var</span> len = <span class="number">10</span>;</div><div class="line">                            <span class="keyword">while</span> (len--) &#123;</div><div class="line">                                res.unshift(now.toLocaleTimeString().replace(<span class="regexp">/^\D*/</span>, <span class="string">''</span>));</div><div class="line">                                now = <span class="keyword">new</span> <span class="built_in">Date</span>(now - <span class="number">2000</span>);</div><div class="line">                            &#125;</div><div class="line">                            <span class="keyword">return</span> res;</div><div class="line">                        &#125;)()</div><div class="line">                    &#125;,</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">type</span>: <span class="string">'category'</span>,</div><div class="line">                        <span class="attr">boundaryGap</span>: <span class="literal">true</span>,</div><div class="line">                        <span class="attr">data</span>: (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                            <span class="keyword">var</span> res = [];</div><div class="line">                            <span class="keyword">var</span> len = <span class="number">10</span>;</div><div class="line">                            <span class="keyword">while</span> (len--) &#123;</div><div class="line">                                res.push(len + <span class="number">1</span>);</div><div class="line">                            &#125;</div><div class="line">                            <span class="keyword">return</span> res;</div><div class="line">                        &#125;)()</div><div class="line">                    &#125;</div><div class="line">                ],</div><div class="line">                <span class="attr">yAxis</span>: [</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">type</span>: <span class="string">'value'</span>,</div><div class="line">                        <span class="attr">scale</span>: <span class="literal">true</span>,</div><div class="line">                        <span class="attr">name</span>: <span class="string">'价格'</span>,</div><div class="line">                        <span class="attr">boundaryGap</span>: [<span class="number">0.2</span>, <span class="number">0.2</span>]</div><div class="line">                    &#125;,</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">type</span>: <span class="string">'value'</span>,</div><div class="line">                        <span class="attr">scale</span>: <span class="literal">true</span>,</div><div class="line">                        <span class="attr">name</span>: <span class="string">'预购量'</span>,</div><div class="line">                        <span class="attr">boundaryGap</span>: [<span class="number">0.2</span>, <span class="number">0.2</span>]</div><div class="line">                    &#125;</div><div class="line">                ],</div><div class="line">                <span class="attr">series</span>: [</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">name</span>: <span class="string">'预购队列'</span>,</div><div class="line">                        <span class="attr">type</span>: <span class="string">'bar'</span>,</div><div class="line">                        <span class="attr">xAxisIndex</span>: <span class="number">1</span>,</div><div class="line">                        <span class="attr">yAxisIndex</span>: <span class="number">1</span>,</div><div class="line">                        <span class="comment">// 获取到数据库的数据</span></div><div class="line">                        data: show_data[<span class="number">0</span>]</div><div class="line">                    &#125;,</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">name</span>: <span class="string">'最新成交价'</span>,</div><div class="line">                        <span class="attr">type</span>: <span class="string">'line'</span>,</div><div class="line">                        <span class="comment">// 实时获取的数据</span></div><div class="line">                        data:show_data[<span class="number">1</span>]</div><div class="line">                    &#125;</div><div class="line">                ]</div><div class="line">            &#125;;</div><div class="line"></div><div class="line">            my_demo_chart.hideLoading();</div><div class="line">            my_demo_chart.setOption(echarts_all_option);</div><div class="line"></div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="comment">// 获取原始数据</span></div><div class="line">        $.ajax(&#123;</div><div class="line">            <span class="attr">url</span>: <span class="string">"http://cuihuan.net:1015/demo_file/echarts_realtime_demo/get_data.php"</span>,</div><div class="line">            <span class="attr">data</span>: &#123;<span class="attr">type</span>: <span class="string">"2"</span>&#125;,</div><div class="line">            <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">                <span class="comment">// 根据数据库取到结果拼接现在结果</span></div><div class="line">                refreshChart(<span class="built_in">eval</span>(data));</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">// 开启实时获取数据更新</span></div><div class="line">    $(<span class="string">"#getData"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> timeTicket;</div><div class="line">        <span class="keyword">var</span> lastData = <span class="number">11</span>;</div><div class="line">        <span class="keyword">var</span> axisData;</div><div class="line">        clearInterval(timeTicket);</div><div class="line">        timeTicket = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 获取实时更新数据</span></div><div class="line">            $.ajax(&#123;</div><div class="line">                <span class="attr">url</span>: <span class="string">"http://cuihuan.net:1015/demo_file/echarts_realtime_demo/get_data.php"</span>,</div><div class="line">                <span class="attr">data</span>: &#123;<span class="attr">type</span>: <span class="string">"new"</span>&#125;,</div><div class="line">                <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">                    <span class="comment">// 根据条件转换成相应的api 转化为echart 需要的数据</span></div><div class="line">                    <span class="comment">// todo 更新数据采用随机更新的方式</span></div><div class="line">                    lastData += <span class="built_in">Math</span>.random() * ((<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">10</span>) % <span class="number">2</span>) == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>);</div><div class="line">                    lastData = lastData.toFixed(<span class="number">1</span>) - <span class="number">0</span>;</div><div class="line">                    axisData = (<span class="keyword">new</span> <span class="built_in">Date</span>()).toLocaleTimeString().replace(<span class="regexp">/^\D*/</span>, <span class="string">''</span>);</div><div class="line"></div><div class="line">                    <span class="comment">// 动态数据接口 addData</span></div><div class="line">                    my_demo_chart.addData([</div><div class="line">                        [</div><div class="line">                            <span class="number">0</span>,        <span class="comment">// 系列索引</span></div><div class="line">                            <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">1000</span>), <span class="comment">// 新增数据</span></div><div class="line">                            <span class="literal">true</span>,     <span class="comment">// 新增数据是否从队列头部插入</span></div><div class="line">                            <span class="literal">false</span>     <span class="comment">// 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头</span></div><div class="line">                        ],</div><div class="line">                        [</div><div class="line">                            <span class="number">1</span>,        <span class="comment">// 系列索引</span></div><div class="line">                            lastData, <span class="comment">// 新增数据</span></div><div class="line">                            <span class="literal">false</span>,    <span class="comment">// 新增数据是否从队列头部插入</span></div><div class="line">                            <span class="literal">false</span>,    <span class="comment">// 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头</span></div><div class="line">                            axisData  <span class="comment">// 坐标轴标签</span></div><div class="line">                        ]</div><div class="line">                    ]);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line"></div><div class="line">        &#125;, <span class="number">2100</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 关闭更新操作</span></div><div class="line">        $(<span class="string">"#stopData"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            clearInterval(timeTicket);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">// 默认加载</span></div><div class="line">    <span class="keyword">var</span> default_load = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        init_echarts();</div><div class="line">    &#125;)();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="php-部分代码"><a href="#php-部分代码" class="headerlink" title="php 部分代码"></a>php 部分代码</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 连接数据库获取数据</div><div class="line"> *</div><div class="line"> * User: cuixiaohuan</div><div class="line"> * Date: 15/12/4</div><div class="line"> * Time: 下午6:47</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="comment">// 获取请求的类型</span></div><div class="line">$type = $_GET[<span class="string">'type'</span>];</div><div class="line"></div><div class="line"><span class="comment">// 连接服务器</span></div><div class="line">$link = mysql_connect(<span class="string">'ip:port'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);</div><div class="line"><span class="keyword">if</span> (!$link) &#123;</div><div class="line">    <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 获取test库数据</span></div><div class="line">$crowd_db = mysql_select_db(<span class="string">'test'</span>, $link);</div><div class="line">$day_time = date(<span class="string">"Y-m-d"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 根据传输过来的数据获取数据</span></div><div class="line">$static_sql = <span class="string">"select v from test where id = "</span> . $type . <span class="string">" limit 10"</span>;</div><div class="line"></div><div class="line"><span class="comment">// 获取数据之后返回</span></div><div class="line">$res = mysql_query($static_sql, $link_2004);</div><div class="line"></div><div class="line"><span class="keyword">if</span> ($res) &#123;</div><div class="line">    <span class="comment">// 将结果进行入库操作</span></div><div class="line">    $row = mysql_fetch_row($res);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>($row[<span class="number">0</span>])&#123;</div><div class="line">        <span class="keyword">echo</span> $row[<span class="number">0</span>];</div><div class="line">    &#125;</div><div class="line">    mysql_free_result($res);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="简单说明"><a href="#简单说明" class="headerlink" title="简单说明"></a>简单说明</h2><p>小拽的demo中，根据echarts的api，绘制出了原有的图形展示；之后，对js设置了个定时任务，实时的去获取数据库中可能新入库的数据，接口通过php简单调用数据库实现。</p>
+<p><a href="http://cuihuan.net"> 小拽个人小站 </a></p>
 
-引入echarts 文件。引入echarts的文件方式有多种，比较推荐模块化的引入方式。小拽的简单demo是直接引入文件，提供一个下载地址 ： 点击下载 
-html 部分代码一块div 用于echart的展现。1&l
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/12/06/echarts动态获取数据实例/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -500,8 +484,13 @@ html 部分代码一块div 用于echart的展现。1&l
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -524,37 +513,26 @@ html 部分代码一块div 用于echart的展现。1&l
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/03/crontab 误删除恢复/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/03/crontab 误删除恢复/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/03/crontab 误删除恢复/" itemprop="url">
-                  crontab 误删除恢复
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/12/03/crontab 误删除恢复/" itemprop="url">crontab 误删除恢复</a></h1>
         
 
         <div class="post-meta">
@@ -566,7 +544,7 @@ html 部分代码一块div 用于echart的展现。1&l
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-03T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-03T17:21:35+08:00">
                 2015-12-03
               </time>
             
@@ -583,8 +561,8 @@ html 部分代码一块div 用于echart的展现。1&l
           
 
           
-
           
+
           
 
           
@@ -595,7 +573,6 @@ html 部分代码一块div 用于echart的展现。1&l
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -604,19 +581,25 @@ html 部分代码一块div 用于echart的展现。1&l
       
         
           
-          
-操作过程中：crontab被全部干掉了，利用log恢复过程记录。
+            <blockquote>
+<p>操作过程中：crontab被全部干掉了，利用log恢复过程记录。</p>
+</blockquote>
+<h2 id="事故原因分析："><a href="#事故原因分析：" class="headerlink" title="事故原因分析："></a>事故原因分析：</h2><p>回忆自己操作过程中，未进行crontab的清空，网上查了下原因，并且复现了下。可能原因如下：</p>
+<p><strong>如果在SSH远程终端中敲下“crontab”命令之后，远程连接被一些原因（比如 糟糕的网络，程序异常）意外终止了，那么Crontab计划任务就会被操作系统所清空。听起来很不可思议，但是经过在虚拟机上的多次测试，它确确实实的发生了。测试方式为 用SecureCRT开一个SSH窗口，然后敲下命令“crontab”，接着在“任务管理器”中直接杀掉SecureCRT进程，再通过另外一个SSH窗口执行“crontab -l”，就会发现，所有的计划任务都不存在了。在今天事故发生的时间点上，就有人在服务器上遇到了这样的情况。</strong></p>
+<h2 id="恢复操作"><a href="#恢复操作" class="headerlink" title="恢复操作"></a>恢复操作</h2><ul>
+<li><p>获取完整日志和cmd日志。<br>从日志中恢复出一份最近几天的完整crontab 运行日志和cmd日志，并存储，用于之后完善和核准例行时间。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cat</span> /var/<span class="built_in">log</span>/cron | <span class="keyword">grep</span> -i <span class="string">"`which cron`"</span> &gt; ./all_temp</div><div class="line"><span class="keyword">cat</span>  ./all_temp | <span class="keyword">grep</span> -v <span class="comment">"&lt;command&gt;” &gt; ./cmd_temp</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>获取所有crontab指令。<br>从日志中恢复一份去重的crontab log。【相当于所有的crontab命令】</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">awk -F'(' '/crond/&#123;a[<span class="variable">$3</span>]=<span class="variable">$0&#125;</span>END&#123;<span class="keyword">for</span>(i <span class="keyword">in</span> a)<span class="keyword">print</span> a[i]&#125;' /<span class="keyword">var</span>/<span class="keyword">log</span>/cron* &gt;crontab.txt</div></pre></td></tr></table></figure>
+</li>
+<li><p>手工恢复：<br>从crontab.txt 中找出每一条指令，然后在cmd_temp 中匹配运行次数，重新编辑crontab 添加</p>
+</li>
+</ul>
+<h2 id="反思工作"><a href="#反思工作" class="headerlink" title="反思工作"></a>反思工作</h2><p>防止类似事件再次发生，写个简单shell脚本，每天对crontab进行备份，备份最近15天的数据。过期清楚<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment"># 每天对crontab 进行备份 ，同时删除最近15天的数据</span></div><div class="line">DATE=$(date +%Y%m%d)</div><div class="line"></div><div class="line">crontab <span class="_">-l</span> &gt; /home/work/bak/crontab_<span class="variable">$DATE</span>.bak</div><div class="line">find /home/work/bak/ -mtime +15 -name <span class="string">'*.bak'</span> -exec rm -rf &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p><a href="http://cuihuan.net/?p=282"> 本人小站原文链接 </a></p>
 
-事故原因分析：回忆自己操作过程中，未进行crontab的清空，网上查了下原因，并且复现了下。可能原因如下：
-如果在SSH远程终端中敲下“crontab”命令之后，远程连接被一些原因（比如 糟糕的网络，程序异常）意外终止了，那么Cr
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/12/03/crontab 误删除恢复/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -629,8 +612,13 @@ html 部分代码一块div 用于echart的展现。1&l
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -653,37 +641,26 @@ html 部分代码一块div 用于echart的展现。1&l
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/02/jsonp + php 跨域实例/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/12/02/jsonp + php 跨域实例/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/02/jsonp + php 跨域实例/" itemprop="url">
-                  jsonp + php 跨域实例
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/12/02/jsonp + php 跨域实例/" itemprop="url">jsonp + php 跨域实例</a></h1>
         
 
         <div class="post-meta">
@@ -695,7 +672,7 @@ html 部分代码一块div 用于echart的展现。1&l
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-02T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-02T17:21:35+08:00">
                 2015-12-02
               </time>
             
@@ -712,8 +689,8 @@ html 部分代码一块div 用于echart的展现。1&l
           
 
           
-
           
+
           
 
           
@@ -724,7 +701,6 @@ html 部分代码一块div 用于echart的展现。1&l
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -733,19 +709,21 @@ html 部分代码一块div 用于echart的展现。1&l
       
         
           
-          
-由于跨域的存在，使资源交互在不同域名间变的复杂和安全。对于跨域数据传输，当数据长度较小(get的长度内)，jsonp是一种较好的解决方案。
-分享一个自己在jsonp使用过程中的demo。关于跨域可以参考：跨域总结与解决办法
+            <blockquote>
+<p>由于跨域的存在，使资源交互在不同域名间变的复杂和安全。对于跨域数据传输，当数据长度较小(<strong>get的长度内</strong>)，jsonp是一种较好的解决方案。</p>
+<p>分享一个自己在jsonp使用过程中的demo。<br>关于跨域可以参考：<a href="http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html" target="_blank" rel="external">跨域总结与解决办法</a></p>
+</blockquote>
+<h2 id="jsonp的js端调用"><a href="#jsonp的js端调用" class="headerlink" title="jsonp的js端调用"></a>jsonp的js端调用</h2><p>主要功能：通过jsonp向服务器，调用相应接口，获应数据；根据获取数据结果做出相应回调。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * jsonp demo</div><div class="line"> * 通过回调函数，进行获取之后的事件加载</div><div class="line"> *</div><div class="line"> * @author:cuihuan</div><div class="line"> * @private</div><div class="line"> */</div><div class="line">_jsonpDemo:<span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">    $.ajax(&#123;</div><div class="line">        <span class="attr">url</span>: <span class="string">"http://your_site_url"</span>,</div><div class="line">        <span class="attr">type</span>: <span class="string">'GET'</span>,</div><div class="line">        <span class="attr">dataType</span>: <span class="string">'JSONP'</span>,</div><div class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (data &amp;&amp; data.status) &#123;</div><div class="line">                <span class="keyword">if</span> (data.status == <span class="string">"0"</span>) &#123;</div><div class="line">                    <span class="comment">// failure solve</span></div><div class="line">                    ...</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data.status == <span class="number">500</span>) &#123;</div><div class="line">                    <span class="comment">// server error log</span></div><div class="line">                    _sendInternalLog(data.info);</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data.status == <span class="number">1</span>) &#123;</div><div class="line">                    <span class="comment">//success solve </span></div><div class="line">                    ...</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                <span class="comment">// callback func</span></div><div class="line">               (callback &amp;&amp; <span class="keyword">typeof</span>(callback) === <span class="string">"function"</span> ) &amp;&amp; callback(); </div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            _sendFailLog();</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="jsonp-服务器端-php"><a href="#jsonp-服务器端-php" class="headerlink" title="jsonp 服务器端 (php)"></a>jsonp 服务器端 (php)</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 接口返回相应数据</div><div class="line"> *</div><div class="line"> * status: 0 标示失败，1标示成功,500发生错误</div><div class="line"> * return: jsonp </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionGetJsonPInfo</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        $data = getNeedData()</div><div class="line">        <span class="keyword">if</span> ($data[<span class="string">'status'</span>] == <span class="string">"success"</span>) &#123;</div><div class="line">            $res = <span class="keyword">array</span>(<span class="string">"status"</span> =&gt; <span class="string">"1"</span>, <span class="string">'info'</span> =&gt; $data[<span class="string">'info'</span>]);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            $res = <span class="keyword">array</span>(<span class="string">"status"</span> =&gt; <span class="string">"0"</span>, <span class="string">'info'</span> =&gt; <span class="string">'0'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span> (<span class="keyword">Exception</span> $e)&#123;</div><div class="line">        $res = <span class="keyword">array</span>(<span class="string">"status"</span> =&gt; <span class="string">"500"</span>, <span class="string">'info'</span>=&gt; $e);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// jsonp 通过get请求的返回数据形式</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span> ($_GET[<span class="string">'callback'</span>])) &#123;</div><div class="line">        header(<span class="string">"Content-Type: application/json"</span>);</div><div class="line">        <span class="keyword">echo</span> $_GET[<span class="string">'callback'</span>].<span class="string">"("</span>.json_encode($res).<span class="string">")"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>目前来说，数据量小的跨域传输，jsonp是一种很好的解决方案。</li>
+<li>jsonp在data中可以自动识别，res.status，res.info等状态位，比较方便。</li>
+<li>php端的接受代码最好不要采用 Access-Control-Allow-Origin:* 风险太大。</li>
+</ul>
+<p><a href="http://cuihuan.net/?p=278"> 本人小站原文 </a></p>
 
-jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口，获
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/12/02/jsonp + php 跨域实例/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -758,8 +736,13 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -782,37 +765,26 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/30/php 操作不同数据库/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/30/php 操作不同数据库/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/30/php 操作不同数据库/" itemprop="url">
-                  php 操作不同数据库
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/30/php 操作不同数据库/" itemprop="url">php 操作不同数据库</a></h1>
         
 
         <div class="post-meta">
@@ -824,7 +796,7 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-30T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-30T17:21:35+08:00">
                 2015-11-30
               </time>
             
@@ -841,8 +813,8 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
           
 
           
-
           
+
           
 
           
@@ -853,7 +825,6 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -862,18 +833,13 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
       
         
           
-          
-php脚本经常，处理处理不同机器上，不同数据库之间数据；而且脚本特别容易写错，抽取了个工作中最常用到的多库同步，特此记忆！
+            <blockquote>
+<p>php脚本经常，处理处理不同机器上，不同数据库之间数据；而且脚本特别容易写错，抽取了个工作中最常用到的多库同步，特此记忆！</p>
+</blockquote>
+<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><p>举个php操作不同数据库，进行数据同步的栗子。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 同步库1的数据到库2</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span>  ：cuihuan</div><div class="line"> * <span class="doctag">@date</span>    ：2015-10-11</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">synchDbDiff</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 连接库1</span></div><div class="line">    $crowd_conn_1 = mysql_connect(<span class="string">'ip_1:port_1'</span>, <span class="string">'name_1'</span>, <span class="string">'pw_1'</span>);</div><div class="line">    <span class="keyword">if</span> (!$crowd_conn_1) &#123;</div><div class="line">        <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    mysql_select_db(<span class="string">'test_data'</span>, $crowd_conn_1);</div><div class="line"></div><div class="line">    <span class="comment">// 连接库2</span></div><div class="line">    $crowd_conn_2 = mysql_connect(<span class="string">'ip_2:port_2'</span>, <span class="string">'name_2'</span>, <span class="string">'pw_2'</span>);</div><div class="line">    <span class="keyword">if</span> (!$crowd_conn_1) &#123;</div><div class="line">        <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    mysql_select_db(<span class="string">'test_data'</span>, $crowd_conn_2);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//获取未同步的数据</span></div><div class="line">    $get_data_sql = <span class="string">"SELECT `id`, `text` FROM `fb_conversation` WHERE `flag` = 1"</span>;</div><div class="line">    $c_result = mysql_query($get_data_sql, $crowd_conn_1);</div><div class="line">    <span class="keyword">$this</span>-&gt;check_res($c_result);</div><div class="line">    <span class="keyword">if</span> ($c_result) &#123;</div><div class="line">        <span class="keyword">while</span> ($row = mysql_fetch_array($c_result, MYSQL_NUM)) &#123;</div><div class="line"></div><div class="line">            <span class="comment">// 更新同步</span></div><div class="line">            $new_data_sql = <span class="string">"update from fb_conversation set text ="</span> . $row[<span class="number">1</span>] . <span class="string">"  where id = "</span> . $row[<span class="number">0</span>];</div><div class="line">            $res = mysql_query($new_data_sql, $crowd_conn_2);</div><div class="line">            <span class="keyword">$this</span>-&gt;check_res($c_result);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="http://cuihuan.net/?p=275"> 个人小站原文链接 </a></p>
 
-上代码举个php操作不同数据库，进行数据同步的栗子。123456789101112131415161718192021222324252627282930313233343
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/30/php 操作不同数据库/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -886,8 +852,13 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -910,37 +881,26 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/【redis学习一】基本概念和基本操作/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/【redis学习一】基本概念和基本操作/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/28/【redis学习一】基本概念和基本操作/" itemprop="url">
-                  【redis学习一】基本概念和基本操作
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/28/【redis学习一】基本概念和基本操作/" itemprop="url">【redis学习一】基本概念和基本操作</a></h1>
         
 
         <div class="post-meta">
@@ -952,7 +912,7 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
                 2015-11-28
               </time>
             
@@ -969,8 +929,8 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
           
 
           
-
           
+
           
 
           
@@ -981,7 +941,6 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -990,17 +949,34 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       
         
           
-          redis 基础官网地址： http://redis.io/ 
-基本介绍：redis 是一个ansi c编写，支持网络的，基于内存的可持久化的日执行，kv数据库；10年期redis有vmare主持开发。
-支持数据类型：redis支持strings,hashes list set sorted等结构。
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/28/【redis学习一】基本概念和基本操作/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h2 id="redis-基础"><a href="#redis-基础" class="headerlink" title="redis 基础"></a>redis 基础</h2><p><strong>官网地址</strong>：<a href="http://redis.io/" target="_blank" rel="external"> http://redis.io/ </a></p>
+<p><strong>基本介绍</strong>：redis 是一个ansi c编写，支持网络的，基于内存的可持久化的日执行，kv数据库；10年期redis有vmare主持开发。</p>
+<p>支持数据类型：redis支持strings,hashes list set sorted等结构。</p>
+<p>持久化：存储于内存或虚拟内存中，有两种持久化的方式：</p>
+<ul>
+<li>：截图，内存数据不断写入硬盘【性能较高】</li>
+<li>：log：记录每次更新的日志。【稳定性好】</li>
+</ul>
+<p>支持主从同步，性能非常优秀。<br>提供多种语言的api  基本上知道的都有。</p>
+<p>使用场景：(个人觉的可以有的使用场景)<br>1：权限【权限每次都要入库校验，放在前端不靠谱，放在cache最合适】<br>2：缓存【例如批量操作数据，可以先缓存】<br>3：预取【例如topN数据,另外可能用到的数据，提前取出来，加快页面加载】<br>4：构建消息队列【可以根据redis的数据结构list，构造；数据批量入库，加快页面相应等方面不错】。<br>5：计数器【类似于批量入库的原理，可以计数，redis原子性的，可以精确支持】<br>6：其他场景还在不断探索中。</p>
+<h2 id="安装和基本操作"><a href="#安装和基本操作" class="headerlink" title="安装和基本操作"></a>安装和基本操作</h2><p>安装参考：<a href="http://www.runoob.com/redis/redis-install.html" target="_blank" rel="external"> http://www.runoob.com/redis/redis-install.html </a></p>
+<p>基本操作：<a href="http://redisdoc.com/" target="_blank" rel="external"> 官方文档地址 </a></p>
+<p>启动：./redis-server<br>关闭：redis-cli shutdown<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">[cuihuan bin]$ ./redis-cli shutdown</div><div class="line">[cuihuan bin]$ ./redis-server    </div><div class="line">[<span class="number">325</span>] <span class="number">24</span> Sep <span class="number">18</span>:<span class="number">49</span>:<span class="number">06.632</span> # Warning: no config file specified, using the default config. In order to specify a config file use ./redis-server /path/to/redis.conf</div><div class="line">                <span class="symbol">_</span>.<span class="symbol">_</span>                                                 </div><div class="line">           <span class="symbol">_</span>.-``<span class="symbol">__</span> ''-.<span class="symbol">_</span>                                            </div><div class="line">      <span class="symbol">_</span>.-``    `.  `<span class="symbol">_</span>.  ''-.<span class="symbol">_</span>           Redis <span class="number">2.6</span>.10 (<span class="number">00000000</span>/<span class="number">0</span>) <span class="number">64</span> bit</div><div class="line">  .-`` .-```.  ```\/    <span class="symbol">_</span>.,<span class="symbol">_</span> ''-.<span class="symbol">_</span>                                  </div><div class="line"> (    '      ,       .-`  | `,    )     Running <span class="keyword">in</span> stand alone mode</div><div class="line"> |`-.<span class="symbol">_</span>`-...-` <span class="symbol">__</span>...-.``-.<span class="symbol">_</span>|'` <span class="symbol">_</span>.-'|     Port: <span class="number">6379</span></div><div class="line"> |    `-.<span class="symbol">_</span>   `.<span class="symbol">_</span>    /     <span class="symbol">_</span>.-'    |     PID: <span class="number">325</span></div><div class="line">  `-.<span class="symbol">_</span>    `-.<span class="symbol">_</span>  `-./  <span class="symbol">_</span>.-'    <span class="symbol">_</span>.-'                                  </div><div class="line"> |`-.<span class="symbol">_</span>`-.<span class="symbol">_</span>    `-.<span class="symbol">__</span>.-'    <span class="symbol">_</span>.-'<span class="symbol">_</span>.-'|                                 </div><div class="line"> |    `-.<span class="symbol">_</span>`-.<span class="symbol">_</span>        <span class="symbol">_</span>.-'<span class="symbol">_</span>.-'    |           http://redis.io       </div><div class="line">  `-.<span class="symbol">_</span>    `-.<span class="symbol">_</span>`-.<span class="symbol">__</span>.-'<span class="symbol">_</span>.-'    <span class="symbol">_</span>.-'                                  </div><div class="line"> |`-.<span class="symbol">_</span>`-.<span class="symbol">_</span>    `-.<span class="symbol">__</span>.-'    <span class="symbol">_</span>.-'<span class="symbol">_</span>.-'|                                 </div><div class="line"> |    `-.<span class="symbol">_</span>`-.<span class="symbol">_</span>        <span class="symbol">_</span>.-'<span class="symbol">_</span>.-'    |                                 </div><div class="line">  `-.<span class="symbol">_</span>    `-.<span class="symbol">_</span>`-.<span class="symbol">__</span>.-'<span class="symbol">_</span>.-'    <span class="symbol">_</span>.-'                                  </div><div class="line">      `-.<span class="symbol">_</span>    `-.<span class="symbol">__</span>.-'    <span class="symbol">_</span>.-'                                      </div><div class="line">          `-.<span class="symbol">_</span>        <span class="symbol">_</span>.-'                                          </div><div class="line">              `-.<span class="symbol">__</span>.-'                                              </div><div class="line"></div><div class="line">[<span class="number">325</span>] <span class="number">24</span> Sep <span class="number">18</span>:<span class="number">49</span>:<span class="number">06.633</span> # Server started, Redis version <span class="number">2.6</span>.10</div><div class="line">[<span class="number">325</span>] <span class="number">24</span> Sep <span class="number">18</span>:<span class="number">49</span>:<span class="number">06.633</span> # WARNING overcommit_memory <span class="built_in">is</span> set to <span class="number">0</span>! Background <span class="built_in">save</span> may fail under low memory condition. To <span class="built_in">fix</span> this issue add 'vm.overcommit_memory = <span class="number">1</span>' to /etc/sysctl.conf <span class="keyword">and</span> <span class="keyword">then</span> reboot <span class="keyword">or</span> run the command 'sysctl vm.overcommit_memory=<span class="number">1</span>' <span class="keyword">for</span> this to take effect.</div><div class="line">[<span class="number">325</span>] <span class="number">24</span> Sep <span class="number">18</span>:<span class="number">49</span>:<span class="number">06.673</span> * DB loaded from disk: <span class="number">0.039</span> seconds</div><div class="line">[<span class="number">325</span>] <span class="number">24</span> Sep <span class="number">18</span>:<span class="number">49</span>:<span class="number">06.673</span> * The server <span class="built_in">is</span> now ready to accept connections on port <span class="number">6379</span></div></pre></td></tr></table></figure></p>
+<p>安装成功的标志 redis-cli 可以成功进入   </p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[cuihuan bin]$ ./redis-<span class="keyword">cli</span></div><div class="line">redis <span class="number">127.0</span><span class="meta">.0</span><span class="meta">.1</span>:<span class="number">6379</span>&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：使用过程中如果是保密性高的数据，可以设置登录密码，增加安全想；但如果是简单数据，则可以不设置，优点就是速度稍快。</p>
+</blockquote>
+<p>redis 基本配置：<br>daemonize: yes 标示在后台运行<br>bind：绑定请求的地址<br>port：端口号，默认6379<br>timeout:默认客户端连接超时  多长时间不操作关闭(默认永久，此处改为3600)</p>
+<p>loglevel: log等级<br>databases：默认连接数据库的个数 【此处为8】<br>slaveof 主从库</p>
+<p>masterauth :密码验证<br>requirepass:是否需要密码</p>
+<p>maxclients :最大客户机个数 设置为10000<br>maxmemory:最大内存个数 6625156  [机器内存32G,分配大约6g]</p>
+<p>最基本的操作<br>set name xxx<br>get name xxx<br>del name xxx<br>exists name xxx</p>
+<p>举个栗子<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># <span class="selector-tag">get</span> <span class="selector-tag">val</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">get</span> <span class="selector-tag">name</span></div><div class="line">"<span class="selector-tag">cuixiaohuan</span>"</div><div class="line"></div><div class="line"># <span class="selector-tag">set</span> <span class="selector-tag">val</span> </div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">set</span> <span class="selector-tag">name</span> <span class="selector-tag">cuixiaohuan_2</span> </div><div class="line"><span class="selector-tag">OK</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">get</span> <span class="selector-tag">name</span></div><div class="line">"<span class="selector-tag">cuixiaohuan_2</span>"</div><div class="line"></div><div class="line"># <span class="selector-tag">check</span> <span class="selector-tag">exists</span>; <span class="selector-tag">if</span> <span class="selector-tag">exists</span> <span class="selector-tag">return</span> 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">exists</span> <span class="selector-tag">name</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"></div><div class="line"># <span class="selector-tag">del</span> <span class="selector-tag">val</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">del</span> <span class="selector-tag">name</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">get</span> <span class="selector-tag">name</span></div><div class="line">(<span class="selector-tag">nil</span>)</div></pre></td></tr></table></figure></p>
+<p>其他常用操作：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># <span class="selector-tag">ping</span> <span class="selector-pseudo">:check</span> <span class="selector-tag">connect</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">ping</span></div><div class="line"><span class="selector-tag">PONG</span></div><div class="line"></div><div class="line"># <span class="selector-tag">dbsize</span> <span class="selector-pseudo">:check</span> <span class="selector-tag">size</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">dbsize</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"></div><div class="line"><span class="selector-id">#flush</span> <span class="selector-pseudo">:clear</span> <span class="selector-tag">db</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">dbsize</span></div><div class="line">(<span class="selector-tag">integer</span>) 1</div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">flushdb</span></div><div class="line"><span class="selector-tag">OK</span></div><div class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">dbsize</span></div><div class="line">(<span class="selector-tag">integer</span>) 0</div></pre></td></tr></table></figure></p>
+<p><a href="http://cuihuan.net/?p=266"> 个人小站原文链接 </a></p>
+
+          
         
       
     </div>
@@ -1013,8 +989,13 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1037,37 +1018,26 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/php 处理unicode解码/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/phpUnit 安装，实例和简单部署/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/28/php 处理unicode解码/" itemprop="url">
-                  php 处理unicode解码
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/28/phpUnit 安装，实例和简单部署/" itemprop="url">phpUnit 安装，实例和简单部署</a></h1>
         
 
         <div class="post-meta">
@@ -1079,7 +1049,7 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
                 2015-11-28
               </time>
             
@@ -1096,8 +1066,8 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
           
 
           
-
           
+
           
 
           
@@ -1108,7 +1078,6 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1117,18 +1086,20 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       
         
           
-          
-备忘：这个算是解码比较靠谱的，亲测。参考自stackoverflow，mark 分享
+            <blockquote>
+<p>背景：一个小脚本，保证稳定为主；所以试用了下phpunit，快捷方便</p>
+</blockquote>
+<h3 id="phpunit-的安装"><a href="#phpunit-的安装" class="headerlink" title="phpunit 的安装"></a>phpunit 的安装</h3><p>phpunit是一个轻量级的php单元测试框架，通过pear安装<br>安装过程<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https:<span class="comment">//phar.phpunit.de/phpunit.phar</span></div><div class="line">chmod +x phpunit<span class="selector-class">.phar</span></div><div class="line">sudo mv phpunit<span class="selector-class">.phar</span> /usr/local/bin/phpunit</div><div class="line">phpunit --version</div></pre></td></tr></table></figure></p>
+<p>成功之后显示如下:<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">cuihuan:</span>~ cuixiaohuan$ phpunit --version</div><div class="line">PHPUnit <span class="number">4</span>.<span class="number">8</span>.<span class="number">6</span> <span class="keyword">by </span><span class="keyword">Sebastian </span><span class="keyword">Bergmann </span><span class="keyword">and </span>contributors.</div></pre></td></tr></table></figure></p>
+<h3 id="简单试用"><a href="#简单试用" class="headerlink" title="简单试用"></a>简单试用</h3><p>测试类集成框架</p>
+<p><strong>class PsCaseTest extends PHPUnit_Framework_TestCase{}</strong></p>
+<p>其中phpunit<br>默认首先执行 setup<br>默认最后执行 teardown</p>
+<p>举个栗子：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="comment">/***************************************************************************</span></div><div class="line"> *</div><div class="line"> * $Id: PsCaseTest,v 1.0 PsCaseTest cuihuan Exp$</div><div class="line"> *</div><div class="line"> **************************************************************************/</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@file</span> PsCaseTest.php</div><div class="line"> * <span class="doctag">@author</span> cuihuan</div><div class="line"> * <span class="doctag">@date</span> 2015/09/11 10:09:31</div><div class="line"> * <span class="doctag">@version</span> $Revision:1.0$</div><div class="line"> * <span class="doctag">@brief</span>  pscase接口单元测试</div><div class="line"> *</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="keyword">require_once</span> dirname(<span class="keyword">__FILE__</span>) . (<span class="string">'/PsCase.php'</span>);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PsCaseTest</span> <span class="keyword">extends</span> <span class="title">PHPUnit_Framework_TestCase</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@var</span> object pscase类</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $pscase;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@brief</span> setup: Sets up the fixture, for example, opens a network connection.</div><div class="line">     *</div><div class="line">     * This method is called before a test is executed.  </div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setup</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;pscase = <span class="keyword">new</span> PsCase();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@brief</span> teardown: Tears down the fixture, for example, closes a network connection.</div><div class="line">     * </div><div class="line">     * This method is called after a test is executed.</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">teardown</span><span class="params">()</span></span>&#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@brief</span> : 测试config文件的获取</div><div class="line">     *</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testGetConfig</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;assertEquals(<span class="keyword">true</span>,<span class="keyword">$this</span>-&gt;pscase-&gt;debugText(<span class="string">"11"</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>运行方式：phpunit  —bootstrap [源文件] 测试文件<br>具体如下：<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cuihuande:newcode cuixiaohuan$ phpunit --bootstrap ./PsCase.php ./PsCaseTest.php</div><div class="line"></div><div class="line">32015<span class="string">-09</span><span class="string">-11</span> 02:09:36:11&lt;br&gt;</div><div class="line">5</div><div class="line"></div><div class="line"><span class="keyword">Time:</span> 116 ms, Memory: 11.75Mb</div><div class="line"></div><div class="line">OK (1 test, 1 assertion)  【表示运行成功】</div></pre></td></tr></table></figure></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>部署就不不赘述了，写个shell脚本，crontab天极运行，加个报警邮件，简单的单元测试ok，从此再也不用担心错误和回归测试了。</p>
+<p><a href="http://cuihuan.net/?p=260"> 个人小站原文链接 </a></p>
 
-12345678910// change unicode to unt-8function replace_unicode_escape_sequence($match) &#123;    return mb
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/28/php 处理unicode解码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1141,8 +1112,13 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1165,37 +1141,26 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/phpUnit 安装，实例和简单部署/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/28/phpUnit 安装，实例和简单部署/" itemprop="url">
-                  phpUnit 安装，实例和简单部署
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/" itemprop="url">【redis学习二】多php版本下phpredis扩展安装</a></h1>
         
 
         <div class="post-meta">
@@ -1207,7 +1172,7 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
                 2015-11-28
               </time>
             
@@ -1224,8 +1189,8 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
           
 
           
-
           
+
           
 
           
@@ -1236,7 +1201,6 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1245,18 +1209,79 @@ php脚本经常，处理处理不同机器上，不同数据库之间数据；�
       
         
           
-          
-背景：一个小脚本，保证稳定为主；所以试用了下phpunit，快捷方便
+            <blockquote>
+<p>背景：安装完redis之后，需要安装phpredis扩展，才能让php操作redis；本机有多个php版本，安装过程中遇到的坑分享一下。</p>
+</blockquote>
+<p>##一 下载<br>git上下载redis的扩展包<br>    git clone <a href="https://github.com/nicolasff/phpredis" target="_blank" rel="external">https://github.com/nicolasff/phpredis</a></p>
+<p>##二 挂载和configure<br>   在shell中输入 phpize 【注意：多个php版本的时候需要指定】<br>     ./configure<br>【phpize是用来扩展php扩展模块的，通过phpize可以建立php的外挂模块】</p>
+<p>注意：（phpize 如果包含多个php，必须指定位置）<br>    cuihuan:phpredis cuixiaohuan$ ../php/bin/phpize<br>    Configuring for:<br>    PHP Api Version:         20121113<br>    Zend Module Api No:      20121212<br>    Zend Extension Api No:   220121212<br>    Cannot find autoconf. Please check your autoconf installation and the<br>    $PHP_AUTOCONF environment variable. Then, rerun this script.</p>
+<p>报错的话需要安装：brew install autoconf  [phpize 报错] 否则没有phpize<br>    [work@cuixiaozhuai phpredis]$ ../php/bin/phpize<br>    Configuring for:<br>    PHP Api Version:         20041225<br>    Zend Module Api No:      20060613<br>    Zend Extension Api No:   220060519<br>    [work@cuixiaozhuai phpredis]$  ./configure –with-php-config=/home/work/thirdparty/php5/bin/php-config </p>
+<p>当存在多个版本的php的时候，需要指定配置文件<br>     ./configure –with-php-config=/home/work/thirdparty/php5/bin/php-config </p>
+<p>##三 编译和安装<br> make  之后最好make test<br>   make install<br>    cuihuan:phpredis cuixiaohuan$ make<br>    。。。<br>    Build complete.<br>    Don’t forget to run ‘make test’.</p>
+<pre><code>cuihuan:phpredis cuixiaohuan$ make test
+cuihuan:phpredis cuixiaohuan$ make install
+</code></pre><p>##四 问题修复<br>【已修复，但是原因可能不太准确】<br>make编译报错<br>    .libs/redis_cluster.o(.data.rel.local+0x0): In function <code>ht_free_seed&#39;:
+    /home/work/thirdparty/php5/php5/phpredis/redis_cluster.c:226:     multiple definition of</code>arginfo_scan’<br>    .libs/redis.o(.data.rel.local+0xe0):/home/work/thirdparty/php5/php5/p hpredis/redis.c:452: first defined here<br>    /usr/bin/ld: Warning: size of symbol <code>arginfo_scan&#39; changed from 160 in .libs/redis.o to 200 in .libs/redis_cluster.o
+    .libs/redis_cluster.o(.data.rel.local+0xe0): In function</code>create_cluster_context’:<br>    /home/work/thirdparty/php5/php5/phpredis/redis_cluster.c:276:     multiple definition of `arginfo_kscan’<br>    .libs/redis.o(.data.rel.local+0x0):/home/work/thirdparty/php5/php5/phpredis/redis.c:364: first defined here<br>    collect2: ld returned 1 exit status<br>    make: <em>*</em> [redis.la] Error 1</p>
+<p>最初以为是php多个版本生成install问题，采用./configure 指定php版本，指定php位置。<br>但是效果还是有问题。<br>最终通过修改redis_cluester.c 中，注释掉了这两个重复的<br>      40 </p>
+<pre><code>41 /* Argument info for HSCAN, SSCAN, HSCAN */
 
-phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear安装安装过程1234wget https://phar.phpunit.de/phpunit.pharchmod +x phpunit.phar
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/28/phpUnit 安装，实例和简单部署/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+42 /*ZEND_BEGIN_ARG_INFO_EX(arginfo_kscan, 0, 0, 2)
+
+43     ZEND_ARG_INFO(0, str_key)
+
+44     ZEND_ARG_INFO(1, i_iterator)
+
+45     ZEND_ARG_INFO(0, str_pattern)
+
+46     ZEND_ARG_INFO(0, i_count)
+
+47 ZEND_END_ARG_INFO();
+
+48 */
+
+49 
+
+50 /* Argument infor for SCAN */
+
+51 /*
+
+52 ZEND_BEGIN_ARG_INFO_EX(arginfo_scan, 0, 0, 2)
+
+53     ZEND_ARG_INFO(1, i_iterator)
+
+54     ZEND_ARG_INFO(0, str_node)
+
+55     ZEND_ARG_INFO(0, str_pattern)
+
+56     ZEND_ARG_INFO(0, i_count)
+
+57 ZEND_END_ARG_INFO();
+
+58 */
+</code></pre><p>##五 简单测试</p>
+<pre><code>&lt;?php
+    $redis = new Redis();
+    $conn = $redis-&gt;connect(&apos;127.0.0.1&apos;,6379);
+
+    echo &quot;redis pass and status show&lt;/br&gt;&quot;;
+    var_dump($redis-&gt;ping());
+
+    $redis-&gt;set(&apos;test_key&apos;,&apos;test_value&apos;);
+    echo &quot;test set val=&quot;.$redis-&gt;get(&apos;test_key&apos;).&quot;&lt;/br&gt;&quot;;
+
+    $redis-&gt;setnx(&apos;unique_key&apos;,&quot;unique_val&quot;);
+    $redis-&gt;setnx(&apos;unique_key&apos;,&quot;unique_val_2&quot;);
+
+    echo $redis-&gt;get(&quot;unique_key&quot;);
+
+    sleep(60);
+    echo &apos;is exist&apos;.$redis-&gt;exists(&apos;test_60s&apos;);
+    echo &apos;not has value&apos;.$redis-&gt;get(&apos;test_60s&apos;);
+    $redis-&gt;delete(&apos;test_key&apos;,&apos;test_60s&apos;);
+</code></pre><p><a href="http://cuihuan.net/?p=248"> 个人小站原文链接 </a></p>
+
+          
         
       
     </div>
@@ -1269,8 +1294,13 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1293,37 +1323,26 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/28/php 处理unicode解码/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/" itemprop="url">
-                  【redis学习二】多php版本下phpredis扩展安装
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/28/php 处理unicode解码/" itemprop="url">php 处理unicode解码</a></h1>
         
 
         <div class="post-meta">
@@ -1335,7 +1354,7 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-28T17:21:35+08:00">
                 2015-11-28
               </time>
             
@@ -1352,8 +1371,8 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
           
 
           
-
           
+
           
 
           
@@ -1364,7 +1383,6 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1373,19 +1391,14 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       
         
           
-          
-背景：安装完redis之后，需要安装phpredis扩展，才能让php操作redis；本机有多个php版本，安装过程中遇到的坑分享一下。
+            <blockquote>
+<p>备忘：这个算是解码比较靠谱的，亲测。参考自stackoverflow，mark 分享</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// change unicode to unt-8</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replace_unicode_escape_sequence</span><span class="params">($match)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> mb_convert_encoding(pack(<span class="string">'H*'</span>, $match[<span class="number">1</span>]), <span class="string">'UTF-8'</span>, <span class="string">'UCS-2BE'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unicode_decode</span><span class="params">($str)</span> </span>&#123;</div><div class="line"> <span class="keyword">return</span> preg_replace_callback(<span class="string">'/u([0-9a-f]&#123;4&#125;)/i'</span>, <span class="string">'replace_unicode_escape_sequence'</span>, $str); </div><div class="line">&#125;</div><div class="line"></div><div class="line">$str = unicode_decode(<span class="string">'&#123;"u5173u952eu8bcd":[&#123;"","key":"u767eu5ea6"&#125;]&#125;'</span>);</div></pre></td></tr></table></figure>
+<p>问题：使用过程中，遇到一个问题：就是当多次调用改函数的时候，出现错误。原因在于函数名方式调用问题。</p>
+<p>如果编码是 \u5173\u952e\u8bcd 正则改为/\u([0-9a-f]{4})/i 即可<br><a href="http://cuihuan.net/?p=194"> 个人小站原文链接 </a></p>
 
-##一 下载git上下载redis的扩展包    git clone https://github.com/nicolasff/phpredis
-##二 挂载
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1398,8 +1411,13 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1422,37 +1440,26 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/23/canvas_combine_pic/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/23/canvas_combine_pic/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="崔小拽">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/wp_content/base/favicon.ico">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="靠谱崔小拽">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="靠谱崔小拽" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
+          <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/11/23/canvas_combine_pic/" itemprop="url">
-                  canvas 生成和合并图片
-                </a>
-              
-            
-          </h2>
+                <a class="post-title-link" href="/2015/11/23/canvas_combine_pic/" itemprop="url">canvas 生成和合并图片</a></h1>
         
 
         <div class="post-meta">
@@ -1464,7 +1471,7 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-23T17:21:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-23T17:21:35+08:00">
                 2015-11-23
               </time>
             
@@ -1481,8 +1488,8 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
           
 
           
-
           
+
           
 
           
@@ -1493,7 +1500,6 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       </header>
     
 
-
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1502,18 +1508,25 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       
         
           
-          
-先说背景：工作中遇到一个问题，file组件上传图片，file是可以上传n张图片；但是，后台逻辑历史原因，只能展现一张。因此：考虑到成本，决定在前端将多张图片合并成一张给后端。
+            <blockquote>
+<p>先说背景：工作中遇到一个问题，file组件上传图片，file是可以上传n张图片；但是，后台逻辑历史原因，只能展现一张。因此：考虑到成本，决定在前端<strong>将多张图片合并成一张给后端</strong>。</p>
+</blockquote>
+<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">_mergeImage2Canvas:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 获取file上传和展现的图片。一般file上传之后，有个小图标展现。</span></div><div class="line">    <span class="keyword">var</span> imgs = $(<span class="string">".img_files"</span>);</div><div class="line">    <span class="keyword">if</span> (!imgs) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 创建原始图像</span></div><div class="line">    <span class="comment">// 原因：file上传之后，展现往往是个缩略图，无法取到真正大小</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; imgs.length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> fbwImg   = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</div><div class="line">        <span class="keyword">var</span> fbwImgID = <span class="string">"temp_img_id"</span> + i;</div><div class="line">        $(<span class="string">"#"</span> + fbwImgID).remove();</div><div class="line">        fbwImg.src   = imgs[i].src;</div><div class="line">        fbwImg.className     = <span class="string">"temp-img-class"</span>;</div><div class="line">        <span class="comment">// 不显示，仅供调用</span></div><div class="line">        fbwImg.style.display = <span class="string">"none"</span>;</div><div class="line"></div><div class="line">        <span class="comment">// 临时区域扩展</span></div><div class="line">        $(<span class="string">"#temp_section"</span>).append(fbwImg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 合并原始图片，生成一个新的base64 图片</span></div><div class="line">    <span class="keyword">var</span> getOriginImgBase64 = <span class="function"><span class="keyword">function</span> (<span class="params">oriImgs</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!oriImgs) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 获取canvas的宽高</span></div><div class="line">        <span class="comment">// 原因：canvas需要首先指定宽高，所以需要提前获取最终的宽高</span></div><div class="line">        <span class="keyword">var</span> maxWidth = <span class="number">0</span>;</div><div class="line">        <span class="keyword">var</span> height = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oriImgs.length; i++) &#123;</div><div class="line">            <span class="keyword">var</span> img = oriImgs[i];</div><div class="line">            <span class="keyword">if</span> (img.width &gt; maxWidth) &#123;</div><div class="line">                maxWidth = img.width;</div><div class="line">            &#125;</div><div class="line">            height += img.height;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 设定canvas</span></div><div class="line">        <span class="keyword">var</span> canvas    = <span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>);</div><div class="line">        canvas.width  = maxWidth + <span class="number">10</span>;</div><div class="line">        canvas.height = height + <span class="number">10</span>;</div><div class="line">        <span class="keyword">var</span> ctx       = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 留5margin</span></div><div class="line">        <span class="keyword">var</span> dheight = <span class="number">5</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; oriImgs.length; j++) &#123;</div><div class="line">            <span class="keyword">var</span> img     = oriImgs[j];</div><div class="line">            <span class="keyword">var</span> cheight = img.height;</div><div class="line">            <span class="keyword">var</span> cwidth  = img.width;</div><div class="line"></div><div class="line">            <span class="comment">// 留5 margin</span></div><div class="line">            ctx.drawImage(img, <span class="number">5</span>, dheight, cwidth, cheight);</div><div class="line"></div><div class="line">            dheight = dheight + cheight + <span class="number">5</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 生成的base64 放在需要的一个全局变量中。</span></div><div class="line">        fbw_img_data = canvas.toDataURL(<span class="string">'image/png'</span>);</div><div class="line">        </div><div class="line">        <span class="comment">// 清理</span></div><div class="line">        $(<span class="string">".temp_img_class"</span>).remove();</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">// 之所以使用timer，考虑到dom树如果没有加载完成，会取到高度有误差</span></div><div class="line">    <span class="keyword">var</span> imgTimer = <span class="literal">null</span>;</div><div class="line">    imgTimer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        getOriginImgBase64($(<span class="string">".temp_img_class"</span>));</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (imgTimer) &#123;</div><div class="line">            clearTimeout(imgTimer);</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">300</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="合成效果"><a href="#合成效果" class="headerlink" title="合成效果"></a>合成效果</h3><p>图片一：小站logo</p>
+<p><a href="http://cuihuan.net/wp-content/uploads/2015/11/cuihuan_title-1.jpg"><img src="http://cuihuan.net/wp-content/uploads/2015/11/cuihuan_title-1.jpg" alt="cuihuan_title (1)"></a> </p>
+<p>图片二：小图标：<br><a href="http://cuihuan.net/wp-content/uploads/2015/11/del.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/del.png" alt="del"></a></p>
+<p>合成效果：</p>
+<p> <a href="http://cuihuan.net/wp-content/uploads/2015/11/下载.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/下载.png" alt="下载"></a></p>
+<h3 id="原理简介"><a href="#原理简介" class="headerlink" title="原理简介"></a>原理简介</h3><p>主要是通过canvas 获取多个图片的base64编码，之后通过drawImage 函数合并和toDataUrl的方式合成。</p>
+<h3 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h3><ul>
+<li>问题一：必须支持canvas，否则还需要后台统一跑脚本处理。</li>
+<li>问题二：性能消耗过大。append img 和base64代码对dom的消耗都挺大，尤其是在移动端，很容易造成崩溃。解决办法：设定最大宽度，将图片等比缩放，这样子就少了向dom扩展元素这部分的损耗。</li>
+<li>问题三：base64 在传输上性能消耗也挺大，没有file原生的好。</li>
+</ul>
+<p>因此：出了必须前端搞定，最好的方式，还是在后台跑脚本运行合并。</p>
+<p><a href="http://cuihuan.net/?p=253"> 个人小站原文链接 </a></p>
 
-先上代码12345678910111213141516171819202122232425262728293031323
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/23/canvas_combine_pic/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1526,8 +1539,13 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -1549,7 +1567,7 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
   </nav>
 
 
-          
+
           </div>
           
 
@@ -1581,13 +1599,15 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
                src="/wp_content/base/favicon.ico"
                alt="崔小拽" />
           <p class="site-author-name" itemprop="name">崔小拽</p>
-          <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
+           
+              <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
+          
         </div>
         <nav class="site-state motion-element">
-        
+
           
             <div class="site-state-item site-state-posts">
-              <a href="/">
+              <a href="/archives/">
                 <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -1597,8 +1617,10 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1626,6 +1648,8 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
 
       
 
+      
+
     </div>
   </aside>
 
@@ -1638,7 +1662,7 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2015 - 
+  &copy; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1647,32 +1671,31 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
 </div>
 
 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-        
-
-<div class="busuanzi-count">
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
-  
-
-  
-    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
-  
-  
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
 </div>
 
 
+        
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1692,6 +1715,14 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
 
 
   
+
+
+
+
+
+
+
+
 
 
 
@@ -1718,26 +1749,29 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
 
 
 
   
+  
 
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
 
 
   
@@ -1759,136 +1793,21 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
 
   
 
-  
 
 
 
 
   
+
+
+
+
+
+
   
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
 
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
 
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
 
 
   
@@ -1899,6 +1818,9 @@ phpunit 的安装phpunit是一个轻量级的php单元测试框架，通过pear�
 
   
 
+  
+
+  
 
 </body>
 </html>
