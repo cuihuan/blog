@@ -1,244 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_components/algolia-search/assets.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_components/algolia-search/dom.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/duoshuo-hot-articles.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/baidu-push.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/application-insights.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/baidu-analytics.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/busuanzi-counter.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/cnzz-analytics.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/facebook-sdk.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/google-analytics.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/analytics/tencent-analytics.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/comments.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/comments/disqus.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/comments/duoshuo.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/comments/gentie.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/comments/hypercomments.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/comments/youyan.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/lean-analytics.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/localsearch.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/mathjax.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/schedule.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/third-party/tinysou.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/layout/old.swig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/next/source/404.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/public/lib/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/.bower.json" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/404.html" afterPath="$PROJECT_DIR$/public/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_variables/Pisces.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_variables/Pisces.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_brand.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_brand.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_layout.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_layout.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_layout.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_layout.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_menu.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_menu.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_sidebar.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_sidebar.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/src/algolia-search.js" afterPath="$PROJECT_DIR$/public/js/src/algolia-search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/js/src/algolia-search.js" afterPath="$PROJECT_DIR$/themes/next/source/js/src/algolia-search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/algolia-search.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/algolia-search.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/archive.swig" afterPath="$PROJECT_DIR$/themes/next/layout/archive.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/back-to-top.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/back-to-top.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/scaffolding/base.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/scaffolding/base.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_variables/base.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_variables/base.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/src/bootstrap.js" afterPath="$PROJECT_DIR$/public/js/src/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/js/src/bootstrap.js" afterPath="$PROJECT_DIR$/themes/next/source/js/src/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/bower.json" afterPath="$PROJECT_DIR$/themes/next/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/busuanzi-counter.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/busuanzi-counter.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/category.swig" afterPath="$PROJECT_DIR$/themes/next/layout/category.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/components.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/components.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_variables/custom.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_variables/custom.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.json" afterPath="$PROJECT_DIR$/db.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/de.yml" afterPath="$PROJECT_DIR$/themes/next/languages/de.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/default.yml" afterPath="$PROJECT_DIR$/themes/next/languages/default.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/en.yml" afterPath="$PROJECT_DIR$/themes/next/languages/en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/public/lib/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/lib/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/lib/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/fr-FR.yml" afterPath="$PROJECT_DIR$/themes/next/languages/fr-FR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/gulpfile.coffee" afterPath="$PROJECT_DIR$/themes/next/gulpfile.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/head.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/head.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/header.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/header.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/scaffolding/helpers.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/scaffolding/helpers.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/highlight/highlight.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/highlight/highlight.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/id.yml" afterPath="$PROJECT_DIR$/themes/next/languages/id.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html" afterPath="$PROJECT_DIR$/public/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html" afterPath="$PROJECT_DIR$/public/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/23/canvas_combine_pic/index.html" afterPath="$PROJECT_DIR$/public/2015/11/23/canvas_combine_pic/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/php 处理unicode解码/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/php 处理unicode解码/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/phpUnit 安装，实例和简单部署/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/phpUnit 安装，实例和简单部署/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/【redis学习一】基本概念和基本操作/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/【redis学习一】基本概念和基本操作/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/30/php 操作不同数据库/index.html" afterPath="$PROJECT_DIR$/public/2015/11/30/php 操作不同数据库/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/02/jsonp + php 跨域实例/index.html" afterPath="$PROJECT_DIR$/public/2015/12/02/jsonp + php 跨域实例/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/03/crontab 误删除恢复/index.html" afterPath="$PROJECT_DIR$/public/2015/12/03/crontab 误删除恢复/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/06/echarts动态获取数据实例/index.html" afterPath="$PROJECT_DIR$/public/2015/12/06/echarts动态获取数据实例/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html" afterPath="$PROJECT_DIR$/public/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/08/linux 查找清理大文件/index.html" afterPath="$PROJECT_DIR$/public/2015/12/08/linux 查找清理大文件/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/11/mysql 简单全量备份和快速恢复/index.html" afterPath="$PROJECT_DIR$/public/2015/12/11/mysql 简单全量备份和快速恢复/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/20/php反射调用private方法实践/index.html" afterPath="$PROJECT_DIR$/public/2015/12/20/php反射调用private方法实践/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/01/03/检验mysql主从备份，读写分离/index.html" afterPath="$PROJECT_DIR$/public/2016/01/03/检验mysql主从备份，读写分离/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/01/07/机器多次恶意提交攻击/index.html" afterPath="$PROJECT_DIR$/public/2016/01/07/机器多次恶意提交攻击/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/01/10/YII2数据库查询实践/index.html" afterPath="$PROJECT_DIR$/public/2016/01/10/YII2数据库查询实践/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/02/29/postMessage处理iframe 跨域问题/index.html" afterPath="$PROJECT_DIR$/public/2016/02/29/postMessage处理iframe 跨域问题/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/03/08/mysql数据导库常用操作/index.html" afterPath="$PROJECT_DIR$/public/2016/03/08/mysql数据导库常用操作/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/04/20/chrome_2/index.html" afterPath="$PROJECT_DIR$/public/2016/04/20/chrome_2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/04/20/中型存储架构实践探索/index.html" afterPath="$PROJECT_DIR$/public/2016/04/20/中型存储架构实践探索/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/04/26/chrome_1/index.html" afterPath="$PROJECT_DIR$/public/2016/04/26/chrome_1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/07/page_monitor_second/index.html" afterPath="$PROJECT_DIR$/public/2016/08/07/page_monitor_second/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /index.html" afterPath="$PROJECT_DIR$/public/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/08/phpredis单例模式封装/index.html" afterPath="$PROJECT_DIR$/public/2016/08/08/phpredis单例模式封装/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/20/fsck修复linux文件损坏/index.html" afterPath="$PROJECT_DIR$/public/2016/08/20/fsck修复linux文件损坏/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/index.html" afterPath="$PROJECT_DIR$/public/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/01/20/charactor/index.html" afterPath="$PROJECT_DIR$/public/2017/01/20/charactor/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html" afterPath="$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/02/05/redis3/index.html" afterPath="$PROJECT_DIR$/public/2017/02/05/redis3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/03/14/nginx_study_1/index.html" afterPath="$PROJECT_DIR$/public/2017/03/14/nginx_study_1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/about/index.html" afterPath="$PROJECT_DIR$/public/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/index.html" afterPath="$PROJECT_DIR$/public/archives/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/11/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/11/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/12/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/12/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/01/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/02/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/02/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/03/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/03/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/04/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/04/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/08/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/08/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/01/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/02/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/02/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/03/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/03/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/page/3/index.html" afterPath="$PROJECT_DIR$/public/archives/page/3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/page/4/index.html" afterPath="$PROJECT_DIR$/public/archives/page/4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/categories/index.html" afterPath="$PROJECT_DIR$/public/categories/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/old/index.html" afterPath="$PROJECT_DIR$/public/old/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/page/2/index.html" afterPath="$PROJECT_DIR$/public/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/page/3/index.html" afterPath="$PROJECT_DIR$/public/page/3/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/page/4/index.html" afterPath="$PROJECT_DIR$/public/page/4/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/index.html" afterPath="$PROJECT_DIR$/public/tags/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/active-record/index.html" afterPath="$PROJECT_DIR$/public/tags/active-record/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/apache/index.html" afterPath="$PROJECT_DIR$/public/tags/apache/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/canvas/index.html" afterPath="$PROJECT_DIR$/public/tags/canvas/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/chrome/index.html" afterPath="$PROJECT_DIR$/public/tags/chrome/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/chrome-extension/index.html" afterPath="$PROJECT_DIR$/public/tags/chrome-extension/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/cors/index.html" afterPath="$PROJECT_DIR$/public/tags/cors/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/crontab/index.html" afterPath="$PROJECT_DIR$/public/tags/crontab/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/css/index.html" afterPath="$PROJECT_DIR$/public/tags/css/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/db/index.html" afterPath="$PROJECT_DIR$/public/tags/db/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/echarts/index.html" afterPath="$PROJECT_DIR$/public/tags/echarts/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/git修复/index.html" afterPath="$PROJECT_DIR$/public/tags/git修复/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/html5/index.html" afterPath="$PROJECT_DIR$/public/tags/html5/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/iframe/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/iframe自适应高度/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe自适应高度/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/iframe跨域/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe跨域/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/ip/index.html" afterPath="$PROJECT_DIR$/public/tags/ip/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/javascript/index.html" afterPath="$PROJECT_DIR$/public/tags/javascript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/jsonp/index.html" afterPath="$PROJECT_DIR$/public/tags/jsonp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/linux/index.html" afterPath="$PROJECT_DIR$/public/tags/linux/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/mysql/index.html" afterPath="$PROJECT_DIR$/public/tags/mysql/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/nginx/index.html" afterPath="$PROJECT_DIR$/public/tags/nginx/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/pho/index.html" afterPath="$PROJECT_DIR$/public/tags/pho/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/php/index.html" afterPath="$PROJECT_DIR$/public/tags/php/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/php/page/2/index.html" afterPath="$PROJECT_DIR$/public/tags/php/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/phpredis/index.html" afterPath="$PROJECT_DIR$/public/tags/phpredis/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/phpunit/index.html" afterPath="$PROJECT_DIR$/public/tags/phpunit/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/redis/index.html" afterPath="$PROJECT_DIR$/public/tags/redis/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/redis主从/index.html" afterPath="$PROJECT_DIR$/public/tags/redis主从/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/shell/index.html" afterPath="$PROJECT_DIR$/public/tags/shell/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/unicode/index.html" afterPath="$PROJECT_DIR$/public/tags/unicode/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/wordpress/index.html" afterPath="$PROJECT_DIR$/public/tags/wordpress/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/yii2/index.html" afterPath="$PROJECT_DIR$/public/tags/yii2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/主从备份/index.html" afterPath="$PROJECT_DIR$/public/tags/主从备份/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/前端/index.html" afterPath="$PROJECT_DIR$/public/tags/前端/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/动态获取数据/index.html" afterPath="$PROJECT_DIR$/public/tags/动态获取数据/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/单例模式/index.html" afterPath="$PROJECT_DIR$/public/tags/单例模式/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/单元测试/index.html" afterPath="$PROJECT_DIR$/public/tags/单元测试/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/合成图片/index.html" afterPath="$PROJECT_DIR$/public/tags/合成图片/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/基本原理/index.html" afterPath="$PROJECT_DIR$/public/tags/基本原理/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/备份/index.html" afterPath="$PROJECT_DIR$/public/tags/备份/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/容灾方案/index.html" afterPath="$PROJECT_DIR$/public/tags/容灾方案/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/恶意攻击/index.html" afterPath="$PROJECT_DIR$/public/tags/恶意攻击/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/数据库同步/index.html" afterPath="$PROJECT_DIR$/public/tags/数据库同步/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/服务器/index.html" afterPath="$PROJECT_DIR$/public/tags/服务器/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/缓存/index.html" afterPath="$PROJECT_DIR$/public/tags/缓存/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/网页爬虫/index.html" afterPath="$PROJECT_DIR$/public/tags/网页爬虫/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/自动化测试/index.html" afterPath="$PROJECT_DIR$/public/tags/自动化测试/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/设计模式/index.html" afterPath="$PROJECT_DIR$/public/tags/设计模式/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/读写分离/index.html" afterPath="$PROJECT_DIR$/public/tags/读写分离/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/跨域/index.html" afterPath="$PROJECT_DIR$/public/tags/跨域/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/高可用架构/index.html" afterPath="$PROJECT_DIR$/public/tags/高可用架构/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/高并发/index.html" afterPath="$PROJECT_DIR$/public/tags/高并发/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/index.swig" afterPath="$PROJECT_DIR$/themes/next/layout/index.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/ja.yml" afterPath="$PROJECT_DIR$/themes/next/languages/ja.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/ko.yml" afterPath="$PROJECT_DIR$/themes/next/languages/ko.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/localsearch.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/localsearch.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/search/localsearch.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/search/localsearch.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/header/menu.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/header/menu.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/scripts/merge-configs.js" afterPath="$PROJECT_DIR$/themes/next/scripts/merge-configs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/scripts/tags/note.js" afterPath="$PROJECT_DIR$/themes/next/scripts/tags/note.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/tags/note.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/tags/note.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/package.json" afterPath="$PROJECT_DIR$/themes/next/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/page-header.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/page-header.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/page.swig" afterPath="$PROJECT_DIR$/themes/next/layout/page.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/src/schemes/pisces.js" afterPath="$PROJECT_DIR$/public/js/src/schemes/pisces.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/js/src/schemes/pisces.js" afterPath="$PROJECT_DIR$/themes/next/source/js/src/schemes/pisces.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-button.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-button.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-collapse.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-collapse.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_macro/post-collapse.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_macro/post-collapse.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/src/post-details.js" afterPath="$PROJECT_DIR$/public/js/src/post-details.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/js/src/post-details.js" afterPath="$PROJECT_DIR$/themes/next/source/js/src/post-details.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-expand.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-expand.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-meta.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-meta.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-nav.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-nav.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/post.swig" afterPath="$PROJECT_DIR$/themes/next/layout/post.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_macro/post.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_macro/post.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/pt-BR.yml" afterPath="$PROJECT_DIR$/themes/next/languages/pt-BR.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/pt.yml" afterPath="$PROJECT_DIR$/themes/next/languages/pt.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/ru.yml" afterPath="$PROJECT_DIR$/themes/next/languages/ru.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/schedule.swig" afterPath="$PROJECT_DIR$/themes/next/layout/schedule.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_partials/search.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/search.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/search.xml" afterPath="$PROJECT_DIR$/public/search.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/sidebar/sidebar-blogroll.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/sidebar/sidebar-blogroll.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_schemes/Mist/sidebar/sidebar-blogroll.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_schemes/Mist/sidebar/sidebar-blogroll.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_schemes/Muse/sidebar/sidebar-blogroll.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_schemes/Muse/sidebar/sidebar-blogroll.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/sidebar/sidebar-toc.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/sidebar/sidebar-toc.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/sidebar/sidebar-toggle.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/sidebar/sidebar-toggle.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_macro/sidebar.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_macro/sidebar.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/tag.swig" afterPath="$PROJECT_DIR$/themes/next/layout/tag.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/tags/tags.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/tags/tags.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/third-party.styl" afterPath="$PROJECT_DIR$/themes/next/source/css/_common/components/third-party/third-party.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/src/utils.js" afterPath="$PROJECT_DIR$/public/js/src/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/source/js/src/utils.js" afterPath="$PROJECT_DIR$/themes/next/source/js/src/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/layout/_scripts/vendors.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_scripts/vendors.swig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" afterPath="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/zh-hk.yml" afterPath="$PROJECT_DIR$/themes/next/languages/zh-hk.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/zh-tw.yml" afterPath="$PROJECT_DIR$/themes/next/languages/zh-tw.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html" afterPath="$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/wp_content/uploads/2015/10/准备动作.html" afterPath="$PROJECT_DIR$/public/wp_content/uploads/2015/10/准备动作.html" />
-    </list>
+    <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="" />
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -265,8 +28,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="30.889706" vertical-offset="2267" max-vertical-offset="10542">
-              <caret line="308" column="7" selection-start-line="308" selection-start-column="7" selection-end-line="308" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.6989796" vertical-offset="1238" max-vertical-offset="10542">
+              <caret line="72" column="58" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -472,6 +235,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="next" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="next" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="scaffolds" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -589,7 +396,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7970244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52497345" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -603,7 +410,7 @@
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7427702" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7970244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5366631" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1095,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="30.889706" vertical-offset="2267" max-vertical-offset="10542">
-          <caret line="308" column="7" selection-start-line="308" selection-start-column="7" selection-end-line="308" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.6989796" vertical-offset="1238" max-vertical-offset="10542">
+          <caret line="72" column="58" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
           <folding />
         </state>
       </provider>
