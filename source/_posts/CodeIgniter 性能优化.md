@@ -1,28 +1,22 @@
----
-title: CodeIgniter 性能优化
-date: 2017-06-05 23:21:35
-tags: 
-- php
-- 性能优化
-- codeIgniter
----
-> 背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，未来扩展性。选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个`启动时间优化到5ms`以内。
+> 背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，扩展性。权衡后选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个`启动时间优化到5ms`左右。
 
 ## 一、选型
 - 背景：使用php作为微服务的接口，具有一定的性能要求和并发要求。
 - 方案：
- - 1：选一个轻量的php框架。最好是具有简单高效的路由，模块化即可。
+ - 1：选一个轻量的php框架。具有简单高效的路由，模块化即可。
  - 2：在框架的基础上，自定义的优化
 
-### 1.1 从压测数据看性能
+从以下几个角度做了简单的比较
+### 1.1 不同框架的性能
 https://www.ruilog.com/blog/view/b6f0e42cf705.html
-具体细节就不赘述，除了直接写php之外，ci和lumen的并发性能不错，在考虑范围内。
-
 [![ci performance](http://cuihuan.net/wp_content/new/codeIgniter/performance.png)](http://cuihuan.net/wp_content/new/codeIgniter/performance.png)
+
+列举了很多数据，除了直接写php之外，ci和lumen的并发和性能不错，在考虑范围内。
+
 
 ### 1.2 从流行度上看。
 
-排名前四的是laravel,symfony,ci,yii2。最火的是laravel毋庸置疑。但前四均在考虑范围内
+github排名前四的是laravel,symfony,ci,yii2。最火的是laravel毋庸置疑。但前四均在考虑范围内
 
 [![ci github](http://cuihuan.net/wp_content/new/codeIgniter/githup_php.png)](http://cuihuan.net/wp_content/new/codeIgniter/githup_php.png)
 
@@ -32,12 +26,12 @@ laraval,ci,yii的中文社区都还不错。
 综合考虑之后，在满足功能的情况下，选择性能最好，也易入手的codeIgniter作为基础框架。（`整个包才2.5M，删除了web文件夹后更小`）
 
 
-## 二、30ms+到10ms
+## 二、30ms+到10ms[粗读代码]
 框架的基本部署，直接参考官网：https://codeigniter.org.cn/
 
 
 ### 2.1 问题描述
-配置了数据库之后，添加了一个默认的controller，一个model，默认加载时间竟然30ms—_-。瞬间懵逼了，nginx+fpm 1-2ms，框架竟然30ms，肯定那里配置错了，决定沿着路由追一下。
+配置了数据库之后，添加了一个默认的controller，一个model，默认加载时间竟然30ms+—_-。瞬间懵逼了，nginx+fpm也就1-2ms，框架竟然30ms，肯定那里配置错了，决定沿着路由追一下。
 
 ### 2.2 问题追查
 沿着ci的路由顺序追查，从index入，一步一步卡时间。[`括号内为运行到的总计数`]
@@ -66,21 +60,23 @@ laraval,ci,yii的中文社区都还不错。
 这个ci的加载过程之后，基本一幕了然，在autoload里面耗时25ms。然后对autoload里面8个组件一个一个分析。
 
 ### 2.3 问题原因
-分析完之后，问题特别简单，下面这行代码
+分析完之后，处理特别简单，下面这行代码
 ```
 $autoload['libraries'] = array('database');
 ```
-ci 出于单例和复用角度考虑，选择`默认加载database`，也就是mysql在默认初始化。对于mysql链接在并发情况下，init基本上要耗费10-30ms，干掉之后，压测基本上在10ms左右。
+ci 出于单例和复用角度考虑，选择`默认加载database`，也就是mysql在框架初始化的过程中默认初始化了。
+mysql链接在并发情况下，init基本上要耗费10-30ms。直接干掉。
+干掉之后，压测基本上在10ms左右。
 
-压测数据图
 
 
-## 三、从10ms到5ms
+## 三、从10ms到5ms [细看代码]
 ### 3.1 优化目标
-抛出了配置等常用错误后，ci在高并发下依然有10ms左右的加载时间，需要结合自身逻辑优化下，干掉很多不需要的功能。
+优化了配置等之后，ci在高并发下依然有10ms左右的加载时间，需要结合自身逻辑优化下，删减掉部分不需要的功能和组件。
 
-### 3.2 分析
-之前在追查问题的过程中，粗读了一遍代码的流程，这次需要细看下每个模块的功能，干掉不需要的，逐步优化。
+### 3.2 代码分析
+之前在追查问题的过程中，粗读了一遍代码的流程。
+而需要进一步优化，就需要细看每个模块函数的功能，干掉不需要的，逐步优化。
 
 
 -》index.php 
@@ -157,16 +153,18 @@ define('UUID', uniqid('xxx', true));
 ### 4.2 长时间高负载压测
 1500qps 10min，均值约6ms
 
-超时分布
+问题：分析了部分数据的超时分布，约千分之二超过30ms，如下图【这块需要之后优化】
 [![time_distribute](http://cuihuan.net/wp_content/new/codeIgniter/time_distribute.png)](http://cuihuan.net/wp_content/new/codeIgniter/time_distribute.png)
 
 ### 4.3 无限发压
+
 nginx + php 均值：17ms
-框架均值：9ms
+框架部分的均值：9ms 也基本上满足需求
 [![nginx_time](http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png)](http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png)
 
 ## 五、汇总
 ci 是一个比较优秀的轻量级MVC框架，可以用来，业能否支撑1000-2000pqs的业务接口。
+
 最后来一张ci的路由图
 [![all](http://cuihuan.net/wp_content/new/codeIgniter/all.png)](http://cuihuan.net/wp_content/new/codeIgniter/all.png)
 

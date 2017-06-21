@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="" />
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -107,7 +105,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="112.0" vertical-offset="3528" max-vertical-offset="39249">
+            <state vertical-scroll-proportion="112.0" vertical-offset="3528" max-vertical-offset="39312">
               <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
@@ -861,9 +859,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498007815000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1498007815000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1498007815000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1498042764000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1498042764000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1498042764000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
