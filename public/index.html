@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,32 +43,6 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
@@ -77,7 +51,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="靠谱崔小拽, 崔小拽" />
 
 
 
@@ -109,13 +83,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: '小拽'
     },
     algolia: {
       applicationID: '',
@@ -141,6 +115,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -178,7 +162,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">subtitle</p>
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
       
   </div>
 
@@ -208,22 +192,42 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-old">
+          <a href="http://cuihuan.net:8222" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
+            
+            旧版
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            demo
           </a>
         </li>
       
@@ -273,9 +277,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/03/14/nginx_study_1/" itemprop="url">【nginx学习一】基本原理学习</a></h1>
+                <a class="post-title-link" href="/2017/03/14/nginx_study_1/" itemprop="url">【nginx学习一】基本原理学习</a></h2>
         
 
         <div class="post-meta">
@@ -287,7 +291,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T23:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-14T23:21:35+08:00">
                 2017-03-14
               </time>
             
@@ -300,6 +304,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/03/14/nginx_study_1/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2017/03/14/nginx_study_1/" class="cy_cmt_count" data-xid="2017/03/14/nginx_study_1/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -324,94 +339,18 @@
       
         
           
-            <blockquote>
-<p>由于性能问题，需要将 apache + php5.2 升级到 nginx + php7，对于nginx的性能和热加载早有耳闻，why nginx so diao。小拽进行了初探，<code>有任何疑问或不准确的地方，欢迎直接开炮</code>！！！</p>
-</blockquote>
-<h2 id="一、nginx现状"><a href="#一、nginx现状" class="headerlink" title="一、nginx现状"></a>一、nginx现状</h2><p>nginx 是当前的<code>使用最广泛的webserver ,支持http正向/反向代理，支持TCP/UDP层代理</code>，来看下netcraft的数据</p>
-<p><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_trend_all.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_trend_all.png" alt="webserver_all"></a><br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_trend_top.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_trend_top.png" alt="webserver_top"></a></p>
-<p>nginx在<code>全部网站中占比达到18%</code>，在<code>top millon busest 达到28%</code>，而且一直在增加。当下最时尚的webserver非nginx莫属</p>
-<blockquote>
-<p>更全数据可以参考：<a href="https://news.netcraft.com/archives/2017/01/12/january-2017-web-server-survey.html" target="_blank" rel="external">【netcraft】</a></p>
-</blockquote>
-<h2 id="二、nginx的特点"><a href="#二、nginx的特点" class="headerlink" title="二、nginx的特点"></a>二、nginx的特点</h2><p>深入了解nginx之前，先泛泛的了解下nginx的几个特点</p>
-<ul>
-<li>性能好<ul>
-<li>非阻塞IO/高并发,支持文件IO</li>
-<li>多worker，thread pool </li>
-<li>基于rbtree的定时器</li>
-<li>系统特性的持续支持</li>
-</ul>
-</li>
-<li>功能强大<ul>
-<li>webserver/cache/keepalive/pipeline等等</li>
-<li>各种upstream的支持【fastcgi/http/…】</li>
-<li>输出灵活【chunk/zip/…】</li>
-<li>在不断的发展 http2,tcp,udp,proxy…</li>
-</ul>
-</li>
-<li>运维的友好【这个对于开发和部署很重要】<ul>
-<li>配置非常规范【个人认为：约定及规范是最好的实践】</li>
-<li>热加载和热更新【后文会详细介绍，能在二进制的层面热更新】</li>
-<li>日志强大【真的很强的，很多变量支撑】</li>
-</ul>
-</li>
-<li>扩展强大</li>
-</ul>
-<p>下图是nginx、apache和lighttpd的一个对比。系统压力，内存占用，upstream支持等多个方面都非常不错<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_compare.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_compare.png" alt="nginx对比图"></a></p>
-<h2 id="三、nginx的核心机制"><a href="#三、nginx的核心机制" class="headerlink" title="三、nginx的核心机制"></a>三、nginx的核心机制</h2><h3 id="3-1-运行方式"><a href="#3-1-运行方式" class="headerlink" title="3.1 运行方式"></a>3.1 运行方式</h3><p>一句话简述nginx的运行方式：<code>master-worker多进程模式运行，单线程/非阻塞执行</code></p>
-<p>如下官方图：nginx 启动后生成master，master会启动conf数量的<code>worker进程</code>，当用户的请求过来之后，由不同的worker调起<code>执行线程</code>，非阻塞的执行请求。这种运行方式相对于<code>apache的进程执行</code>相对轻量很多，支撑的并发性也会高很多。<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_framework.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_framework.png" alt="nginx 基本框架"></a></p>
-<h3 id="3-2-进程管理"><a href="#3-2-进程管理" class="headerlink" title="3.2 进程管理"></a>3.2 进程管理</h3><p>nginx是master-worker进程工作模式，那么nginx是如何管理master启程，怎么做到热加载的？</p>
-<h4 id="3-2-1-配置热加载"><a href="#3-2-1-配置热加载" class="headerlink" title="3.2.1 配置热加载"></a>3.2.1 配置热加载</h4><p>官方图很赞，在<code>更换配置之后，master生成新的worker，直到原有的worker全部任务结束kill掉之后</code>。从现象上作证，也就是在relaod配置之后，短时间可能出现超过conf数量的进程，更新完成后，进程会完全改变。</p>
-<blockquote>
-<p>不更新、直接替换，这种设计思路在代码部署中也很常见，包括mysql迁移，代码更新，服务尝试，很值的学习。<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_conf_reload.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_conf_reload.png" alt="nginx 配置热加载"></a></p>
-</blockquote>
-<h4 id="3-2-2-版本更新热加载"><a href="#3-2-2-版本更新热加载" class="headerlink" title="3.2.2 版本更新热加载"></a>3.2.2 版本更新热加载</h4><p>了解了worker的热加载之后，理解master就非常简单了，通过信号控制，同时存在两个master，逐步替代。<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_bit_reload.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_bit_reload.png" alt="nginx 线程热加载"></a></p>
-<p>关于replace过程中如何细节控制一致性，稳定性，信号控制，log控制等等，敬请期待小拽的进一步探索！</p>
-<h3 id="3-3-处理流程和模块"><a href="#3-3-处理流程和模块" class="headerlink" title="3.3 处理流程和模块"></a>3.3 处理流程和模块</h3><p>启动进程后，请求在nginx内部是如何流转的，nginx内部包括哪些模块？</p>
-<h4 id="3-3-1-worker处理过程"><a href="#3-3-1-worker处理过程" class="headerlink" title="3.3.1 worker处理过程"></a>3.3.1 worker处理过程</h4><ol>
-<li>【post header】请求到达后首先读取header，log中request time初始时间便从此开始。</li>
-<li>【rewrite】请求相关的配置和参数</li>
-<li>【pre-access】预处理阶段，频率控制，高频绝句</li>
-<li>【acess】权限控制，白名单，403，access deny ，静态文件开放等均有这个模块产生</li>
-<li>【content】这个模块会调用upstream产生内容，这个阶段最重要<code>此处调起了工作线程，调用fastcgi，http，以及各种操作产生内容均在此处</code>。性能优化可能需要确认程序执行时间，对应access log中的upstream time 由此产生，记录了nginx中程序运行的全量时间，而request - upstream 就是网络传输和预处理时间。</li>
-<li>【filter】内容过滤，包括gzip压缩，返回等在此处</li>
-<li>【log】日志的产生</li>
-<li>【重定向】<code>没有这个模块，所有的进行智能单向走，有了这个，在任何阶段都可以产生返回</code>，例如client主动阶段产生499的log，过程可能就是1-》2-》8-》7 over</li>
-</ol>
-<blockquote>
-<p>摘自某ppt的一个图，如侵权，请尽快联系小拽<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_flow.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_flow.png" alt="nginx 主要流程和模块"></a></p>
-</blockquote>
-<p>各个阶段的主要状态机可以参考:<a href="http://www.nginxguts.com/2011/01/phases/" target="_blank" rel="external">【跳转】</a></p>
-<h3 id="3-4-请求管理"><a href="#3-4-请求管理" class="headerlink" title="3.4 请求管理"></a>3.4 请求管理</h3><p>了解了worker的工作模式和worker的内部主要模块，那么worker是如何管理请求的？</p>
-<h4 id="3-4-1-任务调度"><a href="#3-4-1-任务调度" class="headerlink" title="3.4.1 任务调度"></a>3.4.1 任务调度</h4><blockquote>
-<p>官方阐述：It’s well known that NGINX uses <code>an asynchronous, event‑driven approach to handling connections</code>. This means that instead of creating another dedicated process or thread for each request (like servers with a traditional architecture), it handles multiple connections and requests in one worker process. To achieve this, NGINX works with sockets in a non‑blocking mode and uses efficient methods such as epoll and kqueue.<br>核心词：<code>异步，事件驱动，链接控制</code></p>
-</blockquote>
-<p>解释的很清楚，<code>nginx并不是通过每个请求都创建线程，而是通过内部管理的调度分配</code>。<br>如下图：此处不翻译了，大家直接看原版<br>epoll详解：<a href="http://man7.org/linux/man-pages/man7/epoll.7.html" target="_blank" rel="external">【跳转】</a></p>
-<p><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_task.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_task.png" alt="nginx 任务基本框架"></a></p>
-<h4 id="3-4-2-线程池"><a href="#3-4-2-线程池" class="headerlink" title="3.4.2 线程池"></a>3.4.2 线程池</h4><p>官方说明</p>
-<blockquote>
-<p>Let’s return to our poor sales assistant who delivers goods from a faraway warehouse. But he has become smarter (or maybe he became smarter after being beaten by the crowd of angry clients?) and hired a delivery service. Now when somebody asks for something from the faraway warehouse, instead of going to the warehouse himself, he just drops an order to a delivery service and they will handle the order while our sales assistant will continue serving other customers. Thus only those clients whose goods aren’t in the store are waiting for delivery, while others can be served immediately.</p>
-</blockquote>
-<p>小拽认为简而言之：<code>结合实际情况，除了空闲被动给，更多的通过事件驱动主动要</code>，通过这种方式在执行资源紧缺的情况下，达到一个执行资源的优化部署，如下图。<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_task2.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_task2.png" alt="nginx 任务基本框架"></a><br>线程池官网详解：<a href="https://www.nginx.com/blog/thread-pools-boost-performance-9x/" target="_blank" rel="external">【跳转】</a></p>
-<h4 id="3-4-3-事件调度"><a href="#3-4-3-事件调度" class="headerlink" title="3.4.3 事件调度"></a>3.4.3 事件调度</h4><p>请求的具体调度基于事件，例如网络IO,磁盘IO,定时器等均可以对事件进行阻塞，当阻塞的事件空闲时，发出调度请求，完成处理。<br>需要额外提一下，<code>nginx的定时器基于rbtree，红黑树的快速插入和查询保证了nginx事件调度的高效性</code><br>事件框架的处理模型<br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_event_.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_event_.png" alt="nginx 事件"></a><br><a href="http://cuihuan.net/wp_content/new/nginx1/nginx_epoll.png"><img src="http://cuihuan.net/wp_content/new/nginx1/nginx_epoll.png" alt="nginx epoll"></a></p>
-<h2 id="四、简单总结"><a href="#四、简单总结" class="headerlink" title="四、简单总结"></a>四、简单总结</h2><ul>
-<li>性能：nginx 工作模式是master-worker进程方式，执行请求是有更轻量线程完成。</li>
-<li>热加载：nginx 替换非更新的方式是nginx热加载的本质</li>
-<li>功能强大：nginx upstream是在线程层面调度，兼容多种，所以可以扩展很多功能强大</li>
-<li>处理流程：主要的流程过程和模块分离清晰。</li>
-<li>请求处理：通过自身的管理，线程池，异步事件驱动等当来完成任务调度</li>
-</ul>
-<p>再次强调：初探nginx，有疑问或不准确的地方，请直接开炮！！！</p>
-<h2 id="五、参考文章"><a href="#五、参考文章" class="headerlink" title="五、参考文章"></a>五、参考文章</h2><ul>
-<li>netcraft：<a href="https://news.netcraft.com/archives/2017/01/12/january-2017-web-server-survey.html" target="_blank" rel="external">https://news.netcraft.com/archives/2017/01/12/january-2017-web-server-survey.html</a></li>
-<li>nginx的线程调度设计：<a href="https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/" target="_blank" rel="external">https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/</a></li>
-<li>epoll详述：<a href="http://man7.org/linux/man-pages/man7/epoll.7.html" target="_blank" rel="external">http://man7.org/linux/man-pages/man7/epoll.7.html</a></li>
-<li><a href="http://yaocoder.blog.51cto.com/2668309/888374" target="_blank" rel="external">http://yaocoder.blog.51cto.com/2668309/888374</a></li>
-<li>线程池：<a href="https://www.nginx.com/blog/thread-pools-boost-performance-9x/" target="_blank" rel="external">https://www.nginx.com/blog/thread-pools-boost-performance-9x/</a></li>
-</ul>
-<p>【转载请注明：<a href="http://cuihuan.net/2017/03/14/nginx_study_1/">【【nginx学习一】基本原理学习 </a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+由于性能问题，需要将 apache + php5.2 升级到 nginx + php7，对于nginx的性能和热加载早有耳闻，why nginx so diao。小拽进行了初探，有任何疑问或不准确的地方，欢迎直接开炮！！！
+
+一、nginx现状nginx 是当前的使用最广泛的webserver ,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/14/nginx_study_1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -470,9 +409,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/05/redis3/" itemprop="url">【redis学习三】简单高可用redis架构实践</a></h1>
+                <a class="post-title-link" href="/2017/02/05/redis3/" itemprop="url">【redis学习三】简单高可用redis架构实践</a></h2>
         
 
         <div class="post-meta">
@@ -484,7 +423,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-05T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T17:21:35+08:00">
                 2017-02-05
               </time>
             
@@ -497,6 +436,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/02/05/redis3/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2017/02/05/redis3/" class="cy_cmt_count" data-xid="2017/02/05/redis3/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -521,78 +471,20 @@
       
         
           
-            <blockquote>
-<p>背景：支撑线上千万级别的天级查询请求，要求高可用。</p>
-</blockquote>
-<h1 id="一、方案调研"><a href="#一、方案调研" class="headerlink" title="一、方案调研"></a>一、方案调研</h1><h2 id="1-1-redis版本选择"><a href="#1-1-redis版本选择" class="headerlink" title="1.1 redis版本选择"></a>1.1 redis版本选择</h2><p>redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：</p>
-<blockquote>
-<p>Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了多种语言的API。近日，Redis 3.0在经过6个RC版本后，其正式版终于发布了。Redis 3.0的最重要特征是对Redis集群的支持，此外，该版本相对于2.8版本在性能、稳定性等方面都有了重大提高。</p>
-</blockquote>
-<p>综合考虑之后扩展性和稳定性之后，选择版本 <code>redis 3.2.3-1</code>版本进行部署</p>
-<h2 id="1-2-是否选择搭建集群"><a href="#1-2-是否选择搭建集群" class="headerlink" title="1.2 是否选择搭建集群"></a>1.2 是否选择搭建集群</h2><p>是否搭建集群关键要看单机是否能够满足业务需求，做了个简单的数据评估。</p>
-<h3 id="数据量评估"><a href="#数据量评估" class="headerlink" title="数据量评估"></a>数据量评估</h3><ul>
-<li><strong>测试</strong>：单机写入2000w业务数据，占用内存1.5g，本机126g内存</li>
-<li><strong>评估</strong>：单机的稳定数据承载量：2000w <em> （126/1.56）</em> 0.6 = 96923w </li>
-<li><strong>结论</strong>：9T 的数据承载量，远超当前千万级别的数据量</li>
-</ul>
-<h3 id="性能评估"><a href="#性能评估" class="headerlink" title="性能评估"></a>性能评估</h3><ul>
-<li><strong>测试</strong>：简单压测了下<ul>
-<li>写操作 1000w，80% 在20ms一下 ，98%在30ms，最大218ms，qps 5w/s，总耗时197s</li>
-<li>读操作 1000w，97% 在10ms一下 ，99.99%在24ms，qps 6w/s，总耗时160s</li>
-</ul>
-</li>
-<li><strong>评估</strong>：当前的调用量在千万每天，qps的话在百/s。 </li>
-<li><strong>结论</strong>：当前单机的redis完全满足需求</li>
-</ul>
-<p>因此：在单机远能够满足当下业务需求的情况下，决定不采用的集群的方式来部署redis，减少技术债务风险。</p>
-<h2 id="1-3-初定方案和架构图"><a href="#1-3-初定方案和架构图" class="headerlink" title="1.3 初定方案和架构图"></a>1.3 初定方案和架构图</h2><p>选定了版本和基本部署方案之后，主要考虑服务的<code>容灾和稳定性</code>，经过思考之后采用<code>采用极简的主从从结构，001实时同步数据002和003；001读写，002，003只读</code>，机构图如下</p>
-<p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_framework.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_framework.png" alt="redis 框架架构"></a></p>
-<h1 id="二、实现过程"><a href="#二、实现过程" class="headerlink" title="二、实现过程"></a>二、实现过程</h1><h2 id="2-1-redis安装"><a href="#2-1-redis安装" class="headerlink" title="2.1 redis安装"></a>2.1 redis安装</h2><p>此处略去，参考官方文档 <a href="https://redis.io/" target="_blank" rel="external">https://redis.io/</a></p>
-<h2 id="2-2-配置读写master"><a href="#2-2-配置读写master" class="headerlink" title="2.2 配置读写master"></a>2.2 配置读写master</h2><ul>
-<li>修改端口：port 【目的：简单的修改默认端口是最好的防攻击】</li>
-<li>添加密码：pwd</li>
-<li>关闭压缩：rdbcompression no 【硬盘最够，降低cpu的能耗更利于提升性能】</li>
-<li>开启守护进程：daemonize yes 【master开启守护，增加稳定性】</li>
-<li>关闭protect-mode :允许他机器访问</li>
-<li>添加白名单：bind xxx</li>
-<li>修改log地址，pid地址和数据存储地址：logfile pidfile 【便于维护和安全】</li>
-<li>添加慢查询：slowlog-log-slower-than 500 【根据业务需求，便于优化】</li>
-<li>最大内存限制：maxmemory 【考虑稳定性和性能，一般不超过最大内存的60%】</li>
-</ul>
-<h2 id="2-3-配置只读slave"><a href="#2-3-配置只读slave" class="headerlink" title="2.3 配置只读slave"></a>2.3 配置只读slave</h2><ul>
-<li>同master</li>
-<li>设置主库:slaveof ip:port</li>
-<li>主库密码：masterauth masterpwd</li>
-<li>只读：slave-read-only yes</li>
-</ul>
-<h2 id="2-4-启动测试"><a href="#2-4-启动测试" class="headerlink" title="2.4 启动测试"></a>2.4 启动测试</h2><h3 id="启动主库写入数据"><a href="#启动主库写入数据" class="headerlink" title="启动主库写入数据"></a>启动主库写入数据</h3><p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_master.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_master.png" alt="redis 写入主库"></a></p>
-<h3 id="进入从库查看"><a href="#进入从库查看" class="headerlink" title="进入从库查看"></a>进入从库查看</h3><p>最初没有数据，主库写入之后，从库去到数据</p>
-<p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_slave.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_slave.png" alt="redis 写入从库"></a></p>
-<h3 id="查看log确认过程"><a href="#查看log确认过程" class="headerlink" title="查看log确认过程"></a>查看log确认过程</h3><p><a href="http://cuihuan.net/wp_content/new/redis/redis_3_log.png"><img src="http://cuihuan.net/wp_content/new/redis/redis_3_log.png" alt="redis log"></a></p>
-<h1 id="三、架构能力评估"><a href="#三、架构能力评估" class="headerlink" title="三、架构能力评估"></a>三、架构能力评估</h1><h2 id="3-1-容灾能力"><a href="#3-1-容灾能力" class="headerlink" title="3.1 容灾能力"></a>3.1 容灾能力</h2><ul>
-<li>主动容灾<ul>
-<li>备份：master 全量备份，slave全量备份。</li>
-<li>备份安全：本机保存，hadoop同步保存一份。</li>
-<li>监控和探活：监控机分钟级探活和预警</li>
-</ul>
-</li>
-<li>被动容灾：<ul>
-<li>slave 宕机：重启之后直接从master恢复</li>
-<li>master 宕机且硬盘数据为损坏：重启后数据自动恢复且和从库一致。</li>
-<li>master 宕机且数据损坏：删除损坏数据，使用slave1的数据恢复，保证数据一致。</li>
-<li>master 和slave 1 同时宕机：slave2 保证读正常，业务不影响，利用slave2 数据备份恢复master，启动slave 即可</li>
-<li>三台全宕机：服务挂掉，从hadoop获取数据恢复服务。</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-2-性能评估"><a href="#3-2-性能评估" class="headerlink" title="3.2 性能评估"></a>3.2 性能评估</h2><p>压测数据，参见方案选择，完全hold住。</p>
-<h1 id="四、问题思考"><a href="#四、问题思考" class="headerlink" title="四、问题思考"></a>四、问题思考</h1><h2 id="4-1-内存清理策略"><a href="#4-1-内存清理策略" class="headerlink" title="4.1 内存清理策略"></a>4.1 内存清理策略</h2><p>暂时采用：<br>noeviction -&gt; 谁也不删，直接在写操作时返回错误。<br>之后采用：<br>volatile-lru -&gt; 根据LRU算法删除带有过期时间的key。 最少使用算法删除。<br>如果达到内存限制，手工清理，通过监控脚本监控内存情况</p>
-<h2 id="4-2-伸缩性和单节点问题"><a href="#4-2-伸缩性和单节点问题" class="headerlink" title="4.2 伸缩性和单节点问题"></a>4.2 伸缩性和单节点问题</h2><p>扩展slave可以直接扩展，扩展master需要master之间数据同步，暂时是个瓶颈。对于主读业务的需求，暂时问题不大；写需求的话，暂时的想法是代码转写的方式。</p>
-<h2 id="4-3-采用redis-sentinal-监听"><a href="#4-3-采用redis-sentinal-监听" class="headerlink" title="4.3 采用redis sentinal 监听"></a>4.3 采用redis sentinal 监听</h2><p>默认不错的监听，尝试了下效果不错，还在调研中，配置conf即可，完成后可以查看监听的情况<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:port&gt; INFO Sentinel</div><div class="line"><span class="meta"># Sentinel</span></div><div class="line"><span class="symbol">sentinel_masters:</span><span class="number">1</span></div><div class="line"><span class="symbol">sentinel_tilt:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_running_scripts:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_scripts_queue_length:</span><span class="number">0</span></div><div class="line"><span class="symbol">sentinel_simulate_failure_flags:</span><span class="number">0</span></div><div class="line"><span class="symbol">master0:</span>name=redis115,status=ok,address=ip:port,slaves=<span class="number">2</span>,sentinels=<span class="number">1</span></div></pre></td></tr></table></figure></p>
-<h1 id="五：常用代码"><a href="#五：常用代码" class="headerlink" title="五：常用代码"></a>五：常用代码</h1><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 强制杀死redis，模仿宕机</span></div><div class="line">ps aux |grep redis |awk <span class="string">'&#123;print $2&#125;'</span>|xargs kill <span class="number">-9</span></div><div class="line"><span class="meta"># 优化模拟宕机 【根据Dual-X-raY提示-_-】</span></div><div class="line">redis&gt; DEBUG SEGFAULT</div><div class="line"></div><div class="line"><span class="meta"># 重启，指定conf</span></div><div class="line">/home/work/xxx/bin/redis-server /home/work/xxx/etc/redis.conf</div><div class="line"></div><div class="line"><span class="meta"># 压测，具体参数可以参考benchmark</span></div><div class="line">[cuihuan@cuihuan bin]$  ./redis-benchmark -h <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>  -p 端口 -a 密码  -c <span class="number">1000</span> -n <span class="number">10000000</span>  -d <span class="number">1024</span> -r <span class="number">100000</span> -t <span class="keyword">set</span>,<span class="keyword">get</span>,incr,del</div></pre></td></tr></table></figure>
-<p>【转载请注明：<a href="http://cuihuan.net/2017/02/05/redis3/">【redis学习三】简单高可用redis架构实践</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+背景：支撑线上千万级别的天级查询请求，要求高可用。
+
+一、方案调研1.1 redis版本选择redis当前主流版本是redis 2.x 和 redis 3.x，3.0对集群支持比较不错，官方解释如下：
+
+Redis是一个开源、基于C语言、基于内存亦可持久化的高性能NoSQL数据库，同时，它还提供了
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/05/redis3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -651,9 +543,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/20/charactor/" itemprop="url">php爬虫：知乎用户数据爬取和分析</a></h1>
+                <a class="post-title-link" href="/2017/01/20/charactor/" itemprop="url">php爬虫：知乎用户数据爬取和分析</a></h2>
         
 
         <div class="post-meta">
@@ -665,7 +557,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T17:21:35+08:00">
                 2017-01-20
               </time>
             
@@ -678,6 +570,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/01/20/charactor/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2017/01/20/charactor/" class="cy_cmt_count" data-xid="2017/01/20/charactor/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -702,59 +605,18 @@
       
         
           
-            <blockquote>
-<p>背景说明：小拽利用php的curl写的爬虫，实验性的爬取了知乎5w用户的基本信息；同时，针对爬取的数据，进行了简单的分析呈现。<a href="http://cuihuan.net:1015/demo_file/zhihu_spider/demo.html">demo 地址</a></p>
-</blockquote>
-<p>php的spider代码和用户dashboard的展现代码，整理后上传github，在个人博客和公众号更新代码库，程序仅供娱乐和学习交流；如果有侵犯知乎相关权益，请尽快联系本人删除。</p>
-<h2 id="无图无真相"><a href="#无图无真相" class="headerlink" title="无图无真相"></a>无图无真相</h2><p>移动端分析数据截图</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/01/wise_web_spider.png"><img src="http://cuihuan.net/wp-content/uploads/2016/01/wise_web_spider.png" alt="wise_web_spider"></a></p>
-<p>pc端分析数据截图</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/01/web_spider.png"><img src="http://cuihuan.net/wp-content/uploads/2016/01/web_spider-629x1024.png" alt="web_spider"></a></p>
-<p>整个爬取，分析，展现过程大概分如下几步，小拽将分别介绍</p>
-<ul>
-<li>curl爬取知乎网页数据</li>
-<li>正则分析知乎网页数据</li>
-<li>数据数据入库和程序部署</li>
-<li>数据分析和呈现</li>
-</ul>
-<h2 id="curl爬取网页数据"><a href="#curl爬取网页数据" class="headerlink" title="curl爬取网页数据"></a>curl爬取网页数据</h2><p>PHP的curl扩展是PHP支持的，允许你与各种服务器使用各种类型的协议进行连接和通信的库。是一个非常便捷的抓取网页的工具，同时，支持多线程扩展。</p>
-<p>本程序抓取的是知乎对外提供用户访问的个人信息页面<a href="https://www.zhihu.com/people/xxx,抓取过程需要携带用户cookie才能获取页面。直接上码" target="_blank" rel="external">https://www.zhihu.com/people/xxx,抓取过程需要携带用户cookie才能获取页面。直接上码</a></p>
-<ul>
-<li><p>获取页面cookie</p>
-  <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 登录知乎，打开个人中心，打开控制台，获取cookie</div><div class="line">document.cookie</div><div class="line"><span class="string">"_za=67254197-3wwb8d-43f6-94f0-fb0e2d521c31; _ga=GA1.2.2142818188.1433767929; q_c1=78ee1604225d47d08cddd8142a08288b23|1452172601000|1452172601000; _xsrf=15f0639cbe6fb607560c075269064393; cap_id="</span>N2QwMTExNGQ0YTY2NGVddlMGIyNmQ4NjdjOTU0YTM5MmQ=|<span class="string">1453444256</span>|<span class="string">49fdc6b43dc51f702b7d6575451e228f56cdaf5d"; __utmt=1; unlock_ticket="QUJDTWpmM0lsZdd2dYQUFBQVlRSlZUVTNVb1ZaNDVoQXJlblVmWGJ0WGwyaHlDdVdscXdZU1VRPT0=</span>|<span class="string">1453444421</span>|<span class="string">c47a2afde1ff334d416bafb1cc267b41014c9d5f"; __utma=51854390.21428dd18188.1433767929.1453187421.1453444257.3; __utmb=51854390.14.8.1453444425011; __utmc=51854390; __utmz=51854390.1452846679.1.dd1.utmcsr=google</span>|<span class="string">utmccn=(organic)</span>|<span class="string">utmcmd=organic</span>|<span class="string">utmctr=(not%20provided); __utmv=51854390.100-1</span>|<span class="string">2=registration_date=20150823=1^dd3=entry_date=20150823=1"</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>抓取个人中心页面<br>通过curl，携带cookie，先抓取本人中心页面</p>
-  <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 通过用户名抓取个人中心页面并存储</div><div class="line"> * </div><div class="line"> * <span class="doctag">@param</span> $username str :用户名 flag</div><div class="line"> * <span class="doctag">@return</span> boolean      :成功与否标志</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">spiderUser</span><span class="params">($username)</span></span></div><div class="line">&#123;</div><div class="line">    $cookie = <span class="string">"xxxx"</span> ;</div><div class="line">    $url_info = <span class="string">'http://www.zhihu.com/people/'</span> . $username; <span class="comment">//此处cui-xiao-zhuai代表用户ID,可以直接看url获取本人id</span></div><div class="line">    $ch = curl_init($url_info); <span class="comment">//初始化会话</span></div><div class="line">    curl_setopt($ch, CURLOPT_HEADER, <span class="number">0</span>);</div><div class="line">    curl_setopt($ch, CURLOPT_COOKIE, $cookie);  <span class="comment">//设置请求COOKIE</span></div><div class="line">    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER[<span class="string">'HTTP_USER_AGENT'</span>]);</div><div class="line">    curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);  <span class="comment">//将curl_exec()获取的信息以文件流的形式返回，而不是直接输出。</span></div><div class="line">    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, <span class="number">1</span>);</div><div class="line">    $result = curl_exec($ch);</div><div class="line"></div><div class="line">     file_put_contents(<span class="string">'/home/work/zxdata_ch/php/zhihu_spider/file/'</span>.$username.<span class="string">'.html'</span>,$result);</div><div class="line">     <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="正则分析网页数据"><a href="#正则分析网页数据" class="headerlink" title="正则分析网页数据"></a>正则分析网页数据</h2><h3 id="分析新链接，进一步爬取"><a href="#分析新链接，进一步爬取" class="headerlink" title="分析新链接，进一步爬取"></a>分析新链接，进一步爬取</h3><p>对于抓取过来的网页进行存储，<code>要想进行进一步的爬取，页面必须包含有可用于进一步爬取用户的链接</code>。通过对知乎页面分析发现：在个人中心页面中有关注人和部分点赞人和被关注人。<br>如下所示<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 抓取的html页面中发现了新的用户，可用于爬虫</span></div><div class="line">&lt;a <span class="keyword">class</span>=<span class="string">"zm-item-link-avatar avatar-link"</span> href=<span class="string">"/people/new-user"</span> data-tip=<span class="string">"p$t$new-user"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>ok，这样子就可以通过自己-》关注人-》关注人的关注人-》。。。进行不断爬取。接下来就是通过正则匹配提取该信息</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匹配到抓取页面的所有用户</span></div><div class="line">preg_match_all(<span class="string">'/\/people\/([\w-]+)\"/i'</span>, $str, $match_arr);</div><div class="line"></div><div class="line"><span class="comment">// 去重合并入新的用户数组,用户进一步抓取</span></div><div class="line"><span class="keyword">self</span>::$newUserArr = array_unique(array_merge($match_arr[<span class="number">1</span>], <span class="keyword">self</span>::$newUserArr));</div></pre></td></tr></table></figure>
-<p>到此，整个爬虫过程就可以顺利进行了。<br>如果需要大量的抓取数据，可以研究下<code>curl_multi</code>和<code>pcntl</code>进行多线程的快速抓取，此处不做赘述。</p>
-<h3 id="分析用户数据，提供分析"><a href="#分析用户数据，提供分析" class="headerlink" title="分析用户数据，提供分析"></a>分析用户数据，提供分析</h3><p>通过正则可以进一步匹配出更多的该用户数据，直接上码。<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 获取用户头像</span></div><div class="line">preg_match('/&lt;img.+src=\<span class="string">"?([^\s]+\.(jpg|gif|bmp|bnp|png))\"</span>?.+&gt;/i', <span class="variable">$str</span>, <span class="variable">$match_img</span>);</div><div class="line"><span class="variable">$img_url</span> = <span class="variable">$match_img</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配用户名：</span></div><div class="line"><span class="comment">// &lt;span class="name"&gt;崔小拽&lt;/span&gt;</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?name\"</span>?&gt;([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+).+span&gt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_name</span>);</div><div class="line"><span class="variable">$user_name</span> = <span class="variable">$match_name</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配用户简介</span></div><div class="line"><span class="comment">// class bio span 中文</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?bio\"</span>?.+\&gt;([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+).+span&gt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_title</span>);</div><div class="line"><span class="variable">$user_title</span> = <span class="variable">$match_title</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配性别</span></div><div class="line"><span class="comment">//&lt;input type="radio" name="gender" value="1" checked="checked" class="male"/&gt; 男&amp;nbsp;&amp;nbsp;</span></div><div class="line"><span class="comment">// gender value1 ;结束 中文</span></div><div class="line">preg_match('/&lt;<span class="keyword">input</span>.+name=\<span class="string">"?gender\"</span>?.+value=\<span class="string">"?1\"</span>?.+([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+).+\;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_sex</span>);</div><div class="line"><span class="variable">$user_sex</span> = <span class="variable">$match_sex</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配地区</span></div><div class="line"><span class="comment">//&lt;span class="location item" title="北京"&gt;</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?location.+\"</span>?.+\<span class="string">"([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+)\"</span>&gt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_city</span>);</div><div class="line"><span class="variable">$user_city</span> = <span class="variable">$match_city</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配工作</span></div><div class="line"><span class="comment">//&lt;span class="employment item" title="人见人骂的公司"&gt;人见人骂的公司&lt;/span&gt;</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?employment.+\"</span>?.+\<span class="string">"([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+)\"</span>&gt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_employment</span>);</div><div class="line"><span class="variable">$user_employ</span> = <span class="variable">$match_employment</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配职位</span></div><div class="line"><span class="comment">// &lt;span class="position item" title="程序猿"&gt;&lt;a href="/topic/19590046" title="程序猿" class="topic-link" data-token="19590046" data-topicid="13253"&gt;程序猿&lt;/a&gt;&lt;/span&gt;</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?position.+\"</span>?.+\<span class="string">"([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+).+\"</span>&gt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_position</span>);</div><div class="line"><span class="variable">$user_position</span> = <span class="variable">$match_position</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 匹配学历</span></div><div class="line"><span class="comment">// &lt;span class="education item" title="研究僧"&gt;研究僧&lt;/span&gt;</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?education.+\"</span>?.+\<span class="string">"([\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+)\"</span>&gt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_education</span>);</div><div class="line"><span class="variable">$user_education</span> = <span class="variable">$match_education</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 工作情况</span></div><div class="line"><span class="comment">// &lt;span class="education-extra item" title='挨踢'&gt;挨踢&lt;/span&gt;</span></div><div class="line">preg_match('/&lt;span.+<span class="keyword">class</span>=\<span class="string">"?education-extra.+\"</span>?.+&gt;([\x&#123;4e00&#125;-</div><div class="line">\x&#123;9fa5&#125;]+)&lt;/<span class="keyword">u</span>', <span class="variable">$str</span>, <span class="variable">$match_education_extra</span>);</div><div class="line"><span class="variable">$user_education_extra</span> = <span class="variable">$match_education_extra</span>[1];</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 匹配关注话题数量</span></div><div class="line"><span class="comment">// class="zg-link-litblue"&gt;&lt;strong&gt;41 个话题&lt;/strong&gt;&lt;/a&gt;</span></div><div class="line">preg_match('/<span class="keyword">class</span>=\<span class="string">"?zg-link-litblue\"</span>?&gt;&lt;strong&gt;(\<span class="keyword">d</span>+)\s.+strong&gt;/i', <span class="variable">$str</span>, <span class="variable">$match_topic</span>);</div><div class="line"><span class="variable">$user_topic</span> = <span class="variable">$match_topic</span>[1];</div><div class="line"></div><div class="line"><span class="comment">// 关注人数</span></div><div class="line"><span class="comment">// &lt;span class="zg-gray-normal"&gt;关注了</span></div><div class="line">preg_match_all('/&lt;strong&gt;(\<span class="keyword">d</span>+)&lt;.+&lt;<span class="keyword">label</span>&gt;/i', <span class="variable">$str</span>, <span class="variable">$match_care</span>);</div><div class="line"><span class="variable">$user_care</span> = <span class="variable">$match_care</span>[1][0];</div><div class="line"><span class="variable">$user_be_careed</span> = <span class="variable">$match_care</span>[1][1];</div><div class="line"></div><div class="line"><span class="comment">// 历史浏览量</span></div><div class="line"><span class="comment">// &lt;span class="zg-gray-normal"&gt;个人主页被 &lt;strong&gt;17&lt;/strong&gt; 人浏览&lt;/span&gt;</span></div><div class="line">preg_match('/<span class="keyword">class</span>=\<span class="string">"?zg-gray-normal\"</span>?.+&gt;(\<span class="keyword">d</span>+)&lt;.+span&gt;/i', <span class="variable">$str</span>, <span class="variable">$match_browse</span>);</div><div class="line"><span class="variable">$user_browse</span> = <span class="variable">$match_browse</span>[1];</div></pre></td></tr></table></figure></p>
-<h2 id="数据入库和程序优化"><a href="#数据入库和程序优化" class="headerlink" title="数据入库和程序优化"></a>数据入库和程序优化</h2><p>在抓取的过程中，有条件的话，一定要通过redis入库，确实能提升抓取和入库效率。没有条件的话只能通过sql优化。这里来几发心德。</p>
-<ul>
-<li>数据库表设计索引一定要慎重。在spider爬取的过程中，建议出了用户名，左右字段都不要索引，包括主键都不要，<code>尽可能的提高入库效率</code>，试想5000w的数据，每次添加一个，建立索引需要多少消耗。等抓取完毕，需要分析数据时，批量建立索引。</li>
-<li><p>数据入库和更新操作，一定要批量。 mysql 官方给出的增删改的建议和速度：<a href="http://dev.mysql.com/doc/refman/5.7/en/insert-speed.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.7/en/insert-speed.html</a></p>
-  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 官方的最优批量插入</div><div class="line">INSERT INTO yourtable VALUES (<span class="number">1</span>,<span class="number">2</span>), (<span class="number">5</span>,<span class="number">5</span>), ...;</div></pre></td></tr></table></figure>
-</li>
-<li><p>部署操作。程序在抓取过程中，有可能会出现异常挂掉，为了保证高效稳定，尽可能的写一个定时脚本。每隔一段时间干掉，重新跑，这样即使异常挂掉也不会浪费太多宝贵时间，毕竟，time is money。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line"><span class="comment"># 干掉</span></div><div class="line">ps aux |grep spider |awk <span class="string">'&#123;print $2&#125;'</span>|xargs <span class="built_in">kill</span> -9</div><div class="line">sleep 5s</div><div class="line"></div><div class="line"><span class="comment"># 重新跑</span></div><div class="line">nohup /home/cuixiaohuan/lamp/php5/bin/php /home/cuixiaohuan/php/zhihu_spider/spider_new.php &amp;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="数据分析呈现"><a href="#数据分析呈现" class="headerlink" title="数据分析呈现"></a>数据分析呈现</h2><p>数据的呈现主要使用echarts 3.0，感觉对于移动端兼容还不错。兼容移动端的页面响应式布局主要通过几个简单的css控制，代码如下</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*兼容性和响应式div设计*/</span></div><div class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">480px</span>) &#123;</div><div class="line">    <span class="selector-tag">body</span>&#123;</div><div class="line">        <span class="attribute">padding</span>: <span class="number">0</span> ;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.adapt-div</span> &#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">100%</span> ;</div><div class="line">        <span class="attribute">float</span>: none ;</div><div class="line">        <span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="selector-class">.half-div</span> &#123;</div><div class="line">        <span class="attribute">height</span>: <span class="number">350px</span> ;</div><div class="line">        <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="selector-class">.whole-div</span> &#123;</div><div class="line">        <span class="attribute">height</span>: <span class="number">350px</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;!<span class="selector-tag">--</span> 整块完整布局，半块在<span class="selector-tag">web</span>端采用<span class="selector-tag">float</span>的方式，移动端去掉<span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-class">.half-div</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">48%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">430px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">1%</span>;</div><div class="line">    <span class="attribute">float</span>: left</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.whole-div</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">98%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">430px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">1%</span>;</div><div class="line">    <span class="attribute">float</span>: left</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="不足和待学习"><a href="#不足和待学习" class="headerlink" title="不足和待学习"></a>不足和待学习</h2><p>整个过程中涉及php,shell,js,css,html,正则等语言和部署等基础知识，但还有诸多需要改进完善，小拽特此记录，后续补充例：</p>
-<ul>
-<li>php 采用multicul进行多线程。</li>
-<li>正则匹配进一步优化</li>
-<li>部署和抓取过程采用redis提升存储</li>
-<li>移动端布局的兼容性提升</li>
-<li>js的模块化和sass书写css。</li>
-</ul>
-<p>【转载请注明：<a href="http://cuihuan.net/article/php%E7%88%AC%E8%99%AB%EF%BC%9A%E7%9F%A5%E4%B9%8E%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E5%92%8C%E5%88%86%E6%9E%90.html">php爬虫：知乎用户数据爬取和分析</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+背景说明：小拽利用php的curl写的爬虫，实验性的爬取了知乎5w用户的基本信息；同时，针对爬取的数据，进行了简单的分析呈现。demo 地址
+
+php的spider代码和用户dashboard的展现代码，整理后上传github，在个人博客和公众号更新代码库，程序仅供娱乐和学习交流；如果有侵犯知乎相
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/20/charactor/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -813,9 +675,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/" itemprop="url">【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合</a></h1>
+                <a class="post-title-link" href="/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/" itemprop="url">【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合</a></h2>
         
 
         <div class="post-meta">
@@ -827,7 +689,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T17:21:35+08:00">
                 2017-01-20
               </time>
             
@@ -840,6 +702,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/" class="cy_cmt_count" data-xid="2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -864,33 +737,18 @@
       
         
           
-            <blockquote>
-<p>需求背景：有个<code>调用统计日志存储和统计需求</code>，要求存储到mysql中；存储数据高峰能达到日均千万，瓶颈在于<code>直接入库并发太高，可能会把mysql干垮</code>。</p>
-</blockquote>
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>思考：应用网站架构的衍化过程中，应用最新的框架和工具技术固然是最优选择；但是，如果能在<code>现有的框架的基础上提出简单可依赖的解决方案</code>，未尝不是一种提升自我的尝试。</p>
-<p>解决：</p>
-<ul>
-<li>问题一：要求日志最好入库；但是，直接入库mysql确实扛不住，批量入库没有问题，done。【批量入库和直接入库性能差异<a href="http://tech.uc.cn/?p=634" target="_blank" rel="external">参考文章</a>】</li>
-<li>问题二：批量入库就需要有高并发的消息队列，决定采用redis list 仿真实现，而且方便回滚。</li>
-<li>问题三：日志量毕竟大，保存最近30条足矣，决定用php写个离线统计和清理脚本。</li>
-</ul>
-<p>done，下面是小拽的简单实现过程</p>
-<h2 id="一：设计数据库表和存储"><a href="#一：设计数据库表和存储" class="headerlink" title="一：设计数据库表和存储"></a>一：设计数据库表和存储</h2><ul>
-<li>考虑到log系统对数据库的性能更多一些，稳定性和安全性没有那么高，<code>存储引擎自然是只支持select insert 没有索引的archive</code>。如果确实有update需求，也可以采用myISAM。</li>
-<li>考虑到log是实时记录的所有数据，数量可能巨大，<code>主键采用bigint，自增即可</code>。</li>
-<li>考虑到log系统<code>以写为主，统计采用离线计算，字段均不要出现索引</code>，因为一方面可能会影响插入数据效率，另外读时候会造成死锁，影响写数据。</li>
-</ul>
-<h2 id="二：redis存储数据形成消息队列"><a href="#二：redis存储数据形成消息队列" class="headerlink" title="二：redis存储数据形成消息队列"></a>二：redis存储数据形成消息队列</h2><p>由于高并发，尽可能简单，直接，上代码。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"><span class="comment"><span class="markdown">/<span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span></span></span></div><div class="line"><span class="bullet">*</span></div><div class="line"><span class="bullet">* </span>获取到的调用日志，存入redis的队列中.</div><div class="line"><span class="bullet">* </span>$Id$</div><div class="line"><span class="bullet">*</span></div><div class="line"><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="emphasis">***</span>*/</div><div class="line"></div><div class="line"><span class="comment"><span class="markdown">/**</span></span></div><div class="line"><span class="bullet">* </span>@file saveLog.php</div><div class="line"><span class="bullet">* </span>@date 2015/11/06 20:47:13</div><div class="line"><span class="bullet">* </span>@author:cuihuan</div><div class="line"><span class="bullet">* </span>@version $Revision$</div><div class="line"><span class="bullet">* </span>@brief</div><div class="line"><span class="bullet">*</span></div><div class="line">**/</div><div class="line"></div><div class="line"><span class="comment">// 获取info</span></div><div class="line">$interface_info = $_GET[<span class="string">'info'</span>];</div><div class="line"></div><div class="line"><span class="comment">// 存入redis队列</span></div><div class="line">$redis = <span class="keyword">new</span> Redis();</div><div class="line">$redis-&gt;connect(<span class="string">'xx'</span>, <span class="number">6379</span>);</div><div class="line">$redis-&gt;auth(<span class="string">"password"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 加上时间戳存入队列</span></div><div class="line">$now_time = date(<span class="string">"Y-m-d H:i:s"</span>);</div><div class="line">$redis-&gt;rPush(<span class="string">"call_log"</span>, $interface_info . <span class="string">"%"</span> . $now_time);</div><div class="line">$redis-&gt;close();</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/* vim: set ts=4 sw=4 sts=4 tw=100 */</span></div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="三：数据定时批量入库。"><a href="#三：数据定时批量入库。" class="headerlink" title="三：数据定时批量入库。"></a>三：数据定时批量入库。</h2><p>定时读取redis消息队列里面的数据，批量入库。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 获取redis消息队列中的脚本，拼接sql，批量入库。</div><div class="line"> * <span class="doctag">@update</span> 2015-11-07 添加失败消息队列回滚机制 </div><div class="line"> *</div><div class="line"> * <span class="doctag">@Author</span>:cuihuan</div><div class="line"> * 2015-11-06</div><div class="line"> * */</div><div class="line"></div><div class="line"><span class="comment">// init redis</span></div><div class="line">$redis_xx = <span class="keyword">new</span> Redis();</div><div class="line">$redis_xx-&gt;connect(<span class="string">'ip'</span>, port);</div><div class="line">$redis_xx-&gt;auth(<span class="string">"password"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 获取现有消息队列的长度</span></div><div class="line">$count = <span class="number">0</span>;</div><div class="line">$max = $redis_xx-&gt;lLen(<span class="string">"call_log"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 获取消息队列的内容，拼接sql</span></div><div class="line">$insert_sql = <span class="string">"insert into fb_call_log (`interface_name`, `createtime`) values "</span>;</div><div class="line"></div><div class="line"><span class="comment">// 回滚数组</span></div><div class="line">$roll_back_arr = <span class="keyword">array</span>();</div><div class="line"></div><div class="line"><span class="keyword">while</span> ($count &lt; $max) &#123;</div><div class="line">    $log_info = $redis_cq01-&gt;lPop(<span class="string">"call_log"</span>);</div><div class="line">    $roll_back_arr = $log_info;</div><div class="line">    <span class="keyword">if</span> ($log_info == <span class="string">'nil'</span> || !<span class="keyword">isset</span>($log_info)) &#123;</div><div class="line">        $insert_sql .= <span class="string">";"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 切割出时间和info</span></div><div class="line">    $log_info_arr = explode(<span class="string">"%"</span>,$log_info);</div><div class="line">    $insert_sql .= <span class="string">" ('"</span>.$log_info_arr[<span class="number">0</span>].<span class="string">"','"</span>.$log_info_arr[<span class="number">1</span>].<span class="string">"'),"</span>;</div><div class="line">    $count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 判定存在数据，批量入库</span></div><div class="line"><span class="keyword">if</span> ($count != <span class="number">0</span>) &#123;</div><div class="line">    $link_2004 = mysql_connect(<span class="string">'ip:port'</span>, <span class="string">'user'</span>, <span class="string">'password'</span>);</div><div class="line">    <span class="keyword">if</span> (!$link_2004) &#123;</div><div class="line">        <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    $crowd_db = mysql_select_db(<span class="string">'fb_log'</span>, $link_2004);</div><div class="line">    $insert_sql = rtrim($insert_sql,<span class="string">","</span>).<span class="string">";"</span>;</div><div class="line">    $res = mysql_query($insert_sql);</div><div class="line"></div><div class="line">    <span class="comment">// 输出入库log和入库结果;</span></div><div class="line">    <span class="keyword">echo</span> date(<span class="string">"Y-m-d H:i:s"</span>).<span class="string">"insert "</span>.$count.<span class="string">" log info result:"</span>;</div><div class="line">    <span class="keyword">echo</span> json_encode($res);</div><div class="line">    <span class="keyword">echo</span> <span class="string">"&lt;/br&gt;\n"</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 数据库插入失败回滚</span></div><div class="line">    <span class="keyword">if</span>(!$res)&#123;</div><div class="line">       <span class="keyword">foreach</span>($roll_back_arr <span class="keyword">as</span> $k)&#123;</div><div class="line">           $redis_xx-&gt;rPush(<span class="string">"call_log"</span>, $k);</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="comment">// 释放连接</span></div><div class="line">    mysql_free_result($res);</div><div class="line">    mysql_close($link_2004);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 释放redis</span></div><div class="line">$redis_cq01-&gt;close();</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="四：离线天级统计和清理数据脚本"><a href="#四：离线天级统计和清理数据脚本" class="headerlink" title="四：离线天级统计和清理数据脚本"></a>四：离线天级统计和清理数据脚本</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">?php</div><div class="line"><span class="comment">/**</span></div><div class="line">* static log ：每天离线统计代码日志和删除五天前的日志</div><div class="line">*</div><div class="line">* <span class="doctag">@Author</span>:cuihuan</div><div class="line">* 2015-11-06</div><div class="line">* */</div><div class="line"></div><div class="line"><span class="comment">// 离线统计</span></div><div class="line">$link_2004 = mysql_connect(<span class="string">'ip:port'</span>, <span class="string">'user'</span>, <span class="string">'pwd'</span>);</div><div class="line"><span class="keyword">if</span> (!$link_2004) &#123;</div><div class="line">    <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">&#125;</div><div class="line"></div><div class="line">$crowd_db = mysql_select_db(<span class="string">'fb_log'</span>, $link_2004);</div><div class="line"></div><div class="line"><span class="comment">// 统计昨天的数据</span></div><div class="line">$day_time = date(<span class="string">"Y-m-d"</span>, time() - <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">1</span>);</div><div class="line">$static_sql = <span class="string">"get sql"</span>;</div><div class="line"></div><div class="line">$res = mysql_query($static_sql, $link_2004);</div><div class="line"></div><div class="line"><span class="comment">// 获取结果入库略</span></div><div class="line"></div><div class="line"><span class="comment">// 清理15天之前的数据</span></div><div class="line">$before_15_day = date(<span class="string">"Y-m-d"</span>, time() - <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">15</span>);</div><div class="line">$delete_sql = <span class="string">"delete from xxx where createtime &lt; '"</span> . $before_15_day . <span class="string">"'"</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $res = mysql_query($delete_sql);</div><div class="line">&#125;<span class="keyword">catch</span>(<span class="keyword">Exception</span> $e)&#123;</div><div class="line">    <span class="keyword">echo</span> json_encode($e).<span class="string">"\n"</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"delete result:"</span>.json_encode($res).<span class="string">"\n"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">mysql_close($link_2004);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="五：代码部署"><a href="#五：代码部署" class="headerlink" title="五：代码部署"></a>五：代码部署</h2><p>主要是部署，批量入库脚本的调用和天级统计脚本，crontab例行运行。<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 批量入库脚本</span></div><div class="line">*<span class="regexp">/2 * * * * /</span>home<span class="regexp">/cuihuan/</span>xxx<span class="regexp">/lamp/</span>php5<span class="regexp">/bin/</span>php <span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>batchLog.php &gt;&gt;<span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>batchlog.log</div><div class="line"></div><div class="line"><span class="comment"># 天级统计脚本</span></div><div class="line"><span class="number">0</span> <span class="number">5</span> * * * <span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>php5<span class="regexp">/bin/</span>php <span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>staticLog.php &gt;&gt;<span class="regexp">/home/</span>cuihuan<span class="regexp">/xxx/</span>staticLog.log</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>总结：相对于其他复杂的方式处理高并发，这个解决方案简单有效：通过redis缓存抗压，mysql批量入库解决数据库瓶颈，离线计算解决统计数据，通过定期清理保证库的大小。</p>
-</blockquote>
-<p>【转载请注明：<a href="http://cuihuan.net/article/%E3%80%90%E9%AB%98%E5%B9%B6%E5%8F%91%E7%AE%80%E5%8D%95%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91redis%E7%BC%93%E5%AD%98%E9%98%9F%E5%88%97-mysql-%E6%89%B9%E9%87%8F%E5%85%A5%E5%BA%93-php%E7%A6%BB.html">高并发简单解决方案</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+需求背景：有个调用统计日志存储和统计需求，要求存储到mysql中；存储数据高峰能达到日均千万，瓶颈在于直接入库并发太高，可能会把mysql干垮。
+
+问题分析思考：应用网站架构的衍化过程中，应用最新的框架和工具技术固然是最优选择；但是，如果能在现有的框架的基础上提出简单可依赖的解决方案，未尝不是一种
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -949,9 +807,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/" itemprop="url">【page-monitor 前端自动化 下篇】 实践应用</a></h1>
+                <a class="post-title-link" href="/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/" itemprop="url">【page-monitor 前端自动化 下篇】 实践应用</a></h2>
         
 
         <div class="post-meta">
@@ -963,7 +821,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-20T17:21:35+08:00">
                 2016-08-20
               </time>
             
@@ -976,6 +834,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/" class="cy_cmt_count" data-xid="2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1000,19 +869,18 @@
       
         
           
-            <blockquote>
-<p>通过page-diff的初步调研和源码分析，确定page-diff在前端自动化测试和监控方面做一些事情。本篇主要介绍下，page-diff在具体的实践中的一些应用</p>
-</blockquote>
-<h2 id="核心dom校验"><a href="#核心dom校验" class="headerlink" title="核心dom校验"></a>核心dom校验</h2><p>前端的快速发展，造成前端dom无论结构还是命名经常变化，每次都尽可能关注每个dom的变化，不可能也没有必要。但是<code>核心dom是相对变化较小，但是比较重要</code>，因此可以利用page-monitor 修改关注结构中的核心代码，核心架构的变化。</p>
-<p>上图是未修改的代码，下图是忽略footer内部变化<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/F1AE4B80-CFC6-4A94-AB24-86297DCDD759.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/F1AE4B80-CFC6-4A94-AB24-86297DCDD759.png" alt="F1AE4B80-CFC6-4A94-AB24-86297DCDD759"></a><br><a href="http://cuihuan.net/wp-content/uploads/2016/08/0141A2E8-9B5E-439A-9FEC-1147ACF982DF.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/0141A2E8-9B5E-439A-9FEC-1147ACF982DF.png" alt="0141A2E8-9B5E-439A-9FEC-1147ACF982DF"></a><br>实践中可以针对自身的核心dom进行进一步优化</p>
-<h2 id="局部dom校验"><a href="#局部dom校验" class="headerlink" title="局部dom校验"></a>局部dom校验</h2><p>项目中，往往在某一时期特别关心某些板块，或者某些板块相对容易出错；因此，可以利用page-monitor 进行局部dom的细节diff。中篇中对只针对header进行对比diff做了详细介绍，此处不赘述，上图。</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/08/FDF6B258-5A69-47D1-B1FF-4EB38D7B8677.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/FDF6B258-5A69-47D1-B1FF-4EB38D7B8677.png" alt="FDF6B258-5A69-47D1-B1FF-4EB38D7B8677"></a></p>
-<h2 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h2><p>由于获取了完整了dom的json，因此可以通过相关阈值的设定或者算法的优化；来对比结果，进行更加优化的分级预警和分析；作者一般对非核心预警超过15%变化会做出预警，超过更高阈值会进一步的预警等等。<br>贴一个dom 细节图<br> <a href="http://cuihuan.net/wp-content/uploads/2016/08/dom.jpg"><img src="http://cuihuan.net/wp-content/uploads/2016/08/dom.jpg" alt="dom"></a></p>
-<h2 id="其他分析"><a href="#其他分析" class="headerlink" title="其他分析"></a>其他分析</h2><p>小拽通过上面的举例，旨在抛砖引玉，希望page-monitor或者dom结构在前端的自动化测试有一定应用，提升产品质量。</p>
-<p>最终再上一张流程图，便于分析<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/page-diff-%E6%B5%81%E7%A8%8B%E5%9B%BE.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/page-diff-%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="page-diff 流程图"></a></p>
-<p>相关文章：<br><a href="http://cuihuan.net/?p=485">【page-monitor 前端自动化 上篇】 初步调研</a><br><a href="http://cuihuan.net/?p=493">【page-monitor 前端自动化 中篇】 源码分析</a></p>
-
           
+通过page-diff的初步调研和源码分析，确定page-diff在前端自动化测试和监控方面做一些事情。本篇主要介绍下，page-diff在具体的实践中的一些应用
+
+核心dom校验前端的快速发展，造成前端dom无论结构还是命名经常变化，每次都尽可能关注每个dom的变化，不可能也没有必要。但是核心d
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1071,9 +939,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/20/fsck修复linux文件损坏/" itemprop="url">fsck修复linux文件损坏</a></h1>
+                <a class="post-title-link" href="/2016/08/20/fsck修复linux文件损坏/" itemprop="url">fsck修复linux文件损坏</a></h2>
         
 
         <div class="post-meta">
@@ -1085,7 +953,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-20T17:21:35+08:00">
                 2016-08-20
               </time>
             
@@ -1098,6 +966,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/08/20/fsck修复linux文件损坏/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/08/20/fsck修复linux文件损坏/" class="cy_cmt_count" data-xid="2016/08/20/fsck修复linux文件损坏/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1122,27 +1001,20 @@
       
         
           
-            <blockquote>
-<p><code>数据一定要备份，最好多机备份，代码一定要ci</code>。</p>
-</blockquote>
-<h2 id="背景和损失"><a href="#背景和损失" class="headerlink" title="背景和损失"></a>背景和损失</h2><p>背景：机房事故，突然关机，硬盘年老失修，造成很多文件不可用。如图</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/08/11441496-18D2-4576-8F5F-C2BF7B84F458.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/11441496-18D2-4576-8F5F-C2BF7B84F458-300x84.png" alt="11441496-18D2-4576-8F5F-C2BF7B84F458"></a></p>
-<p>面临损失：<br>作为一名靠谱程序员，数据库单机多机备份，程序版本控制这些都是有的【如果没有，一定要加上】；但这次有一个重要影响，就是git中commit之后，没有push的文件全损坏了，损坏了，坏了，了。。。。</p>
-<h2 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h2><p>op给出的说法是网络波动，造成机房故障，机器重启。但从结果看，文件系统乱掉了，而且乱掉的文件主要分两类：</p>
-<ul>
-<li>1：当时正在写入和操作的文件。例如运行的脚本，正在写的文件，samba建立网络映射的文件，git实时文件。</li>
-<li>2：内存里的数据，例如memcache里的数据等等</li>
-</ul>
-<h2 id="处理：fsck修复。"><a href="#处理：fsck修复。" class="headerlink" title="处理：fsck修复。"></a>处理：fsck修复。</h2><p>###1：查看硬盘挂载：<br>df查看下磁盘的挂载位置。</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/08/F60D7BE5-D89D-4C74-9927-6EE2DD6157DF.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/F60D7BE5-D89D-4C74-9927-6EE2DD6157DF-300x51.png" alt="F60D7BE5-D89D-4C74-9927-6EE2DD6157DF"></a></p>
-<h3 id="2：操作挂起：不挂起可能会出现数据恢复中断。"><a href="#2：操作挂起：不挂起可能会出现数据恢复中断。" class="headerlink" title="2：操作挂起：不挂起可能会出现数据恢复中断。"></a>2：操作挂起：<code>不挂起可能会出现数据恢复中断</code>。</h3><p>报错：直接挂起会出现 dev is busy，如下图<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/59423A93-F29C-4A30-AB92-17408E9E6556.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/59423A93-F29C-4A30-AB92-17408E9E6556-300x40.png" alt="59423A93-F29C-4A30-AB92-17408E9E6556"></a><br>用：umout -l /dev/sda3<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/3C64703C-CF4A-47EB-9FE3-91CD7542E8FA.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/3C64703C-CF4A-47EB-9FE3-91CD7542E8FA-300x46.png" alt="3C64703C-CF4A-47EB-9FE3-91CD7542E8FA"></a><br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#umount -l &lt;挂载点|设备&gt;</span></div><div class="line"></div><div class="line">此命令将会断开设备并关闭打开该设备的全部句柄。</div><div class="line">通常，您可以使用 eject &lt;挂载点<span class="string">|设备&gt;命令弹出碟片</span></div></pre></td></tr></table></figure></p>
-<h3 id="3：fsck-扫盘"><a href="#3：fsck-扫盘" class="headerlink" title="3：fsck 扫盘"></a>3：fsck 扫盘</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fsck -f <span class="regexp">/dev/</span>sda3</div></pre></td></tr></table></figure>
-<p>注意ext2 还会进行e2fsck 再扫一遍，此为正常操作<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/C9347418-9644-4841-9A2C-3FFB1157E5D8.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/C9347418-9644-4841-9A2C-3FFB1157E5D8-300x83.png" alt="C9347418-9644-4841-9A2C-3FFB1157E5D8"></a></p>
-<h3 id="4：扫盘结束后，挂载驱动盘"><a href="#4：扫盘结束后，挂载驱动盘" class="headerlink" title="4：扫盘结束后，挂载驱动盘"></a>4：扫盘结束后，挂载驱动盘</h3><h3 id="5：寻找和恢复文件"><a href="#5：寻找和恢复文件" class="headerlink" title="5：寻找和恢复文件"></a>5：寻找和恢复文件</h3><p>把.git 内的文件全部整理，导出，一个一个寻找自己需要的文件，找到了久违的文件。<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/3B14EF17-2C86-411F-BF16-4FFC15637C4D.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/3B14EF17-2C86-411F-BF16-4FFC15637C4D-300x109.png" alt="3B14EF17-2C86-411F-BF16-4FFC15637C4D"></a></p>
-<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>一句话：<code>代码一定要ci，数据一定要容灾</code></p>
-<p>【转载请注明：<a href="http://cuihuan.net/?p=474">fsck修复linux文件损坏</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+数据一定要备份，最好多机备份，代码一定要ci。
+
+背景和损失背景：机房事故，突然关机，硬盘年老失修，造成很多文件不可用。如图
+
+面临损失：作为一名靠谱程序员，数据库单机多机备份，程序版本控制这些都是有的【如果没有，一定要加上】；但这次有一个重要影响，就是git中commit之后，没有push的文件
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/20/fsck修复linux文件损坏/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1201,9 +1073,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/08/phpredis单例模式封装/" itemprop="url">phpredis单例模式封装</a></h1>
+                <a class="post-title-link" href="/2016/08/08/phpredis单例模式封装/" itemprop="url">phpredis单例模式封装</a></h2>
         
 
         <div class="post-meta">
@@ -1215,7 +1087,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-08T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-08T17:21:35+08:00">
                 2016-08-08
               </time>
             
@@ -1228,6 +1100,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/08/08/phpredis单例模式封装/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/08/08/phpredis单例模式封装/" class="cy_cmt_count" data-xid="2016/08/08/phpredis单例模式封装/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1252,13 +1135,18 @@
       
         
           
-            <blockquote>
-<p>通过单例模式实现对phpredis连接的封装。</p>
-</blockquote>
-<h2 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Class RedisConnManager</div><div class="line"> *</div><div class="line"> * 单例模式对redis实例的操作的进一步封装</div><div class="line"> * 主要目的：防止过多的连接，一个页面只能存在一个声明连接</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> ：cuihuan</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RedisManager</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> $redisInstance;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 私有化构造函数</div><div class="line">     * 原因：防止外界调用构造新的对象</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span>&#123;&#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 获取redis连接的唯一出口</div><div class="line">     */</div><div class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getRedisConn</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(!<span class="keyword">self</span>::$redisInstance <span class="keyword">instanceof</span> <span class="keyword">self</span>)&#123;</div><div class="line">            <span class="keyword">self</span>::$redisInstance = <span class="keyword">new</span> <span class="keyword">self</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        <span class="comment">// 获取当前单例</span></div><div class="line">        $temp = <span class="keyword">self</span>::$redisInstance;</div><div class="line">        <span class="comment">// 调用私有化方法</span></div><div class="line">        <span class="keyword">return</span> $temp-&gt;connRedis();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 连接ocean 上的redis的私有化方法</div><div class="line">     * <span class="doctag">@return</span> Redis</div><div class="line">     */</div><div class="line">    <span class="keyword">static</span> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">connRedis</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            $redis_ocean = <span class="keyword">new</span> Redis();</div><div class="line">            $redis_ocean-&gt;connect(G::$conf[<span class="string">'redis-host'</span>], G::$conf[<span class="string">'redis-port'</span>]);</div><div class="line">            $redis_ocean-&gt;auth(G::$conf[<span class="string">'redis-pass'</span>]);</div><div class="line"></div><div class="line">        &#125;<span class="keyword">catch</span> (<span class="keyword">Exception</span> $e)&#123;</div><div class="line">            <span class="keyword">echo</span> $e-&gt;getMessage().<span class="string">'&lt;br/&gt;'</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> $redis_ocean;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>【转载请注明：<a href="http://cuihuan.net/?p=527">phpredis单例模式封装</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+通过单例模式实现对phpredis连接的封装。
+
+直接上代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;?php/** * Class 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/08/phpredis单例模式封装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1317,9 +1205,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/07/page_monitor_second/" itemprop="url">【page-monitor 前端自动化 中篇】 源码分析</a></h1>
+                <a class="post-title-link" href="/2016/08/07/page_monitor_second/" itemprop="url">【page-monitor 前端自动化 中篇】 源码分析</a></h2>
         
 
         <div class="post-meta">
@@ -1331,7 +1219,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-07T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-07T17:21:35+08:00">
                 2016-08-07
               </time>
             
@@ -1344,6 +1232,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/08/07/page_monitor_second/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/08/07/page_monitor_second/" class="cy_cmt_count" data-xid="2016/08/07/page_monitor_second/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1368,38 +1267,19 @@
       
         
           
-            <blockquote>
-<p>上篇中初探了page-monitor的一些功能和在前端自动化测试方面的可行性，本篇主要分析下page-monitor的实现方式和源码。</p>
-</blockquote>
-<h2 id="mode-module简介"><a href="#mode-module简介" class="headerlink" title="mode-module简介"></a>mode-module简介</h2><p>page-monitor的存在形式是node-module，依赖于node安装和运行，简单必须了解下node_modules</p>
-<p><code>node-module</code>是nodejs的模块，符合commonJs规范【具体规范可以参考：<a href="http://javascript.ruanyifeng.com/nodejs/module.html】" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/module.html】</a></p>
-<p>简单描述commonJs规范<br>1：文件即模块，作用域在文件内，不允许重复，不会污染。<br>2：<code>加载依赖出现顺序</code>，加载即运行，重复则利用缓存。</p>
-<blockquote>
-<p>多说一句：这是amd 和cmd(commonJs)的本质区别，由于node多运行于服务端，加载比较快，因此比较适合cmd 规范，浏览器端的模块则更适用于cmd的规范，个人理解没有广义的好坏之分</p>
-</blockquote>
-<p>方便看源码，贴出node_modole简单构成和主要函数module<br>node内部提供一了一个modle的构造函数，所有的模块都继承和依赖于此模块。<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/F4D61DF9-40DC-4DB6-A98E-6BED90406D5A.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/F4D61DF9-40DC-4DB6-A98E-6BED90406D5A.png" alt="F4D61DF9-40DC-4DB6-A98E-6BED90406D5A"></a><br>node module的引入 require命令。<br>其他加载规则，路径设定不在此赘述。</p>
-<h2 id="page-monitor文件分析"><a href="#page-monitor文件分析" class="headerlink" title="page-monitor文件分析"></a>page-monitor文件分析</h2><p>完整文件目录：<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/B39BD2DF-7652-49F9-A8FB-F2F691688169.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/B39BD2DF-7652-49F9-A8FB-F2F691688169.png" alt="B39BD2DF-7652-49F9-A8FB-F2F691688169"></a>  </p>
-<p>运行生成目录分析：<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/dom-%E5%88%86%E5%B8%83.jpg"><img src="http://cuihuan.net/wp-content/uploads/2016/08/dom-%E5%88%86%E5%B8%83.jpg" alt="B39BD2DF-7652-49F9-A8FB-F2F691688169"></a>  </p>
-<p>出了node_module及其组件代码，可用和值的分析的文件index.js 和phantomjs 下面的五个文件。</p>
-<h2 id="分析index-js"><a href="#分析index-js" class="headerlink" title="分析index.js"></a>分析index.js</h2><p>代码中无非变量声明和引用，关键一句引用phantom的命令乳腺<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 多线程启动位置</span></div><div class="line">var <span class="function"><span class="keyword">proc</span> = <span class="title">spawn</span><span class="params">(binPath, arr)</span></span>;</div></pre></td></tr></table></figure></p>
-<p>通过上面多线程的启动node可以达到高效和并发处理测试任务的需求，分析下arr的内容如下图：看到了 窗口大小，延时，ua，存放地址，diff变量等等</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/08/E9B3CEA8-6B99-45CC-A52A-B8E9D90B267C.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/E9B3CEA8-6B99-45CC-A52A-B8E9D90B267C.png" alt="E9B3CEA8-6B99-45CC-A52A-B8E9D90B267C"></a></p>
-<h2 id="分析获取DOM源码"><a href="#分析获取DOM源码" class="headerlink" title="分析获取DOM源码"></a>分析获取DOM源码</h2><p>获取dom的源码主要利用了web api evalution，evalution传入一个xpath的参数，返回一个xpath的对象，之后通过遍历和xpath规则生成规则化的json。<br>贴一个evalution api<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/90E47065-DF3B-470E-996C-1900A2EAF354.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/90E47065-DF3B-470E-996C-1900A2EAF354.png" alt="90E47065-DF3B-470E-996C-1900A2EAF354"></a> </p>
-<p>为了看懂page-monitor的代码举个栗子<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># evalution example:</div><div class="line"></div><div class="line"><span class="keyword">var</span> headings = <span class="built_in">document</span>.evaluate(<span class="string">"/html/body//h2"</span>, <span class="built_in">document</span>, <span class="keyword">null</span>, XPathResult.ANY_TYPE, <span class="keyword">null</span>);</div><div class="line"><span class="comment">/* 检索body中所有H2的所欲.</span></div><div class="line"> * 结果存在于一个node的迭代器中 */</div><div class="line"><span class="keyword">var</span> thisHeading = headings.iterateNext();</div><div class="line"><span class="keyword">var</span> alertText = <span class="string">"Level 2 headings in this document are:\n"</span>;</div><div class="line"><span class="keyword">while</span> (thisHeading) &#123;</div><div class="line">  alertText += thisHeading.textContent + <span class="string">"\n"</span>;</div><div class="line">  thisHeading = headings.iterateNext();</div><div class="line">&#125;</div><div class="line">alert(alertText); <span class="comment">// Alerts the text of all h2 elements</span></div></pre></td></tr></table></figure></p>
-<p>通过上面函数和page-monitor中walk.js函数最后一行，可以看出page-monitor 保存了四个元素：属性[name,id等等]，节点类型，位置[后期渲染]，样式的md5加密[样式仅需要对比是否变化即可]<br>具体内容和dom结构如下：<br> <a href="http://cuihuan.net/wp-content/uploads/2016/08/30FA5132-7903-466A-B866-588311812C47.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/30FA5132-7903-466A-B866-588311812C47.png" alt="30FA5132-7903-466A-B866-588311812C47"></a><br>对应的具体dom结构<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/FBEE1F3F-7A81-4AF0-8E05-7E0BED5B5291.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/FBEE1F3F-7A81-4AF0-8E05-7E0BED5B5291.png" alt="FBEE1F3F-7A81-4AF0-8E05-7E0BED5B5291"></a> </p>
-<h2 id="diff-js-代码"><a href="#diff-js-代码" class="headerlink" title="diff.js 代码"></a>diff.js 代码</h2><p>diff代码主要两个作用</p>
-<ul>
-<li>1：获取差异</li>
-<li>2：渲染差异<br>其中对比的策略：</li>
-</ul>
-<p>历史完全每个对比现在：获取更新和删除的内容<br>现在完全每个对比历史：获取更新和新增的内容<br>具体可以参考代码</p>
-<h2 id="其他api和源码简单修改"><a href="#其他api和源码简单修改" class="headerlink" title="其他api和源码简单修改"></a>其他api和源码简单修改</h2><p>必须了解的web api 还有一个是querySeletor 也就是检索的api，参考地址<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector" target="_blank" rel="external">document.querySelector()</a><br>了解了这个api就可以做一件事情：<code>不对全局dom diff，只对特别关心的dom进行diff</code><br>实现方式：修改querySelector的根节点为Header<br>获取的dom结构如下：根节点为header<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/30FA5132-7903-466A-B866-588311812C47.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/30FA5132-7903-466A-B866-588311812C47.png" alt="30FA5132-7903-466A-B866-588311812C47"></a></p>
-<p>获取的页面截图如下：<br><a href="http://cuihuan.net/wp-content/uploads/2016/08/FDF6B258-5A69-47D1-B1FF-4EB38D7B8677.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/FDF6B258-5A69-47D1-B1FF-4EB38D7B8677.png" alt="FDF6B258-5A69-47D1-B1FF-4EB38D7B8677"></a></p>
-<h2 id="代码流程图"><a href="#代码流程图" class="headerlink" title="代码流程图"></a>代码流程图</h2><p> <a href="http://cuihuan.net/wp-content/uploads/2016/08/page-diff-流程图.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/page-diff-%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="page-diff 流程图"></a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本次在调研page-monitor的基础上，对page-monitor的源码实现进行分析；同时利用相关api修改，来只对核心页面进行获取优化。下一篇将会进一步思考page-monitor的应用。</p>
-<p>相关文章：<br><a href="http://cuihuan.net/?p=485">【page-monitor 前端自动化 上篇】 初步调研</a><br><a href="http://cuihuan.net/?p=508">【page-monitor 前端自动化 下篇】 实践应用</a></p>
-
           
+上篇中初探了page-monitor的一些功能和在前端自动化测试方面的可行性，本篇主要分析下page-monitor的实现方式和源码。
+
+mode-module简介page-monitor的存在形式是node-module，依赖于node安装和运行，简单必须了解下node_modules
+node
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/07/page_monitor_second/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1458,9 +1338,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /" itemprop="url">【page-monitor 前端自动化 上篇】初步调研</a></h1>
+                <a class="post-title-link" href="/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /" itemprop="url">【page-monitor 前端自动化 上篇】初步调研</a></h2>
         
 
         <div class="post-meta">
@@ -1472,7 +1352,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-07T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-07T17:21:35+08:00">
                 2016-08-07
               </time>
             
@@ -1485,6 +1365,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /" class="cy_cmt_count" data-xid="2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1509,31 +1400,18 @@
       
         
           
-            <blockquote>
-<p>前端自动化测试主要在于：<code>变化快，不稳定，兼容性复杂</code>；故而，想通过较低的成本维护较为通用的自动化case比较困难。本文旨在<code>通过page-monitor获取和分析dom结构，调研能否通过监控和分析核心dom，来进行前端自动化测试</code>。</p>
-</blockquote>
-<h2 id="一：page-monitor-介绍"><a href="#一：page-monitor-介绍" class="headerlink" title="一：page-monitor 介绍"></a>一：page-monitor 介绍</h2><p>page-monitor：通过xpath获取dom节点结构，之后可视化的渲染出页面的差异。<br>github地址：<a href="https://github.com/fouber/page-monitor" target="_blank" rel="external">https://github.com/fouber/page-monitor</a><br>基本原理：<code>利用xpath获取页面的dom结构，存储为结构化的json，对比两次的json之间的差异，利用phantom渲染页面和差异页面</code>。</p>
-<p>先上个初次试用的图</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/08/927EE33C-AD06-4EC3-9E5C-B8C3D2029AA3.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/927EE33C-AD06-4EC3-9E5C-B8C3D2029AA3-212x300.png" alt="927EE33C-AD06-4EC3-9E5C-B8C3D2029AA3"></a></p>
-<h2 id="二：初次试用"><a href="#二：初次试用" class="headerlink" title="二：初次试用"></a>二：初次试用</h2><h3 id="2-1-安装"><a href="#2-1-安装" class="headerlink" title="2.1 安装"></a>2.1 安装</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># page-monitor 依赖于 phantomjs</span></div><div class="line">npm <span class="keyword">install</span> phantomjs</div><div class="line">npm <span class="keyword">install</span> page-monitor</div></pre></td></tr></table></figure>
-<p>注意：phantomJs较大，如果比较慢 可以用brew安装，并且<code>page-monitor最多兼容phantom1.98</code><br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 调整phantom为1.98 版本</span></div><div class="line">MacBook-Pro:~ cuixiaohuan$ brew link phantomjs198</div><div class="line">Linking <span class="meta-keyword">/usr/</span>local/Cellar<span class="meta-keyword">/phantomjs198/</span><span class="number">1.9</span><span class="number">.8</span>... <span class="number">2</span> symlinks created</div><div class="line">MacBook-Pro:~ cuixiaohuan$ phantomjs -v</div><div class="line"><span class="number">1.9</span><span class="number">.8</span></div></pre></td></tr></table></figure></p>
-<p>2.2 初次运行：<br>写一个test.js 代码如下:<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> Monitor = <span class="built_in">require</span>(<span class="string">'page-monitor'</span>);</div><div class="line"></div><div class="line"><span class="built_in">var</span> <span class="built_in">url</span> = <span class="string">'http://www.baidu.com'</span>;</div><div class="line"><span class="built_in">var</span> monitor = <span class="keyword">new</span> Monitor(<span class="built_in">url</span>);</div><div class="line">monitor.capture(<span class="function"><span class="keyword">function</span>(<span class="params">code</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(monitor.log); <span class="comment">// from phantom</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'done, exit ['</span> + code + <span class="string">']'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>运行效果<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">MacBook-Pro:test cuixiaohuan$ node test.js</div><div class="line">&#123; debug:</div><div class="line">   [ <span class="string">'mode: 11'</span>,</div><div class="line">     <span class="string">'need diff'</span>,</div><div class="line">     <span class="string">'loading: http://www.baidu.com'</span>,</div><div class="line">     <span class="string">'page.viewportSize = &#123;"width":320,"height":568&#125;'</span>,</div><div class="line">     <span class="string">'page.settings.resourceTimeout = 20000'</span>,</div><div class="line">     <span class="string">'page.settings.userAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53"'</span>,</div><div class="line">     <span class="string">'loaded: http://www.baidu.com'</span>,</div><div class="line">     <span class="string">'delay before render: 0ms'</span>,</div><div class="line">     <span class="string">'walk tree'</span>,</div><div class="line">     <span class="string">'save capture [/Users/cuixiaohuan/Desktop/workspace/test/pagemonitor/test/www.baidu.com/Lw==/1461155680901]'</span>,</div><div class="line">     <span class="string">'screenshot [/Users/cuixiaohuan/Desktop/workspace/test/pagemonitor/test/www.baidu.com/Lw==/1461155680901/screenshot.jpg]'</span>,</div><div class="line">     <span class="string">'Unsafe JavaScript attempt to access frame with URL about:blank from frame with URL file:///Users/cuixiaohuan/Desktop/workspace/test/pagemonitor/test/node_modules/page-monitor/phantomjs/index.js. Domains, protocols and ports must match.'</span> ],</div><div class="line">  warning: [],</div><div class="line">  info: [],</div><div class="line">  error: [],</div><div class="line">  notice: [] &#125;</div><div class="line">done, <span class="keyword">exit</span> [<span class="number">0</span>]</div></pre></td></tr></table></figure></p>
-<h3 id="2-2-生成对比页面"><a href="#2-2-生成对比页面" class="headerlink" title="2.2 生成对比页面"></a>2.2 生成对比页面</h3><p> test.js code</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">monitor.diff(<span class="number">1408947323420</span>, <span class="number">1408947556898</span>, <span class="function"><span class="keyword">function</span>(<span class="params">code</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(monitor.log.info); <span class="comment">// diff result</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'[DONE] exit ['</span> + code + <span class="string">']'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>运行<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">MacBook-Pro:test cuixiaohuan$ <span class="keyword">node</span> <span class="title">test</span>.js</div><div class="line">[ '&#123;<span class="string">"diff"</span>:&#123;<span class="string">"left"</span>:<span class="string">"1461155680901"</span>,<span class="string">"right"</span>:<span class="string">"1461163758667"</span>,<span class="string">"screenshot"</span>:<span class="string">"/Users/cuixiaohuan/Desktop/workspace/test/pagemonitor/test/www.baidu.com/Lw==/diff/1461155680901-1461163758667.jpg"</span>,<span class="string">"count"</span>:&#123;<span class="string">"add"</span>:<span class="number">2</span>,<span class="string">"remove"</span>:<span class="number">2</span>,<span class="string">"style"</span>:<span class="number">0</span>,<span class="string">"text"</span>:<span class="number">9</span>&#125;&#125;&#125;' ]</div><div class="line">[DONE] exit [<span class="number">0</span>]</div></pre></td></tr></table></figure></p>
-<h3 id="2-3-对比页面效果如下图"><a href="#2-3-对比页面效果如下图" class="headerlink" title="2.3 对比页面效果如下图"></a>2.3 对比页面效果如下图</h3><p><a href="http://cuihuan.net/wp-content/uploads/2016/08/927EE33C-AD06-4EC3-9E5C-B8C3D2029AA3.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/927EE33C-AD06-4EC3-9E5C-B8C3D2029AA3-212x300.png" alt="927EE33C-AD06-4EC3-9E5C-B8C3D2029AA3"></a></p>
-<h3 id="2-4-目录初步分析"><a href="#2-4-目录初步分析" class="headerlink" title="2.4 目录初步分析"></a>2.4 目录初步分析</h3><p>通过目录和运行结果<br>1：每个时间利用phantom生成一张截图【保存现场】和一个dome的tree.json【对比dom】 【生成过程看下源码】<br>2：diff 调用tree.json 比较区中的区别【位置，内容生成和对比过程之后看下源码？】<br>3：利用当时保存的截图渲染生成的结果</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/08/F2838502-FF7E-4DC8-9C7F-01687F3DB3E9.png"><img src="http://cuihuan.net/wp-content/uploads/2016/08/F2838502-FF7E-4DC8-9C7F-01687F3DB3E9-300x151.png" alt="F2838502-FF7E-4DC8-9C7F-01687F3DB3E9"></a></p>
-<h2 id="三：dom-diff工具page-monitor-调研初步结论："><a href="#三：dom-diff工具page-monitor-调研初步结论：" class="headerlink" title="三：dom diff工具page monitor 调研初步结论："></a>三：dom diff工具page monitor 调研初步结论：</h2><ul>
-<li>1：dom的diff 是可行的。</li>
-<li>2：page monitor 现有主要功能：抽取不同时间段的页面做页面domdiff<br>使用过程中缺陷：<br>1：依赖太多，依赖node，依赖phantom，<br>2：接口太少，现在直接提供的就两个一个保存现场，一个diff。不方便dom定制和阈值定制。</li>
-</ul>
-<h2 id="四：应用价值思考和下一步"><a href="#四：应用价值思考和下一步" class="headerlink" title="四：应用价值思考和下一步"></a>四：应用价值思考和下一步</h2><p>如果能对dom树的处理更完善一些，应用价值还是挺高的，例如<code>核心dom的diff，局部dom的diff，时效性dom(例如：时间tag必须变化，不变化则为bug)的变更检验，兼容性dom的check等等</code></p>
-<p>下一步调研：<br>看下源码中，分析dom生成tree过程，对比tree过程，展现tree过程。</p>
-<p>相关文章：<br><a href="http://cuihuan.net/?p=493">【page-monitor 前端自动化 中篇】 源码分析</a><br><a href="http://cuihuan.net/?p=508">【page-monitor 前端自动化 下篇】 实践应用</a></p>
-
           
+前端自动化测试主要在于：变化快，不稳定，兼容性复杂；故而，想通过较低的成本维护较为通用的自动化case比较困难。本文旨在通过page-monitor获取和分析dom结构，调研能否通过监控和分析核心dom，来进行前端自动化测试。
+
+一：page-monitor 介绍page-monitor：通过xp
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1592,9 +1470,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/04/26/chrome_1/" itemprop="url">【chrome 插件一】开发一个简单chrome浏览器插件</a></h1>
+                <a class="post-title-link" href="/2016/04/26/chrome_1/" itemprop="url">【chrome 插件一】开发一个简单chrome浏览器插件</a></h2>
         
 
         <div class="post-meta">
@@ -1606,7 +1484,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-26T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-26T17:21:35+08:00">
                 2016-04-26
               </time>
             
@@ -1619,6 +1497,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/04/26/chrome_1/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/04/26/chrome_1/" class="cy_cmt_count" data-xid="2016/04/26/chrome_1/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1643,36 +1532,18 @@
       
         
           
-            <blockquote>
-<p>chrome 之所以越来越好用，很大一部分原因归功于功能丰富的插件；对于chrome忠实用户来说，了解和开发一款适合自己的chrome插件，确实是一件很cool的事情。</p>
-</blockquote>
-<h2 id="了解chrome-插件"><a href="#了解chrome-插件" class="headerlink" title="了解chrome 插件"></a>了解chrome 插件</h2><p>chrome 插件个人理解：<code>就是一个html + js +css + image的一个web应用</code>；不同于普通的web应用，<code>chrome插件除了兼容普通的js，json，h5等api，还可以调用一些浏览器级别的api，例如收藏夹，历史记录等。</code></p>
-<p>推荐两个网站了解和入门<br>谷歌官方API：<a href="https://developer.chrome.com/extensions/getstarted" target="_blank" rel="external">https://developer.chrome.com/extensions/getstarted</a><br>360的文档：<a href="http://open.chrome.360.cn/extension_dev/overview.html" target="_blank" rel="external">http://open.chrome.360.cn/extension_dev/overview.html</a></p>
-<h2 id="开始写第一个插件"><a href="#开始写第一个插件" class="headerlink" title="开始写第一个插件"></a>开始写第一个插件</h2><h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><p>一个简单的demo，文件目录如下<br><a href="http://cuihuan.net/wp-content/uploads/2016/04/7A980C32-7D7B-44F6-AC5D-C0CC02F79ACA.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/7A980C32-7D7B-44F6-AC5D-C0CC02F79ACA.png" alt="7A980C32-7D7B-44F6-AC5D-C0CC02F79ACA"></a><br>和普通的web文件没有什么区别，简单介绍下</p>
-<ul>
-<li>html:存放html页面</li>
-<li>js :存放js</li>
-<li>locales ：存放了一个多语言的兼容【可无】</li>
-<li>image ：放了两张图片【初期图标】</li>
-<li>manifest ：核心入口文件</li>
-</ul>
-<h3 id="写一个manifest"><a href="#写一个manifest" class="headerlink" title="写一个manifest"></a>写一个manifest</h3><p>api参考文档 :<a href="http://open.chrome.360.cn/extension_dev/manifest.html" target="_blank" rel="external">http://open.chrome.360.cn/extension_dev/manifest.html</a></p>
-<p>直接上代码：<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"hijack analyse plug"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">  <span class="string">"manifest_version"</span>: <span class="number">2</span>,</div><div class="line"></div><div class="line">  // 简单描述</div><div class="line">  <span class="string">"description"</span>: <span class="string">"chrome plug analyse and guard the http hijack"</span>,</div><div class="line">  <span class="string">"icons"</span>: &#123;</div><div class="line">    <span class="string">"16"</span>: <span class="string">"image/icon16.png"</span>,</div><div class="line">    <span class="string">"48"</span>: <span class="string">"image/icon48.png"</span></div><div class="line">  &#125;,</div><div class="line">  // 选择默认语言</div><div class="line">  <span class="string">"default_locale"</span>: <span class="string">"en"</span>,</div><div class="line"></div><div class="line">  // 浏览器小图表部分</div><div class="line">  <span class="string">"browser_action"</span>: &#123;</div><div class="line">    <span class="string">"default_title"</span>: <span class="string">"反劫持"</span>,</div><div class="line">    <span class="string">"default_icon"</span>: <span class="string">"image/icon16.png"</span>,</div><div class="line">    <span class="string">"default_popup"</span>: <span class="string">"html/test.html"</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  // 引入一个脚本</div><div class="line">  <span class="string">"content_scripts"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="string">"js"</span>: [<span class="string">"script/test.js"</span>],</div><div class="line">      // 在什么情况下使用该脚本</div><div class="line">      <span class="string">"matches"</span>: [</div><div class="line">        <span class="string">"http://*/*"</span>,</div><div class="line">        <span class="string">"https://*/*"</span></div><div class="line">      ],</div><div class="line">      // 什么情况下运行【文档加载开始】</div><div class="line">      <span class="string">"run_at"</span>: <span class="string">"document_start"</span></div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  // 应用协议页面</div><div class="line">  <span class="string">"permissions"</span>: [</div><div class="line">    <span class="string">"http://*/*"</span>,</div><div class="line">    <span class="string">"https://*/*"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>test.js 文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * @author: cuixiaohuan</div><div class="line"> * Date: 16/4/13</div><div class="line"> * Time: 下午8:41</div><div class="line"> */</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * just test for run by self</div><div class="line">     */</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'begin'</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<p>test.html 文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>test<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="运行插件"><a href="#运行插件" class="headerlink" title="运行插件"></a>运行插件</h3><p>chrome 中输入：chrome://extensions<br>选择加载已解压的插件-》选择文件根目录即可。<br>效果如下：</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/04/475BA7E7-29F3-48AF-9990-2B73FF1B4B56.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/475BA7E7-29F3-48AF-9990-2B73FF1B4B56.png" alt="生效插件"></a><br>一个基本的插件变完成了，勾选已启用，随便打开一个网页，会看到log中输出如下</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/04/50F1039A-71C0-463F-A60D-C95527985C7E.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/50F1039A-71C0-463F-A60D-C95527985C7E.png" alt="运行效果"></a></p>
-<p>点击页面上面的小图标如下图：<br><a href="http://cuihuan.net/wp-content/uploads/2016/04/25CF59DD-0666-4A6F-ACA3-683D1FEEA346.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/25CF59DD-0666-4A6F-ACA3-683D1FEEA346.png" alt="右侧展示"></a></p>
-<h2 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a>优化建议</h2><p>一个小的插件已经完成，但是还有更多的api和有趣的事情可以去做。下面是360文档中给出一些优化建议，共勉。</p>
-<ul>
-<li>确认 Browser actions 只使用在大多数网站都有功能需求的场景下。确认 Browser actions 没有使用在少数网页才有功能的场景， 此场景请使用page actions。</li>
-<li>确认你的图标尺寸尽量占满19x19的像素空间。 Browser action 的图标应该看起来比page action的图标更大更重。</li>
-<li>尽量使用alpha通道并且柔滑你的图标边缘，因为很多用户使用themes，你的图标应该在在各种背景下都表现不错。不要不停的闪动你的图标，这很惹人反感。</li>
-</ul>
-<p>【转载请注明：<a href="http://cuihuan.net/article/postmessage%E5%A4%84%E7%90%86iframe-%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98.html">【chrome 插件一】开发一个简单chrome浏览器插件</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+chrome 之所以越来越好用，很大一部分原因归功于功能丰富的插件；对于chrome忠实用户来说，了解和开发一款适合自己的chrome插件，确实是一件很cool的事情。
+
+了解chrome 插件chrome 插件个人理解：就是一个html + js +css + image的一个web应用；不同于
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/26/chrome_1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1746,14 +1617,14 @@
                alt="崔小拽" />
           <p class="site-author-name" itemprop="name">崔小拽</p>
            
-              <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives/">
+              <a href="/">
                 <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -1808,7 +1679,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1817,19 +1688,28 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -1904,6 +1784,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
@@ -1947,6 +1834,10 @@
 
 
 
+
+  
+    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4yCrLQ"></script>
+  
 
 
 

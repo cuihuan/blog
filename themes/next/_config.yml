@@ -76,8 +76,8 @@ menu_icons:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
-#scheme: Pisces
+#scheme: Mist
+scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -194,6 +194,18 @@ sidebar:
   #display: hide
   #display: remove
 
+  # Sidebar offset from top menubar in pixels.
+  offset: 12
+  offset_float: 0
+
+  # Back to top in sidebar
+  b2t: false
+
+  # Scroll percent label in b2t button
+  scrollpercent: false
+
+
+
 
 # Blogrolls
 #links_title: Links
@@ -254,6 +266,11 @@ wechat_subscriber:
    qcode: /wp_content/base/qrcode.jpg
    description: 欢迎您扫一扫上面的微信公众号，订阅小拽的博客！
 
+
+post_copyright:
+  enable: true
+  license: CC BY-NC-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 # Code Highlight theme
 # Available value:
 #    normal | night | night eighties | night blue | night bright
@@ -493,4 +510,4 @@ js: js
 images: images
 
 # Theme version
-version: 5.1.0
+version: 5.1.1

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,32 +40,6 @@
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -122,13 +96,13 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: '小拽'
     },
     algolia: {
       applicationID: '',
@@ -154,6 +128,16 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -189,7 +173,7 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
       </a>
     </div>
       
-        <p class="site-subtitle">subtitle</p>
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
       
   </div>
 
@@ -219,22 +203,42 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-old">
+          <a href="http://cuihuan.net:8222" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
+            
+            旧版
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            demo
           </a>
         </li>
       
@@ -284,7 +288,7 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
 
         
         
-          <h1 class="post-title" itemprop="name headline">jsonp + php 跨域实例</h1>
+          <h2 class="post-title" itemprop="name headline">jsonp + php 跨域实例</h2>
         
 
         <div class="post-meta">
@@ -296,7 +300,7 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-02T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-02T17:21:35+08:00">
                 2015-12-02
               </time>
             
@@ -310,11 +314,27 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
 
           
             
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2015/12/02/jsonp + php 跨域实例/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2015/12/02/jsonp + php 跨域实例/" itemprop="commentsCount"></span>
+                </a>
+              
+            
           
 
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -351,6 +371,11 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
     <div>
       
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
 
       
     </div>
@@ -365,6 +390,21 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>Post author:</strong>
+      崔小拽
+    </li>
+    <li class="post-copyright-link">
+      <strong>Post link:</strong>
+      <a href="http://cuihuan.net/2015/12/02/jsonp + php 跨域实例/" title="jsonp + php 跨域实例">http://cuihuan.net/2015/12/02/jsonp + php 跨域实例/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright Notice: </strong>
+      All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+    </li>
+  </ul>
+
 
       
     </div>
@@ -430,6 +470,8 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
           
   <div class="comments" id="comments">
     
+      <div id="SOHUCS"></div>
+    
   </div>
 
 
@@ -468,14 +510,14 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
                alt="崔小拽" />
           <p class="site-author-name" itemprop="name">崔小拽</p>
            
-              <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives/">
+              <a href="/">
                 <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -546,7 +588,7 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -555,19 +597,28 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -642,6 +693,13 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
@@ -685,6 +743,21 @@ jsonp的js端调用主要功能：通过jsonp向服务器，调用相应接口�
 
 
 
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt4yCrLQ';
+      var conf = 'b93e7476cddc60d0ecda38b6929b86e6';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
 
 
 

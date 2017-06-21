@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,32 +43,6 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
@@ -77,7 +51,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="靠谱崔小拽, 崔小拽" />
 
 
 
@@ -109,13 +83,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: '小拽'
     },
     algolia: {
       applicationID: '',
@@ -141,6 +115,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -178,7 +162,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">subtitle</p>
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
       
   </div>
 
@@ -208,22 +192,42 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-old">
+          <a href="http://cuihuan.net:8222" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
+            
+            旧版
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            demo
           </a>
         </li>
       
@@ -273,9 +277,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/04/20/chrome_2/" itemprop="url">【chrome 插件二】添加菜单和添加消息提醒</a></h1>
+                <a class="post-title-link" href="/2016/04/20/chrome_2/" itemprop="url">【chrome 插件二】添加菜单和添加消息提醒</a></h2>
         
 
         <div class="post-meta">
@@ -287,7 +291,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-20T17:21:35+08:00">
                 2016-04-20
               </time>
             
@@ -300,6 +304,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/04/20/chrome_2/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/04/20/chrome_2/" class="cy_cmt_count" data-xid="2016/04/20/chrome_2/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -324,32 +339,18 @@
       
         
           
-            <blockquote>
-<p>上一篇中简单的接触了chrome插件，并且草草的制作一个chrome 插件（-_-只中看，不能用）；这次主要学习，<code>browse action api制作菜单制作和调用系统提醒</code>。</p>
-</blockquote>
-<h2 id="browse-action"><a href="#browse-action" class="headerlink" title="browse action"></a>browse action</h2><p>browse action 包括四部分：一个图标，一个tooltip，一个badge和一个pophtml<br>先上代码和效果<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">"browser_action"</span>: &#123;</div><div class="line">   <span class="string">"default_title"</span>: <span class="string">"反劫持工具"</span>,</div><div class="line">   <span class="string">"default_icon"</span>: <span class="string">"image/icon_19.png"</span>,</div><div class="line">   <span class="string">"default_popup"</span>: <span class="string">"html/popup.html"</span></div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/04/9E62D576-098D-4B4A-8C4C-1E845D23E094.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/9E62D576-098D-4B4A-8C4C-1E845D23E094.png" alt="red"></a></p>
-<h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3><p>图标优化：<code>最好是19px，这样基本占满</code>，可以直接使用图标也可以用h5 canvas element，同时，<code>图片一定要是背景透明的</code>。</p>
-<p>ps处理后页面效果如下：</p>
-<p><a href="http://cuihuan.net/wp-content/uploads/2016/04/C84884DF-38DB-4402-8BEF-181795A51FAF.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/C84884DF-38DB-4402-8BEF-181795A51FAF.png" alt="title"></a></p>
-<h3 id="tooltip"><a href="#tooltip" class="headerlink" title="tooltip"></a>tooltip</h3><p>直接设置default_title 效果是鼠标经过显示标题效果</p>
-<h3 id="badge"><a href="#badge" class="headerlink" title="badge:"></a>badge:</h3><p>这个相当于设置图片文字和背景色：提供了两个方法：设置badge文字和颜色可以分别使用setBadgeText()andsetBadgeBackgroundColor()。</p>
-<h3 id="pophtml：创建菜单"><a href="#pophtml：创建菜单" class="headerlink" title="pophtml：创建菜单"></a>pophtml：创建菜单</h3><p>上码：<code>能用代码说话的，不用文字</code><br>js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * @author: cuixiaohuan</div><div class="line"> * Date: 16/4/19</div><div class="line"> * Time: 下午9:41</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 点击菜单的事件</div><div class="line"> *</div><div class="line"> * @param e</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">click</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    chrome.tabs.executeScript(<span class="literal">null</span>,</div><div class="line">        &#123;</div><div class="line">            <span class="comment">// 更改背景色</span></div><div class="line">            code: <span class="string">"document.body.style.backgroundColor='"</span> + e.target.id + <span class="string">"'"</span></div><div class="line">        &#125;</div><div class="line">    );</div><div class="line"></div><div class="line">    <span class="built_in">window</span>.close();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 页面加载完成后，监听事件</div><div class="line"> */</div><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">'div'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; divs.length; i++) &#123;</div><div class="line">        divs[i].addEventListener(<span class="string">'click'</span>, click);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>html<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Set Page Color Popup<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">body</span> &#123;</div><div class="line">            <span class="attribute">overflow</span>: hidden;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0px</span>;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">0px</span>;</div><div class="line">            <span class="attribute">background</span>: white;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span> &#123;</div><div class="line">            <span class="attribute">margin-top</span>: <span class="number">0px</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-tag">div</span> &#123;</div><div class="line">            <span class="attribute">cursor</span>: pointer;</div><div class="line">            <span class="attribute">text-align</span>: center;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">1px</span> <span class="number">3px</span>;</div><div class="line">            <span class="attribute">font-family</span>: sans-serif;</div><div class="line">            <span class="attribute">font-size</span>: <span class="number">0.8em</span>;</div><div class="line">            <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">            <span class="attribute">margin-top</span>: <span class="number">1px</span>;</div><div class="line">            <span class="attribute">background</span>: <span class="number">#cccccc</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">            <span class="attribute">background</span>: <span class="number">#aaaaaa</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-id">#red</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line">            <span class="attribute">color</span>: red;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-id">#blue</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</div><div class="line">            <span class="attribute">color</span>: blue;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-id">#green</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid green;</div><div class="line">            <span class="attribute">color</span>: green;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-id">#yellow</span> &#123;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid yellow;</div><div class="line">            <span class="attribute">color</span>: yellow;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../script/changeBackgroud.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"red"</span>&gt;</span>红色小拽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"blue"</span>&gt;</span>绿色小拽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"green"</span>&gt;</span>蓝色小拽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"yellow"</span>&gt;</span>换色小拽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>效果图<br><a href="http://cuihuan.net/wp-content/uploads/2016/04/4AA82B9D-759E-434E-A0B5-8F2F0376F16D.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/4AA82B9D-759E-434E-A0B5-8F2F0376F16D.png" alt="blue"></a></p>
-<h2 id="调用系统提醒"><a href="#调用系统提醒" class="headerlink" title="调用系统提醒"></a>调用系统提醒</h2><p>notification api 官方文档:<a href="https://developer.chrome.com/extensions/notifications" target="_blank" rel="external">https://developer.chrome.com/extensions/notifications</a><br>注意</p>
-<ul>
-<li>chrome32 之前的预警接口不太一样，文档中已经说明。</li>
-<li>使用预警一定要加上权限统一<figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"permissions"</span>: [</div><div class="line">  <span class="string">"notifications"</span></div><div class="line">],</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>调用系统提醒代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 用户授权</span></div><div class="line"><span class="keyword">if</span> (Notification.permission == <span class="string">"granted"</span>) &#123;</div><div class="line">    Notification.requestPermission();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 调用系统提醒</div><div class="line"> * </div><div class="line"> * 第一次进入页面需要授权，之后弹出提醒</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">notifyMe</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!Notification) &#123;</div><div class="line">        alert(<span class="string">'Desktop notifications not available in your browser. Try Chromium.'</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (Notification.permission !== <span class="string">"granted"</span>)&#123;</div><div class="line">        Notification.requestPermission();</div><div class="line"></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">var</span> notification = <span class="keyword">new</span> Notification(<span class="string">'小拽提醒'</span>, &#123;</div><div class="line">            <span class="attr">icon</span>: <span class="string">'http://cuihuan.net/wp-content/themes/quench-master/images/cuihuan_title.jpg'</span>,</div><div class="line">            <span class="attr">body</span>: <span class="string">"别点击，点击跳转'靠谱崔小拽'"</span></div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        notification.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">window</span>.open(<span class="string">"http://cuihuan.net"</span>);</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>初次进去提醒，授权<br><a href="http://cuihuan.net/wp-content/uploads/2016/04/8971AFAA-2C56-4A2F-962B-BBA0A8E0E7A4.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/8971AFAA-2C56-4A2F-962B-BBA0A8E0E7A4.png" alt="notify_allow"></a></p>
-<p>提醒效果如右上角所示<br><a href="http://cuihuan.net/wp-content/uploads/2016/04/04A3AF6D-69FA-423A-8447-F5984F32762C.png"><img src="http://cuihuan.net/wp-content/uploads/2016/04/04A3AF6D-69FA-423A-8447-F5984F32762C.png" alt="notify"></a></p>
-<p>通过菜单和提醒，我们基本就可以完成一个简单的闹钟提醒，每隔30分钟提醒，码农扭扭脑袋，伸伸懒腰，小心肩周炎-_-!</p>
-<p>【转载请注明：<a href="http://cuihuan.net/?p=454">【chrome 插件二】弹出菜单和系统提醒学习</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+上一篇中简单的接触了chrome插件，并且草草的制作一个chrome 插件（-_-只中看，不能用）；这次主要学习，browse action api制作菜单制作和调用系统提醒。
+
+browse actionbrowse action 包括四部分：一个图标，一个tooltip，一个badge和一个p
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/20/chrome_2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -408,9 +409,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/04/20/中型存储架构实践探索/" itemprop="url">中型存储架构实践探索</a></h1>
+                <a class="post-title-link" href="/2016/04/20/中型存储架构实践探索/" itemprop="url">中型存储架构实践探索</a></h2>
         
 
         <div class="post-meta">
@@ -422,7 +423,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-20T17:21:35+08:00">
                 2016-04-20
               </time>
             
@@ -435,6 +436,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/04/20/中型存储架构实践探索/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/04/20/中型存储架构实践探索/" class="cy_cmt_count" data-xid="2016/04/20/中型存储架构实践探索/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -459,57 +471,21 @@
       
         
           
-            <blockquote>
-<p>最近一直在做平台优化：对于中小型的站点，<code>如何在资源有限的情况下，实现一个稳定，高效，靠谱的存储方案</code>。下图是小拽个人在时间过程使用的一个存储架构。拿出来分享交流一下，也希望得到指点改进！</p>
-</blockquote>
-<h2 id="先上图"><a href="#先上图" class="headerlink" title="先上图"></a>先上图</h2><p><a href="http://cuihuan.net/wp-content/uploads/2016/02/存储架构.jpg"><img src="http://cuihuan.net/wp-content/uploads/2016/02/存储架构-1024x996.jpg" alt="存储架构"></a></p>
-<h2 id="首先说思想"><a href="#首先说思想" class="headerlink" title="首先说思想"></a>首先说思想</h2><p>思想就一个：<code>权衡资源和业务需求</code></p>
-<blockquote>
-<p>简单解释一下：对于架构的理解，个人非常认同百度架构师tandai的一句话：<code>架构设计本质上是折衷的艺术</code>，如果你有足够量的高速存储和高性能的机器，那么完全可以用足量的cache，足量的离线计算存储，来提升时效性；同样，如果你的机器不足，资源不足，那么就可以通过可接受的时间消耗来节省存储空间。</p>
-</blockquote>
-<p>架构基本组件：</p>
-<ul>
-<li>至少两台机器。【保证物理容灾】</li>
-<li>三个mysql实例。【一主两从，一主不解释；一从主要用于实时备份，暂叫容灾从；一从用于离线计算，cache更新，非时效性的数据抓取，暂叫api从；】</li>
-<li>ameoba 负责负载均衡和读写分离【暂时用着还可以】。</li>
-<li>redis 负责缓存，预取，存储cache。【可以换成其他】</li>
-<li>一个抗高并发的中间件。【暂时只加了antispam组件，高并发并未处理，可能系统负载比较平均，qpd几千万 ，但是并未出现qps峰值】</li>
-</ul>
-<p>that’s all，这些组件对于一个操作尚可的程序员来说，部署一整套肯定不会特别麻烦，相对于其他大型的架构来说，略显简单；但是，麻雀虽小，五脏俱全，下面从架构必备的几个角度分析一下。</p>
-<h2 id="安全性（Failover）"><a href="#安全性（Failover）" class="headerlink" title="安全性（Failover）"></a>安全性（Failover）</h2><p>任何一个架构首要考虑的是数据安全和容灾。小拽的架构中做了哪些</p>
-<h3 id="数据库全量备份"><a href="#数据库全量备份" class="headerlink" title="数据库全量备份"></a>数据库全量备份</h3><p>这个就是一个简单脚本，对api从库在闲暇时间【晚上3-4点】进行全量导出备份，同时scp到另一台机器一份。（之所以对api库，是因为api库主要负责非失效性的查询和计算）</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># crontab 每天3点进行数据库备份 (cuihuan)</span></div><div class="line"><span class="comment"># 0 3 * * * sh /home/disk6/mysql/bin/backup.sh</span></div><div class="line"><span class="comment"># 每天备份，保存最近30天的</span></div><div class="line">DATE=$(date +%Y%m%d)</div><div class="line"><span class="regexp">/home/</span>xxx<span class="regexp">/bin/my</span>sqldump -uroot -pxxx db &gt; <span class="regexp">/home/</span>xxx<span class="regexp">/bak_sql/</span>db_<span class="variable">$DATE</span>.sql;</div><div class="line">find <span class="regexp">/home/</span>xxx<span class="regexp">/bak_sql/</span> -mtime +<span class="number">30</span> -name <span class="string">'*.sql'</span> -exec rm -rf &#123;&#125; \;</div></pre></td></tr></table></figure>
-<h3 id="数据库增量备份"><a href="#数据库增量备份" class="headerlink" title="数据库增量备份"></a>数据库增量备份</h3><p>增量备份主要从两个角度</p>
-<ul>
-<li>binlog中定期备份sql；</li>
-<li>是采用主从库之后，从库会定时的备份主库信息，同时，对api库采用数据完全一致，对容灾库则设置只同步update 和insert；这样完备的保证了数据的安全。</li>
-</ul>
-<h2 id="可用性（Availabilty）"><a href="#可用性（Availabilty）" class="headerlink" title="可用性（Availabilty）"></a>可用性（Availabilty）</h2><p>数据的安全排第一，毋庸置疑；次之排平台的可用性，也毫无争议。可用性最简单的一个指标则为：<code>不卡</code>。</p>
-<h3 id="cache"><a href="#cache" class="headerlink" title="cache"></a>cache</h3><p>cache是提升查询时效性最有效的一个手段，小拽在框架中主要应用了两种cache，满足不同的业务需求。（所有关于cache的使用，一定要注意时效性和一致性，时效性和一致性，时效性和一致性）</p>
-<ul>
-<li>普通的cache。即用户搜索或者查询之后的结果存在redis里面，下次查询使用。</li>
-<li>预取的cache。即预测用户要查询的内容，放到cache里面。举几个栗子，用户首页内容一定要存cache里面；用户在看page1的时候，可以后台预测用户会看page2，提前取过来等等，这些策略和自己的实际业务紧密结合。</li>
-</ul>
-<p>关于时效性和一致性再多说一句：一定要注意及时更新，例如用户写操作，点击操作，都需要在后台触发cache的主动更新，否则可能造成数据一致性错误。</p>
-<h3 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h3><p><strong>中小型的架构中，存储的瓶颈往往在于读。</strong></p>
-<p>随着数据的增加，读库的成本越来越大，一个sql很可能会造成锁死整个库，一条sql 10+s也是常有的事情；因此，解决读库的瓶颈，可以大大提升系统的可用性；小拽的实践中主要应用了分库，分表。</p>
-<h3 id="分库"><a href="#分库" class="headerlink" title="分库"></a>分库</h3><p>之所以要分库，是因为<code>二八原则的存在，80%的用户操作集中于20%的数据</code>。</p>
-<p>举个栗子：实践过程中小拽有个月库，只存本月的数据，基本上80%+的用户操作数据，都会命中这个库。</p>
-<p>分库的原则有很多，例如时间原则，业务原则，数据逻辑原则等等；总之在您的框架中，当db扛不住的时候就分库，分层级。</p>
-<h3 id="分表"><a href="#分表" class="headerlink" title="分表"></a>分表</h3><p>分表的思想和分库类似，只是粒度更小，不在赘述。</p>
-<h2 id="扩展性（Scabability）"><a href="#扩展性（Scabability）" class="headerlink" title="扩展性（Scabability）"></a>扩展性（Scabability）</h2><p>小拽的架构中，扩展性主要从三个方面考虑</p>
-<ul>
-<li>1：数据库的扩展性。如果资源允许N主N从都是可以的，基本上不会影响业务操作。</li>
-<li>2：缓存的扩展。缓存基本上也是单独部署的，redis，memcache等均可以，变更成本不大。</li>
-<li>3：高并发和负载均衡。这块属于大型网站需要考虑的，暂时只采用了ameaba进行负载均衡的扩展，高并发预留接口。</li>
-</ul>
-<h2 id="权衡（Balance）"><a href="#权衡（Balance）" class="headerlink" title="权衡（Balance）"></a>权衡（Balance）</h2><p>所有的架构和技术，最终都要落实到和业务需求权衡。</p>
-<p>上面的架构最大的优势其实就是：简单，搭建起来非常容易，这就够了。</p>
-<p>作为一名码农，只有在实践的过程中，不断发现系统的瓶颈，权衡现有资源和需求，解决和处理问题，才能成为一名靠谱的码农。</p>
-<p>以上只是小拽在实践过程中的一点小小心的，欢迎大家到小站交流（<a href="http://cuihuan.net）。" target="_blank" rel="external">http://cuihuan.net）。</a></p>
-<p>【转载请注明：<a href="http://cuihuan.net/?p=460">中型存储架构实践探索</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+最近一直在做平台优化：对于中小型的站点，如何在资源有限的情况下，实现一个稳定，高效，靠谱的存储方案。下图是小拽个人在时间过程使用的一个存储架构。拿出来分享交流一下，也希望得到指点改进！
+
+先上图
+首先说思想思想就一个：权衡资源和业务需求
+
+简单解释一下：对于架构的理解，个人非常认同百度架构师tan
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/20/中型存储架构实践探索/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -568,9 +544,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/08/mysql数据导库常用操作/" itemprop="url">mysql数据导库常用操作</a></h1>
+                <a class="post-title-link" href="/2016/03/08/mysql数据导库常用操作/" itemprop="url">mysql数据导库常用操作</a></h2>
         
 
         <div class="post-meta">
@@ -582,7 +558,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-08T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-08T17:21:35+08:00">
                 2016-03-08
               </time>
             
@@ -595,6 +571,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/03/08/mysql数据导库常用操作/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/03/08/mysql数据导库常用操作/" class="cy_cmt_count" data-xid="2016/03/08/mysql数据导库常用操作/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -619,23 +606,20 @@
       
         
           
-            <blockquote>
-<p>工作中经常遇到：一个数据库导入新的数据库实例中，或者一个数据库中的某些表导入新的数据库中，常用操作，总结一下。</p>
-</blockquote>
-<h2 id="部分数据表导入新库"><a href="#部分数据表导入新库" class="headerlink" title="部分数据表导入新库"></a>部分数据表导入新库</h2><ul>
-<li><p>单表导入新库的sql为</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># CREATE TABLE 新表 SELECT * FROM 旧表</div><div class="line">create table `dashboard`.`xx` (select * <span class="keyword">from</span> dashboard_stb.xxx);</div></pre></td></tr></table></figure>
-</li>
-<li><p>多表导入新库（将所有的stability_* 导入新库）<br>多表的时候，只需选出需要的表即可。</p>
-</li>
-</ul>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># 拼接处所有的导出sql</div><div class="line">mysql&gt; select concat (<span class="string">'create table `dashboard`.'</span>,table_name,<span class="string">'(select * from `dashboard_stb`.'</span>,table_name,<span class="string">');'</span>) <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_name like <span class="string">"stability_%"</span>;</div><div class="line">+--------------------------------------------------------------------------------------------------------+</div><div class="line">| concat (<span class="string">'create table `dashboard`.'</span>,table_name,<span class="string">'(select * from `dashboard_stb`.'</span>,table_name,<span class="string">');'</span>)      |</div><div class="line">+--------------------------------------------------------------------------------------------------------+</div><div class="line">| create table `dashboard`.stability_capacity(select * <span class="keyword">from</span> `dashboard_stb`.stability_capacity);         |</div><div class="line">| create table `dashboard`.stability_dailymaxflow(select * <span class="keyword">from</span> `dashboard_stb`.stability_dailymaxflow); |</div><div class="line">| create table `dashboard`.stability_indextype(select * <span class="keyword">from</span> `dashboard_stb`.stability_indextype);       |</div><div class="line">| create table `dashboard`.stability_ktraceagent(select * <span class="keyword">from</span> `dashboard_stb`.stability_ktraceagent);   </div><div class="line"># 此处省略N行</div><div class="line">+--------------------------------------------------------------------------------------------------------+</div></pre></td></tr></table></figure>
-<p>粘贴进去直接运行即可<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">mysql&gt;  create table `dashboard`.stability_maccpu(select * <span class="keyword">from</span> `dashboard_stb`.stability_maccpu);</div><div class="line">Query OK, <span class="number">138138</span> rows affected (<span class="number">2.16</span> sec)</div><div class="line">Records: <span class="number">138138</span>  Duplicates: <span class="number">0</span>  Warnings: <span class="number">0</span></div><div class="line"></div><div class="line">mysql&gt;  create table `dashboard`.stability_macmem(select * <span class="keyword">from</span> `dashboard_stb`.stability_macmem);</div><div class="line">Query OK, <span class="number">138137</span> rows affected (<span class="number">2.07</span> sec)</div><div class="line">Records: <span class="number">138137</span>  Duplicates: <span class="number">0</span>  Warnings: <span class="number">0</span></div><div class="line"></div><div class="line">mysql&gt;  create table `dashboard`.stability_macssd(select * <span class="keyword">from</span> `dashboard_stb`.stability_macssd);</div><div class="line">Query OK, <span class="number">138139</span> rows affected (<span class="number">2.17</span> sec)</div><div class="line">Records: <span class="number">138139</span>  Duplicates: <span class="number">0</span>  Warnings: <span class="number">0</span></div><div class="line"># 此处省略N行</div></pre></td></tr></table></figure></p>
-<h2 id="全库备份导入新库"><a href="#全库备份导入新库" class="headerlink" title="全库备份导入新库"></a>全库备份导入新库</h2><p>数据库全量导出为sql<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">mysqldump</span> <span class="selector-tag">-uxxx</span> <span class="selector-tag">-pxxx</span> <span class="selector-tag">dashboard</span> &gt; <span class="selector-tag">dashboard</span><span class="selector-class">.sql</span></div></pre></td></tr></table></figure></p>
-<p>通过sql建立新库<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 建新库</span></div><div class="line">mysql&gt; create databases dashboard_new<span class="type"></span></div><div class="line"><span class="meta"># 导入数据</span></div><div class="line">./mysql -uxxx -p --<span class="keyword">default</span>-character-<span class="keyword">set</span>=utf8 dashboard_new <span class="type"></span>&lt; dashboard.sql</div></pre></td></tr></table></figure></p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%BA%93%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C.html">mysql 简单全量备份和快速恢复</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+工作中经常遇到：一个数据库导入新的数据库实例中，或者一个数据库中的某些表导入新的数据库中，常用操作，总结一下。
+
+部分数据表导入新库
+单表导入新库的sql为
+12# CREATE TABLE 新表 SELECT * FROM 旧表create table `dashboard`.`xx` (sel
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/03/08/mysql数据导库常用操作/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -694,9 +678,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/29/postMessage处理iframe 跨域问题/" itemprop="url">postMessage处理iframe 跨域问题</a></h1>
+                <a class="post-title-link" href="/2016/02/29/postMessage处理iframe 跨域问题/" itemprop="url">postMessage处理iframe 跨域问题</a></h2>
         
 
         <div class="post-meta">
@@ -708,7 +692,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-29T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-29T17:21:35+08:00">
                 2016-02-29
               </time>
             
@@ -721,6 +705,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/02/29/postMessage处理iframe 跨域问题/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/02/29/postMessage处理iframe 跨域问题/" class="cy_cmt_count" data-xid="2016/02/29/postMessage处理iframe 跨域问题/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -745,26 +740,18 @@
       
         
           
-            <blockquote>
-<p>背景：由于同源策略存在，javascript的跨域一直都是一个棘手的问题。<code>父页面无法直接获取iframe内部的跨域资源；同时，iframe内部的跨域资源也无法将信息直接传递给父页面</code>。</p>
-</blockquote>
-<h2 id="一：传统的解决方式。"><a href="#一：传统的解决方式。" class="headerlink" title="一：传统的解决方式。"></a>一：传统的解决方式。</h2><p>传统的iframe资源解决方式：主要通过通过中间页面代理，此处不再赘述，参考<a href="http://www.cnblogs.com/snandy/p/3900016.html" target="_blank" rel="external">中间页获取跨域iframe</a></p>
-<h2 id="二：html5-postMessage的产生"><a href="#二：html5-postMessage的产生" class="headerlink" title="二：html5 postMessage的产生"></a>二：html5 postMessage的产生</h2><p>随着HTML5的发展，html5工作组提供了两个重要的接口：<code>postMessage(send) 和 onmessage</code>。这两个接口有点类似于websocket，可以实现两个跨域站点页面之间的数据传递。</p>
-<p><a href="https://www.w3.org/TR/websockets/?cm_mc_uid=62901929538214344332551&amp;cm_mc_sid_50200000=1456119382" target="_blank" rel="external">postMessage API</a></p>
-<p>下面是实践过程中两个小栗子：分别父页面传递信息给iframe，iframe传递信息给父页面。</p>
-<h2 id="三：iframe获取父页面信息"><a href="#三：iframe获取父页面信息" class="headerlink" title="三：iframe获取父页面信息"></a>三：iframe获取父页面信息</h2><p>话不多说，直接上码：<br>参考demo：<a href="http://cuihuan.net:1015/demo_file/postmesage/demo.html">父页面传给子页面demo</a></p>
-<h3 id="父页面代码"><a href="#父页面代码" class="headerlink" title="父页面代码"></a>父页面代码</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>崔涣 iframe postmessage 父页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/JavaScript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sendIt</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 通过 postMessage 向子窗口发送数据</span></div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"otherPage"</span>).contentWindow</div><div class="line">                    .postMessage(</div><div class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">"message"</span>).value,</div><div class="line">                    <span class="string">"http://cuihuan.net:8003"</span></div><div class="line">            );</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 通过 iframe 嵌入子页面 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://cuihuan.net:8003/test.html"</span> <span class="attr">id</span>=<span class="string">"otherPage"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"message"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Send to child.com"</span> <span class="attr">onclick</span>=<span class="string">"sendIt()"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="子页面代码"><a href="#子页面代码" class="headerlink" title="子页面代码"></a>子页面代码</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span>崔涣测试子页面信息<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/JavaScript"</span>&gt;</span><span class="javascript"> </span></div><div class="line">	 <span class="comment">//event 参数中有 data 属性，就是父窗口发送过来的数据</span></div><div class="line">	 <span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"> event </span>) </span>&#123; </div><div class="line">		 <span class="comment">// 把父窗口发送过来的数据显示在子窗口中</span></div><div class="line">	   <span class="built_in">document</span>.getElementById(<span class="string">"content"</span>).innerHTML+=event.data+<span class="string">"&lt;br/&gt;"</span>; </div><div class="line">	 &#125;, <span class="literal">false</span> ); </div><div class="line"></div><div class="line"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span> </div><div class="line">	 this is the 8003 port for cuixiaozhuai </div><div class="line">	 <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span> </div><div class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>demo 效果如下图：两个跨域页面之间，父页面给子页面传递数据。<br><a href="http://cuihuan.net/wp-content/uploads/2016/02/16743333-E2AF-40E5-8DD2-0CBCE8919C66.png"><img src="http://cuihuan.net/wp-content/uploads/2016/02/16743333-E2AF-40E5-8DD2-0CBCE8919C66.png" alt="16743333-E2AF-40E5-8DD2-0CBCE8919C66"></a> </p>
-<h2 id="四：iframe传递信息给父页面"><a href="#四：iframe传递信息给父页面" class="headerlink" title="四：iframe传递信息给父页面"></a>四：iframe传递信息给父页面</h2><p>参考demo：<a href="http://cuihuan.net:1015/demo_file/postmesage/son2Parent.html">跨域子页面传给父页面demo</a></p>
-<h3 id="父页面代码-1"><a href="#父页面代码-1" class="headerlink" title="父页面代码"></a>父页面代码</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span>崔涣测试父页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/JavaScript"</span>&gt;</span><span class="javascript"></span></div><div class="line">     <span class="comment">//event 参数中有 data 属性，就是父窗口发送过来的数据</span></div><div class="line">     <span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"> event </span>) </span>&#123;</div><div class="line">         <span class="comment">// 把父窗口发送过来的数据显示在子窗口中</span></div><div class="line">       <span class="built_in">document</span>.getElementById(<span class="string">"content"</span>).innerHTML+=event.data+<span class="string">"&lt;br/&gt;"</span>;</div><div class="line">     &#125;, <span class="literal">false</span> );</div><div class="line"></div><div class="line"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://cuihuan.net:8003/iframeSon.html"</span> <span class="attr">id</span>=<span class="string">"otherPage"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">     this is the 1015 port for cuixiaozhuai。</div><div class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="子页面代码-1"><a href="#子页面代码-1" class="headerlink" title="子页面代码"></a>子页面代码</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>崔小涣iframe postmessage 测试页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/JavaScript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sendIt</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 子页面给父页面传输信息 </span></div><div class="line">            parent.postMessage(</div><div class="line">                <span class="built_in">document</span>.getElementById(<span class="string">"message"</span>).value,</div><div class="line">                <span class="string">"http://cuihuan.net:1015"</span></div><div class="line">            );</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">this is the  port for cuixiaozhuai</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"message"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Send to child.com"</span> <span class="attr">onclick</span>=<span class="string">"sendIt()"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>demo 效果如下图：两个跨域页面之间，子页面传递数据给父页面传递数据。<br><a href="http://cuihuan.net/wp-content/uploads/2016/02/22433B4C-8836-4546-93DB-7A896F8B4B37.png"><img src="http://cuihuan.net/wp-content/uploads/2016/02/22433B4C-8836-4546-93DB-7A896F8B4B37.png" alt="22433B4C-8836-4546-93DB-7A896F8B4B37"></a> </p>
-<h2 id="五：postmessage简单分析和安全问题"><a href="#五：postmessage简单分析和安全问题" class="headerlink" title="五：postmessage简单分析和安全问题"></a>五：postmessage简单分析和安全问题</h2><p>postmessage 传送过来的信息如下图，<br><a href="http://cuihuan.net/wp-content/uploads/2016/02/BABB5101-CD9D-448C-99EE-910334405D3D.png"><img src="http://cuihuan.net/wp-content/uploads/2016/02/BABB5101-CD9D-448C-99EE-910334405D3D.png" alt="BABB5101-CD9D-448C-99EE-910334405D3D"></a></p>
-<p>几乎包含了所有应该有的信息。甚至data中可以包含object，出于安全考虑可以域的校验，数据规则的校验安全校验，如下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">       </div><div class="line">       <span class="comment">//校验函数是否合法</span></div><div class="line">       <span class="keyword">var</span> checkMessage = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">           <span class="comment">// 只获取需要的域，并非所有都可以跨域</span></div><div class="line">           <span class="keyword">if</span> (event.origin != <span class="string">"need domain"</span>) &#123;</div><div class="line">               <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           </div><div class="line">           <span class="keyword">var</span> message = event.data;</div><div class="line">           <span class="comment">// 传输数据类型校验</span></div><div class="line">           <span class="keyword">if</span> (<span class="keyword">typeof</span>(message) !== <span class="string">'object'</span>) &#123;</div><div class="line">               <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="comment">// message 的rule中包含xxx则为xxx需要字段。</span></div><div class="line">           <span class="keyword">return</span> message.rule === <span class="string">"xxx"</span>;</div><div class="line">       &#125;;</div><div class="line"></div><div class="line">       <span class="keyword">if</span> (checkMessage()) &#123;</div><div class="line">           <span class="comment">// 通过校验进行相关操作</span></div><div class="line">           addDetailFunc(event);</div><div class="line">       &#125;</div><div class="line">   &#125;);</div></pre></td></tr></table></figure></p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/postmessage%E5%A4%84%E7%90%86iframe-%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98.html">postMessage处理iframe 跨域问题</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+背景：由于同源策略存在，javascript的跨域一直都是一个棘手的问题。父页面无法直接获取iframe内部的跨域资源；同时，iframe内部的跨域资源也无法将信息直接传递给父页面。
+
+一：传统的解决方式。传统的iframe资源解决方式：主要通过通过中间页面代理，此处不再赘述，参考中间页获取跨域i
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/02/29/postMessage处理iframe 跨域问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -823,9 +810,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/01/10/YII2数据库查询实践/" itemprop="url">YII2数据库查询实践</a></h1>
+                <a class="post-title-link" href="/2016/01/10/YII2数据库查询实践/" itemprop="url">YII2数据库查询实践</a></h2>
         
 
         <div class="post-meta">
@@ -837,7 +824,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-10T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-10T17:21:35+08:00">
                 2016-01-10
               </time>
             
@@ -850,6 +837,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/01/10/YII2数据库查询实践/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/01/10/YII2数据库查询实践/" class="cy_cmt_count" data-xid="2016/01/10/YII2数据库查询实践/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -874,27 +872,18 @@
       
         
           
-            <blockquote>
-<p>初探yii2框架，对增删改查，关联查询等数据库基本操作的简单实践。</p>
-</blockquote>
-<h2 id="数据库配置。"><a href="#数据库配置。" class="headerlink" title="数据库配置。"></a>数据库配置。</h2><p>/config/db.php 进行数据库配置<br>配置可以参考<a href="http://www.yiichina.com/doc/guide/2.0/start-databases" target="_blank" rel="external"> yii文档 </a><br>实践过程中有个test库-》test表-》两条记录如下<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section">mysql&gt; select * from test;</span></div><div class="line">+----+--------+</div><div class="line"><span class="section">| id | name   |</span></div><div class="line">+----+--------+</div><div class="line">|  1 | zhuai  |</div><div class="line"><span class="section">|  2 | heng   | </span></div><div class="line">+----+--------+</div><div class="line">18 rows in set (0.00 sec)</div></pre></td></tr></table></figure></p>
-<h2 id="sql-查询方式"><a href="#sql-查询方式" class="headerlink" title="sql 查询方式"></a>sql 查询方式</h2><p>yii2 提供了原始的数据库查询方式findBySql；同时，<code>通过占位符的方式，自动进行了基本的sql注入防御</code>。上码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 最基本的查询方式</span></div><div class="line">$sql = <span class="string">"select * from test where 1"</span>;</div><div class="line">$res = Test::findBySql($sql)-&gt;all();</div><div class="line">var_dump(count($res));    <span class="comment">// res-&gt;2 </span></div><div class="line"></div><div class="line"><span class="comment">// findbysql 防止sql注入方式</span></div><div class="line">$id = <span class="string">'1 or 1=1'</span>;</div><div class="line">$sql = <span class="string">"select * from test where id = "</span> . $id;</div><div class="line">$res = Test::findBySql($sql)-&gt;all();</div><div class="line">var_dump(count($res));   <span class="comment">// res-&gt; 2</span></div><div class="line"></div><div class="line">$sql = <span class="string">"select * from test where id = :id"</span>;</div><div class="line"><span class="comment">// 定位符会自动防止sql 注入</span></div><div class="line">$res = Test::findBySql($sql,<span class="keyword">array</span>(<span class="string">":id"</span>=&gt;$id))-&gt;all();</div><div class="line">var_dump(count($res));  <span class="comment">// res-&gt;1</span></div></pre></td></tr></table></figure></p>
-<h2 id="activeRecord查询方式"><a href="#activeRecord查询方式" class="headerlink" title="activeRecord查询方式"></a>activeRecord查询方式</h2><p>每个框架除了原有的sql方式，都会提供相应的封装的查询方式，yii2亦然。</p>
-<h3 id="创建model"><a href="#创建model" class="headerlink" title="创建model"></a>创建model</h3><p>yii的model基本方式如下，代码如下不赘述。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">models</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">ActiveRecord</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">ActiveRecord</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 可无，对应表：默认类名和表名匹配，则无需此函数</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">tableName</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'test'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 可无，验证器：主要用于校验各个字段</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rules</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> [</div><div class="line">            [<span class="string">'id'</span>, <span class="string">'integer'</span>],</div><div class="line">            [<span class="string">'name'</span>, <span class="string">'string'</span>, <span class="string">'length'</span> =&gt; [<span class="number">0</span>, <span class="number">100</span>]],</div><div class="line">        ];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用的时候需要引入model<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> app\models\<span class="keyword">Test</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="增加操作"><a href="#增加操作" class="headerlink" title="增加操作"></a>增加操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// add 操作</span></div><div class="line">$test = <span class="keyword">new</span> Test();</div><div class="line">$test-&gt;name = <span class="string">'test'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 合法性校验</span></div><div class="line">$test-&gt;validate();</div><div class="line"><span class="keyword">if</span>($test-&gt;hasErrors())&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"数据不合法"</span>;</div><div class="line">    <span class="keyword">die</span>;</div><div class="line">&#125;</div><div class="line">$test-&gt;save();</div></pre></td></tr></table></figure>
-<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>查询操作先上官方文档<br><a href="http://www.yiichina.com/doc/api/2.0/yii-db-activerecord" target="_blank" rel="external"> activeRecord doc</a><br><a href="http://www.yiichina.com/doc/api/2.0/yii-db-query#where(-detail" target="_blank" rel="external"> where doc</a><br>需要强调的是：yii查询提供了特别多丰富的库，例如代码中的批量查询处理等等，细节可以看文档。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">// select</span></div><div class="line">// id = <span class="number">1</span></div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'id'</span> =&gt; <span class="number">1</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//1</span></div><div class="line"></div><div class="line">// id &gt; <span class="number">0</span></div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'&gt;'</span>,<span class="string">'id'</span>,<span class="number">0</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//2</span></div><div class="line"></div><div class="line">// id &gt; =<span class="number">1</span> id &lt;=<span class="number">2</span></div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'between'</span>,<span class="string">'id'</span>,<span class="number">1</span>,<span class="number">2</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//2</span></div><div class="line"></div><div class="line">// name字段like</div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'like'</span>, <span class="string">'name'</span>, <span class="string">'cuihuan'</span>])</span>-&gt;</span>all();</div><div class="line">var_dump(count($res));  <span class="regexp">//2</span></div><div class="line"></div><div class="line"></div><div class="line">// 查询的使用 obj-&gt;array</div><div class="line">$res = Test::find<span class="function"><span class="params">()</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'between'</span>,<span class="string">'id'</span>,<span class="number">1</span>,<span class="number">2</span>])</span>-&gt;</span>asArray<span class="function"><span class="params">()</span>-&gt;</span>all();</div><div class="line">var_dump($res[<span class="number">0</span>][<span class="string">'id'</span>]);  <span class="regexp">//2</span></div><div class="line"></div><div class="line">// 批量查询,对于大内存操作的批量查询</div><div class="line">foreach <span class="function"><span class="params">(Test::find()-&gt;batch(<span class="number">1</span>) as $test)</span> &#123;</span></div><div class="line">    <span class="title">var_dump</span><span class="params">(count($test))</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// delete </span></div><div class="line"><span class="comment">// 选出来删除</span></div><div class="line">$res = Test::find()-&gt;where([<span class="string">'id'</span>=&gt;<span class="number">1</span>])-&gt;all();</div><div class="line">$res[<span class="number">0</span>]-&gt;delete();</div><div class="line"></div><div class="line"><span class="comment">// 直接删除</span></div><div class="line">var_dump(Test::deleteAll(<span class="string">'id&gt;:id'</span>, <span class="keyword">array</span>(<span class="string">':id'</span> =&gt; <span class="number">2</span>)));</div></pre></td></tr></table></figure>
-<h3 id="修改操作"><a href="#修改操作" class="headerlink" title="修改操作"></a>修改操作</h3><p>除了代码中方式，yii2直接提供update操作。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 活动记录修改</span></div><div class="line">$res = Test::find()-&gt;where([<span class="string">'id'</span>=&gt;<span class="number">4</span>])-&gt;one();</div><div class="line">$res-&gt;name = <span class="string">"update"</span>;</div><div class="line">$res-&gt;save();</div></pre></td></tr></table></figure></p>
-<h3 id="关联查询操作"><a href="#关联查询操作" class="headerlink" title="关联查询操作"></a>关联查询操作</h3><p>关联查询示例中两个表:<br>一个学生表(student):id ，name;<br>一个分数表(score)：id,stu_id,score<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 相应学生的所有score</span></div><div class="line">$stu = Student::find()-&gt;where([<span class="string">'name'</span>=&gt;<span class="string">'xiaozhuai'</span>])-&gt;one();</div><div class="line">var_dump($stu-&gt;id);</div><div class="line"></div><div class="line"><span class="comment">// 基本获取</span></div><div class="line">$scores_1 = $stu-&gt;hasMany(<span class="string">'app\model\Score'</span>,[<span class="string">'stu_id'</span>=&gt;$stu-&gt;id])-&gt;asArray()-&gt;all();</div><div class="line">$scores_2 = $stu-&gt;hasMany(Score::className(),[<span class="string">'stu_id'</span>=&gt;<span class="string">'id'</span>])-&gt;asArray()-&gt;all();</div><div class="line">var_dump($scores_1);</div><div class="line">var_dump($scores_2);</div></pre></td></tr></table></figure></p>
-<p>两种关联查询方式；但是，在controller进行相关操作，代码显的过于混乱，在model中封装调用</p>
-<p>首先在student model中封装相关关联调用函数<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">models</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">ActiveRecord</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">ActiveRecord</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">tableName</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'student'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 获取分数信息</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getScores</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $scores = <span class="keyword">$this</span>-&gt;hasMany(Score::className(), [<span class="string">'stu_id'</span> =&gt; <span class="string">'id'</span>])-&gt;asArray()-&gt;all();</div><div class="line"></div><div class="line">        <span class="keyword">return</span> $scores;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>之后直接调用，两种调用方式<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 函数封装之后调用</span></div><div class="line">$scores = $stu-&gt;getScores();</div><div class="line">var_dump($scores);</div><div class="line"></div><div class="line"><span class="comment">// 利用__get 的自动调用的方式</span></div><div class="line">$scores = $stu-&gt;scores;</div><div class="line">var_dump($scores);</div></pre></td></tr></table></figure></p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>上面在yii2的部署和使用过程中的一些基本的增删改查，关联查询等操作。但是如果想要将yii2的db操作使用好，还要看文档大法：<br><a href="http://www.yiichina.com/doc/api/2.0/yii-db-activerecord" target="_blank" rel="external"> activeRecord doc</a></p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/yii2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E8%B7%B5.html">YII2数据库查询实践</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+初探yii2框架，对增删改查，关联查询等数据库基本操作的简单实践。
+
+数据库配置。/config/db.php 进行数据库配置配置可以参考 yii文档 实践过程中有个test库-》test表-》两条记录如下12345678mysql&gt; select * from test;+----+---
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/01/10/YII2数据库查询实践/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -953,9 +942,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/01/07/机器多次恶意提交攻击/" itemprop="url">机器多次恶意提交攻击简单防范</a></h1>
+                <a class="post-title-link" href="/2016/01/07/机器多次恶意提交攻击/" itemprop="url">机器多次恶意提交攻击简单防范</a></h2>
         
 
         <div class="post-meta">
@@ -967,7 +956,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-07T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-07T17:21:35+08:00">
                 2016-01-07
               </time>
             
@@ -980,6 +969,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/01/07/机器多次恶意提交攻击/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/01/07/机器多次恶意提交攻击/" class="cy_cmt_count" data-xid="2016/01/07/机器多次恶意提交攻击/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1004,29 +1004,21 @@
       
         
           
-            <blockquote>
-<p>先说背景：机器不断的发送请求或者恶意提交，会给服务器造成很大压力；针对这种攻击<code>最优的策略是判断提交次数，产生动态验证码</code>，即<code>判断ip规定时间内重复发送达到N次弹出验证码</code>。下面是小拽在实践过程中一个简单的识别ip，利用session记录和防御的过程。</p>
-</blockquote>
-<h2 id="识别和校验ip"><a href="#识别和校验ip" class="headerlink" title="识别和校验ip"></a>识别和校验ip</h2><p>过程如下；</p>
-<ul>
-<li>识别ip</li>
-<li>ip属于白名单直接通过[白名单策略：内网ip+指定ip表]</li>
-<li>利用session存储ip的请求时间戳</li>
-<li>校验规定时间内ip的请求次数</li>
-<li>采取相应的措施</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 获取和校验ip；同时防止短时间内多次提交</div><div class="line"> *</div><div class="line"> * <span class="doctag">@notice</span>        ：弹出验证码，需要替换掉echo $echo_str 即可。</div><div class="line"> * <span class="doctag">@return</span> string ：返回校验成功的ip</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getAndCheckIP</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 获取环境ip</span></div><div class="line">    <span class="keyword">if</span> (getenv(<span class="string">"HTTP_CLIENT_IP"</span>) &amp;&amp; strcasecmp(getenv(<span class="string">"HTTP_CLIENT_IP"</span>), <span class="string">"unknown"</span>))</div><div class="line">        $ip = getenv(<span class="string">"HTTP_CLIENT_IP"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (getenv(<span class="string">"HTTP_X_FORWARDED_FOR"</span>) &amp;&amp; strcasecmp(getenv(<span class="string">"HTTP_X_FORWARDED_FOR"</span>), <span class="string">"unknown"</span>))</div><div class="line">        $ip = getenv(<span class="string">"HTTP_X_FORWARDED_FOR"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (getenv(<span class="string">"REMOTE_ADDR"</span>) &amp;&amp; strcasecmp(getenv(<span class="string">"REMOTE_ADDR"</span>), <span class="string">"unknown"</span>))</div><div class="line">        $ip = getenv(<span class="string">"REMOTE_ADDR"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">isset</span>($_SERVER[<span class="string">'REMOTE_ADDR'</span>]) &amp;&amp; $_SERVER[<span class="string">'REMOTE_ADDR'</span>] &amp;&amp; strcasecmp($_SERVER[<span class="string">'REMOTE_ADDR'</span>], <span class="string">"unknown"</span>))</div><div class="line">        $ip = $_SERVER[<span class="string">'REMOTE_ADDR'</span>];</div><div class="line">    <span class="keyword">else</span></div><div class="line">        $ip = <span class="string">"unknown"</span>;</div><div class="line"></div><div class="line">    <span class="comment">// check 环境ip</span></div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">$this</span>-&gt;isWhiteList($ip)) &#123;</div><div class="line">        $echo_str = <span class="string">"提交过于频繁,请稍后再试！"</span>;</div><div class="line">        <span class="comment">// 构建ip的时间栈数据</span></div><div class="line">        <span class="keyword">if</span> (!is_array($_SESSION[$ip])) &#123;</div><div class="line">            $_SESSION[$ip] = <span class="keyword">array</span>();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>($_SESSION[$ip][<span class="number">0</span>])) &#123;</div><div class="line">            $_SESSION[$ip][] = time();</div><div class="line"></div><div class="line">            <span class="comment">// session 保存时间为6小时。清理session</span></div><div class="line">            $post_interval_first = time() - $_SESSION[$ip][<span class="number">0</span>];</div><div class="line">            <span class="keyword">if</span> ($post_interval_first &gt; <span class="number">21600</span>) &#123;</div><div class="line">                $_SESSION[$ip] = <span class="keyword">array</span>();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// 两次提交小于1s，禁止提交</span></div><div class="line">            $post_interval_pre = time() - $_SESSION[$ip][count($_SESSION[$ip]) - <span class="number">3</span>];</div><div class="line">            <span class="keyword">if</span> ($post_interval_pre &lt; <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">echo</span> $echo_str;</div><div class="line">                <span class="keyword">exit</span>;</div><div class="line">            &#125;;</div><div class="line"></div><div class="line">            <span class="comment">// 您在10s内已经提交了3请求，禁止提交</span></div><div class="line">            $post_interval_third = time() - $_SESSION[$ip][count($_SESSION[$ip]) - <span class="number">3</span>];</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">isset</span>($_SESSION[$ip][<span class="number">3</span>]) &amp;&amp; ($post_interval_third &lt; <span class="number">10</span>)) &#123;</div><div class="line">                <span class="keyword">echo</span> $echo_str;</div><div class="line">                <span class="keyword">exit</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// 您在1分钟期间已经提交了5请求，禁止提交</span></div><div class="line">            $post_interval_fifth = time() - $_SESSION[$ip][count($_SESSION[$ip]) - <span class="number">3</span>];</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">isset</span>($_SESSION[$ip][<span class="number">5</span>]) &amp;&amp; ($post_interval_fifth &lt; <span class="number">60</span>)) &#123;</div><div class="line">                <span class="keyword">echo</span> $echo_str;</div><div class="line">                <span class="keyword">exit</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// 6小时内提交10次，禁止提交</span></div><div class="line">            <span class="keyword">if</span> (<span class="keyword">isset</span>($_SESSION[$ip][<span class="number">10</span>])) &#123;</div><div class="line">                <span class="keyword">echo</span> $echo_str;</div><div class="line">                <span class="keyword">exit</span>;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            $_SESSION[$ip][] = time();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> ($ip);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="白名单策略"><a href="#白名单策略" class="headerlink" title="白名单策略"></a>白名单策略</h2><p>白名单策略采用：内网ip放行和特定ip放行<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 检验是否存在于白名单中</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> $ip    ：校验的ip</div><div class="line"> * <span class="doctag">@return</span> bool  ：校验结果</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isWhiteList</span><span class="params">($ip)</span></span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 内网ip默认全部存在于白名单中</div><div class="line">     */</div><div class="line">    <span class="keyword">if</span>(!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE))&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 是否在写死的whitelist 里面</span></div><div class="line">    <span class="keyword">return</span> in_array($ip,<span class="keyword">$this</span>-&gt;_WHTTE_LIST);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="防攻击策略"><a href="#防攻击策略" class="headerlink" title="防攻击策略"></a>防攻击策略</h2><p>小拽采用的比较简单的策略，如上面代码，实际过程中可以结合业务需求。</p>
-<ul>
-<li>1s内禁止重复提交</li>
-<li>5s内提交上限3次</li>
-<li>60s内提交上限5次</li>
-<li>6小时内提交上限10次</li>
-</ul>
-<p>【转载请注明：<a href="http://cuihuan.net/article/%E6%9C%BA%E5%99%A8%E5%A4%9A%E6%AC%A1%E6%81%B6%E6%84%8F%E6%8F%90%E4%BA%A4%E6%94%BB%E5%87%BB%E7%AE%80%E5%8D%95%E9%98%B2%E8%8C%83.html">机器多次恶意提交攻击简单防范</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+先说背景：机器不断的发送请求或者恶意提交，会给服务器造成很大压力；针对这种攻击最优的策略是判断提交次数，产生动态验证码，即判断ip规定时间内重复发送达到N次弹出验证码。下面是小拽在实践过程中一个简单的识别ip，利用session记录和防御的过程。
+
+识别和校验ip过程如下；
+
+识别ip
+ip属于白
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/01/07/机器多次恶意提交攻击/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1085,9 +1077,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/01/03/检验mysql主从备份，读写分离/" itemprop="url">检验mysql主从备份，读写分离</a></h1>
+                <a class="post-title-link" href="/2016/01/03/检验mysql主从备份，读写分离/" itemprop="url">检验mysql主从备份，读写分离</a></h2>
         
 
         <div class="post-meta">
@@ -1099,7 +1091,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-03T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-03T17:21:35+08:00">
                 2016-01-03
               </time>
             
@@ -1112,6 +1104,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2016/01/03/检验mysql主从备份，读写分离/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2016/01/03/检验mysql主从备份，读写分离/" class="cy_cmt_count" data-xid="2016/01/03/检验mysql主从备份，读写分离/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1136,39 +1139,18 @@
       
         
           
-            <blockquote>
-<p>先说背景：mysql的主从部署，读写分离，负载均衡之后；需要简单测试和校验一下，在实践中写了个简单的php脚本和校验过程，mark一下，方便再次部署校验。</p>
-</blockquote>
-<h2 id="数据库部署和实践"><a href="#数据库部署和实践" class="headerlink" title="数据库部署和实践"></a>数据库部署和实践</h2><p>数据库在实践中，<code>往往需要进行多机主从备份保证安全</code>，这个毋庸置疑；<code>进行读写分离和负载均衡可以极大的提升mysql的读写性能</code>。作者在实践中采用阿里的ameoba进行了读写分离和负载均衡操作。细节步骤参考小拽文章:<a href="http://www.baidu.com" target="_blank" rel="external"> mysql主从备份，读写分离和负载均衡实践 </a></p>
-<p>那么问题来了，部署完了，校验也需慎重，下面是简单的校验过程。</p>
-<h2 id="php简单读写库脚本"><a href="#php简单读写库脚本" class="headerlink" title="php简单读写库脚本"></a>php简单读写库脚本</h2><p>上码：能用代码说的，最好不用文字说话！<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 进行读写分离的校验</div><div class="line"> * <span class="doctag">@notice</span> ：需要关闭主从备份的情况下进行</div><div class="line"> * 原理：打开主从，写主库，从库获取数据，校验主从备份；关闭主从写ameoba,校验读写分离和负载</div><div class="line"> *</div><div class="line"> * <span class="doctag">@author</span>: cuixiaohuan</div><div class="line"> * Date: 15/12/29</div><div class="line"> * Time: 下午9:10</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReadAndWriteTest</span> </span>&#123;</div><div class="line">   </div><div class="line">    <span class="comment">// ameoba 设定端口,校验读写时，放主库配置</span></div><div class="line">    <span class="keyword">const</span> IP   =<span class="string">"ip:port"</span>;</div><div class="line">    <span class="keyword">const</span> PWD  =<span class="string">"pwd"</span>;</div><div class="line">    <span class="keyword">const</span> USER =<span class="string">"user"</span>;</div><div class="line">    <span class="keyword">const</span> DB   =<span class="string">"db"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span>&#123;</div><div class="line">        error_reporting(E_ALL ^ E_DEPRECATED);</div><div class="line"></div><div class="line">        <span class="keyword">$this</span>-&gt;initDb();</div><div class="line">        <span class="keyword">$this</span>-&gt;_writeTest();</div><div class="line">        <span class="keyword">$this</span>-&gt;_selectTest();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 进行10次读操作</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">_selectTest</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">10</span>; $i++) &#123;</div><div class="line">            $read_sql = <span class="string">'select * from test limit 10'</span>;</div><div class="line">            $g_result = mysql_query($read_sql);</div><div class="line">            var_dump($g_result);</div><div class="line">            mysql_free_result($g_result);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 进行10次写操作</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">_writeTest</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">10</span>; $i++) &#123;</div><div class="line">            $id        = uniqid();</div><div class="line">            $content   = <span class="string">"pingce"</span> . uniqid();</div><div class="line">            $write_sql = <span class="string">'INSERT INTO `test`(`test`, `test1`) VALUES ("'</span> . $id . <span class="string">'","'</span> . $content . <span class="string">'")'</span>;</div><div class="line">            $g_result = mysql_query($write_sql);</div><div class="line">            var_dump($g_result);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 初始化数据库连接信息 info</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">initDb</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $crowd_conn = mysql_pconnect(<span class="keyword">self</span>::IP, <span class="keyword">self</span>::USER, <span class="keyword">self</span>::PWD);</div><div class="line">        <span class="keyword">if</span> (!$crowd_conn) &#123;</div><div class="line">            <span class="keyword">die</span>(<span class="string">"Could not connect:"</span> . mysql_error());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        $crowd_db = mysql_select_db(<span class="keyword">self</span>::DB, $crowd_conn);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$rw = <span class="keyword">new</span> ReadAndWriteTest();</div></pre></td></tr></table></figure></p>
-<h2 id="主从备份校验"><a href="#主从备份校验" class="headerlink" title="主从备份校验"></a>主从备份校验</h2><ul>
-<li>开启slave</li>
-<li>调整数据库信息为mysql，主库信息，运行脚本。</li>
-<li>查看从库的log，有如下写入操作，说明实时主从备份成功。<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">151231 </span><span class="number">15</span>:<span class="number">36</span>:<span class="number">21</span> <span class="number">4</span> Query start slave</div><div class="line"><span class="symbol">14 </span>Connect <span class="keyword">Out</span> pingce@<span class="number">10.95.112.120</span>:<span class="number">3666</span></div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957e5c85"</span>,<span class="string">"pingce5684d957e5cf2"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957e7937"</span>,<span class="string">"pingce5684d957e7982"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957e8e96"</span>,<span class="string">"pingce5684d957e8ee4"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957ea2c2"</span>,<span class="string">"pingce5684d957ea2eb"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eb565"</span>,<span class="string">"pingce5684d957eb5b3"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957ec7ee"</span>,<span class="string">"pingce5684d957ec83e"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eda2f"</span>,<span class="string">"pingce5684d957eda78"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eeca4"</span>,<span class="string">"pingce5684d957eecf0"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eff16"</span>,<span class="string">"pingce5684d957eff61"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div><div class="line"><span class="symbol">15 </span>Query BEGIN</div><div class="line"><span class="symbol">15 </span>Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957f121e"</span>,<span class="string">"pingce5684d957f126d"</span>)</div><div class="line"><span class="symbol">15 </span>Query COMMIT /* implicit, from Xid_log_event */</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="检验读写分离"><a href="#检验读写分离" class="headerlink" title="检验读写分离"></a>检验读写分离</h2><ul>
-<li><p>读写分离，首先需要关闭从机器上的slave。原因：存在主从的话，无法通过log查看出读写分离操作。</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; <span class="literal">stop</span> <span class="literal">slave</span>;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.08</span> sec)</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行脚本：如下信息标示，运行成功。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">[cuixiaohuan TestScript]$ /home/work/lamp/php5/bin/php ReadAndWriteTest.php</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957e5c85"</span>,<span class="string">"pingce5684d957e5cf2"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957e7937"</span>,<span class="string">"pingce5684d957e7982"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957e8e96"</span>,<span class="string">"pingce5684d957e8ee4"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957ea2c2"</span>,<span class="string">"pingce5684d957ea2eb"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957eb565"</span>,<span class="string">"pingce5684d957eb5b3"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957ec7ee"</span>,<span class="string">"pingce5684d957ec83e"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957eda2f"</span>,<span class="string">"pingce5684d957eda78"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957eeca4"</span>,<span class="string">"pingce5684d957eecf0"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957eff16"</span>,<span class="string">"pingce5684d957eff61"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`test`</span>(<span class="string">`test`</span>, <span class="string">`test1`</span>) <span class="keyword">VALUES</span> (<span class="string">"5684d957f121e"</span>,<span class="string">"pingce5684d957f126d"</span>)bool(<span class="literal">true</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">5</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">6</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">7</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">8</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">9</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">10</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">11</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">12</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">13</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div><div class="line"><span class="keyword">resource</span>(<span class="number">14</span>) <span class="keyword">of</span> <span class="keyword">type</span> (mysql <span class="keyword">result</span>)</div></pre></td></tr></table></figure>
-</li>
-<li><p>查询读写库的log</p>
-<blockquote>
-<p>解释：之所以主库放一个读写库，是因为有些要求超高一致性的数据，备份可能会有延迟；所以，主库承担读写操作，和高负载。</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#读写机器log：  进行了<span class="number">10</span>次写和 四次读</div><div class="line"><span class="number">151231</span> <span class="number">15</span>:<span class="number">29</span>:<span class="number">27</span> <span class="number">19</span> Query set names gbk^@</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957e5c85"</span>,<span class="string">"pingce5684d957e5cf2"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957e7937"</span>,<span class="string">"pingce5684d957e7982"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957e8e96"</span>,<span class="string">"pingce5684d957e8ee4"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957ea2c2"</span>,<span class="string">"pingce5684d957ea2eb"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eb565"</span>,<span class="string">"pingce5684d957eb5b3"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957ec7ee"</span>,<span class="string">"pingce5684d957ec83e"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eda2f"</span>,<span class="string">"pingce5684d957eda78"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eeca4"</span>,<span class="string">"pingce5684d957eecf0"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957eff16"</span>,<span class="string">"pingce5684d957eff61"</span>)</div><div class="line"><span class="number">19</span> Query INSERT INTO `test`(`test`, `test1`) VALUES (<span class="string">"5684d957f121e"</span>,<span class="string">"pingce5684d957f126d"</span>)</div><div class="line"><span class="number">19</span> Query select * <span class="keyword">from</span> test limit <span class="number">10</span></div><div class="line"><span class="number">151231</span> <span class="number">15</span>:<span class="number">29</span>:<span class="number">28</span> <span class="number">19</span> Query select * <span class="keyword">from</span> test limit <span class="number">10</span></div><div class="line"><span class="number">19</span> Query select * <span class="keyword">from</span> test limit <span class="number">10</span></div><div class="line"><span class="number">19</span> Query select * <span class="keyword">from</span> test limit <span class="number">10</span></div><div class="line"><span class="number">19</span> Query select * <span class="keyword">from</span> test limit <span class="number">10</span></div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>查看读库的log</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># 只进行了读操作，校正了数据库的读写分离操作。</div><div class="line">151231 15:29:20 4 <span class="keyword">Query</span> stop slave</div><div class="line">151231 15:29:27 3 <span class="keyword">Query</span> <span class="keyword">set</span> names gbk^@</div><div class="line">3 <span class="keyword">Query</span> select * from <span class="keyword">test</span> limit 10</div><div class="line">3 <span class="keyword">Query</span> select * from <span class="keyword">test</span> limit 10</div><div class="line">3 <span class="keyword">Query</span> select * from <span class="keyword">test</span> limit 10</div><div class="line">3 <span class="keyword">Query</span> select * from <span class="keyword">test</span> limit 10</div><div class="line">3 <span class="keyword">Query</span> select * from <span class="keyword">test</span> limit 10</div><div class="line">3 <span class="keyword">Query</span> select * from <span class="keyword">test</span> limit 10</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>一句话：打开slave，校验主从备份；关闭slave，校验读写分离。</p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/%E6%A3%80%E9%AA%8Cmysql%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD%EF%BC%8C%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB.html"> 检验mysql主从备份，读写分离 </a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+先说背景：mysql的主从部署，读写分离，负载均衡之后；需要简单测试和校验一下，在实践中写了个简单的php脚本和校验过程，mark一下，方便再次部署校验。
+
+数据库部署和实践数据库在实践中，往往需要进行多机主从备份保证安全，这个毋庸置疑；进行读写分离和负载均衡可以极大的提升mysql的读写性能。作
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/01/03/检验mysql主从备份，读写分离/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1227,9 +1209,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/20/php反射调用private方法实践/" itemprop="url">php反射调用private方法实践</a></h1>
+                <a class="post-title-link" href="/2015/12/20/php反射调用private方法实践/" itemprop="url">php反射调用private方法实践</a></h2>
         
 
         <div class="post-meta">
@@ -1241,7 +1223,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-20T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-20T17:21:35+08:00">
                 2015-12-20
               </time>
             
@@ -1254,6 +1236,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2015/12/20/php反射调用private方法实践/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2015/12/20/php反射调用private方法实践/" class="cy_cmt_count" data-xid="2015/12/20/php反射调用private方法实践/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1278,17 +1271,19 @@
       
         
           
-            <blockquote>
-<p>问题背景：单测中有个普遍性的问题，<code>被侧类中的private方法无法直接调用</code>。小拽在处理过程中通过<code>反射改变方法权限，进行单测</code>，分享一下，直接上代码。</p>
-</blockquote>
-<h2 id="简单被测试类"><a href="#简单被测试类" class="headerlink" title="简单被测试类"></a>简单被测试类</h2><p>生成一个简单的被测试类，只有个private方法。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 崔小涣单测的基本模板。</div><div class="line"> *</div><div class="line"> * <span class="doctag">@author</span> cuihuan</div><div class="line"> * <span class="doctag">@date</span> 2015/11/12 22:15:31</div><div class="line"> * <span class="doctag">@version</span> $Revision:1.0$</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 私有方法</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> $params</div><div class="line">     * <span class="doctag">@return</span> bool</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">privateFunc</span><span class="params">($params)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(!<span class="keyword">isset</span>($params))&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"test success"</span>;</div><div class="line">        <span class="keyword">return</span> $params;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="单测代码"><a href="#单测代码" class="headerlink" title="单测代码"></a>单测代码</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"><span class="comment">/***************************************************************************</span></div><div class="line"> *</div><div class="line"> * $Id: MyClassTest T,v 1.0 PsCaseTest cuihuan Exp$</div><div class="line"> *</div><div class="line"> **************************************************************************/</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 崔小涣单测的基本模板。 </div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> cuihuan</div><div class="line"> * <span class="doctag">@date</span> 2015/11/12 22:09:31</div><div class="line"> * <span class="doctag">@version</span> $Revision:1.0$</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="keyword">require_once</span> (<span class="string">'./MyClass.php'</span>);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClassTest</span> <span class="keyword">extends</span> <span class="title">PHPUnit_Framework_TestCase</span> </span>&#123;</div><div class="line">    <span class="keyword">const</span> CLASS_NAME = <span class="string">'MyClass'</span>;</div><div class="line">    <span class="keyword">const</span> FAIL       = <span class="string">'fail'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> $objMyClass;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@brief</span> setup: Sets up the fixture, for example, opens a network connection.</div><div class="line">     *</div><div class="line">     * 可以看做phpunit的构造函数</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</div><div class="line">        date_default_timezone_set(<span class="string">'PRC'</span>);</div><div class="line">        <span class="keyword">$this</span>-&gt;objMyClass = <span class="keyword">new</span> MyClass();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 利用反射，对类中的private 和 protect 方法进行单元测试</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> $strMethodName  string  ：反射函数名</div><div class="line">     * <span class="doctag">@return</span> ReflectionMethod obj   ：回调对象</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getPrivateMethod</span><span class="params">($strMethodName)</span> </span>&#123;</div><div class="line">        $objReflectClass = <span class="keyword">new</span> ReflectionClass(<span class="keyword">self</span>::CLASS_NAME);</div><div class="line">        $method          = $objReflectClass-&gt;getMethod($strMethodName);</div><div class="line">        $method-&gt;setAccessible(<span class="keyword">true</span>);</div><div class="line">        <span class="keyword">return</span> $method;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@brief</span> :测试private函数的调用</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testPrivateFunc</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        $testCase = <span class="string">'just a test string'</span>;</div><div class="line"></div><div class="line">        <span class="comment">// 反射该类</span></div><div class="line">        $testFunc = <span class="keyword">self</span>::getPrivateMethod(<span class="string">'privateFunc'</span>);</div><div class="line">        $res = $testFunc-&gt;invokeArgs(<span class="keyword">$this</span>-&gt;objMyClass, <span class="keyword">array</span>($testCase));</div><div class="line"></div><div class="line">        <span class="keyword">$this</span>-&gt;assertEquals($testCase, $res);</div><div class="line">        <span class="keyword">$this</span>-&gt;expectOutputRegex(<span class="string">'/success/i'</span>);</div><div class="line">        </div><div class="line">        <span class="comment">// 捕获没有参数异常测试</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">             $testFunc-&gt;invokeArgs(<span class="keyword">$this</span>-&gt;transfer2Pscase, <span class="keyword">array</span>());</div><div class="line">        &#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $expected) &#123;</div><div class="line">            <span class="keyword">$this</span>-&gt;assertNotNull($expected);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">$this</span>-&gt;fail(<span class="keyword">self</span>::FAIL);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##运行结果<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cuihuan:test cuixiaohuan$ phpunit MyClassTest.php </div><div class="line">PHPUnit 4.8.6 by Sebastian Bergmann and contributors.</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">Time:</span> 103 ms, Memory: 11.75Mb</div><div class="line"></div><div class="line">OK (1 test, 3 assertions)</div></pre></td></tr></table></figure></p>
-<h2 id="关键代码分析"><a href="#关键代码分析" class="headerlink" title="关键代码分析"></a>关键代码分析</h2><p>封装了一个，被测类方法的反射调用；同时，<code>返回方法之前处理方法的接入权限为true</code>，便可以访问private的函数方法。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 利用反射，对类中的private 和 protect 方法进行单元测试</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> $strMethodName  string  ：反射函数名</div><div class="line"> * <span class="doctag">@return</span> ReflectionMethod obj   ：回调对象</div><div class="line"> */</div><div class="line"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getPrivateMethod</span><span class="params">($strMethodName)</span> </span>&#123;</div><div class="line">    $objReflectClass = <span class="keyword">new</span> ReflectionClass(<span class="keyword">self</span>::CLASS_NAME);</div><div class="line">    $method          = $objReflectClass-&gt;getMethod($strMethodName);</div><div class="line">    $method-&gt;setAccessible(<span class="keyword">true</span>);</div><div class="line">    <span class="keyword">return</span> $method;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/phpunit%E5%8D%95%E6%B5%8B%E4%B8%AD%E8%B0%83%E7%94%A8private%E6%96%B9%E6%B3%95%E5%A4%84%E7%90%86.html">phpunit单测中调用private方法处理</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+问题背景：单测中有个普遍性的问题，被侧类中的private方法无法直接调用。小拽在处理过程中通过反射改变方法权限，进行单测，分享一下，直接上代码。
+
+简单被测试类生成一个简单的被测试类，只有个private方法。
+123456789101112131415161718192021222324252
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/20/php反射调用private方法实践/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1347,9 +1342,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/11/mysql 简单全量备份和快速恢复/" itemprop="url">mysql 简单全量备份和快速恢复</a></h1>
+                <a class="post-title-link" href="/2015/12/11/mysql 简单全量备份和快速恢复/" itemprop="url">mysql 简单全量备份和快速恢复</a></h2>
         
 
         <div class="post-meta">
@@ -1361,7 +1356,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-11T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-11T17:21:35+08:00">
                 2015-12-11
               </time>
             
@@ -1374,6 +1369,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2015/12/11/mysql 简单全量备份和快速恢复/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2015/12/11/mysql 简单全量备份和快速恢复/" class="cy_cmt_count" data-xid="2015/12/11/mysql 简单全量备份和快速恢复/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1398,15 +1404,18 @@
       
         
           
-            <blockquote>
-<p>一个简单的mysql全量备份脚本，备份最近15天的数据。</p>
-</blockquote>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#每天备份mysql数据库(保存最近15天的数据脚本)</span></div><div class="line">DATE=$(date +%Y%m%d)</div><div class="line"><span class="regexp">/home/</span>cuixiaohuan<span class="regexp">/lamp/my</span>sql5<span class="regexp">/bin/my</span>sqldump -uuser -ppassword need_db &gt; <span class="regexp">/home/</span>cuixiaohuan<span class="regexp">/bak_sql/my</span>sql_dbxx_<span class="variable">$DATE</span>.sql;</div><div class="line">find <span class="regexp">/home/</span>cuixiaohuan<span class="regexp">/bak_sql/</span> -mtime +<span class="number">15</span> -name <span class="string">'*.sql'</span> -exec rm -rf &#123;&#125; \;</div></pre></td></tr></table></figure>
-<h2 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h2><p>mysql 数据导入<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">drop</span> <span class="keyword">databases</span> need_db;</div><div class="line"><span class="keyword">create</span> <span class="keyword">databases</span> need_db;</div></pre></td></tr></table></figure></p>
-<p>导入数据：必须设定编码进行恢复<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./mysql -uroot -p --<span class="keyword">default</span>-character-<span class="keyword">set</span>=utf8 need_db &lt; xx.sql</div></pre></td></tr></table></figure></p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/mysql-%E7%AE%80%E5%8D%95%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD%E5%92%8C%E5%BF%AB%E9%80%9F%E6%81%A2%E5%A4%8D.html">mysql 简单全量备份和快速恢复</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+一个简单的mysql全量备份脚本，备份最近15天的数据。
+
+备份1234#每天备份mysql数据库(保存最近15天的数据脚本)DATE=$(date +%Y%m%d)/home/cuixiaohuan/lamp/mysql5/bin/mysqldump -uuser -ppassword need
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/11/mysql 简单全量备份和快速恢复/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1465,9 +1474,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/12/08/linux 查找清理大文件/" itemprop="url">linux 查找清理大文件</a></h1>
+                <a class="post-title-link" href="/2015/12/08/linux 查找清理大文件/" itemprop="url">linux 查找清理大文件</a></h2>
         
 
         <div class="post-meta">
@@ -1479,7 +1488,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-08T17:21:35+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-08T17:21:35+08:00">
                 2015-12-08
               </time>
             
@@ -1492,6 +1501,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2015/12/08/linux 查找清理大文件/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://cuihuan.net/2015/12/08/linux 查找清理大文件/" class="cy_cmt_count" data-xid="2015/12/08/linux 查找清理大文件/" itemprop="commentsCount" ></span>
+                </a>
+              
             
           
 
@@ -1516,19 +1536,18 @@
       
         
           
-            <blockquote>
-<p>linux 经常硬盘空间不足，往往是由于一些大文件造成；之前寻找大文件总是很头疼，速度特别慢。<br>经学弟介绍使用：<code>du -sh * |grep G</code> 查找和清理速度不错，分享一下清理过程。</p>
-</blockquote>
-<h2 id="查看系统存储状态"><a href="#查看系统存储状态" class="headerlink" title="查看系统存储状态"></a>查看系统存储状态</h2><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[cuihuan:~ cuixiaohuan]$ df -h</div><div class="line"><span class="symbol">Filesystem</span> <span class="symbol">Size</span> <span class="symbol">Used</span> <span class="symbol">Avail</span> <span class="symbol">Use</span><span class="comment">% Mounted on</span></div><div class="line">/dev/sda2 <span class="number">8.2</span><span class="symbol">G</span> <span class="number">6.7</span><span class="symbol">G</span> <span class="number">1.6</span><span class="symbol">G</span> <span class="number">82</span><span class="comment">% /</span></div><div class="line">/dev/sda3 <span class="number">1.4</span><span class="symbol">T</span> <span class="number">1.3</span><span class="symbol">T</span> <span class="number">50</span><span class="symbol">G</span> <span class="number">97</span><span class="comment">% /home</span></div></pre></td></tr></table></figure>
-<p>1.5T的硬盘占用了97%，确实不够用了，必须着手清理一下</p>
-<h2 id="查找大文件"><a href="#查找大文件" class="headerlink" title="查找大文件"></a>查找大文件</h2><p>主要使用查找命令：<code>du -sh * |grep G</code><br>从根文件开始查找<br><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[cuihuan:~]$ du -sh * | grep G</div><div class="line">。。。</div><div class="line"><span class="number">73</span>G mongodb</div><div class="line"><span class="number">103</span>G mxm</div><div class="line"><span class="number">2.1</span>G online</div><div class="line"><span class="number">613</span>G thirdparty [binggo!!!]</div><div class="line">。。。</div></pre></td></tr></table></figure></p>
-<p>bingo 613g，看来这个主要矛盾了，进一步分析该文件</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">[cuihuan:~ mysql5]$ du -<span class="keyword">sh</span> *</div><div class="line">116M bin</div><div class="line">904K <span class="keyword">include</span></div><div class="line">13M lib</div><div class="line">17M libexec</div><div class="line">458G <span class="keyword">log</span> [-__]</div><div class="line">8.0K my.cnf</div><div class="line">76M mysql-<span class="keyword">test</span></div><div class="line">13M share</div><div class="line">2.9M sql-bench</div><div class="line">4.0K <span class="keyword">test</span></div><div class="line">4.0K tmp</div><div class="line">101G <span class="keyword">var</span> [-_-]</div><div class="line">[cuihuan:~ mysql5]$ <span class="keyword">cd</span> <span class="built_in">log</span></div><div class="line">[cuihuan:~ <span class="keyword">log</span>]$ <span class="keyword">ls</span> -lh</div><div class="line"><span class="keyword">total</span> 458G</div><div class="line">-rw-rw---- 1 work work 870K <span class="keyword">Dec</span> 2 17:42 mysql.<span class="keyword">err</span></div><div class="line">-rw-rw---- 1 work work 3.9K Mar 24 2015 mysql.<span class="keyword">err</span>-old</div><div class="line">-rw-rw---- 1 work work 446G <span class="keyword">Dec</span> 3 15:19 mysql.<span class="keyword">log</span> 【-__】</div><div class="line">-rw-rw---- 1 work work 11G <span class="keyword">Dec</span> 3 15:10 slow.<span class="built_in">log</span></div></pre></td></tr></table></figure>
-<p>经过分析看到mysql.log的日志占了446G,着手清理下。【mysql log 好的保存方式是：天级导出，清理n天之前的log，此处不再赘述】</p>
-<h2 id="清理之后效果"><a href="#清理之后效果" class="headerlink" title="清理之后效果"></a>清理之后效果</h2><p>清理 mysql.log 和var  之后<br>清理了大约<code>500g</code>的空间<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[cuihuan:~ var]$ df -h   </div><div class="line"><span class="symbol">Filesystem</span> <span class="symbol">Size</span> <span class="symbol">Used</span> <span class="symbol">Avail</span> <span class="symbol">Use</span><span class="comment">% Mounted on</span></div><div class="line">/dev/sda2 <span class="number">8.2</span><span class="symbol">G</span> <span class="number">6.7</span><span class="symbol">G</span> <span class="number">1.6</span><span class="symbol">G</span> <span class="number">82</span><span class="comment">% /</span></div><div class="line">/dev/sda3 <span class="number">1.4</span><span class="symbol">T</span> <span class="number">757</span><span class="symbol">G</span> <span class="number">584</span><span class="symbol">G</span> <span class="number">57</span><span class="comment">% /home</span></div></pre></td></tr></table></figure></p>
-<p>【转载请注明：<a href="http://cuihuan.net/article/linux-%E6%9F%A5%E6%89%BE%E6%B8%85%E7%90%86%E5%A4%A7%E6%96%87%E4%BB%B6.html">linux 查找清理大文件</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
-
           
+linux 经常硬盘空间不足，往往是由于一些大文件造成；之前寻找大文件总是很头疼，速度特别慢。经学弟介绍使用：du -sh * |grep G 查找和清理速度不错，分享一下清理过程。
+
+查看系统存储状态1234[cuihuan:~ cuixiaohuan]$ df -hFilesystem Siz
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/08/linux 查找清理大文件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1602,14 +1621,14 @@
                alt="崔小拽" />
           <p class="site-author-name" itemprop="name">崔小拽</p>
            
-              <p class="site-description motion-element" itemprop="description">崔小拽的个人博客</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives/">
+              <a href="/">
                 <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -1664,7 +1683,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1673,19 +1692,28 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -1760,6 +1788,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
@@ -1803,6 +1838,10 @@
 
 
 
+
+  
+    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4yCrLQ"></script>
+  
 
 
 

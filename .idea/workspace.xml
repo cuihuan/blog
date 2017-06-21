@@ -1,7 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="" />
+    <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fancybox/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fastclick/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/font-awesome/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery_lazyload/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/velocity/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fancybox/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/font-awesome/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/font-awesome/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery_lazyload/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fastclick/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery_lazyload/README.md" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/lib/fastclick/README.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/lib/jquery_lazyload/CONTRIBUTING.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/lib/jquery_lazyload/README.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/Han/dist/font/han-space.woff" afterPath="$PROJECT_DIR$/public/lib/Han/dist/font/han-space.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/404.html" afterPath="$PROJECT_DIR$/public/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/_config.yml" afterPath="$PROJECT_DIR$/themes/next/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/fastclick/bower.json" afterPath="$PROJECT_DIR$/public/lib/fastclick/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/font-awesome/bower.json" afterPath="$PROJECT_DIR$/public/lib/font-awesome/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/jquery_lazyload/bower.json" afterPath="$PROJECT_DIR$/public/lib/jquery_lazyload/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/velocity/bower.json" afterPath="$PROJECT_DIR$/public/lib/velocity/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.json" afterPath="$PROJECT_DIR$/db.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html" afterPath="$PROJECT_DIR$/public/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html" afterPath="$PROJECT_DIR$/public/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/23/canvas_combine_pic/index.html" afterPath="$PROJECT_DIR$/public/2015/11/23/canvas_combine_pic/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/php 处理unicode解码/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/php 处理unicode解码/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/phpUnit 安装，实例和简单部署/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/phpUnit 安装，实例和简单部署/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/【redis学习一】基本概念和基本操作/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/【redis学习一】基本概念和基本操作/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/11/30/php 操作不同数据库/index.html" afterPath="$PROJECT_DIR$/public/2015/11/30/php 操作不同数据库/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/02/jsonp + php 跨域实例/index.html" afterPath="$PROJECT_DIR$/public/2015/12/02/jsonp + php 跨域实例/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/03/crontab 误删除恢复/index.html" afterPath="$PROJECT_DIR$/public/2015/12/03/crontab 误删除恢复/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/06/echarts动态获取数据实例/index.html" afterPath="$PROJECT_DIR$/public/2015/12/06/echarts动态获取数据实例/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html" afterPath="$PROJECT_DIR$/public/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/08/linux 查找清理大文件/index.html" afterPath="$PROJECT_DIR$/public/2015/12/08/linux 查找清理大文件/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/11/mysql 简单全量备份和快速恢复/index.html" afterPath="$PROJECT_DIR$/public/2015/12/11/mysql 简单全量备份和快速恢复/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2015/12/20/php反射调用private方法实践/index.html" afterPath="$PROJECT_DIR$/public/2015/12/20/php反射调用private方法实践/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/01/03/检验mysql主从备份，读写分离/index.html" afterPath="$PROJECT_DIR$/public/2016/01/03/检验mysql主从备份，读写分离/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/01/07/机器多次恶意提交攻击/index.html" afterPath="$PROJECT_DIR$/public/2016/01/07/机器多次恶意提交攻击/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/01/10/YII2数据库查询实践/index.html" afterPath="$PROJECT_DIR$/public/2016/01/10/YII2数据库查询实践/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/02/29/postMessage处理iframe 跨域问题/index.html" afterPath="$PROJECT_DIR$/public/2016/02/29/postMessage处理iframe 跨域问题/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/03/08/mysql数据导库常用操作/index.html" afterPath="$PROJECT_DIR$/public/2016/03/08/mysql数据导库常用操作/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/04/20/chrome_2/index.html" afterPath="$PROJECT_DIR$/public/2016/04/20/chrome_2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/04/20/中型存储架构实践探索/index.html" afterPath="$PROJECT_DIR$/public/2016/04/20/中型存储架构实践探索/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/04/26/chrome_1/index.html" afterPath="$PROJECT_DIR$/public/2016/04/26/chrome_1/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/07/page_monitor_second/index.html" afterPath="$PROJECT_DIR$/public/2016/08/07/page_monitor_second/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /index.html" afterPath="$PROJECT_DIR$/public/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/08/phpredis单例模式封装/index.html" afterPath="$PROJECT_DIR$/public/2016/08/08/phpredis单例模式封装/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/20/fsck修复linux文件损坏/index.html" afterPath="$PROJECT_DIR$/public/2016/08/20/fsck修复linux文件损坏/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/index.html" afterPath="$PROJECT_DIR$/public/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/01/20/charactor/index.html" afterPath="$PROJECT_DIR$/public/2017/01/20/charactor/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html" afterPath="$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/02/05/redis3/index.html" afterPath="$PROJECT_DIR$/public/2017/02/05/redis3/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2017/03/14/nginx_study_1/index.html" afterPath="$PROJECT_DIR$/public/2017/03/14/nginx_study_1/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/about/index.html" afterPath="$PROJECT_DIR$/public/about/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/index.html" afterPath="$PROJECT_DIR$/public/archives/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/11/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/11/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/12/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/12/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2015/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/page/2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/02/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/03/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/04/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/04/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/08/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/08/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2016/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/page/2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/01/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/02/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/02/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/2017/03/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/03/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/page/3/index.html" afterPath="$PROJECT_DIR$/public/archives/page/3/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/archives/page/4/index.html" afterPath="$PROJECT_DIR$/public/archives/page/4/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/categories/index.html" afterPath="$PROJECT_DIR$/public/categories/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/old/index.html" afterPath="$PROJECT_DIR$/public/old/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/page/2/index.html" afterPath="$PROJECT_DIR$/public/page/2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/page/3/index.html" afterPath="$PROJECT_DIR$/public/page/3/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/page/4/index.html" afterPath="$PROJECT_DIR$/public/page/4/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/index.html" afterPath="$PROJECT_DIR$/public/tags/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/active-record/index.html" afterPath="$PROJECT_DIR$/public/tags/active-record/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/apache/index.html" afterPath="$PROJECT_DIR$/public/tags/apache/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/canvas/index.html" afterPath="$PROJECT_DIR$/public/tags/canvas/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/chrome/index.html" afterPath="$PROJECT_DIR$/public/tags/chrome/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/chrome-extension/index.html" afterPath="$PROJECT_DIR$/public/tags/chrome-extension/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/cors/index.html" afterPath="$PROJECT_DIR$/public/tags/cors/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/crontab/index.html" afterPath="$PROJECT_DIR$/public/tags/crontab/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/css/index.html" afterPath="$PROJECT_DIR$/public/tags/css/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/db/index.html" afterPath="$PROJECT_DIR$/public/tags/db/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/echarts/index.html" afterPath="$PROJECT_DIR$/public/tags/echarts/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/git修复/index.html" afterPath="$PROJECT_DIR$/public/tags/git修复/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/html5/index.html" afterPath="$PROJECT_DIR$/public/tags/html5/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/iframe/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/iframe自适应高度/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe自适应高度/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/iframe跨域/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe跨域/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/ip/index.html" afterPath="$PROJECT_DIR$/public/tags/ip/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/javascript/index.html" afterPath="$PROJECT_DIR$/public/tags/javascript/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/jsonp/index.html" afterPath="$PROJECT_DIR$/public/tags/jsonp/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/linux/index.html" afterPath="$PROJECT_DIR$/public/tags/linux/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/mysql/index.html" afterPath="$PROJECT_DIR$/public/tags/mysql/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/nginx/index.html" afterPath="$PROJECT_DIR$/public/tags/nginx/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/pho/index.html" afterPath="$PROJECT_DIR$/public/tags/pho/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/php/index.html" afterPath="$PROJECT_DIR$/public/tags/php/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/php/page/2/index.html" afterPath="$PROJECT_DIR$/public/tags/php/page/2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/phpredis/index.html" afterPath="$PROJECT_DIR$/public/tags/phpredis/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/phpunit/index.html" afterPath="$PROJECT_DIR$/public/tags/phpunit/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/redis/index.html" afterPath="$PROJECT_DIR$/public/tags/redis/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/redis主从/index.html" afterPath="$PROJECT_DIR$/public/tags/redis主从/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/shell/index.html" afterPath="$PROJECT_DIR$/public/tags/shell/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/unicode/index.html" afterPath="$PROJECT_DIR$/public/tags/unicode/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/wordpress/index.html" afterPath="$PROJECT_DIR$/public/tags/wordpress/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/yii2/index.html" afterPath="$PROJECT_DIR$/public/tags/yii2/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/主从备份/index.html" afterPath="$PROJECT_DIR$/public/tags/主从备份/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/前端/index.html" afterPath="$PROJECT_DIR$/public/tags/前端/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/动态获取数据/index.html" afterPath="$PROJECT_DIR$/public/tags/动态获取数据/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/单例模式/index.html" afterPath="$PROJECT_DIR$/public/tags/单例模式/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/单元测试/index.html" afterPath="$PROJECT_DIR$/public/tags/单元测试/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/合成图片/index.html" afterPath="$PROJECT_DIR$/public/tags/合成图片/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/基本原理/index.html" afterPath="$PROJECT_DIR$/public/tags/基本原理/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/备份/index.html" afterPath="$PROJECT_DIR$/public/tags/备份/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/容灾方案/index.html" afterPath="$PROJECT_DIR$/public/tags/容灾方案/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/恶意攻击/index.html" afterPath="$PROJECT_DIR$/public/tags/恶意攻击/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/数据库同步/index.html" afterPath="$PROJECT_DIR$/public/tags/数据库同步/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/服务器/index.html" afterPath="$PROJECT_DIR$/public/tags/服务器/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/缓存/index.html" afterPath="$PROJECT_DIR$/public/tags/缓存/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/网页爬虫/index.html" afterPath="$PROJECT_DIR$/public/tags/网页爬虫/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/自动化测试/index.html" afterPath="$PROJECT_DIR$/public/tags/自动化测试/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/设计模式/index.html" afterPath="$PROJECT_DIR$/public/tags/设计模式/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/读写分离/index.html" afterPath="$PROJECT_DIR$/public/tags/读写分离/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/跨域/index.html" afterPath="$PROJECT_DIR$/public/tags/跨域/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/高可用架构/index.html" afterPath="$PROJECT_DIR$/public/tags/高可用架构/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tags/高并发/index.html" afterPath="$PROJECT_DIR$/public/tags/高并发/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/lib/three/three.min.js" afterPath="$PROJECT_DIR$/public/lib/three/three.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html" afterPath="$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/wp_content/uploads/2015/10/准备动作.html" afterPath="$PROJECT_DIR$/public/wp_content/uploads/2015/10/准备动作.html" />
+    </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,11 +166,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6989796" vertical-offset="1238" max-vertical-offset="10542">
-              <caret line="72" column="58" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
+            <state vertical-scroll-proportion="-7.4074073" vertical-offset="409" max-vertical-offset="10899">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1932">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.93322736" vertical-offset="59557" max-vertical-offset="60270">
+              <caret line="2864" column="0" selection-start-line="2864" selection-start-column="0" selection-end-line="2864" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pisces.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/src/schemes/pisces.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="483">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.styl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/source/css/main.styl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1071">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,13 +229,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="41538">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-              <folding>
-                <marker date="1497951138000" expanded="true" signature="122648:122656" placeholder="..." />
-                <marker date="1497951138000" expanded="true" signature="2218:2236" placeholder="{...}" />
-                <marker date="1497951138000" expanded="true" signature="122589:122590" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="112.0" vertical-offset="3528" max-vertical-offset="39249">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,10 +265,10 @@
       <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/404.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11046">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11781">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1497951138000" expanded="true" signature="8749:8750" placeholder="{...}" />
+                <marker date="1498007815000" expanded="true" signature="9789:9790" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -144,12 +321,13 @@
         <option value="$PROJECT_DIR$/source/categories/index.md" />
         <option value="$PROJECT_DIR$/source/about/index.md" />
         <option value="$PROJECT_DIR$/source/404.html" />
-        <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/source/404/index.md" />
         <option value="$PROJECT_DIR$/source/_posts/redis3.md" />
         <option value="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" />
         <option value="$PROJECT_DIR$/source/_posts/nginx_study_1.md" />
         <option value="$PROJECT_DIR$/themes/next/_config.yml" />
+        <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
       </list>
     </option>
   </component>
@@ -158,10 +336,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -243,7 +420,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="source" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -265,7 +442,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="languages" />
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,7 +460,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scaffolds" />
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,6 +500,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/source/bak" />
       <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="$PROJECT_DIR$/source" />
@@ -392,16 +588,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1920" height="1057" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52497345" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7519026" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2087327" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31663975" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -410,12 +606,12 @@
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7970244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7519026" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5366631" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2087327" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31663975" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -443,16 +639,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/charactor.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.633333" vertical-offset="4010" max-vertical-offset="4977">
-          <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/chrome_1.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -781,7 +967,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497951138000" expanded="true" signature="8749:8750" placeholder="{...}" />
+            <marker date="1498007815000" expanded="true" signature="9789:9790" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -790,18 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1590909" vertical-offset="0" max-vertical-offset="18459">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="42273">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding>
-            <marker date="1497951138000" expanded="true" signature="122648:122656" placeholder="..." />
-            <marker date="1497951138000" expanded="true" signature="2218:2236" placeholder="{...}" />
-            <marker date="1497951138000" expanded="true" signature="122589:122590" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -822,21 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1932">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-Hans.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,10 +1059,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-Hans.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="112.0" vertical-offset="3528" max-vertical-offset="41538">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6989796" vertical-offset="1238" max-vertical-offset="10542">
-          <caret line="72" column="58" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
+        <state vertical-scroll-proportion="-7.4074073" vertical-offset="409" max-vertical-offset="10899">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1932">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/src/schemes/pisces.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/source/css/main.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93322736" vertical-offset="59557" max-vertical-offset="60270">
+          <caret line="2864" column="0" selection-start-line="2864" selection-start-column="0" selection-end-line="2864" selection-end-column="0" />
           <folding />
         </state>
       </provider>
