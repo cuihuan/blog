@@ -1,0 +1,891 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="php,性能优化,codeIgniter," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，未来扩展性。选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个启动时间优化到5ms以内。
+
+一、选型
+背景：使用php作为微服务的接口，具有一定的性能要求和并发要求。
+方案：
+1：选一个轻量的php框架。最好是具有简单高效的路由，模块化即可。
+2：在框架的基础上，自定义的优化
+
+
+
+1.1 从压测数据看性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CodeIgniter 性能优化">
+<meta property="og:url" content="http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，未来扩展性。选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个启动时间优化到5ms以内。
+
+一、选型
+背景：使用php作为微服务的接口，具有一定的性能要求和并发要求。
+方案：
+1：选一个轻量的php框架。最好是具有简单高效的路由，模块化即可。
+2：在框架的基础上，自定义的优化
+
+
+
+1.1 从压测数据看性">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/codeIgniter/performance.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/codeIgniter/githup_php.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/codeIgniter/time_distribute.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/codeIgniter/all.png">
+<meta property="og:updated_time" content="2017-06-21T09:28:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CodeIgniter 性能优化">
+<meta name="twitter:description" content="背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，未来扩展性。选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个启动时间优化到5ms以内。
+
+一、选型
+背景：使用php作为微服务的接口，具有一定的性能要求和并发要求。
+方案：
+1：选一个轻量的php框架。最好是具有简单高效的路由，模块化即可。
+2：在框架的基础上，自定义的优化
+
+
+
+1.1 从压测数据看性">
+<meta name="twitter:image" content="http://cuihuan.net/wp_content/new/codeIgniter/performance.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/"/>
+
+
+
+
+
+  <title>CodeIgniter 性能优化 | 靠谱崔小拽</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-old">
+          <a href="http://cuihuan.net:8222" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
+            
+            旧版
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            demo
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/favicon.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CodeIgniter 性能优化</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-05T23:21:35+08:00">
+                2017-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/06/05/CodeIgniter 性能优化/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/06/05/CodeIgniter 性能优化/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，未来扩展性。选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个<code>启动时间优化到5ms</code>以内。</p>
+</blockquote>
+<h2 id="一、选型"><a href="#一、选型" class="headerlink" title="一、选型"></a>一、选型</h2><ul>
+<li>背景：使用php作为微服务的接口，具有一定的性能要求和并发要求。</li>
+<li>方案：<ul>
+<li>1：选一个轻量的php框架。最好是具有简单高效的路由，模块化即可。</li>
+<li>2：在框架的基础上，自定义的优化</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-1-从压测数据看性能"><a href="#1-1-从压测数据看性能" class="headerlink" title="1.1 从压测数据看性能"></a>1.1 从压测数据看性能</h3><p><a href="https://www.ruilog.com/blog/view/b6f0e42cf705.html" target="_blank" rel="external">https://www.ruilog.com/blog/view/b6f0e42cf705.html</a><br>具体细节就不赘述，除了直接写php之外，ci和lumen的并发性能不错，在考虑范围内。</p>
+<p><a href="http://cuihuan.net/wp_content/new/codeIgniter/performance.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/performance.png" alt="ci performance"></a></p>
+<h3 id="1-2-从流行度上看。"><a href="#1-2-从流行度上看。" class="headerlink" title="1.2 从流行度上看。"></a>1.2 从流行度上看。</h3><p>排名前四的是laravel,symfony,ci,yii2。最火的是laravel毋庸置疑。但前四均在考虑范围内</p>
+<p><a href="http://cuihuan.net/wp_content/new/codeIgniter/githup_php.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/githup_php.png" alt="ci github"></a></p>
+<h3 id="1-3-从文档来看。"><a href="#1-3-从文档来看。" class="headerlink" title="1.3 从文档来看。"></a>1.3 从文档来看。</h3><p>laraval,ci,yii的中文社区都还不错。</p>
+<p>综合考虑之后，在满足功能的情况下，选择性能最好，也易入手的codeIgniter作为基础框架。（<code>整个包才2.5M，删除了web文件夹后更小</code>）</p>
+<h2 id="二、30ms-到10ms"><a href="#二、30ms-到10ms" class="headerlink" title="二、30ms+到10ms"></a>二、30ms+到10ms</h2><p>框架的基本部署，直接参考官网：<a href="https://codeigniter.org.cn/" target="_blank" rel="external">https://codeigniter.org.cn/</a></p>
+<h3 id="2-1-问题描述"><a href="#2-1-问题描述" class="headerlink" title="2.1 问题描述"></a>2.1 问题描述</h3><p>配置了数据库之后，添加了一个默认的controller，一个model，默认加载时间竟然30ms—_-。瞬间懵逼了，nginx+fpm 1-2ms，框架竟然30ms，肯定那里配置错了，决定沿着路由追一下。</p>
+<h3 id="2-2-问题追查"><a href="#2-2-问题追查" class="headerlink" title="2.2 问题追查"></a>2.2 问题追查</h3><p>沿着ci的路由顺序追查，从index入，一步一步卡时间。[<code>括号内为运行到的总计数</code>]</p>
+<p>-》index.php [<code>1ms</code>]<br>-》core/CodeIgniter.php<br>-》加载常量[<code>1ms</code>]<br>-》加载common(包括log，show，error,is_https等)[1ms]load hooks [<code>2ms</code>]<br>-》加载autoload 方法<br>-》加载benchmark<br>-》实例化hooks<br>-》实例化pre_controller<br>-》实例化post_controller_constructor<br>-》实例化post_controller<br>-》实例化post_system<br>-》加载config [<code>3ms</code>]<br>-》加载扩展mbstring,iconv,hash,stardard<br>-》load 组件utf8，uri<br>-》load router [<code>4ms</code>]<br>-》load output，input，lang[<code>5ms</code>]<br>-》autoload package,cinfig,helper,language,driver,lib,model,db,cache<br>-》404 &amp;empty$…handle [<code>31ms</code>]<br>-》controller remap（测试性能写了个remap）[<code>35ms</code>]<br>-》controller 业务逻辑 [<code>35ms</code>]</p>
+<p>这个ci的加载过程之后，基本一幕了然，在autoload里面耗时25ms。然后对autoload里面8个组件一个一个分析。</p>
+<h3 id="2-3-问题原因"><a href="#2-3-问题原因" class="headerlink" title="2.3 问题原因"></a>2.3 问题原因</h3><p>分析完之后，问题特别简单，下面这行代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$autoload[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>);</div></pre></td></tr></table></figure></p>
+<p>ci 出于单例和复用角度考虑，选择<code>默认加载database</code>，也就是mysql在默认初始化。对于mysql链接在并发情况下，init基本上要耗费10-30ms，干掉之后，压测基本上在10ms左右。</p>
+<p>压测数据图</p>
+<h2 id="三、从10ms到5ms"><a href="#三、从10ms到5ms" class="headerlink" title="三、从10ms到5ms"></a>三、从10ms到5ms</h2><h3 id="3-1-优化目标"><a href="#3-1-优化目标" class="headerlink" title="3.1 优化目标"></a>3.1 优化目标</h3><p>抛出了配置等常用错误后，ci在高并发下依然有10ms左右的加载时间，需要结合自身逻辑优化下，干掉很多不需要的功能。</p>
+<h3 id="3-2-分析"><a href="#3-2-分析" class="headerlink" title="3.2 分析"></a>3.2 分析</h3><p>之前在追查问题的过程中，粗读了一遍代码的流程，这次需要细看下每个模块的功能，干掉不需要的，逐步优化。</p>
+<p>-》index.php </p>
+<ul>
+<li>作用：加载了部分全局变量，文件路径等入口</li>
+<li>优化：干掉了整个web文件，调整了部分路径</li>
+</ul>
+<p>-》core/CodeIgniter.php</p>
+<ul>
+<li>作用：ci的核心文件，基本上加载了整个模块</li>
+<li>优化：进入内部优化</li>
+</ul>
+<p>-》加载common.php</p>
+<ul>
+<li>作用：框架特别基本的一些函数log，show，error，is_xxx等，800行左右代码</li>
+<li>优化：暂时未处理</li>
+</ul>
+<p>-》composer autoload func<br>-》加载benchmark </p>
+<ul>
+<li>作用：benchmark性能追查工具，设置了全局的开始和结束时间</li>
+<li>优化：<code>直接干掉</code>，全局处理。但是性能需要卡，就在index中初始化了一个入库的timer<figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义全局开始追查</span></div><div class="line"><span class="built_in">list</span>($msec, $sec) = explode(<span class="string">' '</span>, microtime());</div><div class="line"><span class="class"><span class="keyword">define</span></span>(<span class="string">'START_TIME'</span>, (float)sprintf(<span class="string">'%.0f'</span>, (floatval($msec) + floatval($sec)) * <span class="number">1000</span>));</div><div class="line"><span class="comment">// 定义全局uuid</span></div><div class="line"><span class="class"><span class="keyword">define</span></span>(<span class="string">'UUID'</span>, uniqid(<span class="string">'xxx'</span>, <span class="literal">true</span>));</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>-》实例化hooks和预变量 </p>
+<ul>
+<li>作用：设计特别棒，对于一些hook或者针对不同模块的预加载函数。</li>
+<li>优化：<code>直接干掉</code>，7,8个hook后期用到再针对性添加</li>
+</ul>
+<p>-》加载config </p>
+<ul>
+<li>作用：对应的是ci的get_config等函数，加载了base_url,uri,cache path等 。</li>
+<li>优化：<code>直接干掉</code>，全局变量占用需要自己加就行，这种不可控的干掉</li>
+</ul>
+<p>-》加载扩展mbstring,iconv,hash,stardard</p>
+<ul>
+<li>作用：一些额外的扩展。</li>
+<li>优化：<code>直接干掉</code>，试了下干掉对功能不影响，ci写的太全面了，后期可以通过加载自己的lib弥补。</li>
+</ul>
+<p>-》load 组件utf8，uri</p>
+<ul>
+<li>作用：uri路由方式处理，utf8的处理。</li>
+<li>优化：<code>直接干掉</code>。</li>
+</ul>
+<p>-》load router [<code>4ms</code>]</p>
+<ul>
+<li>作用：路由。</li>
+<li>优化：<code>干不掉</code>。</li>
+<li>额外：laravel 据说是使用COC最好的框架，看了下ci的router也不错，基本上都是遵循COC</li>
+</ul>
+<p>-》load output，input</p>
+<ul>
+<li>作用：output和浏览器交互输出的处理组件，input包括获取数据array_merge等等。</li>
+<li>优化：<code>干掉</code>,需要自己写</li>
+</ul>
+<p>-》autoload package,cinfig,helper,language,driver,lib,model,db,cache</p>
+<ul>
+<li>作用：各种各样的组建了。</li>
+<li>优化：全<code>不</code>加载</li>
+</ul>
+<p>-》404 &amp;empty$…handle </p>
+<ul>
+<li>作用：异常处理。</li>
+<li>优化：加载</li>
+</ul>
+<p>-》controller remap（测试性能写了个remap）</p>
+<ul>
+<li>作用：指向其他controller。</li>
+<li>优化：无</li>
+</ul>
+<p>-》controller 业务逻辑 </p>
+<p>到此将整个框架过程优化完成，初始一下4-5ms感觉还不错。</p>
+<h2 id="四、压测数据"><a href="#四、压测数据" class="headerlink" title="四、压测数据"></a>四、压测数据</h2><h3 id="4-1-高并发压测"><a href="#4-1-高并发压测" class="headerlink" title="4.1 高并发压测"></a>4.1 高并发压测</h3><p>2000qps+ ，均值约6ms</p>
+<h3 id="4-2-长时间高负载压测"><a href="#4-2-长时间高负载压测" class="headerlink" title="4.2 长时间高负载压测"></a>4.2 长时间高负载压测</h3><p>1500qps 10min，均值约6ms</p>
+<p>超时分布<br><a href="http://cuihuan.net/wp_content/new/codeIgniter/time_distribute.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/time_distribute.png" alt="time_distribute"></a></p>
+<h3 id="4-3-无限发压"><a href="#4-3-无限发压" class="headerlink" title="4.3 无限发压"></a>4.3 无限发压</h3><p>nginx + php 均值：17ms<br>框架均值：9ms<br><a href="http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png" alt="nginx_time"></a></p>
+<h2 id="五、汇总"><a href="#五、汇总" class="headerlink" title="五、汇总"></a>五、汇总</h2><p>ci 是一个比较优秀的轻量级MVC框架，可以用来，业能否支撑1000-2000pqs的业务接口。<br>最后来一张ci的路由图<br><a href="http://cuihuan.net/wp_content/new/codeIgniter/all.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/all.png" alt="all"></a></p>
+<p>```</p>
+<p>【转载请注明：<a href="http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/">【CodeIgniter 性能优化</a> | <a href="http://cuihuan.net">靠谱崔小拽</a> 】</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>Post author:</strong>
+      崔小拽
+    </li>
+    <li class="post-copyright-link">
+      <strong>Post link:</strong>
+      <a href="http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/" title="CodeIgniter 性能优化">http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright Notice: </strong>
+      All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+            <a href="/tags/codeIgniter/" rel="tag"># codeIgniter</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/14/nginx_study_1/" rel="next" title="【nginx学习一】基本原理学习">
+                <i class="fa fa-chevron-left"></i> 【nginx学习一】基本原理学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/favicon.ico"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、选型"><span class="nav-number">1.</span> <span class="nav-text">一、选型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-从压测数据看性能"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 从压测数据看性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-从流行度上看。"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 从流行度上看。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-从文档来看。"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 从文档来看。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、30ms-到10ms"><span class="nav-number">2.</span> <span class="nav-text">二、30ms+到10ms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-问题描述"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-问题追查"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 问题追查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-问题原因"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 问题原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、从10ms到5ms"><span class="nav-number">3.</span> <span class="nav-text">三、从10ms到5ms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-优化目标"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 优化目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-分析"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、压测数据"><span class="nav-number">4.</span> <span class="nav-text">四、压测数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-高并发压测"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 高并发压测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-长时间高负载压测"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 长时间高负载压测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-无限发压"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 无限发压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、汇总"><span class="nav-number">5.</span> <span class="nav-text">五、汇总</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt4yCrLQ';
+      var conf = 'b93e7476cddc60d0ecda38b6929b86e6';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
