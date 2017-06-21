@@ -1,3 +1,11 @@
+---
+title: CodeIgniter 性能优化
+date: 2017-06-05 23:21:35
+tags: 
+- php
+- 性能优化
+- codeIgniter
+---
 > 背景：部署一套PHP微服务接口，需要兼顾性能，开发效率，扩展性。权衡后选择了CodeIgniter；同时优化框架的默认启动项，在qps1000+的压力下整个`启动时间优化到5ms`左右。
 
 ## 一、选型
@@ -170,5 +178,3 @@ ci 是一个比较优秀的轻量级MVC框架，可以用来，业能否支撑10
 
 
 ```
-
-【转载请注明：[【CodeIgniter 性能优化](http://cuihuan.net/2017/06/05/CodeIgniter 性能优化/) | [靠谱崔小拽](http://cuihuan.net) 】
