@@ -11,7 +11,7 @@ language: zh-Hans
 timezone:
 
 # my avatar
-avatar: /wp_content/base/favicon.ico
+avatar: /wp_content/base/cuihuan_title.jpg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
