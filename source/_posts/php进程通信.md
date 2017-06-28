@@ -45,7 +45,7 @@ php也有一些封装好的异步进程处理框架：例如swoole,workman等
 
 # 三、与php相关的IPC
 
-## nginx的IPC
+## 3.1 nginx的IPC
 
 nginx的ipc主要有两种：
 - 早期：channel 机制：类似于信号，标示不同进程以及进程与子进程之间的套接字，同时具有继承关系。
@@ -53,9 +53,10 @@ nginx的ipc主要有两种：
 
 - 当前主流：共享内存方式：快，写入数据少，方便。
 
-具体可以参见这篇文章：写的非常好 https://rocfang.gitbooks.io/dev-notes/content/nginxzhong_de_jin_cheng_jian_tong_xin.html
 
-## apache的IPC
+> 具体可以参见这篇文章：写的非常好 https://rocfang.gitbooks.io/dev-notes/content/nginxzhong_de_jin_cheng_jian_tong_xin.html
+
+## 3.2 apache的IPC
 apache：https://arrow.apache.org/docs/ipc.html
 
 # 四、实际应用中的IPC

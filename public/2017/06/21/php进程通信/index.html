@@ -92,7 +92,7 @@ BSD的socket Ipc :消息队列，共享内存，信号灯。
 
 1.2 主要方式总结起">
 <meta property="og:image" content="https://www.ibm.com/developerworks/cn/linux/l-ipc/1.gif">
-<meta property="og:updated_time" content="2017-06-28T09:54:27.000Z">
+<meta property="og:updated_time" content="2017-06-28T10:00:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php进程通信">
 <meta name="twitter:description" content="PHP间进程如何通信，PHP相关的服务的IPC是实现方式，IPC的思想如何用到项目中。
@@ -403,15 +403,17 @@ BSD的socket Ipc :消息队列，共享内存，信号灯。
 <li>sockets扩展：实现socket通信，跨机器，跨平台。</li>
 </ul>
 <p>php也有一些封装好的异步进程处理框架：例如swoole,workman等</p>
-<h1 id="三、与php相关的IPC"><a href="#三、与php相关的IPC" class="headerlink" title="三、与php相关的IPC"></a>三、与php相关的IPC</h1><h2 id="nginx的IPC"><a href="#nginx的IPC" class="headerlink" title="nginx的IPC"></a>nginx的IPC</h2><p>nginx的ipc主要有两种：</p>
+<h1 id="三、与php相关的IPC"><a href="#三、与php相关的IPC" class="headerlink" title="三、与php相关的IPC"></a>三、与php相关的IPC</h1><h2 id="3-1-nginx的IPC"><a href="#3-1-nginx的IPC" class="headerlink" title="3.1 nginx的IPC"></a>3.1 nginx的IPC</h2><p>nginx的ipc主要有两种：</p>
 <ul>
 <li><p>早期：channel 机制：类似于信号，标示不同进程以及进程与子进程之间的套接字，同时具有继承关系。<br>缺点：过于复杂，也产生了过多的套接字，造成存储浪费。</p>
 </li>
 <li><p>当前主流：共享内存方式：快，写入数据少，方便。</p>
 </li>
 </ul>
+<blockquote>
 <p>具体可以参见这篇文章：写的非常好 <a href="https://rocfang.gitbooks.io/dev-notes/content/nginxzhong_de_jin_cheng_jian_tong_xin.html" target="_blank" rel="external">https://rocfang.gitbooks.io/dev-notes/content/nginxzhong_de_jin_cheng_jian_tong_xin.html</a></p>
-<h2 id="apache的IPC"><a href="#apache的IPC" class="headerlink" title="apache的IPC"></a>apache的IPC</h2><p>apache：<a href="https://arrow.apache.org/docs/ipc.html" target="_blank" rel="external">https://arrow.apache.org/docs/ipc.html</a></p>
+</blockquote>
+<h2 id="3-2-apache的IPC"><a href="#3-2-apache的IPC" class="headerlink" title="3.2 apache的IPC"></a>3.2 apache的IPC</h2><p>apache：<a href="https://arrow.apache.org/docs/ipc.html" target="_blank" rel="external">https://arrow.apache.org/docs/ipc.html</a></p>
 <h1 id="四、实际应用中的IPC"><a href="#四、实际应用中的IPC" class="headerlink" title="四、实际应用中的IPC"></a>四、实际应用中的IPC</h1><p>在平时的项目中，类似于php和linux的IPC的思想大量存在，深入理解。</p>
 <ul>
 <li><p>socket方式：不同项目间通讯，跨机微服务等等，也是使用最广泛的IPC。</p>
@@ -616,7 +618,7 @@ BSD的socket Ipc :消息队列，共享内存，信号灯。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、linux进程间通信"><span class="nav-number">1.</span> <span class="nav-text">一、linux进程间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-历史发展"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 历史发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-主要方式"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 主要方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、php进程通讯有哪些方式"><span class="nav-number">2.</span> <span class="nav-text">二、php进程通讯有哪些方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、与php相关的IPC"><span class="nav-number">3.</span> <span class="nav-text">三、与php相关的IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx的IPC"><span class="nav-number">3.1.</span> <span class="nav-text">nginx的IPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apache的IPC"><span class="nav-number">3.2.</span> <span class="nav-text">apache的IPC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、实际应用中的IPC"><span class="nav-number">4.</span> <span class="nav-text">四、实际应用中的IPC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、linux进程间通信"><span class="nav-number">1.</span> <span class="nav-text">一、linux进程间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-历史发展"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 历史发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-主要方式"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 主要方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、php进程通讯有哪些方式"><span class="nav-number">2.</span> <span class="nav-text">二、php进程通讯有哪些方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、与php相关的IPC"><span class="nav-number">3.</span> <span class="nav-text">三、与php相关的IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-nginx的IPC"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 nginx的IPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-apache的IPC"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 apache的IPC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、实际应用中的IPC"><span class="nav-number">4.</span> <span class="nav-text">四、实际应用中的IPC</span></a></li></ol></div>
             
 
           </div>
