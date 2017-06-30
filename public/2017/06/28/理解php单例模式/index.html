@@ -51,7 +51,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="php,nginx,apache," />
+  <meta name="keywords" content="php,单例模式," />
 
 
 
@@ -67,28 +67,28 @@
 
 
 
-<meta name="description" content="背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。
+<meta name="description" content="单例作为一个最经典的设计模式之一，到底什么是单例？为什么要用单例？怎么设计单例？php中单例如何具体实现？
 
-背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉">
+一、什么是单例wiki百科：单例模式，也叫单子模式，是一种常用的软件设计模式。 在应用这个模式时，单例对象的类必须保证只有一个实例存在。 许多时候整个系统只需要拥有一个的全局对象，这样有利于我们协调系统整体的行为。
+通俗的说，也就是对于某一个功能只能实例化一个对象。
+二、为什么用单例实际">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx实践一：centos apache更换为nginx">
-<meta property="og:url" content="http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html">
+<meta property="og:title" content="理解php单例模式">
+<meta property="og:url" content="http://cuihuan.net/2017/06/28/理解php单例模式/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
-<meta property="og:description" content="背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。
+<meta property="og:description" content="单例作为一个最经典的设计模式之一，到底什么是单例？为什么要用单例？怎么设计单例？php中单例如何具体实现？
 
-背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉">
-<meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/11/8C2E5AE4-0A5E-479E-8C20-1CFF0C35F6D7-1024x621.png">
-<meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/11/CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2-1024x302.png">
-<meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/11/BAEF603F-CA9C-436E-B870-3E70C11542D0.png">
-<meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/11/A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3-1024x718.png">
-<meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/11/E773D2EE-2F51-4113-AAE1-939CD88DCAEE-1024x667.png">
-<meta property="og:updated_time" content="2017-06-20T09:13:32.000Z">
+一、什么是单例wiki百科：单例模式，也叫单子模式，是一种常用的软件设计模式。 在应用这个模式时，单例对象的类必须保证只有一个实例存在。 许多时候整个系统只需要拥有一个的全局对象，这样有利于我们协调系统整体的行为。
+通俗的说，也就是对于某一个功能只能实例化一个对象。
+二、为什么用单例实际">
+<meta property="og:updated_time" content="2017-06-30T05:50:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx实践一：centos apache更换为nginx">
-<meta name="twitter:description" content="背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。
+<meta name="twitter:title" content="理解php单例模式">
+<meta name="twitter:description" content="单例作为一个最经典的设计模式之一，到底什么是单例？为什么要用单例？怎么设计单例？php中单例如何具体实现？
 
-背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉">
-<meta name="twitter:image" content="http://cuihuan.net/wp-content/uploads/2015/11/8C2E5AE4-0A5E-479E-8C20-1CFF0C35F6D7-1024x621.png">
+一、什么是单例wiki百科：单例模式，也叫单子模式，是一种常用的软件设计模式。 在应用这个模式时，单例对象的类必须保证只有一个实例存在。 许多时候整个系统只需要拥有一个的全局对象，这样有利于我们协调系统整体的行为。
+通俗的说，也就是对于某一个功能只能实例化一个对象。
+二、为什么用单例实际">
 
 
 
@@ -116,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/"/>
+  <link rel="canonical" href="http://cuihuan.net/2017/06/28/理解php单例模式/"/>
 
 
 
 
 
-  <title>Nginx实践一：centos apache更换为nginx | 靠谱崔小拽</title>
+  <title>理解php单例模式 | 靠谱崔小拽</title>
   
 
 
@@ -271,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2017/06/28/理解php单例模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="崔小拽">
@@ -288,7 +288,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Nginx实践一：centos apache更换为nginx</h2>
+          <h2 class="post-title" itemprop="name headline">理解php单例模式</h2>
         
 
         <div class="post-meta">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-18T17:21:35+08:00">
-                2015-11-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-28T22:21:35+08:00">
+                2017-06-28
               </time>
             
 
@@ -320,8 +320,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2015/11/18/Nginx实践一：centos apache更换为nginx/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2015/11/18/Nginx实践一：centos apache更换为nginx/" itemprop="commentsCount"></span>
+                <a href="/2017/06/28/理解php单例模式/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/06/28/理解php单例模式/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -352,44 +352,24 @@
 
       
         <blockquote>
-<p>背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。</p>
+<p>单例作为一个最经典的设计模式之一，到底什么是单例？为什么要用单例？怎么设计单例？php中单例如何具体实现？</p>
 </blockquote>
-<h3 id="背景数据"><a href="#背景数据" class="headerlink" title="背景数据"></a>背景数据</h3><p>如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉的不是治本之策</p>
-<pre><code># 统计apache 进程个数
-ps aux|grep httpd | wc –l
-</code></pre><p><a href="http://cuihuan.net/wp-content/uploads/2015/11/8C2E5AE4-0A5E-479E-8C20-1CFF0C35F6D7.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/8C2E5AE4-0A5E-479E-8C20-1CFF0C35F6D7-1024x621.png" alt="ngnix 服务器占用"></a></p>
-<h3 id="解决策略"><a href="#解决策略" class="headerlink" title="解决策略"></a>解决策略</h3><ul>
-<li>1：针对Apache进行优化。包括优化worker运行方式等等。可以参考<a href="https://linux.cn/article-5294-2.html" target="_blank" rel="external"> apache优化 </a></li>
-<li>2 :更换轻量级服务器。采用nginx 或者lighthttpd等更轻量的服务器。传说中Nginx大法负载均衡和高并发略胜一筹，决定实践一把。</li>
+<h1 id="一、什么是单例"><a href="#一、什么是单例" class="headerlink" title="一、什么是单例"></a>一、什么是单例</h1><p>wiki百科：单例模式，也叫单子模式，是一种常用的软件设计模式。 在应用这个模式时，单例对象的类必须保证只有一个实例存在。 许多时候整个系统只需要拥有一个的全局对象，这样有利于我们协调系统整体的行为。</p>
+<p>通俗的说，也就是对于<code>某一个功能只能实例化一个对象</code>。</p>
+<h1 id="二、为什么用单例"><a href="#二、为什么用单例" class="headerlink" title="二、为什么用单例"></a>二、为什么用单例</h1><p>实际项目中像数<code>据库查询，日志输出，全局回调，统一校验</code>等模块。这些模块<code>功能单一</code>，但需要<code>多次访问</code>，如果能够<code>全局唯一，多次复用</code>会大大提升性能。这也就是单例存在的必要性。</p>
+<p>单例模式的好处：</p>
+<ul>
+<li>1：减少频繁创建，节省了cpu。</li>
+<li>2：静态对象公用，节省了内存。</li>
+<li>3：功能解耦，代码已维护。</li>
 </ul>
-<h3 id="apache替换为nginx"><a href="#apache替换为nginx" class="headerlink" title="apache替换为nginx"></a>apache替换为nginx</h3><ul>
-<li><p>1： 停掉apache<br>  sudo service httpd stop</p>
-<p>注意：以防万一，最好不好提前卸掉。</p>
-</li>
-<li><p>2：安装nginx<br>  yum install nginx</p>
-</li>
-<li><p>3：启动nginx<br>  sudo nginx</p>
-<p>安装成功之后，启动成功如下图 <a href="http://cuihuan.net/wp-content/uploads/2015/11/CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2-1024x302.png" alt="CB5A50FB-8B68-4F21-A6F4-BDC7AF6C93B2"></a></p>
-</li>
-<li>4：简单配置nginx<br>主要是简单修改下log【方便追查问题】 和 web_root 对应文件【快速启用网站】</li>
-<li><p>5：重启nginx<br>  [root@iZ25xlozdf2Z nginx]# nginx -s quit<br>  [root@iZ25xlozdf2Z nginx]# nginx</p>
-<p>如下图，配置web目录成功！ <a href="http://cuihuan.net/wp-content/uploads/2015/11/BAEF603F-CA9C-436E-B870-3E70C11542D0.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/BAEF603F-CA9C-436E-B870-3E70C11542D0.png" alt="BAEF603F-CA9C-436E-B870-3E70C11542D0"></a></p>
-</li>
-<li><p>6：添加php 支持<br>安装php-fpm<br>  yum install php-fpm</p>
-<p>nginx.conf设置<br>  location ~ .php$ {</p>
-<pre><code>root /var/www/html;
-fastcgi_pass 127.0.0.1:9000;
-fastcgi_index index.php;
-fastcgi_param SCRIPT_FILENAME         /var/www/html$fastcgi_script_name;
-include fastcgi_params;
-</code></pre><p>  }</p>
-</li>
-<li><p>7：重新启动服务，网站回复。<br><a href="http://cuihuan.net/wp-content/uploads/2015/11/A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3-1024x718.png" alt="A8D2AD14-7AB9-4421-AF40-B1BE0A5355C3"></a></p>
-</li>
-<li>8：耗存简单对比 如下图：基本上节省了200M，虽然这个可能是运行初期数据；但是，还是确实轻了不少，每个服务占存基本上1/4，线程也少了不少。内存占用方面表现，感觉尚可，接下就看性能了 <a href="http://cuihuan.net/wp-content/uploads/2015/11/E773D2EE-2F51-4113-AAE1-939CD88DCAEE.png"><img src="http://cuihuan.net/wp-content/uploads/2015/11/E773D2EE-2F51-4113-AAE1-939CD88DCAEE-1024x667.png" alt="E773D2EE-2F51-4113-AAE1-939CD88DCAEE"></a></li>
+<h1 id="三、如何设计单例"><a href="#三、如何设计单例" class="headerlink" title="三、如何设计单例"></a>三、如何设计单例</h1><p>通过上面的描述，单例的核心是，<code>实例一次生成，全局唯一，多次调用</code>。因此在单例模式必须包含三要素：</p>
+<ul>
+<li>1：私有化构造函数，私有化clone。也就是不能new，不能clone。【唯一】</li>
+<li>2：拥有一个静态变量，用于保存当前的类。【唯一如何保存】</li>
+<li>3：提供一个公共的访问入口。【可以访问】</li>
 </ul>
-<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>初次接触nginx，整体感觉还不错。后续，进行基本的防攻击，多端口设置，和性能配置。</p>
-<p><a href="http://cuihuan.net/?p=225"> 个人小站原文链接 </a></p>
+<h1 id="四、php实现"><a href="#四、php实现" class="headerlink" title="四、php实现"></a>四、php实现</h1><p>php 实现的单例模式<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XiaozhuaiSingleton</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 私有化构造方法</span></div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 私有化clone方法</span></div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">// 保存实例的静态对象</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $singleInstance;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 声明静态调用方法</div><div class="line">     * 目的：保证该方法的调用全局唯一</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> XiaozhuaiSingleton</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (!<span class="keyword">self</span>::$singleInstance) &#123;</div><div class="line">            <span class="keyword">self</span>::$singleInstance = <span class="keyword">new</span> <span class="keyword">self</span>();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$singleInstance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">// 调用单例的方法</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">singletonFunc</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"call single ton method"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">$singleInstance = XiaozhuaiSingleton::getInstance();</div><div class="line">$singleInstance-&gt;singletonFunc();</div><div class="line"></div><div class="line">$singleInstance2 = XiaozhuaiSingleton::getInstance();</div><div class="line">$singleInstance2-&gt;singletonFunc();</div><div class="line"></div><div class="line"><span class="comment">// 校验是否是一个实例</span></div><div class="line">var_dump($singleInstance === $singleInstance2);  <span class="comment">// true ，一个对象</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -423,7 +403,7 @@ include fastcgi_params;
     </li>
     <li class="post-copyright-link">
       <strong>Post link:</strong>
-      <a href="http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/" title="Nginx实践一：centos apache更换为nginx">http://cuihuan.net/2015/11/18/Nginx实践一：centos apache更换为nginx/</a>
+      <a href="http://cuihuan.net/2017/06/28/理解php单例模式/" title="理解php单例模式">http://cuihuan.net/2017/06/28/理解php单例模式/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright Notice: </strong>
@@ -441,9 +421,7 @@ include fastcgi_params;
           
             <a href="/tags/php/" rel="tag"># php</a>
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
-          
-            <a href="/tags/apache/" rel="tag"># apache</a>
+            <a href="/tags/单例模式/" rel="tag"># 单例模式</a>
           
         </div>
       
@@ -456,8 +434,8 @@ include fastcgi_params;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/" rel="next" title="Nginx实践二：nginx端口配置，域名重定向设置">
-                <i class="fa fa-chevron-left"></i> Nginx实践二：nginx端口配置，域名重定向设置
+              <a href="/2017/06/21/php进程通信/" rel="next" title="php进程通信">
+                <i class="fa fa-chevron-left"></i> php进程通信
               </a>
             
           </div>
@@ -465,10 +443,6 @@ include fastcgi_params;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/23/canvas_combine_pic/" rel="prev" title="canvas 生成和合并图片">
-                canvas 生成和合并图片 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +575,7 @@ include fastcgi_params;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景数据"><span class="nav-number">1.</span> <span class="nav-text">背景数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决策略"><span class="nav-number">2.</span> <span class="nav-text">解决策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apache替换为nginx"><span class="nav-number">3.</span> <span class="nav-text">apache替换为nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续"><span class="nav-number">4.</span> <span class="nav-text">后续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、什么是单例"><span class="nav-number">1.</span> <span class="nav-text">一、什么是单例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为什么用单例"><span class="nav-number">2.</span> <span class="nav-text">二、为什么用单例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、如何设计单例"><span class="nav-number">3.</span> <span class="nav-text">三、如何设计单例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、php实现"><span class="nav-number">4.</span> <span class="nav-text">四、php实现</span></a></li></ol></div>
             
 
           </div>
