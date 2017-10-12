@@ -43,7 +43,7 @@ menu:
 #  archives: /archives
 #  sitemap: /sitemap.xml
   commonweal: /404.html
-  old: http://cuihuan.net:8222
+#  old: http://cuihuan.net:8222
   demo: http://cuihuan.net:1015
 
 
@@ -502,15 +502,21 @@ vendors:
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
 
-sitemap:
-  path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
 
 # Assets
 css: css
 js: js
 images: images
 
+
 # Theme version
 version: 5.1.1
+
+
+# Local search
+local_search:
+  enable: true
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
