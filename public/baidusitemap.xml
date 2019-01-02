@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2019/01/02/2018/</loc>
+    <lastmod>2019-01-02T15:37:28.770Z</lastmod>
+    <data>
+        <display>
+        <title>2018回顾</title>
+        <pubTime>2019-01-02T15:51:35.000Z</pubTime>
+        
+        <tag>年终回顾</tag>
+         
+        <tag>2018</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2017/06/28/%E7%90%86%E8%A7%A3php%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2017-06-30T05:50:17.000Z</lastmod>
     <data>
@@ -63,27 +82,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/11/18/Nginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>Nginx实践二：nginx端口配置，域名重定向设置</title>
-        <pubTime>2015-11-18T09:21:35.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-        <tag>apache</tag>
-         
-        <tag>服务器</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/11/23/canvas_combine_pic/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -96,27 +94,6 @@
         <tag>canvas</tag>
          
         <tag>javascript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
-        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>chrome-extension</tag>
-         
-        <tag>chrome</tag>
          
          
            
@@ -142,6 +119,27 @@
         <tag>shell</tag>
          
         <tag>css</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
+        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>chrome-extension</tag>
+         
+        <tag>chrome</tag>
          
          
            
@@ -191,25 +189,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/20/fsck%E4%BF%AE%E5%A4%8Dlinux%E6%96%87%E4%BB%B6%E6%8D%9F%E5%9D%8F/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>fsck修复linux文件损坏</title>
-        <pubTime>2016-08-20T09:21:35.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>git修复</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/12/06/echarts%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E5%AE%9E%E4%BE%8B/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -235,14 +214,16 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/12/08/linux%20%E6%9F%A5%E6%89%BE%E6%B8%85%E7%90%86%E5%A4%A7%E6%96%87%E4%BB%B6/</loc>
+    <loc>http://cuihuan.net/2016/08/20/fsck%E4%BF%AE%E5%A4%8Dlinux%E6%96%87%E4%BB%B6%E6%8D%9F%E5%9D%8F/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>linux 查找清理大文件</title>
-        <pubTime>2015-12-08T09:21:35.000Z</pubTime>
+        <title>fsck修复linux文件损坏</title>
+        <pubTime>2016-08-20T09:21:35.000Z</pubTime>
         
         <tag>linux</tag>
+         
+        <tag>git修复</tag>
          
          
            
@@ -266,6 +247,23 @@
         <tag>跨域</tag>
          
         <tag>jsonp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/12/08/linux%20%E6%9F%A5%E6%89%BE%E6%B8%85%E7%90%86%E5%A4%A7%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux 查找清理大文件</title>
+        <pubTime>2015-12-08T09:21:35.000Z</pubTime>
+        
+        <tag>linux</tag>
          
          
            
@@ -349,25 +347,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/11/28/php%20%E5%A4%84%E7%90%86unicode%E8%A7%A3%E7%A0%81/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>php 处理unicode解码</title>
-        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>unicode</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/11/30/php%20%E6%93%8D%E4%BD%9C%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -380,6 +359,25 @@
         <tag>mysql</tag>
          
         <tag>数据库同步</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/11/28/php%20%E5%A4%84%E7%90%86unicode%E8%A7%A3%E7%A0%81/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>php 处理unicode解码</title>
+        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>unicode</tag>
          
          
            
@@ -480,25 +478,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【page-monitor 前端自动化 上篇】初步调研</title>
-        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>自动化测试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2017/02/05/redis3/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -513,6 +492,25 @@
         <tag>容灾方案</tag>
          
         <tag>redis主从</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【page-monitor 前端自动化 上篇】初步调研</title>
+        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>自动化测试</tag>
          
          
            
@@ -602,18 +600,20 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/01/03/%E6%A3%80%E9%AA%8Cmysql%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD%EF%BC%8C%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/</loc>
+    <loc>http://cuihuan.net/2017/01/20/%E3%80%90%E9%AB%98%E5%B9%B6%E5%8F%91%E7%AE%80%E5%8D%95%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91redis%E9%98%9F%E5%88%97%E7%BC%93%E5%AD%98%20+%20mysql%20%E6%89%B9%E9%87%8F%E5%85%A5%E5%BA%93%20+%20php%E7%A6%BB%E7%BA%BF%E6%95%B4%E5%90%88/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>检验mysql主从备份，读写分离</title>
-        <pubTime>2016-01-03T09:21:35.000Z</pubTime>
+        <title>【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合</title>
+        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
         
+        <tag>php</tag>
+         
         <tag>mysql</tag>
          
-        <tag>读写分离</tag>
+        <tag>redis</tag>
          
-        <tag>主从备份</tag>
+        <tag>高并发</tag>
          
          
            
@@ -667,20 +667,39 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2017/01/20/%E3%80%90%E9%AB%98%E5%B9%B6%E5%8F%91%E7%AE%80%E5%8D%95%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%91redis%E9%98%9F%E5%88%97%E7%BC%93%E5%AD%98%20+%20mysql%20%E6%89%B9%E9%87%8F%E5%85%A5%E5%BA%93%20+%20php%E7%A6%BB%E7%BA%BF%E6%95%B4%E5%90%88/</loc>
+    <loc>http://cuihuan.net/2016/01/03/%E6%A3%80%E9%AA%8Cmysql%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD%EF%BC%8C%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【高并发简单解决方案】redis队列缓存 + 批量入库 + php离线整合</title>
-        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
+        <title>检验mysql主从备份，读写分离</title>
+        <pubTime>2016-01-03T09:21:35.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>mysql</tag>
          
-        <tag>redis</tag>
+        <tag>读写分离</tag>
          
-        <tag>高并发</tag>
+        <tag>主从备份</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/11/18/Nginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx实践二：nginx端口配置，域名重定向设置</title>
+        <pubTime>2015-11-18T09:21:35.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+        <tag>apache</tag>
+         
+        <tag>服务器</tag>
          
          
            
