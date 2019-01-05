@@ -299,12 +299,26 @@ baidu_analytics:
 #duoshuo_shortname:
 #  cuihuan
 
-changyan:
-   enable: true
-   appid: cyt4yCrLQ
-   appkey: b93e7476cddc60d0ecda38b6929b86e6
+#changyan:
+#   enable: true
+#   appid: cyt4yCrLQ
+#   appkey: b93e7476cddc60d0ecda38b6929b86e6
 # Disqus
 #disqus_shortname:
+# Valine.
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+
+valine:
+  enable: false
+  appid:  iE7N63O9zgzx0uEfvjf9zjvc-gzGzoHsz
+  appkey:  8tHCueQDE7VSeDSDqywhCFwf
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: Just go go # comment box placeholder
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
 
 # Hypercomments
 #hypercomments_id:
@@ -350,7 +364,7 @@ changyan:
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
-  ua_enable: true
+  ua_enable: false
   admin_enable: false
   user_id: 0
   admin_nickname: 小拽
@@ -375,12 +389,6 @@ facebook_comments_plugin:
   scheme: light     # default scheme is light (light or dark)
 
 
-# Show number of visitors to each article.
-# You can visit https://leancloud.cn get AppID and AppKey.
-leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -406,7 +414,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page

@@ -2,395 +2,147 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/【GO学习一】 Hello World.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/_posts/【GO学习二】包，函数，常量和变量.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/changelog.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.core.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/browser/bluebird.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/any.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/assert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/async.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/bind.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/bluebird.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/call_get.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/cancel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/catch_filter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/context.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/debuggability.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/direct_resolve.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/each.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/errors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/es5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/filter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/finally.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/generators.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/join.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/method.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/nodeback.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/nodeify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/promise.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/promise_array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/promisify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/props.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/queue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/race.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/reduce.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/schedule.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/settle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/some.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/synchronous_inspection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/thenables.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/timers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/using.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/js/release/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/bluebird/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/camel-case/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/camel-case/camel-case.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/camel-case/camel-case.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/camel-case/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/lib/generator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/search.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/.eslintignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/.jscsrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/highlight_alias.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/cache_stream.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/camel_case_keys.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/escape_diacritic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/escape_html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/escape_regexp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/hash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/highlight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/html_tag.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/pattern.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/permalink.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/slugize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/spawn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/strip_html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/truncate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/lib/word_wrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/lib/enoent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/lib/hasBrokenSpawn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/lib/parse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/lib/resolveCommand.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/node_modules/cross-spawn/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/hexo-util/scripts/build_highlight_alias.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/api.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/building-testing.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/css-classes-reference.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/language-contribution.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/language-guide.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/language-requests.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/line-numbers.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/reference.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/release-process.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/docs/style-guide.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/highlight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/1c.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/abnf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/accesslog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/actionscript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ada.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/apache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/applescript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/arduino.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/armasm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/asciidoc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/aspectj.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/autohotkey.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/autoit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/avrasm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/awk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/axapta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/bash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/basic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/bnf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/brainfuck.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/cal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/capnproto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ceylon.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/clean.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/clojure-repl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/clojure.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/cmake.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/coffeescript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/coq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/cos.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/cpp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/crmsh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/crystal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/csp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/css.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/delphi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/diff.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/django.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dns.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dockerfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dos.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dsconfig.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/dust.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ebnf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/elixir.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/elm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/erb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/erlang-repl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/erlang.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/excel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/fix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/flix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/fortran.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/fsharp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/gams.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/gauss.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/gcode.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/gherkin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/glsl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/go.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/golo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/gradle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/groovy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/haml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/handlebars.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/haskell.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/haxe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/hsp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/htmlbars.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/http.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/inform7.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ini.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/irpf90.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/java.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/javascript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/json.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/julia.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/kotlin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/lasso.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ldif.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/less.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/lisp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/livecodeserver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/livescript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/llvm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/lsl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/lua.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/makefile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/markdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/mathematica.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/matlab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/maxima.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/mel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/mercury.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/mipsasm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/mizar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/mojolicious.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/monkey.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/moonscript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/nginx.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/nimrod.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/nix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/nsis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/objectivec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ocaml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/openscad.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/oxygene.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/parser3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/perl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/pf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/php.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/pony.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/powershell.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/processing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/profile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/prolog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/protobuf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/puppet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/purebasic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/python.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/q.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/qml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/r.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/rib.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/roboconf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/rsl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ruby.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/ruleslanguage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/rust.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/scala.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/scheme.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/scilab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/scss.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/smali.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/smalltalk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/sml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/sqf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/sql.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/stan.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/stata.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/step21.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/stylus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/subunit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/swift.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/taggerscript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/tap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/tcl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/tex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/thrift.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/tp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/twig.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/typescript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/vala.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/vbnet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/vbscript-html.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/vbscript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/verilog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/vhdl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/vim.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/x86asm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/xl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/xml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/xquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/yaml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/lib/languages/zephir.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/agate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/androidstudio.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/arduino-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/arta.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/ascetic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-cave-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-cave-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-dune-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-dune-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-estuary-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-estuary-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-forest-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-forest-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-heath-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-heath-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-lakeside-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-lakeside-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-plateau-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-plateau-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-savanna-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-savanna-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-seaside-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-seaside-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-sulphurpool-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atelier-sulphurpool-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atom-one-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/atom-one-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/brown-paper.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/brown-papersq.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/codepen-embed.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/color-brewer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/darcula.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/darkula.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/docco.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/dracula.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/far.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/foundation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/github-gist.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/github.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/googlecode.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/grayscale.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/gruvbox-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/gruvbox-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/hopscotch.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/hybrid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/idea.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/ir-black.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/kimbie.dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/kimbie.light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/magula.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/mono-blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/monokai-sublime.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/monokai.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/obsidian.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/ocean.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/paraiso-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/paraiso-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/pojoaque.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/pojoaque.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/purebasic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/qtcreator_dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/qtcreator_light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/railscasts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/rainbow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/school-book.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/school-book.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/solarized-dark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/solarized-light.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/sunburst.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/tomorrow-night-blue.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/tomorrow-night-bright.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/tomorrow-night-eighties.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/tomorrow-night.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/tomorrow.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/vs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/xcode.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/xt256.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/highlight.js/styles/zenburn.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/lib/html4-entities.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/lib/html5-entities.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/lib/xml-entities.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/html-entities/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lower-case/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lower-case/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lower-case/lower-case.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lower-case/lower-case.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lower-case/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/no-case.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/no-case.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/vendor/camel-case-regexp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/vendor/camel-case-upper-regexp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/no-case/vendor/non-word-regexp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/striptags/striptags.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/upper-case/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/upper-case/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/upper-case/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/upper-case/upper-case.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/upper-case/upper-case.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/striptags/.npmignore" afterPath="$PROJECT_DIR$/node_modules/striptags/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/README.md" afterPath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/striptags/README.md" afterPath="$PROJECT_DIR$/node_modules/striptags/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/_config.yml" afterPath="$PROJECT_DIR$/themes/next/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.json" afterPath="$PROJECT_DIR$/db.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/index.js" afterPath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/package.json" afterPath="$PROJECT_DIR$/node_modules/hexo-generator-searchdb/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/striptags/package.json" afterPath="$PROJECT_DIR$/node_modules/striptags/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/striptags/test/striptags-test.js" afterPath="$PROJECT_DIR$/node_modules/striptags/test/striptags-test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" afterPath="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/next/layout/_third-party/comments/valine.swig" />
+      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" afterPath="$PROJECT_DIR$/.idea/blog.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/db.json" afterPath="$PROJECT_DIR$/db.json" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html" afterPath="$PROJECT_DIR$/public/2015/11/18/Nginx实践一：centos apache更换为nginx/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html" afterPath="$PROJECT_DIR$/public/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/23/canvas_combine_pic/index.html" afterPath="$PROJECT_DIR$/public/2015/11/23/canvas_combine_pic/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/28/php 处理unicode解码/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/php 处理unicode解码/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/28/phpUnit 安装，实例和简单部署/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/phpUnit 安装，实例和简单部署/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/28/【redis学习一】基本概念和基本操作/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/【redis学习一】基本概念和基本操作/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/index.html" afterPath="$PROJECT_DIR$/public/2015/11/28/【redis学习二】多php版本下phpredis扩展安装/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/11/30/php 操作不同数据库/index.html" afterPath="$PROJECT_DIR$/public/2015/11/30/php 操作不同数据库/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/02/jsonp + php 跨域实例/index.html" afterPath="$PROJECT_DIR$/public/2015/12/02/jsonp + php 跨域实例/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/03/crontab 误删除恢复/index.html" afterPath="$PROJECT_DIR$/public/2015/12/03/crontab 误删除恢复/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/06/echarts动态获取数据实例/index.html" afterPath="$PROJECT_DIR$/public/2015/12/06/echarts动态获取数据实例/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html" afterPath="$PROJECT_DIR$/public/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/08/linux 查找清理大文件/index.html" afterPath="$PROJECT_DIR$/public/2015/12/08/linux 查找清理大文件/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/11/mysql 简单全量备份和快速恢复/index.html" afterPath="$PROJECT_DIR$/public/2015/12/11/mysql 简单全量备份和快速恢复/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2015/12/20/php反射调用private方法实践/index.html" afterPath="$PROJECT_DIR$/public/2015/12/20/php反射调用private方法实践/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/01/03/检验mysql主从备份，读写分离/index.html" afterPath="$PROJECT_DIR$/public/2016/01/03/检验mysql主从备份，读写分离/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/01/07/机器多次恶意提交攻击/index.html" afterPath="$PROJECT_DIR$/public/2016/01/07/机器多次恶意提交攻击/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/01/10/YII2数据库查询实践/index.html" afterPath="$PROJECT_DIR$/public/2016/01/10/YII2数据库查询实践/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/02/29/postMessage处理iframe 跨域问题/index.html" afterPath="$PROJECT_DIR$/public/2016/02/29/postMessage处理iframe 跨域问题/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/03/08/mysql数据导库常用操作/index.html" afterPath="$PROJECT_DIR$/public/2016/03/08/mysql数据导库常用操作/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/04/20/chrome_2/index.html" afterPath="$PROJECT_DIR$/public/2016/04/20/chrome_2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/04/20/中型存储架构实践探索/index.html" afterPath="$PROJECT_DIR$/public/2016/04/20/中型存储架构实践探索/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/04/26/chrome_1/index.html" afterPath="$PROJECT_DIR$/public/2016/04/26/chrome_1/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/08/07/page_monitor_second/index.html" afterPath="$PROJECT_DIR$/public/2016/08/07/page_monitor_second/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /index.html" afterPath="$PROJECT_DIR$/public/2016/08/07/【page-monitor 前端自动化 上篇】初步调研 /index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/08/08/phpredis单例模式封装/index.html" afterPath="$PROJECT_DIR$/public/2016/08/08/phpredis单例模式封装/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/08/20/fsck修复linux文件损坏/index.html" afterPath="$PROJECT_DIR$/public/2016/08/20/fsck修复linux文件损坏/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/index.html" afterPath="$PROJECT_DIR$/public/2016/08/20/【page-monitor 前端自动化 下篇】 实践应用/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/01/20/charactor/index.html" afterPath="$PROJECT_DIR$/public/2017/01/20/charactor/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html" afterPath="$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/02/05/redis3/index.html" afterPath="$PROJECT_DIR$/public/2017/02/05/redis3/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/03/14/nginx_study_1/index.html" afterPath="$PROJECT_DIR$/public/2017/03/14/nginx_study_1/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/06/05/CodeIgniter 性能优化/index.html" afterPath="$PROJECT_DIR$/public/2017/06/05/CodeIgniter 性能优化/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/06/21/php进程通信/index.html" afterPath="$PROJECT_DIR$/public/2017/06/21/php进程通信/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2017/06/28/理解php单例模式/index.html" afterPath="$PROJECT_DIR$/public/2017/06/28/理解php单例模式/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/2019/01/02/2018/index.html" afterPath="$PROJECT_DIR$/public/2019/01/02/2018/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/404.html" afterPath="$PROJECT_DIR$/public/404.html" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" afterPath="$PROJECT_DIR$/public/about/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2015/11/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/11/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2015/12/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/12/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2015/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2015/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/2015/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/01/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/02/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/02/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/03/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/03/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/04/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/04/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/08/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/08/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2016/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/2016/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/01/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/02/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/02/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/03/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/03/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/06/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/06/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2017/index.html" afterPath="$PROJECT_DIR$/public/archives/2017/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2019/01/index.html" afterPath="$PROJECT_DIR$/public/archives/2019/01/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2019/index.html" afterPath="$PROJECT_DIR$/public/archives/2019/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/index.html" afterPath="$PROJECT_DIR$/public/archives/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/2/index.html" afterPath="$PROJECT_DIR$/public/archives/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/3/index.html" afterPath="$PROJECT_DIR$/public/archives/page/3/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/archives/page/4/index.html" afterPath="$PROJECT_DIR$/public/archives/page/4/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/baidusitemap.xml" afterPath="$PROJECT_DIR$/public/baidusitemap.xml" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.html" afterPath="$PROJECT_DIR$/public/categories/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/old/index.html" afterPath="$PROJECT_DIR$/public/old/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/page/2/index.html" afterPath="$PROJECT_DIR$/public/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/page/3/index.html" afterPath="$PROJECT_DIR$/public/page/3/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/page/4/index.html" afterPath="$PROJECT_DIR$/public/page/4/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/search.xml" afterPath="$PROJECT_DIR$/public/search.xml" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" afterPath="$PROJECT_DIR$/public/sitemap.xml" />
+      <change beforePath="$PROJECT_DIR$/public/tags/2018/index.html" afterPath="$PROJECT_DIR$/public/tags/2018/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/active-record/index.html" afterPath="$PROJECT_DIR$/public/tags/active-record/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/apache/index.html" afterPath="$PROJECT_DIR$/public/tags/apache/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/canvas/index.html" afterPath="$PROJECT_DIR$/public/tags/canvas/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/chrome-extension/index.html" afterPath="$PROJECT_DIR$/public/tags/chrome-extension/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/chrome/index.html" afterPath="$PROJECT_DIR$/public/tags/chrome/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/codeIgniter/index.html" afterPath="$PROJECT_DIR$/public/tags/codeIgniter/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/cors/index.html" afterPath="$PROJECT_DIR$/public/tags/cors/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/crontab/index.html" afterPath="$PROJECT_DIR$/public/tags/crontab/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/css/index.html" afterPath="$PROJECT_DIR$/public/tags/css/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/db/index.html" afterPath="$PROJECT_DIR$/public/tags/db/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/echarts/index.html" afterPath="$PROJECT_DIR$/public/tags/echarts/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/git修复/index.html" afterPath="$PROJECT_DIR$/public/tags/git修复/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/html5/index.html" afterPath="$PROJECT_DIR$/public/tags/html5/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/iframe/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/iframe自适应高度/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe自适应高度/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/iframe跨域/index.html" afterPath="$PROJECT_DIR$/public/tags/iframe跨域/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" afterPath="$PROJECT_DIR$/public/tags/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/ip/index.html" afterPath="$PROJECT_DIR$/public/tags/ip/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/ipc/index.html" afterPath="$PROJECT_DIR$/public/tags/ipc/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/javascript/index.html" afterPath="$PROJECT_DIR$/public/tags/javascript/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/jsonp/index.html" afterPath="$PROJECT_DIR$/public/tags/jsonp/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/linux/index.html" afterPath="$PROJECT_DIR$/public/tags/linux/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/mysql/index.html" afterPath="$PROJECT_DIR$/public/tags/mysql/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/nginx/index.html" afterPath="$PROJECT_DIR$/public/tags/nginx/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/pho/index.html" afterPath="$PROJECT_DIR$/public/tags/pho/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/php/index.html" afterPath="$PROJECT_DIR$/public/tags/php/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/php/page/2/index.html" afterPath="$PROJECT_DIR$/public/tags/php/page/2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/phpredis/index.html" afterPath="$PROJECT_DIR$/public/tags/phpredis/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/phpunit/index.html" afterPath="$PROJECT_DIR$/public/tags/phpunit/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/redis/index.html" afterPath="$PROJECT_DIR$/public/tags/redis/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/redis主从/index.html" afterPath="$PROJECT_DIR$/public/tags/redis主从/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/shell/index.html" afterPath="$PROJECT_DIR$/public/tags/shell/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/unicode/index.html" afterPath="$PROJECT_DIR$/public/tags/unicode/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/wordpress/index.html" afterPath="$PROJECT_DIR$/public/tags/wordpress/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/yii2/index.html" afterPath="$PROJECT_DIR$/public/tags/yii2/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/主从备份/index.html" afterPath="$PROJECT_DIR$/public/tags/主从备份/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/前端/index.html" afterPath="$PROJECT_DIR$/public/tags/前端/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/动态获取数据/index.html" afterPath="$PROJECT_DIR$/public/tags/动态获取数据/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/单例模式/index.html" afterPath="$PROJECT_DIR$/public/tags/单例模式/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/单元测试/index.html" afterPath="$PROJECT_DIR$/public/tags/单元测试/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/合成图片/index.html" afterPath="$PROJECT_DIR$/public/tags/合成图片/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/基本原理/index.html" afterPath="$PROJECT_DIR$/public/tags/基本原理/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/备份/index.html" afterPath="$PROJECT_DIR$/public/tags/备份/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/容灾方案/index.html" afterPath="$PROJECT_DIR$/public/tags/容灾方案/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/年终回顾/index.html" afterPath="$PROJECT_DIR$/public/tags/年终回顾/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/性能优化/index.html" afterPath="$PROJECT_DIR$/public/tags/性能优化/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/恶意攻击/index.html" afterPath="$PROJECT_DIR$/public/tags/恶意攻击/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/数据库同步/index.html" afterPath="$PROJECT_DIR$/public/tags/数据库同步/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/服务器/index.html" afterPath="$PROJECT_DIR$/public/tags/服务器/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/缓存/index.html" afterPath="$PROJECT_DIR$/public/tags/缓存/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/网页爬虫/index.html" afterPath="$PROJECT_DIR$/public/tags/网页爬虫/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/自动化测试/index.html" afterPath="$PROJECT_DIR$/public/tags/自动化测试/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/设计模式/index.html" afterPath="$PROJECT_DIR$/public/tags/设计模式/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/读写分离/index.html" afterPath="$PROJECT_DIR$/public/tags/读写分离/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/跨域/index.html" afterPath="$PROJECT_DIR$/public/tags/跨域/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/高可用架构/index.html" afterPath="$PROJECT_DIR$/public/tags/高可用架构/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/tags/高并发/index.html" afterPath="$PROJECT_DIR$/public/tags/高并发/index.html" />
+      <change beforePath="$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html" afterPath="$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html" />
+      <change beforePath="$PROJECT_DIR$/public/wp_content/uploads/2015/10/准备动作.html" afterPath="$PROJECT_DIR$/public/wp_content/uploads/2015/10/准备动作.html" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/2018.md" afterPath="$PROJECT_DIR$/source/_posts/2018.md" />
+      <change beforePath="$PROJECT_DIR$/themes/next/_config.yml" afterPath="$PROJECT_DIR$/themes/next/_config.yml" />
+      <change beforePath="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" afterPath="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" />
+      <change beforePath="$PROJECT_DIR$/themes/next/layout/_macro/post.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_macro/post.swig" />
+      <change beforePath="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" />
+      <change beforePath="$PROJECT_DIR$/themes/next/layout/_third-party/analytics/busuanzi-counter.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_third-party/analytics/busuanzi-counter.swig" />
+      <change beforePath="$PROJECT_DIR$/themes/next/layout/_third-party/comments/index.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_third-party/comments/index.swig" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -402,123 +154,109 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="772" max-vertical-offset="11088">
-              <caret line="46" column="6" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="6" />
+            <state relative-caret-position="6136">
+              <caret line="312" column="15" lean-forward="false" selection-start-line="312" selection-start-column="15" selection-end-line="312" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="理解php单例模式.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/理解php单例模式.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
+      <file leaf-file-name="valine.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/valine.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1806" max-vertical-offset="1953">
-              <caret line="86" column="3" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
+            <state relative-caret-position="126">
+              <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar.swig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/sidebar.swig">
+      <file leaf-file-name="comments.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/comments.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1764" max-vertical-offset="3486">
-              <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+            <state relative-caret-position="371">
+              <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
+      <file leaf-file-name="_layout.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/_layout.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1505" max-vertical-offset="2037">
-              <caret line="79" column="14" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zh-Hans.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-Hans.yml">
+      <file leaf-file-name="index.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/index.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1785">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="【GO学习一】 Hello World.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/【GO学习一】 Hello World.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
+      <file leaf-file-name="page.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/page.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="903" max-vertical-offset="1722">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="199">
+              <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="【GO学习二】包，函数，常量和变量.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/【GO学习二】包，函数，常量和变量.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
+      <file leaf-file-name="busuanzi-counter.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/analytics/busuanzi-counter.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.3516948" vertical-offset="4884" max-vertical-offset="5565">
-              <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+            <state relative-caret-position="42">
+              <caret line="2" column="84" lean-forward="false" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baidusitemap.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/baidusitemap.xml">
+      <file leaf-file-name="index.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/index.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15078" max-vertical-offset="15624">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="147">
+              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sitemap.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/sitemap.xml">
+      <file leaf-file-name="post.swig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/post.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="6384">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="130">
+              <caret line="186" column="51" lean-forward="false" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google5bd8852642bb8345.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/google5bd8852642bb8345.html">
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/next/bower.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
-              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+            <state relative-caret-position="124">
+              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -526,19 +264,30 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cmt-list</find>
+      <find>module-cmt-header</find>
+      <find>Post author</find>
+      <find>val</find>
+      <find>Valine</find>
+      <find>busuanzi_count</find>
+      <find>dn-lbs</find>
+      <find>bus</find>
+      <find>busuanzi</find>
+      <find>v</find>
+      <find>valin</find>
+      <find>foo</find>
+      <find>sohu</find>
+      <find>valine</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/themes/next/source/css/_variables/custom.styl" />
-        <option value="$PROJECT_DIR$/source/_posts/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合.md" />
-        <option value="$PROJECT_DIR$/themes/next/source/404.html" />
-        <option value="$PROJECT_DIR$/themes/next/layout/_partials/footer.swig" />
-        <option value="$PROJECT_DIR$/source/_posts/charactor.md" />
-        <option value="$PROJECT_DIR$/source/_posts/default.md" />
-        <option value="$PROJECT_DIR$/source/_posts/chrome_1.md" />
         <option value="$PROJECT_DIR$/source/_posts/canvas_combine_pic.md" />
         <option value="$PROJECT_DIR$/source/_posts/page_monitor_second.md" />
         <option value="$PROJECT_DIR$/source/_posts/chrome_2.md" />
@@ -573,21 +322,35 @@
         <option value="$PROJECT_DIR$/source/404/index.md" />
         <option value="$PROJECT_DIR$/source/_posts/redis3.md" />
         <option value="$PROJECT_DIR$/source/_posts/nginx_study_1.md" />
-        <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/source/_posts/CodeIgniter 性能优化.md" />
         <option value="$PROJECT_DIR$/source/_posts/php进程通信.md" />
         <option value="$PROJECT_DIR$/source/_posts/理解php单例模式.md" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$USER_HOME$/Downloads/baidu_verify_HtaFe5NFov (1).html" />
-        <option value="$PROJECT_DIR$/themes/next/_config.yml" />
-        <option value="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" />
         <option value="$PROJECT_DIR$/source/_posts/【GO学习一】 Hello World.md" />
         <option value="$PROJECT_DIR$/source/_posts/【GO学习二】包，函数，常量和变量.md" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/source/_posts/2018.md" />
+        <option value="$PROJECT_DIR$/themes/next/languages/zh-Hans.yml" />
+        <option value="$PROJECT_DIR$/themes/next/bower.json" />
+        <option value="$PROJECT_DIR$/themes/next/layout/_third-party/analytics/busuanzi-counter.swig" />
+        <option value="$PROJECT_DIR$/themes/next/layout/_third-party/comments/valine.swig" />
+        <option value="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" />
+        <option value="$PROJECT_DIR$/themes/next/layout/_third-party/comments/index.swig" />
+        <option value="$PROJECT_DIR$/themes/next/layout/_macro/post.swig" />
+        <option value="$PROJECT_DIR$/themes/next/_config.yml" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/themes/next/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -595,18 +358,8 @@
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <OptionsSetting value="true" id="添加" />
-    <OptionsSetting value="true" id="移除" />
-    <OptionsSetting value="true" id="编辑" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -619,155 +372,95 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="languages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp_content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp_content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_posts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_macro" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_partials" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_third-party" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="next" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -786,6 +479,10 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/source/_posts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source/_posts" />
       <recent name="$PROJECT_DIR$/public" />
@@ -793,16 +490,20 @@
       <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/themes/next/layout" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/source/_posts" />
-    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -814,46 +515,57 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
-    <list size="0" />
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="" />
       <created>1484741833152</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1484741833152</updated>
+      <workItem from="1546436546504" duration="3800000" />
+      <workItem from="1546681787701" duration="3281000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7081000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -876,21 +588,42 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.551145" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29644588" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5366631" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30613893" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5366631" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.551145" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3631523" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.551145" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30613893" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5366631" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -904,9 +637,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -914,298 +644,45 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/YII2数据库查询实践.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.033333" vertical-offset="3737" max-vertical-offset="4746">
-          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/php 操作不同数据库.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.033333" vertical-offset="293" max-vertical-offset="1302">
-          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/jsonp + php 跨域实例.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.033333" vertical-offset="1112" max-vertical-offset="2121">
-          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/mysql 简单全量备份和快速恢复.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="756">
-          <caret line="30" column="197" selection-start-line="30" selection-start-column="197" selection-end-line="30" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/php反射调用private方法实践.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3150" max-vertical-offset="3318">
-          <caret line="150" column="193" selection-start-line="150" selection-start-column="193" selection-end-line="150" selection-end-column="193" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/【redis学习二】多php版本下phpredis扩展安装.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2688" max-vertical-offset="2814">
-          <caret line="128" column="39" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/crontab 误删除恢复.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="903" max-vertical-offset="1029">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/中型存储架构实践探索.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2499">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/linux 查找清理大文件.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1407" max-vertical-offset="1554">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/categories/index.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7" vertical-offset="0" max-vertical-offset="252">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/tags/index.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7" vertical-offset="0" max-vertical-offset="273">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/about/index.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="252">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/layout/tag.swig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="693">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/source/lib/font-awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9841" max-vertical-offset="46305">
-          <caret line="516" column="4" selection-start-line="516" selection-start-column="4" selection-end-line="516" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/layout/index.swig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scaffolds/page.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/2017/01/20/【高并发简单解决方案】redis队列缓存 + mysql 批量入库 + php离线整合/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1590909" vertical-offset="0" max-vertical-offset="18459">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/【page-monitor 前端自动化 上篇】初步调研 .md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2499">
-          <caret line="17" column="225" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="225" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scaffolds/post.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Nginx实践二：nginx端口配置，域名重定向设置.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="1848">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/Nginx实践一：centos apache更换为nginx.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1215754" vertical-offset="0" max-vertical-offset="1533">
-          <caret line="59" column="227" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="227" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/404/index.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="609">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
-          <caret line="0" column="879117" selection-start-line="0" selection-start-column="879117" selection-end-line="0" selection-end-column="879117" />
+        <state relative-caret-position="0">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/nginx_study_1.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8335221" vertical-offset="1931" max-vertical-offset="2814">
-          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3780" max-vertical-offset="39585">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="127" column="46" lean-forward="false" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/src/schemes/pisces.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/source/css/main.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/redis3.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2877">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/php进程通信.md">
-      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1617">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/CodeIgniter 性能优化.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.3505745" vertical-offset="3002" max-vertical-offset="3885">
-          <caret line="179" column="3" selection-start-line="179" selection-start-column="3" selection-end-line="179" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.877451" vertical-offset="59557" max-vertical-offset="60270">
-          <caret line="2864" column="0" selection-start-line="2864" selection-start-column="0" selection-end-line="2864" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1231,119 +708,349 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.deploy_git/2015/11/18/Nginx实践二：nginx端口配置，域名重定向设置/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35978836" vertical-offset="10532" max-vertical-offset="17703">
-          <caret line="508" column="40" selection-start-line="508" selection-start-column="40" selection-end-line="508" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="508" column="40" lean-forward="false" selection-start-line="508" selection-start-column="40" selection-end-line="508" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/source/css/_schemes/Pisces/_sidebar.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="2373">
-          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/sidebar.swig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3486">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="1764">
+          <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/理解php单例模式.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="86" column="3" lean-forward="false" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
+        </state>
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1806" max-vertical-offset="1953">
-          <caret line="86" column="3" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
-          <folding />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/search.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5418">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/baidusitemap.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15624">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/baidu_verify_HtaFe5NFov (1).html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="529">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/sitemap.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6384">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="357">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/google5bd8852642bb8345.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="126">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32256">
+          <caret line="0" column="1536262" lean-forward="false" selection-start-line="0" selection-start-column="1536262" selection-end-line="0" selection-end-column="1536262" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="42">
+            <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/CodeIgniter 性能优化.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="179" column="3" lean-forward="false" selection-start-line="179" selection-start-column="3" selection-end-line="179" selection-end-column="3" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/archives/2017/10/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="2852" column="12" lean-forward="false" selection-start-line="2852" selection-start-column="12" selection-end-line="2852" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-hk.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-964">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/languages/id.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="30" selection-start-column="2" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/2018.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="476">
+            <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-Hans.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="38" column="114" lean-forward="false" selection-start-line="38" selection-start-column="114" selection-end-line="38" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9281">
+          <caret line="1630" column="31" lean-forward="false" selection-start-line="1630" selection-start-column="31" selection-end-line="1630" selection-end-column="31" />
+          <folding>
+            <marker date="1546686119974" expanded="true" signature="28290:28334" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2196">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1505" max-vertical-offset="2037">
-          <caret line="79" column="14" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
+        <state relative-caret-position="173">
+          <caret line="83" column="24" lean-forward="false" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-427">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/wp-content/uploads/2015/10/准备动作.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19068">
+          <caret line="908" column="50" lean-forward="false" selection-start-line="908" selection-start-column="50" selection-end-line="908" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/livere.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/duoshuo.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/changyan.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/hypercomments.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/youyan.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_layout.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/index.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/page.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/valine.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/comments/index.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/analytics/busuanzi-counter.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="84" lean-forward="false" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/post.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="186" column="51" lean-forward="false" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/comments.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="772" max-vertical-offset="11088">
-          <caret line="46" column="6" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-Hans.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1785">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/【GO学习一】 Hello World.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="903" max-vertical-offset="1722">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/【GO学习二】包，函数，常量和变量.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3516948" vertical-offset="4884" max-vertical-offset="5565">
-          <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
+        <state relative-caret-position="6136">
+          <caret line="312" column="15" lean-forward="false" selection-start-line="312" selection-start-column="15" selection-end-line="312" selection-end-column="15" />
           <folding />
         </state>
       </provider>
