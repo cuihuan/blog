@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2019/01/06/%E8%B4%A2%E5%8A%A1%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E3%80%90%E5%BA%8F%E3%80%91/</loc>
+    <lastmod>2019-01-06T12:20:27.177Z</lastmod>
+    <data>
+        <display>
+        <title>财务系统设计【序】</title>
+        <pubTime>2019-01-06T13:07:35.000Z</pubTime>
+        
+        <tag>财务系统</tag>
+         
+        <tag>系统设计</tag>
+         
+        <tag>业务系统</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2019/01/02/2018/</loc>
     <lastmod>2019-01-05T10:15:46.438Z</lastmod>
     <data>
@@ -347,6 +368,25 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2015/11/28/php%20%E5%A4%84%E7%90%86unicode%E8%A7%A3%E7%A0%81/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>php 处理unicode解码</title>
+        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>unicode</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2015/11/30/php%20%E6%93%8D%E4%BD%9C%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -359,25 +399,6 @@
         <tag>mysql</tag>
          
         <tag>数据库同步</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2015/11/28/php%20%E5%A4%84%E7%90%86unicode%E8%A7%A3%E7%A0%81/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>php 处理unicode解码</title>
-        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>unicode</tag>
          
          
            
@@ -438,11 +459,11 @@
         <title>Nginx实践一：centos apache更换为nginx</title>
         <pubTime>2015-11-18T09:21:35.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>nginx</tag>
          
         <tag>apache</tag>
+         
+        <tag>php</tag>
          
          
            
@@ -541,23 +562,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【redis学习一】基本概念和基本操作</title>
-        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
-        
-        <tag>redis</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%BA%8C%E3%80%91%E5%A4%9Aphp%E7%89%88%E6%9C%AC%E4%B8%8Bphpredis%E6%89%A9%E5%B1%95%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -570,6 +574,23 @@
         <tag>redis</tag>
          
         <tag>phpredis</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【redis学习一】基本概念和基本操作</title>
+        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
+        
+        <tag>redis</tag>
          
          
            
@@ -688,27 +709,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/11/18/Nginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>Nginx实践二：nginx端口配置，域名重定向设置</title>
-        <pubTime>2015-11-18T09:21:35.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-        <tag>apache</tag>
-         
-        <tag>服务器</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2016/01/10/YII2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -721,6 +721,27 @@
         <tag>active record</tag>
          
         <tag>yii2</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/11/18/Nginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx实践二：nginx端口配置，域名重定向设置</title>
+        <pubTime>2015-11-18T09:21:35.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+        <tag>apache</tag>
+         
+        <tag>服务器</tag>
          
          
            
