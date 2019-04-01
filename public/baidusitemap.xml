@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2019/04/01/%E7%83%AD%E7%82%B9%E8%B4%A6%E6%88%B7%E9%97%AE%E9%A2%98%E5%92%8C%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E4%B8%AD%E3%80%91/</loc>
+    <lastmod>2019-04-01T13:46:53.186Z</lastmod>
+    <data>
+        <display>
+        <title>热点账户问题和常用解决方案【中】</title>
+        <pubTime>2019-04-01T14:01:35.000Z</pubTime>
+        
+        <tag>财务系统</tag>
+         
+        <tag>热点账户</tag>
+         
+        <tag>伪同步设计</tag>
+         
+        <tag>读写优化</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2019/02/13/%E7%83%AD%E7%82%B9%E8%B4%A6%E6%88%B7%E9%97%AE%E9%A2%98%E5%92%8C%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E4%B8%8A%E3%80%91/</loc>
     <lastmod>2019-02-13T14:25:47.690Z</lastmod>
     <data>
@@ -13,11 +36,11 @@
         
         <tag>财务系统</tag>
          
-        <tag>系统设计</tag>
-         
         <tag>热点账户</tag>
          
         <tag>安全性</tag>
+         
+        <tag>系统设计</tag>
          
          
            
@@ -126,43 +149,16 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2017/01/20/charactor/</loc>
+    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>php爬虫：知乎用户数据爬取和分析</title>
-        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>javascript</tag>
-         
-        <tag>网页爬虫</tag>
-         
-        <tag>shell</tag>
-         
-        <tag>css</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
-        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
+        <title>【page-monitor 前端自动化 上篇】初步调研</title>
+        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
         
         <tag>javascript</tag>
          
-        <tag>chrome-extension</tag>
-         
-        <tag>chrome</tag>
+        <tag>自动化测试</tag>
          
          
            
@@ -237,25 +233,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/20/fsck%E4%BF%AE%E5%A4%8Dlinux%E6%96%87%E4%BB%B6%E6%8D%9F%E5%9D%8F/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>fsck修复linux文件损坏</title>
-        <pubTime>2016-08-20T09:21:35.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>git修复</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/12/02/jsonp%20+%20php%20%E8%B7%A8%E5%9F%9F%E5%AE%9E%E4%BE%8B/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -270,6 +247,25 @@
         <tag>跨域</tag>
          
         <tag>jsonp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/08/20/fsck%E4%BF%AE%E5%A4%8Dlinux%E6%96%87%E4%BB%B6%E6%8D%9F%E5%9D%8F/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>fsck修复linux文件损坏</title>
+        <pubTime>2016-08-20T09:21:35.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>git修复</tag>
          
          
            
@@ -332,25 +328,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2017/03/14/nginx_study_1/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【nginx学习一】基本原理学习</title>
-        <pubTime>2017-03-14T15:21:35.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-        <tag>基本原理</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2016/08/07/page_monitor_second/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -361,6 +338,25 @@
         <tag>javascript</tag>
          
         <tag>自动化测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2017/03/14/nginx_study_1/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【nginx学习一】基本原理学习</title>
+        <pubTime>2017-03-14T15:21:35.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+        <tag>基本原理</tag>
          
          
            
@@ -431,6 +427,27 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2015/12/20/php%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8private%E6%96%B9%E6%B3%95%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>php反射调用private方法实践</title>
+        <pubTime>2015-12-20T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>单元测试</tag>
+         
+        <tag>phpunit</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2016/08/08/phpredis%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%B0%81%E8%A3%85/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -473,7 +490,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://cuihuan.net/2016/02/29/postMessage%E5%A4%84%E7%90%86iframe%20%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
@@ -524,16 +540,35 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
+    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【page-monitor 前端自动化 上篇】初步调研</title>
-        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
+        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
+        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
         
         <tag>javascript</tag>
          
-        <tag>自动化测试</tag>
+        <tag>chrome-extension</tag>
+         
+        <tag>chrome</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【redis学习一】基本概念和基本操作</title>
+        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
+        
+        <tag>redis</tag>
          
          
            
@@ -576,23 +611,6 @@
         <tag>redis</tag>
          
         <tag>phpredis</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【redis学习一】基本概念和基本操作</title>
-        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
-        
-        <tag>redis</tag>
          
          
            
@@ -646,6 +664,27 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2016/01/07/%E6%9C%BA%E5%99%A8%E5%A4%9A%E6%AC%A1%E6%81%B6%E6%84%8F%E6%8F%90%E4%BA%A4%E6%94%BB%E5%87%BB/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>机器多次恶意提交攻击简单防范</title>
+        <pubTime>2016-01-07T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>ip</tag>
+         
+        <tag>恶意攻击</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2016/04/20/%E4%B8%AD%E5%9E%8B%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84%E5%AE%9E%E8%B7%B5%E6%8E%A2%E7%B4%A2/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -660,27 +699,6 @@
         <tag>读写分离</tag>
          
         <tag>主从备份</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2016/01/07/%E6%9C%BA%E5%99%A8%E5%A4%9A%E6%AC%A1%E6%81%B6%E6%84%8F%E6%8F%90%E4%BA%A4%E6%94%BB%E5%87%BB/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>机器多次恶意提交攻击简单防范</title>
-        <pubTime>2016-01-07T09:21:35.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>ip</tag>
-         
-        <tag>恶意攻击</tag>
          
          
            
@@ -732,6 +750,27 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2015/11/23/canvas_combine_pic/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>canvas 生成和合并图片</title>
+        <pubTime>2015-11-23T09:21:35.000Z</pubTime>
+        
+        <tag>合成图片</tag>
+         
+        <tag>canvas</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2015/11/18/Nginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -753,45 +792,22 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/11/23/canvas_combine_pic/</loc>
+    <loc>http://cuihuan.net/2017/01/20/charactor/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>canvas 生成和合并图片</title>
-        <pubTime>2015-11-23T09:21:35.000Z</pubTime>
-        
-        <tag>合成图片</tag>
-         
-        <tag>canvas</tag>
-         
-        <tag>javascript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-    
-    
-    
-  <url>
-    <loc>http://cuihuan.net/2015/12/20/php%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8private%E6%96%B9%E6%B3%95%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>php反射调用private方法实践</title>
-        <pubTime>2015-12-20T09:21:35.000Z</pubTime>
+        <title>php爬虫：知乎用户数据爬取和分析</title>
+        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
         
         <tag>php</tag>
          
-        <tag>单元测试</tag>
+        <tag>javascript</tag>
          
-        <tag>phpunit</tag>
+        <tag>网页爬虫</tag>
+         
+        <tag>shell</tag>
+         
+        <tag>css</tag>
          
          
            
@@ -799,4 +815,11 @@
     </data>
     </url>
 
+    
+    
+    
+    
+    
+    
+    
 </urlset>
