@@ -67,25 +67,25 @@
 
 
 
-<meta name="description" content="话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，进行拆解，分析和解决。沉淀解决问题思路，归纳常用解决方案。
+<meta name="description" content="话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，梳理和拆解业务流，分析问题点，提出七种常用解决方案。
 
-一、性能问题初现上线初期数据量较小，运行正常！一次大促后，账户流水的总数目接近亿级别，初现性能问题：系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位">
+一、性能问题初现上线初期数据量较小，运行正常！一次大促后，账户流水的总数目接近亿级别，初现性能问题：系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位不断重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="热点账户问题和常用解决方案【中】">
 <meta property="og:url" content="http://cuihuan.net/2019/04/01/热点账户问题和常用解决方案【中】/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
-<meta property="og:description" content="话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，进行拆解，分析和解决。沉淀解决问题思路，归纳常用解决方案。
+<meta property="og:description" content="话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，梳理和拆解业务流，分析问题点，提出七种常用解决方案。
 
-一、性能问题初现上线初期数据量较小，运行正常！一次大促后，账户流水的总数目接近亿级别，初现性能问题：系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位">
-<meta property="og:image" content="http://cuihuan.net/img/bVbqH7C">
-<meta property="og:image" content="http://cuihuan.net/img/bVbqIim">
-<meta property="og:updated_time" content="2019-04-01T13:46:53.186Z">
+一、性能问题初现上线初期数据量较小，运行正常！一次大促后，账户流水的总数目接近亿级别，初现性能问题：系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位不断重">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/finance/finance_hot_account_3.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/finance/finance_hot_account_4.png">
+<meta property="og:updated_time" content="2019-04-01T14:31:33.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="热点账户问题和常用解决方案【中】">
-<meta name="twitter:description" content="话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，进行拆解，分析和解决。沉淀解决问题思路，归纳常用解决方案。
+<meta name="twitter:description" content="话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，梳理和拆解业务流，分析问题点，提出七种常用解决方案。
 
-一、性能问题初现上线初期数据量较小，运行正常！一次大促后，账户流水的总数目接近亿级别，初现性能问题：系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位">
-<meta name="twitter:image" content="http://cuihuan.net/img/bVbqH7C">
+一、性能问题初现上线初期数据量较小，运行正常！一次大促后，账户流水的总数目接近亿级别，初现性能问题：系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位不断重">
+<meta name="twitter:image" content="http://cuihuan.net/wp_content/new/finance/finance_hot_account_3.png">
 
 
 
@@ -362,12 +362,12 @@
 
       
         <blockquote>
-<p>话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，进行拆解，分析和解决。沉淀解决问题思路，归纳常用解决方案。</p>
+<p>话接上回，上篇阐述了什么是热点账户，基本财务账户如何设计，幂等健和链式设计！本篇将针对热点账户在实践中引发的问题，梳理和拆解业务流，分析问题点，提出七种常用解决方案。</p>
 </blockquote>
 <h2 id="一、性能问题初现"><a href="#一、性能问题初现" class="headerlink" title="一、性能问题初现"></a>一、性能问题初现</h2><p>上线初期数据量较小，运行正常！<br>一次大促后，账户流水的总数目接近亿级别，初现性能问题：<code>系统整体的qps也就10+，但热点账户写入失败率偏高，并且随数据量增加失败率逐步升高；整个账户系统全靠上游有redo标识位不断重试，才能保证最终写入成功!</code></p>
 <p>哈哈，作为一名拥有三年工作经验的老码农，面对问题，要做的第一件事，就是<code>静</code>，抽根烟静静，准备开搞！</p>
-<h2 id="二、数据流拆解"><a href="#二、数据流拆解" class="headerlink" title="二、数据流拆解"></a>二、数据流拆解</h2><p>拿到问题，抽根烟静一下之后，一般需要三步：<strong>梳理数据流，拆解过程，定位可能问题点</strong>。先拆解下财务账户更新的数据流</p>
-<p><img src="/img/bVbqH7C" alt="clipboard.png"></p>
+<h2 id="二、数据流拆解"><a href="#二、数据流拆解" class="headerlink" title="二、数据流拆解"></a>二、数据流拆解</h2><p>拿到问题，抽根烟静一下之后，分析问题需要三步：<strong>梳理数据流，拆解过程，定位问题点</strong>。先对财务账户更新的数据流进行拆解</p>
+<p><a href="http://cuihuan.net/wp_content/new/finance/finance_hot_account_3.png"><img src="http://cuihuan.net/wp_content/new/finance/finance_hot_account_3.png" alt="finance_hot_account_3"></a></p>
 <p>链式锁后的基本账户操作过程，分为如下五阶段</p>
 <ul>
 <li>请求阶段：账户操作请求。</li>
@@ -376,17 +376,16 @@
 <li>写入阶段：事务同步写入流水和余额</li>
 <li>响应阶段：告知上游回调</li>
 </ul>
-<p>初步梳理数据流后，接下来分析每个阶段可能引发的问题</p>
-<h2 id="三、链路分析"><a href="#三、链路分析" class="headerlink" title="三、链路分析"></a>三、链路分析</h2><p>按照优先级，<code>先分析业务问题区域（读取阶段，计算阶段，写入阶段）</code>，通常问题会出现在业务阶段；之后，<code>再分析框架问题区域（请求阶段和回调阶段）</code>，该区域出现问题的情况偏下，一旦出现问题，就是比较有意思^_^！</p>
+<h2 id="三、链路分析"><a href="#三、链路分析" class="headerlink" title="三、链路分析"></a>三、链路分析</h2><p>梳理数据流后，接下来分析每个阶段可能引发的问题。按照优先级，<code>先分析业务问题区域（读取阶段，计算阶段，写入阶段）</code>，通常问题会出现在业务阶段；之后，<code>再分析框架问题区域（请求阶段和回调阶段）</code>，该区域出现问题的情况偏小，但是一旦出现问题，就是比较有意思^_^！</p>
 <h3 id="3-1-业务问题区域分析"><a href="#3-1-业务问题区域分析" class="headerlink" title="3.1 业务问题区域分析"></a>3.1 业务问题区域分析</h3><p>读取阶段，计算阶段，写入阶段三个阶段是具体的业务操作，从并发和耗时两个角度来分析下可能的问题点</p>
-<h4 id="3-2-1-耗时分析"><a href="#3-2-1-耗时分析" class="headerlink" title="3.2.1 耗时分析"></a>3.2.1 耗时分析</h4><p>耗时分为三块</p>
+<h4 id="3-1-1-耗时分析"><a href="#3-1-1-耗时分析" class="headerlink" title="3.1.1 耗时分析"></a>3.1.1 耗时分析</h4><p>耗时分为三块</p>
 <ul>
 <li>查询耗时：RDS拥有亿级别数据量，<code>查询未中primary，但命中索引，业务数据体并未完全在索引中，因此访问数据走index match；数据主键聚簇，唯一健索引查询获取数据，page极难命中cache，也不会命中磁盘电梯算法优化！结合实际情况，查询耗时在10-100ms级别</code></li>
 <li>写入耗时：insert 包含了自增，理论上在数据落盘是追加写，即使uniq_key去创建索引的情况下，耗时在ms级</li>
 <li>过程耗时：长连接情况下，init conn时间基本可以忽略，但是读写两次往返数据库的链路时间还是需要考虑，整体预估在1-2ms之间</li>
 </ul>
 <p>从整体上看，预估该阶段的耗时在10-100+ms，从实际失败率来看也基本一致！</p>
-<h4 id="3-2-2-并发分析"><a href="#3-2-2-并发分析" class="headerlink" title="3.2.2 并发分析"></a>3.2.2 并发分析</h4><ul>
+<h4 id="3-1-2-并发分析"><a href="#3-1-2-并发分析" class="headerlink" title="3.1.2 并发分析"></a>3.1.2 并发分析</h4><ul>
 <li>天级QPS：当时分析天级几十万单，天级QPS不到10，不高！</li>
 <li>瞬间QPS：每个订单拆解到资金流后，会同时操作多次热点账户，瞬间qps相对很高，理论qps就可能达到语言上限，由于上游链路限流1024，按照10级别操作拆分，理论上满池QPS在万级别。考虑实际单量，瞬间QPS=单量(10)*拆解量(10)，实际的满额预估QPS可能到100+ ！</li>
 </ul>
@@ -417,7 +416,7 @@
 </ul>
 <h3 id="4-3-请求和回调阶段优化"><a href="#4-3-请求和回调阶段优化" class="headerlink" title="4.3 请求和回调阶段优化"></a>4.3 请求和回调阶段优化</h3><p>请求阶段一般有三种形式：<strong>同步调用，异步调用和伪同步调用</strong>！<br>前两种调用非常常见：同步爆池的情况，一般采用限流来降压，采用漏桶，令牌桶等等策略；异步调用通常采用消息队列来削峰填谷；这里重点阐述对于支付和财务系统在请求阶段经常采用的伪同步的方式</p>
 <p>伪同步流量较早出现在innodb，leveldb等存储引擎为了利用追加写提升写入性能，采用类WAL日志来持久化数据。通常伪同步方案采用三件套：<code>WAL日志+校验位+广播消息</code>来完成一次完整的请求！流程图一般如下</p>
-<p><img src="/img/bVbqIim" alt="clipboard.png"></p>
+<p><a href="http://cuihuan.net/wp_content/new/finance/finance_hot_account_4.png"><img src="http://cuihuan.net/wp_content/new/finance/finance_hot_account_4.png" alt="finance_hot_account_4"></a></p>
 <ul>
 <li>请求阶段：同步请求调用，核心要素追加写入wal日志，变更校验位，完成同步调用！此处追加写保证了快速写入，校验位来保证数据的最终写入成功。图中1，2</li>
 <li>异步阶段：<code>通过读取wal日志的核心数据，进行复杂事务处理，如果成功进入下一阶段；如果失败，没问题，通过外部trigger来触发redo操作！如果多次redo依然失败，那么通过undo来回滚数据</code>。</li>
@@ -429,12 +428,12 @@
 <li>时效性：伪同步并非完全同步，所以结果需要监听回调。对于结果强一致的请求，必须监听回调，确保一致，时效性降低；对于弱一致可以认为同步回调即成功，时效性提升。</li>
 <li>失败率：操作知识核心要素追加写入，真正的操作通过异步保证，整体成功率提升！</li>
 </ul>
-<p>对于资金处理过程，大量采用伪同步的请求方式来保证快速写入和最终一致性。</p>
+<p>对于资金处理过程，大量采用<strong>伪同步的请求方式来保证快速写入和最终一致性</strong>。</p>
 <h3 id="4-4-解决方案总结"><a href="#4-4-解决方案总结" class="headerlink" title="4.4 解决方案总结"></a>4.4 解决方案总结</h3><p>总的来说，归结了七种优化方式（哈哈，上篇写的八种优化，当时总结的，现在愣是想不到还有啥了^_^）。其中请求和回调的伪同步方式，是在架构层面优化，这个在多数的财务系统和财务系统的内部数据流中都会用到；而读写和计算阶段的优化，可以跟进实际业务情况进行选型处理。</p>
 <h2 id="五、事故复盘"><a href="#五、事故复盘" class="headerlink" title="五、事故复盘"></a>五、事故复盘</h2><p>面对各种优化方案，需要结合实际情况做出取舍，有的是长期方案，有的是快速方案，<code>但一定需要想清楚了再开搞</code>，过程中有一个对小拽之后影响很大的事故，引以为戒。</p>
 <p>翻车过程：当时觉的读-&gt;计算-&gt;写这个过程，<code>两次读DB操作，下沉计算过程到DB后，通过DB计算，可以减少一次数据库请求</code>。于是<code>合并了一个大SQL，也就是所谓的insert ( field computer from select)</code>，觉的写了个狂赚酷炫吊炸天的SQL，一上线，库锁死了！幸好有前置的redo flag，全量redo数据恢复，要不然估计直接祭天了！</p>
-<p>对于这个复杂大SQL事故，小拽总结了三个方面<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>莫炫技：没啥好说的，解决问题的成就感要远大于炫技！</div><div class="line"><span class="number">2.</span>简单设计：简单的设计通常意味着可依赖；复杂的设计要尽可能的拆解，想清楚，队友都理解不了的设计，那就别上线了，可能真的需要再思考拆解下</div><div class="line"><span class="number">3.</span>尊重线上：核心服务基本上线流程一定要遵守，测试，监控和回滚方案缺一不可</div></pre></td></tr></table></figure></p>
-<h2 id="六、小结"><a href="#六、小结" class="headerlink" title="六、小结"></a>六、小结</h2><p>本篇主要针对热点账户问题提出了七种常用的解决方案，同时，也分享了问题分析的过程和事故反思！下篇将继续引申七种解决方案在不规则高并发场景的具体应用。</p>
+<p>对于这个复杂大SQL事故，小拽总结了三个方面<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">莫炫技：没啥好说的，解决问题的成就感要远大于炫技！</div><div class="line">简单设计：简单的设计通常意味着可依赖；复杂的设计要尽可能的拆解，想清楚，队友都理解不了的设计，那就别上线了，可能真的需要再思考拆解下</div><div class="line">尊重线上：核心服务基本上线流程一定要遵守，测试，监控和回滚方案缺一不可</div></pre></td></tr></table></figure></p>
+<h2 id="六、小结"><a href="#六、小结" class="headerlink" title="六、小结"></a>六、小结</h2><p>本篇主要针对热点账户问题提出了七种常用的解决方案，下篇将继续引申探索下，各种解决方案在不规则高并发场景，例如双十一，微博热点事件中如何套用</p>
 <p>预知后事如何，下回再聊！</p>
 
       
@@ -646,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、性能问题初现"><span class="nav-number">1.</span> <span class="nav-text">一、性能问题初现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数据流拆解"><span class="nav-number">2.</span> <span class="nav-text">二、数据流拆解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、链路分析"><span class="nav-number">3.</span> <span class="nav-text">三、链路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-业务问题区域分析"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 业务问题区域分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-耗时分析"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.2.1 耗时分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-并发分析"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.2.2 并发分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-框架问题区域"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 框架问题区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、解决方案"><span class="nav-number">4.</span> <span class="nav-text">四、解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-读取和写入阶段优化"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 读取和写入阶段优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-计算阶段优化"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 计算阶段优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-请求和回调阶段优化"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 请求和回调阶段优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-解决方案总结"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 解决方案总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、事故复盘"><span class="nav-number">5.</span> <span class="nav-text">五、事故复盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、小结"><span class="nav-number">6.</span> <span class="nav-text">六、小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、性能问题初现"><span class="nav-number">1.</span> <span class="nav-text">一、性能问题初现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数据流拆解"><span class="nav-number">2.</span> <span class="nav-text">二、数据流拆解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、链路分析"><span class="nav-number">3.</span> <span class="nav-text">三、链路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-业务问题区域分析"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 业务问题区域分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-耗时分析"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 耗时分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-并发分析"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 并发分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-框架问题区域"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 框架问题区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、解决方案"><span class="nav-number">4.</span> <span class="nav-text">四、解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-读取和写入阶段优化"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 读取和写入阶段优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-计算阶段优化"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 计算阶段优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-请求和回调阶段优化"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 请求和回调阶段优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-解决方案总结"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 解决方案总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、事故复盘"><span class="nav-number">5.</span> <span class="nav-text">五、事故复盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、小结"><span class="nav-number">6.</span> <span class="nav-text">六、小结</span></a></li></ol></div>
             
 
           </div>
