@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2019/04/03/%E6%95%B0%E6%8D%AE%E5%BD%92%E6%A1%A3%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</loc>
+    <lastmod>2019-04-03T13:11:51.087Z</lastmod>
+    <data>
+        <display>
+        <title>数据归档那些事儿</title>
+        <pubTime>2019-04-03T14:11:35.000Z</pubTime>
+        
+        <tag>数据归档</tag>
+         
+        <tag>存储选型</tag>
+         
+        <tag>数据通道</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2019/04/01/%E7%83%AD%E7%82%B9%E8%B4%A6%E6%88%B7%E9%97%AE%E9%A2%98%E5%92%8C%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%90%E4%B8%AD%E3%80%91/</loc>
     <lastmod>2019-04-01T14:31:33.502Z</lastmod>
     <data>
@@ -149,37 +170,14 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
+    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【page-monitor 前端自动化 上篇】初步调研</title>
-        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
+        <title>【redis学习一】基本概念和基本操作</title>
+        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
-        <tag>自动化测试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2016/04/20/chrome_2/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【chrome 插件二】添加菜单和添加消息提醒</title>
-        <pubTime>2016-04-20T09:21:35.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>chrome-extension</tag>
-         
-        <tag>chrome</tag>
+        <tag>redis</tag>
          
          
            
@@ -540,18 +538,16 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
+    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
-        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
+        <title>【page-monitor 前端自动化 上篇】初步调研</title>
+        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
         
         <tag>javascript</tag>
          
-        <tag>chrome-extension</tag>
-         
-        <tag>chrome</tag>
+        <tag>自动化测试</tag>
          
          
            
@@ -561,14 +557,18 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    <loc>http://cuihuan.net/2016/04/20/chrome_2/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【redis学习一】基本概念和基本操作</title>
-        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
+        <title>【chrome 插件二】添加菜单和添加消息提醒</title>
+        <pubTime>2016-04-20T09:21:35.000Z</pubTime>
         
-        <tag>redis</tag>
+        <tag>javascript</tag>
+         
+        <tag>chrome-extension</tag>
+         
+        <tag>chrome</tag>
          
          
            
@@ -729,6 +729,31 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2017/01/20/charactor/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>php爬虫：知乎用户数据爬取和分析</title>
+        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>javascript</tag>
+         
+        <tag>网页爬虫</tag>
+         
+        <tag>shell</tag>
+         
+        <tag>css</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2016/01/10/YII2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -792,22 +817,18 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2017/01/20/charactor/</loc>
+    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>php爬虫：知乎用户数据爬取和分析</title>
-        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
+        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
+        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>javascript</tag>
          
-        <tag>网页爬虫</tag>
+        <tag>chrome-extension</tag>
          
-        <tag>shell</tag>
-         
-        <tag>css</tag>
+        <tag>chrome</tag>
          
          
            
