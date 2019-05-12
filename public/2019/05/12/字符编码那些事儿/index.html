@@ -1,0 +1,1191 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="字符编码,国际化,ICU,UTF,UNICODE," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
+
+一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符编码那些事儿">
+<meta property="og:url" content="http://cuihuan.net/2019/05/12/字符编码那些事儿/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
+
+一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/finance/ASCII.png">
+<meta property="og:updated_time" content="2019-05-12T11:34:57.449Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符编码那些事儿">
+<meta name="twitter:description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
+
+一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0">
+<meta name="twitter:image" content="http://cuihuan.net/wp_content/new/finance/ASCII.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2019/05/12/字符编码那些事儿/"/>
+
+
+
+
+
+  <title>字符编码那些事儿 | 靠谱崔小拽</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            DEMO
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2019/05/12/字符编码那些事儿/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/cuihuan_title.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">字符编码那些事儿</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-12T08:31:35+08:00">
+                2019-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下<strong>字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU</strong>等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“<strong>锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯</strong>”是什么神兵利器O(∩_∩)O？</p>
+</blockquote>
+<h2 id="一、二进制和字节"><a href="#一、二进制和字节" class="headerlink" title="一、二进制和字节"></a>一、二进制和字节</h2><p>大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0和1)的状态，这种01状态的变化被称为<code>二进制位（bit）</code>。</p>
+<p>过了几年，英特尔把八个可以开合的晶体管组合，做为一个基本的记录单元，这个单元被称作<code>字节（byte）</code>，所以<strong>一个byte由8个bit构成，可以表达256种状态</strong>。</p>
+<p>又过几年，祖师爷冯诺依曼设计了一台可以存储和处理（冯诺依曼体系）字节变动的机器<strong>ENIAC</strong>，后来这个机器被称作<code>计算机</code>。</p>
+<h2 id="二、标准ASCII"><a href="#二、标准ASCII" class="headerlink" title="二、标准ASCII"></a>二、标准ASCII</h2><p>计算机运行是二进制，如何用二进制位来标识人类语言，就需要和计算机有一套约定关系，例如约定，0100 1111就代表O，0100 1011即代表K，那么存储为11110100 101101100的两个字节就代表OK，这套约定关系就是<code>字符编码</code>。</p>
+<p>冯祖师爷是的德国人，二战去了美国设计了第一台计算机。起初，也只有美国人能用计算机，山姆大叔就根据英语习惯设计了一套映射约定</p>
+<ul>
+<li>0-31 表示控制字符，例如换行[LF]，删除[DEL]，确认[ACK]等</li>
+<li>32-47 表示符号例如!@#$等</li>
+<li>48-57 表示0-9是个阿拉伯数字</li>
+<li>65-122 表示大小写字母</li>
+</ul>
+<p>大家都按着这个约定来，交流表达起来没啥问题，呵呵，都挺好。于是这个方案就一致通过了，山姆大叔也给这个约定起了个名字<code>ASCII</code>编码（<strong>American Standard Code for Information Interchange，美国信息互换标准代码</strong>）。当时世界上所有的计算机都用同样的ASCII方案来保存英文字符。</p>
+<blockquote>
+<p>计算机一个标准字节8bit本身可以标识256个符号，但<strong>标准的ASCII的最高位去掉用做奇偶校验，用剩余7位标识128个符号</strong>，如下图</p>
+</blockquote>
+<p><a href="http://cuihuan.net/wp_content/new/finance/ASCII.png"><img src="http://cuihuan.net/wp_content/new/finance/ASCII.png" alt="ASCII"></a></p>
+<h2 id="三、ASCII-扩展字符集"><a href="#三、ASCII-扩展字符集" class="headerlink" title="三、ASCII 扩展字符集"></a>三、ASCII 扩展字符集</h2><p>随着计算机的发展，欧洲人开始逐步接触计算机了。<br>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用ASCII码表示。于是，一些欧洲国家就决定，<strong>利用字节中闲置的最高位编入新的符号</strong>。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使用的编码体系，<strong>可以表示最多256个符号</strong>。</p>
+<p>IBM牵头扩充了ASCII编码128-256位的标识字符，主要是一些欧洲的常用符号，这部分扩展映射被称为<code>ASCII扩展字符集</code></p>
+<h2 id="四、GB2312"><a href="#四、GB2312" class="headerlink" title="四、GB2312"></a>四、GB2312</h2><p>雄关漫道真如铁，而今迈步从头越，美帝国主义万万没有想到，二战后，大量第三世界的人民站起来了，逐步开始使用计算机。但<strong>问题是256个字符已经没啥可利用的字节状态来表示汉字了，更何况中华文明有6000多个常用汉字需要保存</strong>呢。</p>
+<p>但是这难不倒智慧的中国人民，面对帝国主义的压迫，我们毫不客气的做了两件事情，并在1980年发表了这个声明</p>
+<ul>
+<li>互相尊重：尊重标准ASCII 规范中0-127位表示的标准字符。</li>
+<li>平等互利：<strong>ASCII的128-256位，我们用来标识中文，由于中文太多，我们要使用两个字节来表示一个中文^_^</strong></li>
+</ul>
+<p>中国人民觉的这个声明还不错，毕竟计算机使用范围也不大，基本满足需求，于是就把这种汉字方案叫做 <code>GB2312编码</code>。<strong>GB2312 是对 ASCII 的中文扩展</strong>。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">非专业人士可以忽略： GB2312如何组合，能表示多少个？</div><div class="line">GB2312中用两个字节来标识一个汉字，前面的一个字节（他称之为高字节）从<span class="number">0xA1</span>用到<span class="number">0xF7</span>，后面一个字节（低字节）从<span class="number">0xA1</span>到<span class="number">0xFE</span>，简单计算</div><div class="line"></div><div class="line"><span class="number">0xA1</span>：<span class="number">10</span>*<span class="number">16</span> + <span class="number">1</span> = <span class="number">161</span>  </div><div class="line"><span class="number">0xF7</span>：<span class="number">15</span>*<span class="number">16</span> + <span class="number">7</span> = <span class="number">247</span> =&gt; <span class="number">247</span><span class="number">-161</span> = <span class="number">86</span></div><div class="line"><span class="number">0xFE</span>：<span class="number">15</span>*<span class="number">16</span> + <span class="number">14</span>= <span class="number">254</span> =&gt; <span class="number">254</span><span class="number">-161</span> = <span class="number">93</span></div><div class="line">因此GB2312可以标识约<span class="number">86</span>*<span class="number">93</span>=<span class="number">7998</span> 个汉字</div><div class="line"></div><div class="line">实时上 GB2312 标准共收录 <span class="number">6763</span> 个汉字，其中一级汉字 <span class="number">3755</span> 个，二级汉字 <span class="number">3008</span> 个。</div><div class="line">同时收录了包括拉丁字母、希腊字母、日文平假名及片假名字母、俄语西里尔字母在内的 <span class="number">682</span> 个字符。</div><div class="line">几乎覆盖了大陆常用的<span class="number">99.75</span>%汉字</div></pre></td></tr></table></figure>
+<p>这样我们就可以组合出大约7000多个简体汉字了。在这些编码里，我们还把数学符号、罗马希腊的字母、日文的假名们都编进去了，连在 ASCII 里本来就有的数字、标点、字母都统统重新编了两个字节长的编码，这就是常说的<code>全角字符</code>，而原来在127号以下的那些就叫<code>半角字符</code>了。</p>
+<h2 id="五、GBK"><a href="#五、GBK" class="headerlink" title="五、GBK"></a>五、GBK</h2><p>满足了基础和常用的汉字需求后，但<strong>依然会有很多人的生僻字名字打不出来，屌丝还好，但是一旦牵涉伟人名字打不出来那就坑爹了</strong>！改改改，抓紧改！</p>
+<p>GB2312的编码，使用两个字符，每个都<strong>只用了后128位，不合理呀，干脆我们把低字节127号之后的内码我们也用了，不浪费</strong>。</p>
+<p>说干就干，于是扩展之后的编码方案被称为<code>GBK</code>标准（不知道K是不是扩展的缩写K^_^），<strong>GBK包括了GB2312的所有内容，同时又增加了近20000个新的汉字（包括繁体字）和符号</strong>。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">非专业人士可以忽略： GBK如何组合，能表示多少个？</div><div class="line">第一个字节的值从 <span class="number">0x81</span> 到 <span class="number">0xFE</span>保持不变，第二个字节的值扩展从 <span class="number">0x40</span> 到 <span class="number">0xFE</span></div><div class="line"></div><div class="line"><span class="number">0xFE</span><span class="number">-0x81</span>：<span class="number">254</span> - <span class="number">8</span>*<span class="number">16</span>+<span class="number">1</span> =<span class="number">125</span></div><div class="line"><span class="number">0xFE</span><span class="number">-0x40</span>：<span class="number">254</span> - <span class="number">4</span>*<span class="number">16</span> =<span class="number">190</span> </div><div class="line"></div><div class="line">因此，GBK约标识了 <span class="number">125</span>*<span class="number">190</span>  = <span class="number">23750</span> </div><div class="line"></div><div class="line">GBK 共收入 <span class="number">21886</span> 个汉字和图形符号，包括：GB2312 中的全部汉字、非汉字符号；BIG5中的全部汉字；ISO10646 相应的国家标准GB13000 中的其它 CJK 汉字</div><div class="line">以上合计 <span class="number">20902</span> 个汉字； 其它汉字、部首、符号，共计 <span class="number">984</span> 个。</div></pre></td></tr></table></figure>
+<h2 id="六、GB18030"><a href="#六、GB18030" class="headerlink" title="六、GB18030"></a>六、GB18030</h2><p>中华民族大团结，<strong>后来少数民族也要用电脑了，于是我们需要再次扩展，又加了几千个新的少数民族的字</strong>，GBK扩成了<code>GB18030</code>。从此之后，中华民族的文化就可以完美的在计算机时代中传承了。 </p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">非专业人士忽略：</div><div class="line">这一系列汉字编码的标准通为 `DBCS`（<span class="built_in">Double</span> <span class="built_in">Byte</span> Charecter <span class="keyword">Set</span> 双字节字符集）。</div><div class="line">在DBCS系列标准里，最大的特点是两字节长的汉字字符和一字节长的英文字符并存于同一套编码方案里，因此他们写的程序为了支持中文处理，</div><div class="line">必须要注意字串里的每一个字节的值，如果这个值是大于<span class="number">127</span>的，那么就认为一个双字节字符集里的字符出现了</div></pre></td></tr></table></figure>
+<p>从ASCII到GB2312，再到GBK，而后GB18030，中华民族终于完成了全量中文字符的编码，简单总结下<br>第一阶段：中国人民通过对 ASCII 编码的中文扩充改造，产生了GB2312 编码，可以表示6000多个常用汉字。<br>第二阶段：汉字实在是太多了，包括繁体和各种字符，于是产生了 GBK 编码，它包括了 GB2312 中的编码，同时扩充了很多。<br>第三阶段：中国是个多民族国家，各个民族几乎都有自己独立的语言系统，为了表示那些字符，继续把 GBK 编码扩充为 GB18030 编码，完成全量中文字符编码。</p>
+<h2 id="六、UNICODE"><a href="#六、UNICODE" class="headerlink" title="六、UNICODE"></a>六、UNICODE</h2><p>之后的世界，百花齐放，百家争鸣，<strong>各国纷纷制造自己的编码规范，同时互相不去理解对方规范，即使同一种语言也区别巨大</strong>，例如台湾地区中文采用<code>big5</code>的繁体编码，名字也牛逼大了，叫<code>大五码</code>。</p>
+<p>各自为政引来了大量的问题，<strong>各个语言互不兼容</strong>，此时，一堆大佬看不下去了，勇敢的站了出来，着手解决这个问题，他们成立了一个类似于TC的组织，叫做<code>ISO</code>(International Organization for Standardization 国际标准化组织)。</p>
+<p>他们采用的方法很简单：<strong>废了所有的地区性编码方案，重新搞一个包括了地球上所有文化、所有字母和符号的编码</strong>！他们打算叫它”Universal Multiple-Octet Coded Character Set”，简称 <code>UCS</code>, 俗称 “<code>UNICODE</code>“。这就是<strong>Unicode，就像它的名字都表示的，这是一种所有符号的编码</strong>！</p>
+<p>UNICODE统一了各国，成为了实事上的大一统的编码规范。这种编码非常大，大到可以容纳世界上任何一个文字和标志。所以只要电脑上有 UNICODE 这种编码系统，无论是全球哪种文字，只需要保存文件的时候，保存成 UNICODE 编码就可以被其他电脑正常解释。</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">非专业人士忽略：<span class="built_in">unicode</span> 编码</div><div class="line"><span class="built_in">unicode</span>开始制订时，计算机的存储器容量极大地发展了，空间再也不成为问题了。</div><div class="line">于是ISO就直接规定<span class="symbol">:</span></div><div class="line"><span class="number">1</span>：必须用两个字节，也就是<span class="number">16</span>位来统一表示所有的字符</div><div class="line"><span class="number">2</span>：对于ASCII里的那些“半角”字符，<span class="built_in">unicode</span>包持其原编码不变，只是将其长度由原来的<span class="number">8</span>位扩展为<span class="number">16</span>位，</div><div class="line"><span class="number">3</span>：其他文化和语言的字符则全部重新统一编码。</div><div class="line"></div><div class="line">由于”半角”英文符号只需要用到低<span class="number">8</span>位，所以其高<span class="number">8</span>位永远是<span class="number">0</span>，因此这种大气的方案在保存英文文本时会多浪费一倍的空间。</div></pre></td></tr></table></figure>
+<h2 id="七、UTF，UTF8，UTF16"><a href="#七、UTF，UTF8，UTF16" class="headerlink" title="七、UTF，UTF8，UTF16"></a>七、UTF，UTF8，UTF16</h2><p>UNICODE很好的解决了不同语言统一编码的问题，但同样也不完美，有两个主要问题，</p>
+<ul>
+<li><strong>字符识别</strong>：如何才能区别unicode和ascii？计算机怎么知道三个字节表示一个符号，而不是分别表示三个符号呢？</li>
+<li><strong>存储浪费</strong>：我们已经知道，英文字母只用一个字节表示就够了，如果unicode统一规定，每个符号用三个或四个字节表示，那么<strong>每个英文字母前都必然有二到三个字节是0，这对于存储空间来说是极大的浪费，文本文件的大小会因此大出二三倍</strong>。</li>
+</ul>
+<p>此时<code>UTF</code>(unicode transfer format)标准出现了，顾名思义，是<strong>UNICODE在传输和存储过程中的格式化标准</strong>，其中使用最广的是utf8和utf16</p>
+<p><code>UTF-16</code>相对好理解，就是<strong>任何字符对应的数字都用两个字节来保存！我们通常对Unicode的理解就是把Unicode与UTF-16等同</strong>了。但是很显然如果都是英文字母这做有点浪费，明明用一个字节能表示一个字符为啥整两个啊。</p>
+<p><code>UTF-8</code>最大的一个特点，就是它是一种<strong>变长的编码方式</strong>。它可以<strong>使用1~4个字节表示一个符号，根据不同的符号而变化字节长度</strong>，当字符在ASCII码的范围时，就用一个字节表示，保留了ASCII字符一个字节的编码做为它的一部分，注意的是unicode一个中文字符占2个字节，而UTF-8一个中文字符占3个字节）。从unicode到utf-8并不是直接的对应，而是要过一些算法和规则来转换。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">非专业人士直接忽略：unicode 如何转换成utf<span class="number">-8</span></div><div class="line">以小拽的<span class="string">"拽"</span>字为例</div><div class="line"></div><div class="line">Unicode符号范围 | UTF<span class="number">-8</span>编码方式</div><div class="line">(十六进制) | （二进制）</div><div class="line">—————————————————————–</div><div class="line"><span class="number">0000</span> <span class="number">0000</span><span class="number">-0000</span> <span class="number">007</span>F | <span class="number">0</span>xxxxxxx</div><div class="line"><span class="number">0000</span> <span class="number">0080</span><span class="number">-0000</span> <span class="number">07</span>FF | <span class="number">110</span>xxxxx <span class="number">10</span>xxxxxx</div><div class="line"><span class="number">0000</span> <span class="number">0800</span><span class="number">-0000</span> FFFF | <span class="number">1110</span>xxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx</div><div class="line"><span class="number">0001</span> <span class="number">0000</span><span class="number">-0010</span> FFFF | <span class="number">11110</span>xxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx <span class="number">10</span>xxxxxx</div><div class="line">中文一般三个字节，前置标识位</div><div class="line"></div><div class="line">举个栗子，中文：拽 unicode是<span class="number">25341</span></div><div class="line"><span class="number">25341</span>                    十进制 unicode</div><div class="line"><span class="number">0x62fd</span>                   十六进制 </div><div class="line"><span class="number">0110</span> <span class="number">0010</span> <span class="number">1111</span> <span class="number">1101</span>      二进制 </div><div class="line"></div><div class="line">### 套上模板</div><div class="line"><span class="number">0110</span>      <span class="number">001011</span>    <span class="number">111101</span>      二进制  <span class="number">25341</span></div><div class="line"><span class="number">1110</span>xxxx  <span class="number">10</span>xxxxxx  <span class="number">10</span>xxxxxx    模板第三行</div><div class="line"><span class="number">11100110</span>  <span class="number">10001011</span>  <span class="number">10111101</span>    utf8 二进制</div><div class="line">e   <span class="number">6</span>     <span class="number">8</span>   b     b   d       utf8 十六进制【一切为了节省】</div><div class="line">最终utf8拽对应的就是<span class="number">0xe68bdb</span></div></pre></td></tr></table></figure>
+<p>UTF-8就是在互联网上使用最广的一种unicode的实现方式，这是为传输而设计的编码，并使编码无国界，这样就可以显示全世界上所有文化的字符了。</p>
+<p>简单对比下GB系列，UTF8，UTF16 </p>
+<ul>
+<li>UTF16：首先不推荐使用utf16，因为<strong>utf16最初能表示的字符数有6万多，看起来很多，但是实际上目前 Unicode5.0 收录的字符已经达到99024个字符，其实不够，有可能出现乱码</strong>。</li>
+<li>UTF8：国际化编码首推UTF8，兼容全量，<strong>唯一的问题是空间略有浪费</strong>!</li>
+<li>GB系列：<strong>GB系列都是双字节字符集，相对节省空间，如果只是国内使用GB18030完全可以兼容所有</strong>。</li>
+</ul>
+<h2 id="八、“锟斤拷��”-是什么"><a href="#八、“锟斤拷��”-是什么" class="headerlink" title="八、“锟斤拷��” 是什么"></a>八、“锟斤拷��” 是什么</h2><p>通过上面介绍，可以看出来，各个编码规则是不一样的，目前互联网浏览器默认传输和解析方式是UTF8，但是部分老的网页采用GB系列，就会出现传输过程UTF8解析不了，展示GB错乱问题。</p>
+<p>UNIDCODE规定：<strong>当unicode遇到解释失败的字时，会尝试用 「U+FFFD」 来代替，「U+FFFD」乃是 unicode 的一个占位符， 显示为 �</strong></p>
+<p>而utf8识别为异常的传输字符后，传到页面转为双字节展示的GB会怎么样呢？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜ xiaozhuai ✗ python</div><div class="line">Python <span class="number">2.7</span><span class="number">.10</span> (default, Aug <span class="number">17</span> <span class="number">2018</span>, <span class="number">19</span>:<span class="number">45</span>:<span class="number">58</span>)</div><div class="line">[GCC <span class="number">4.2</span><span class="number">.1</span> Compatible Apple LLVM <span class="number">10.0</span><span class="number">.0</span> (clang<span class="number">-1000.0</span><span class="number">.42</span>)] on darwin</div><div class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = (<span class="string">u'\uFFFD'</span>.encode(<span class="string">'utf8'</span>)*<span class="number">2</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(s.decode(<span class="string">'gbk'</span>))</div><div class="line">锟斤拷</div></pre></td></tr></table></figure></p>
+<p>也就产生了，传说中的”锟斤拷”神器！</p>
+<blockquote>
+<p>另外还有几个神器：”烫烫烫烫烫，屯屯屯屯屯屯”<br>“烫” 主要出没于 windows 平台下，ms 的 vc++ 编译器中， 当你在栈内开辟新内存时， vc 会使用 0xcc 来初始化填充， 很多个 0xcc 连起来就成了 烫烫烫烫烫 同理在堆内开辟新内存时， 会用 0xcd 填充，这便是 屯屯屯屯屯屯<br>不管是 “锟斤拷” 还是 “烫” 都要求最后是用GB码输出。</p>
+</blockquote>
+<h2 id="九、ICU"><a href="#九、ICU" class="headerlink" title="九、ICU"></a>九、ICU</h2><p>在unicode的统治下，世界各国的基本编码不会出现乱码等异常。但当中华民族逐步强大，准备冲出中国统一世界的时候，<strong>发现各国的货币，时间，数字等表示灰常不统一</strong>，例如数字1234.5，英文表示1,234.5，葡语表示确是1.234,5，很是苦恼。</p>
+<p>此时IBM站了出来，叫上google,apple等小伙伴，<strong>遵循”IBM公共许可证”，开源了一套基于unicode的国际化组件</strong><code>ICU</code>(International Component for Unicode<br>)。<strong>根据各地的风俗和语言习惯，实现对数字、货币、时间、日期、和消息的格式化、解析，对字符串进行大小写转换、整理、搜索和排序等功能</strong>，ICU4C提供了强大的BIDI算法，对阿拉伯语等BIDI语言提供了完善的支持。</p>
+<p><strong>ICU成为了目前国际化组件的实事标准，底层依赖UNICODE和CLDR</strong>，官方提供了C/C++和JAVA的SDK，ICU4C和ICU4J，同时，各个语言在此基础上开发了各个语言的版本，例如php的intl组件。</p>
+<h2 id="十、总结"><a href="#十、总结" class="headerlink" title="十、总结"></a>十、总结</h2><p>字符编码的从产生，发展，到国际化一步一步走来，逐步形成了下列实事标准</p>
+<ul>
+<li>字符集：UNICODE</li>
+<li>字节编码：UTF8</li>
+<li>国际化：ICU</li>
+</ul>
+<blockquote>
+<p>需要注意的是，mysql的utf8并不完全兼容标准的utf8编码，后续推出了utf8mb4完全兼容，所以推荐采用utf8mb4</p>
+</blockquote>
+<p>参考网站：</p>
+<ul>
+<li>BIDI：<a href="https://www.ibm.com/developerworks/cn/web/1404_xiayin_bidihtml/index.html" target="_blank" rel="external">https://www.ibm.com/developerworks/cn/web/1404_xiayin_bidihtml/index.html</a></li>
+<li>CLDR：<a href="http://cldr.unicode.org/" target="_blank" rel="external">http://cldr.unicode.org/</a></li>
+<li>ICU：<a href="http://site.icu-project.org/design/size/cldr" target="_blank" rel="external">http://site.icu-project.org/design/size/cldr</a></li>
+<li>UNICODE：<a href="http://www.unicode.org/standard/versions/enumeratedversions.html" target="_blank" rel="external">http://www.unicode.org/standard/versions/enumeratedversions.html</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者:</strong>
+      崔小拽
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接:</strong>
+      <a href="http://cuihuan.net/2019/05/12/字符编码那些事儿/" title="字符编码那些事儿">http://cuihuan.net/2019/05/12/字符编码那些事儿/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明: </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/字符编码/" rel="tag"># 字符编码</a>
+          
+            <a href="/tags/国际化/" rel="tag"># 国际化</a>
+          
+            <a href="/tags/ICU/" rel="tag"># ICU</a>
+          
+            <a href="/tags/UTF/" rel="tag"># UTF</a>
+          
+            <a href="/tags/UNICODE/" rel="tag"># UNICODE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/06/【周记】996思考和团队文化/" rel="next" title="【周记】996思考和团队文化">
+                <i class="fa fa-chevron-left"></i> 【周记】996思考和团队文化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div class="comments" id="comments">
+        </div>
+      
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/cuihuan_title.jpg"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cuihuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、二进制和字节"><span class="nav-number">1.</span> <span class="nav-text">一、二进制和字节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、标准ASCII"><span class="nav-number">2.</span> <span class="nav-text">二、标准ASCII</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、ASCII-扩展字符集"><span class="nav-number">3.</span> <span class="nav-text">三、ASCII 扩展字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、GB2312"><span class="nav-number">4.</span> <span class="nav-text">四、GB2312</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、GBK"><span class="nav-number">5.</span> <span class="nav-text">五、GBK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、GB18030"><span class="nav-number">6.</span> <span class="nav-text">六、GB18030</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、UNICODE"><span class="nav-number">7.</span> <span class="nav-text">六、UNICODE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、UTF，UTF8，UTF16"><span class="nav-number">8.</span> <span class="nav-text">七、UTF，UTF8，UTF16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、“锟斤拷��”-是什么"><span class="nav-number">9.</span> <span class="nav-text">八、“锟斤拷��” 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九、ICU"><span class="nav-number">10.</span> <span class="nav-text">九、ICU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十、总结"><span class="nav-number">11.</span> <span class="nav-text">十、总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === '') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
