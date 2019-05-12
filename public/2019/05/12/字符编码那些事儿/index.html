@@ -67,23 +67,23 @@
 
 
 
-<meta name="description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
+<meta name="description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU 到底是什么鬼？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
 
-一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0">
+一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0和1)的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符编码那些事儿">
 <meta property="og:url" content="http://cuihuan.net/2019/05/12/字符编码那些事儿/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
-<meta property="og:description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
+<meta property="og:description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU 到底是什么鬼？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
 
-一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0">
+一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0和1)的">
 <meta property="og:image" content="http://cuihuan.net/wp_content/new/finance/ASCII.png">
-<meta property="og:updated_time" content="2019-05-12T11:34:57.449Z">
+<meta property="og:updated_time" content="2019-05-12T11:44:08.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符编码那些事儿">
-<meta name="twitter:description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
+<meta name="twitter:description" content="身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU 到底是什么鬼？最后理论结合实际，研究下网站中经常出现的“锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯”是什么神兵利器O(∩_∩)O？
 
-一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0">
+一、二进制和字节大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0和1)的">
 <meta name="twitter:image" content="http://cuihuan.net/wp_content/new/finance/ASCII.png">
 
 
@@ -361,12 +361,12 @@
 
       
         <blockquote>
-<p>身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下<strong>字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU</strong>等这么一大坨到底是什么？最后理论结合实际，研究下网站中经常出现的“<strong>锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯</strong>”是什么神兵利器O(∩_∩)O？</p>
+<p>身为一名要冲出国门的国际化码农，字符编码是必备课题。小拽本文依次介绍下<strong>字节，ASCII，GB2312，GBK，GB18030，UNICODE，UTF8，UTF16，ICU</strong> 到底是什么鬼？最后理论结合实际，研究下网站中经常出现的“<strong>锟斤拷，��，烫烫烫烫烫，屯屯屯屯屯屯</strong>”是什么神兵利器O(∩_∩)O？</p>
 </blockquote>
 <h2 id="一、二进制和字节"><a href="#一、二进制和字节" class="headerlink" title="一、二进制和字节"></a>一、二进制和字节</h2><p>大概一百多年前，贝尔实验室制造了世界上的第一个晶体管，晶体管具有开合(0和1)的状态，这种01状态的变化被称为<code>二进制位（bit）</code>。</p>
 <p>过了几年，英特尔把八个可以开合的晶体管组合，做为一个基本的记录单元，这个单元被称作<code>字节（byte）</code>，所以<strong>一个byte由8个bit构成，可以表达256种状态</strong>。</p>
 <p>又过几年，祖师爷冯诺依曼设计了一台可以存储和处理（冯诺依曼体系）字节变动的机器<strong>ENIAC</strong>，后来这个机器被称作<code>计算机</code>。</p>
-<h2 id="二、标准ASCII"><a href="#二、标准ASCII" class="headerlink" title="二、标准ASCII"></a>二、标准ASCII</h2><p>计算机运行是二进制，如何用二进制位来标识人类语言，就需要和计算机有一套约定关系，例如约定，0100 1111就代表O，0100 1011即代表K，那么存储为11110100 101101100的两个字节就代表OK，这套约定关系就是<code>字符编码</code>。</p>
+<h2 id="二、标准ASCII"><a href="#二、标准ASCII" class="headerlink" title="二、标准ASCII"></a>二、标准ASCII</h2><p>计算机运行是二进制，如何用二进制位来标识人类语言，就需要和计算机有一套约定关系。例如约定，0100 1111代表O，0100 1011代表K，那么存储为11110100 101101100的两个字节就代表OK，这套约定关系被称作<code>字符编码</code>。</p>
 <p>冯祖师爷是的德国人，二战去了美国设计了第一台计算机。起初，也只有美国人能用计算机，山姆大叔就根据英语习惯设计了一套映射约定</p>
 <ul>
 <li>0-31 表示控制字符，例如换行[LF]，删除[DEL]，确认[ACK]等</li>
@@ -379,7 +379,8 @@
 <p>计算机一个标准字节8bit本身可以标识256个符号，但<strong>标准的ASCII的最高位去掉用做奇偶校验，用剩余7位标识128个符号</strong>，如下图</p>
 </blockquote>
 <p><a href="http://cuihuan.net/wp_content/new/finance/ASCII.png"><img src="http://cuihuan.net/wp_content/new/finance/ASCII.png" alt="ASCII"></a></p>
-<h2 id="三、ASCII-扩展字符集"><a href="#三、ASCII-扩展字符集" class="headerlink" title="三、ASCII 扩展字符集"></a>三、ASCII 扩展字符集</h2><p>随着计算机的发展，欧洲人开始逐步接触计算机了。<br>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用ASCII码表示。于是，一些欧洲国家就决定，<strong>利用字节中闲置的最高位编入新的符号</strong>。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使用的编码体系，<strong>可以表示最多256个符号</strong>。</p>
+<h2 id="三、ASCII-扩展字符集"><a href="#三、ASCII-扩展字符集" class="headerlink" title="三、ASCII 扩展字符集"></a>三、ASCII 扩展字符集</h2><p>随着计算机的发展，欧洲人开始逐步接触计算机了。</p>
+<p><strong>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的</strong>。比如在法语中，字母上方有注音符号，它就无法用ASCII码表示。于是，一些欧洲国家就决定，<strong>利用字节中闲置的最高位编入新的符号</strong>。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使用的编码体系，<strong>可以表示最多256个符号</strong>。</p>
 <p>IBM牵头扩充了ASCII编码128-256位的标识字符，主要是一些欧洲的常用符号，这部分扩展映射被称为<code>ASCII扩展字符集</code></p>
 <h2 id="四、GB2312"><a href="#四、GB2312" class="headerlink" title="四、GB2312"></a>四、GB2312</h2><p>雄关漫道真如铁，而今迈步从头越，美帝国主义万万没有想到，二战后，大量第三世界的人民站起来了，逐步开始使用计算机。但<strong>问题是256个字符已经没啥可利用的字节状态来表示汉字了，更何况中华文明有6000多个常用汉字需要保存</strong>呢。</p>
 <p>但是这难不倒智慧的中国人民，面对帝国主义的压迫，我们毫不客气的做了两件事情，并在1980年发表了这个声明</p>
