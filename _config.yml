@@ -81,7 +81,7 @@ theme: next
 deploy:
   type: git
   #repo: https://github.com/cuihuan/cuixiaozhuai.github.io
-  repo: git@github.com:cuihuan/cuihuan.github.io
+  repo: https://github.com/cuihuan/gitment-comment
   branch: master
 
 search:
