@@ -150,8 +150,8 @@
     <url>%2F2016%2F08%2F20%2Ffsck%E4%BF%AE%E5%A4%8Dlinux%E6%96%87%E4%BB%B6%E6%8D%9F%E5%9D%8F%2F</url>
     <content type="text"><![CDATA[数据一定要备份，最好多机备份，代码一定要ci。 背景和损失背景：机房事故，突然关机，硬盘年老失修，造成很多文件不可用。如图 面临损失：作为一名靠谱程序员，数据库单机多机备份，程序版本控制这些都是有的【如果没有，一定要加上】；但这次有一个重要影响，就是git中commit之后，没有push的文件全损坏了，损坏了，坏了，了。。。。 分析原因op给出的说法是网络波动，造成机房故障，机器重启。但从结果看，文件系统乱掉了，而且乱掉的文件主要分两类： 1：当时正在写入和操作的文件。例如运行的脚本，正在写的文件，samba建立网络映射的文件，git实时文件。 2：内存里的数据，例如memcache里的数据等等 处理：fsck修复。###1：查看硬盘挂载：df查看下磁盘的挂载位置。 2：操作挂起：不挂起可能会出现数据恢复中断。报错：直接挂起会出现 dev is busy，如下图用：umout -l /dev/sda31234#umount -l &lt;挂载点|设备&gt;此命令将会断开设备并关闭打开该设备的全部句柄。通常，您可以使用 eject &lt;挂载点|设备&gt;命令弹出碟片 3：fsck 扫盘1fsck -f /dev/sda3 注意ext2 还会进行e2fsck 再扫一遍，此为正常操作 4：扫盘结束后，挂载驱动盘5：寻找和恢复文件把.git 内的文件全部整理，导出，一个一个寻找自己需要的文件，找到了久违的文件。 后续一句话：代码一定要ci，数据一定要容灾 【转载请注明：fsck修复linux文件损坏 | 靠谱崔小拽 】]]></content>
       <tags>
-        <tag>git修复</tag>
         <tag>linux</tag>
+        <tag>git修复</tag>
       </tags>
   </entry>
   <entry>
@@ -289,8 +289,8 @@
     <url>%2F2015%2F12%2F11%2Fmysql%20%E7%AE%80%E5%8D%95%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD%E5%92%8C%E5%BF%AB%E9%80%9F%E6%81%A2%E5%A4%8D%2F</url>
     <content type="text"><![CDATA[一个简单的mysql全量备份脚本，备份最近15天的数据。 备份1234#每天备份mysql数据库(保存最近15天的数据脚本)DATE=$(date +%Y%m%d)/home/cuixiaohuan/lamp/mysql5/bin/mysqldump -uuser -ppassword need_db &gt; /home/cuixiaohuan/bak_sql/mysql_dbxx_$DATE.sql;find /home/cuixiaohuan/bak_sql/ -mtime +15 -name '*.sql' -exec rm -rf &#123;&#125; \; 恢复mysql 数据导入12drop databases need_db;create databases need_db; 导入数据：必须设定编码进行恢复1./mysql -uroot -p --default-character-set=utf8 need_db &lt; xx.sql 【转载请注明：mysql 简单全量备份和快速恢复 | 靠谱崔小拽 】]]></content>
       <tags>
-        <tag>备份</tag>
         <tag>mysql</tag>
+        <tag>备份</tag>
       </tags>
   </entry>
   <entry>
@@ -328,8 +328,8 @@
     <url>%2F2015%2F12%2F03%2Fcrontab%20%E8%AF%AF%E5%88%A0%E9%99%A4%E6%81%A2%E5%A4%8D%2F</url>
     <content type="text"><![CDATA[操作过程中：crontab被全部干掉了，利用log恢复过程记录。 事故原因分析：回忆自己操作过程中，未进行crontab的清空，网上查了下原因，并且复现了下。可能原因如下： 如果在SSH远程终端中敲下“crontab”命令之后，远程连接被一些原因（比如 糟糕的网络，程序异常）意外终止了，那么Crontab计划任务就会被操作系统所清空。听起来很不可思议，但是经过在虚拟机上的多次测试，它确确实实的发生了。测试方式为 用SecureCRT开一个SSH窗口，然后敲下命令“crontab”，接着在“任务管理器”中直接杀掉SecureCRT进程，再通过另外一个SSH窗口执行“crontab -l”，就会发现，所有的计划任务都不存在了。在今天事故发生的时间点上，就有人在服务器上遇到了这样的情况。 恢复操作 获取完整日志和cmd日志。从日志中恢复出一份最近几天的完整crontab 运行日志和cmd日志，并存储，用于之后完善和核准例行时间。 12cat /var/log/cron | grep -i "`which cron`" &gt; ./all_tempcat ./all_temp | grep -v "&lt;command&gt;” &gt; ./cmd_temp 获取所有crontab指令。从日志中恢复一份去重的crontab log。【相当于所有的crontab命令】 1awk -F'(' '/crond/&#123;a[$3]=$0&#125;END&#123;for(i in a)print a[i]&#125;' /var/log/cron* &gt;crontab.txt 手工恢复：从crontab.txt 中找出每一条指令，然后在cmd_temp 中匹配运行次数，重新编辑crontab 添加 反思工作防止类似事件再次发生，写个简单shell脚本，每天对crontab进行备份，备份最近15天的数据。过期清楚123456#!/bin/bash# 每天对crontab 进行备份 ，同时删除最近15天的数据DATE=$(date +%Y%m%d)crontab -l &gt; /home/work/bak/crontab_$DATE.bakfind /home/work/bak/ -mtime +15 -name '*.bak' -exec rm -rf &#123;&#125; \; 本人小站原文链接]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>crontab</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -401,23 +401,23 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Nginx实践二：nginx端口配置，域名重定向设置]]></title>
-    <url>%2F2015%2F11%2F18%2FNginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[nginx替换apache之后，需要进行两个基本设置，一是：域名绑定和重定向，防止盗链，死链，参考文章 apache 防盗链 ；二是：设置多个端口，一个端口显然无法满足需求。 域名防盗链设置域名防盗链主要通过，设定服务器域名，非域名重定向到现有域名（相对于之前的黑名单，我太单纯了，流量可以重定向利用一下）。 配置nginx.conf 12345678# default 默认只能server_name 访问listen 80 default ;server_name cuihuan.net;# 重定向if ($host != "cuihuan.net") &#123; rewrite ^/(.*)$ http://cuihuan.net/$1 permanent;&#125; 解释：首先80端口默认只能域名访问 ，默认的域名cuihuan.net。 对于所有非cuihuan.net 的过来的数据直接引流的cuihuan.net。如下图【这个战斗力为五的渣渣还挂在我的页面】 进行了转码后还可以避免搜索引擎抓的域名出现死链。 配置多端口： 这个就简单了，直接把上面配置好的server copy一个挂上其他web服务或者phpadmin等等1234567891011121314151617181920212223242526272829303132333435363738server &#123; listen 8002 default ; server_name cuihuan.net; if ($host != "cuihuan.net") &#123; rewrite ^/(.*)$ http://cuihuan.net/$1 permanent; &#125; location / &#123; root /var/www/weixin; index index.php; &#125; location ~ \.php$ &#123; root /var/www/weixin; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /var/www/weixin$fastcgi_script_name; include fastcgi_params; &#125; # set nginx stutus location /NginxStatus&#123; stub_status on; access_log on; auth_basic "NginxStatus"; auth_basic_user_file conf/htpasswd; &#125; #set deny all file error_page 404 /404.html; location = /var/www/wordpress/40x.html &#123; &#125; error_page 500 502 503 504 /50x.html; location = /home/www/wordpress/50x.html &#123; &#125; &#125; 对于nginx搭建小网站来说，这个是基本的配置。个人感觉相对于之前 apache 防盗链配置 来说难易差不多。 相关文章：Nginx实践一：centos apache更换为nginx 个人小站原文链接]]></content>
-      <tags>
-        <tag>服务器</tag>
-        <tag>apache</tag>
-        <tag>nginx</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Nginx实践一：centos apache更换为nginx]]></title>
     <url>%2F2015%2F11%2F18%2FNginx%E5%AE%9E%E8%B7%B5%E4%B8%80%EF%BC%9Acentos%20apache%E6%9B%B4%E6%8D%A2%E4%B8%BAnginx%2F</url>
     <content type="text"><![CDATA[背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。 背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉的不是治本之策 # 统计apache 进程个数 ps aux|grep httpd | wc –l 解决策略 1：针对Apache进行优化。包括优化worker运行方式等等。可以参考 apache优化 2 :更换轻量级服务器。采用nginx 或者lighthttpd等更轻量的服务器。传说中Nginx大法负载均衡和高并发略胜一筹，决定实践一把。 apache替换为nginx 1： 停掉apache sudo service httpd stop 注意：以防万一，最好不好提前卸掉。 2：安装nginx yum install nginx 3：启动nginx sudo nginx 安装成功之后，启动成功如下图 4：简单配置nginx主要是简单修改下log【方便追查问题】 和 web_root 对应文件【快速启用网站】 5：重启nginx [root@iZ25xlozdf2Z nginx]# nginx -s quit [root@iZ25xlozdf2Z nginx]# nginx 如下图，配置web目录成功！ 6：添加php 支持安装php-fpm yum install php-fpm nginx.conf设置 location ~ .php$ { root /var/www/html; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /var/www/html$fastcgi_script_name; include fastcgi_params; } 7：重新启动服务，网站回复。 8：耗存简单对比 如下图：基本上节省了200M，虽然这个可能是运行初期数据；但是，还是确实轻了不少，每个服务占存基本上1/4，线程也少了不少。内存占用方面表现，感觉尚可，接下就看性能了 后续初次接触nginx，整体感觉还不错。后续，进行基本的防攻击，多端口设置，和性能配置。 个人小站原文链接]]></content>
       <tags>
-        <tag>apache</tag>
-        <tag>nginx</tag>
         <tag>php</tag>
+        <tag>nginx</tag>
+        <tag>apache</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Nginx实践二：nginx端口配置，域名重定向设置]]></title>
+    <url>%2F2015%2F11%2F18%2FNginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[nginx替换apache之后，需要进行两个基本设置，一是：域名绑定和重定向，防止盗链，死链，参考文章 apache 防盗链 ；二是：设置多个端口，一个端口显然无法满足需求。 域名防盗链设置域名防盗链主要通过，设定服务器域名，非域名重定向到现有域名（相对于之前的黑名单，我太单纯了，流量可以重定向利用一下）。 配置nginx.conf 12345678# default 默认只能server_name 访问listen 80 default ;server_name cuihuan.net;# 重定向if ($host != "cuihuan.net") &#123; rewrite ^/(.*)$ http://cuihuan.net/$1 permanent;&#125; 解释：首先80端口默认只能域名访问 ，默认的域名cuihuan.net。 对于所有非cuihuan.net 的过来的数据直接引流的cuihuan.net。如下图【这个战斗力为五的渣渣还挂在我的页面】 进行了转码后还可以避免搜索引擎抓的域名出现死链。 配置多端口： 这个就简单了，直接把上面配置好的server copy一个挂上其他web服务或者phpadmin等等1234567891011121314151617181920212223242526272829303132333435363738server &#123; listen 8002 default ; server_name cuihuan.net; if ($host != "cuihuan.net") &#123; rewrite ^/(.*)$ http://cuihuan.net/$1 permanent; &#125; location / &#123; root /var/www/weixin; index index.php; &#125; location ~ \.php$ &#123; root /var/www/weixin; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /var/www/weixin$fastcgi_script_name; include fastcgi_params; &#125; # set nginx stutus location /NginxStatus&#123; stub_status on; access_log on; auth_basic "NginxStatus"; auth_basic_user_file conf/htpasswd; &#125; #set deny all file error_page 404 /404.html; location = /var/www/wordpress/40x.html &#123; &#125; error_page 500 502 503 504 /50x.html; location = /home/www/wordpress/50x.html &#123; &#125; &#125; 对于nginx搭建小网站来说，这个是基本的配置。个人感觉相对于之前 apache 防盗链配置 来说难易差不多。 相关文章：Nginx实践一：centos apache更换为nginx 个人小站原文链接]]></content>
+      <tags>
+        <tag>nginx</tag>
+        <tag>apache</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
 </search>
