@@ -78,11 +78,11 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  #repo: https://github.com/cuihuan/cuixiaozhuai.github.io
-  repo: https://github.com/cuihuan/gitment-comment
-  branch: master
+#deploy:
+#  type: git
+#  #repo: https://github.com/cuihuan/cuixiaozhuai.github.io
+#  repo: https://github.com/cuihuan/gitment-comment
+#  branch: master
 
 search:
   path: search.xml
