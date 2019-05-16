@@ -48,17 +48,18 @@
             return container;
           }
         }
+
         function showGitment() {
           $("#gitment_title").attr("style", "display:none");
           $("#container").attr("style", "").addClass("gitment_container");
           var gitment = new Gitment({
             id: window.location.pathname,
             theme: myTheme,
-            owner: '{{ theme.gitment.owner }}',
+            owner: '{{ theme.gitment.githubID }}',
             repo: '{{ theme.gitment.repo }}',
             oauth: {
-              client_id: '{{ theme.gitment.client_id }}',
-              client_secret: '{{ theme.gitment.client_secret }}'
+              client_id: '{{ theme.gitment.ClientID }}',
+              client_secret: '{{ theme.gitment.ClientSecret }}'
             }
           });
           gitment.render('container');
