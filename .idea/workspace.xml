@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" afterPath="$PROJECT_DIR$/themes/next/layout/_partials/comments.swig" />
+      <change beforePath="$PROJECT_DIR$/db.json" afterPath="$PROJECT_DIR$/db.json" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="116">
-              <caret line="524" column="13" lean-forward="true" selection-start-line="524" selection-start-column="13" selection-end-line="524" selection-end-column="13" />
+              <caret line="524" column="13" lean-forward="false" selection-start-line="524" selection-start-column="13" selection-end-line="524" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -323,12 +323,12 @@
       <workItem from="1557147447518" duration="2598000" />
       <workItem from="1557660647405" duration="2539000" />
       <workItem from="1557729397065" duration="7000" />
-      <workItem from="1557973728018" duration="4928000" />
+      <workItem from="1557973728018" duration="4954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29516000" />
+    <option name="totallyTimeSpent" value="29542000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -778,7 +778,7 @@
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
-          <caret line="524" column="13" lean-forward="true" selection-start-line="524" selection-start-column="13" selection-end-line="524" selection-end-column="13" />
+          <caret line="524" column="13" lean-forward="false" selection-start-line="524" selection-start-column="13" selection-end-line="524" selection-end-column="13" />
           <folding />
         </state>
       </provider>
