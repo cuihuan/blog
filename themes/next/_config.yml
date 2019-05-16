@@ -528,3 +528,14 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+gitment:
+  enable: true
+  mint: true 		# RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  count: true       # Show comments count in post meta area
+  cleanly: true
+  githubID: cuihuan
+  repo: https://github.com/cuihuan/gitment-comment
+  ClientID: 7edc9157bc7fc73953fa
+  ClientSecret: 2325e5880f9d8e18c3c5accb5ec6e021ddc47bb4
+  lazy: false

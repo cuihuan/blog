@@ -401,23 +401,23 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Nginx实践一：centos apache更换为nginx]]></title>
-    <url>%2F2015%2F11%2F18%2FNginx%E5%AE%9E%E8%B7%B5%E4%B8%80%EF%BC%9Acentos%20apache%E6%9B%B4%E6%8D%A2%E4%B8%BAnginx%2F</url>
-    <content type="text"><![CDATA[背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。 背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉的不是治本之策 # 统计apache 进程个数 ps aux|grep httpd | wc –l 解决策略 1：针对Apache进行优化。包括优化worker运行方式等等。可以参考 apache优化 2 :更换轻量级服务器。采用nginx 或者lighthttpd等更轻量的服务器。传说中Nginx大法负载均衡和高并发略胜一筹，决定实践一把。 apache替换为nginx 1： 停掉apache sudo service httpd stop 注意：以防万一，最好不好提前卸掉。 2：安装nginx yum install nginx 3：启动nginx sudo nginx 安装成功之后，启动成功如下图 4：简单配置nginx主要是简单修改下log【方便追查问题】 和 web_root 对应文件【快速启用网站】 5：重启nginx [root@iZ25xlozdf2Z nginx]# nginx -s quit [root@iZ25xlozdf2Z nginx]# nginx 如下图，配置web目录成功！ 6：添加php 支持安装php-fpm yum install php-fpm nginx.conf设置 location ~ .php$ { root /var/www/html; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /var/www/html$fastcgi_script_name; include fastcgi_params; } 7：重新启动服务，网站回复。 8：耗存简单对比 如下图：基本上节省了200M，虽然这个可能是运行初期数据；但是，还是确实轻了不少，每个服务占存基本上1/4，线程也少了不少。内存占用方面表现，感觉尚可，接下就看性能了 后续初次接触nginx，整体感觉还不错。后续，进行基本的防攻击，多端口设置，和性能配置。 个人小站原文链接]]></content>
-      <tags>
-        <tag>php</tag>
-        <tag>nginx</tag>
-        <tag>apache</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Nginx实践二：nginx端口配置，域名重定向设置]]></title>
     <url>%2F2015%2F11%2F18%2FNginx%E5%AE%9E%E8%B7%B5%E4%BA%8C%EF%BC%9Anginx%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%9F%E5%90%8D%E9%87%8D%E5%AE%9A%E5%90%91%E8%AE%BE%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[nginx替换apache之后，需要进行两个基本设置，一是：域名绑定和重定向，防止盗链，死链，参考文章 apache 防盗链 ；二是：设置多个端口，一个端口显然无法满足需求。 域名防盗链设置域名防盗链主要通过，设定服务器域名，非域名重定向到现有域名（相对于之前的黑名单，我太单纯了，流量可以重定向利用一下）。 配置nginx.conf 12345678# default 默认只能server_name 访问listen 80 default ;server_name cuihuan.net;# 重定向if ($host != "cuihuan.net") &#123; rewrite ^/(.*)$ http://cuihuan.net/$1 permanent;&#125; 解释：首先80端口默认只能域名访问 ，默认的域名cuihuan.net。 对于所有非cuihuan.net 的过来的数据直接引流的cuihuan.net。如下图【这个战斗力为五的渣渣还挂在我的页面】 进行了转码后还可以避免搜索引擎抓的域名出现死链。 配置多端口： 这个就简单了，直接把上面配置好的server copy一个挂上其他web服务或者phpadmin等等1234567891011121314151617181920212223242526272829303132333435363738server &#123; listen 8002 default ; server_name cuihuan.net; if ($host != "cuihuan.net") &#123; rewrite ^/(.*)$ http://cuihuan.net/$1 permanent; &#125; location / &#123; root /var/www/weixin; index index.php; &#125; location ~ \.php$ &#123; root /var/www/weixin; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /var/www/weixin$fastcgi_script_name; include fastcgi_params; &#125; # set nginx stutus location /NginxStatus&#123; stub_status on; access_log on; auth_basic "NginxStatus"; auth_basic_user_file conf/htpasswd; &#125; #set deny all file error_page 404 /404.html; location = /var/www/wordpress/40x.html &#123; &#125; error_page 500 502 503 504 /50x.html; location = /home/www/wordpress/50x.html &#123; &#125; &#125; 对于nginx搭建小网站来说，这个是基本的配置。个人感觉相对于之前 apache 防盗链配置 来说难易差不多。 相关文章：Nginx实践一：centos apache更换为nginx 个人小站原文链接]]></content>
       <tags>
-        <tag>nginx</tag>
-        <tag>apache</tag>
         <tag>服务器</tag>
+        <tag>apache</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Nginx实践一：centos apache更换为nginx]]></title>
+    <url>%2F2015%2F11%2F18%2FNginx%E5%AE%9E%E8%B7%B5%E4%B8%80%EF%BC%9Acentos%20apache%E6%9B%B4%E6%8D%A2%E4%B8%BAnginx%2F</url>
+    <content type="text"><![CDATA[背景介绍： 阿里云，512M内存（最屌丝配置），搭建lamp 环境，除去 mysql分配了100M左右（这个不能再少了），http竟然占用了200多M，太庞大，决定换为较轻量级，高并发的nginx。 背景数据如下图所示：系统也就500M ,出了mysql占用的100M, httpd 占了1/2 还多（经常达到十几个进程），剩余50M，有时更少不能忍，经常造成数据库崩掉，写了个自动重启脚本，但觉的不是治本之策 # 统计apache 进程个数 ps aux|grep httpd | wc –l 解决策略 1：针对Apache进行优化。包括优化worker运行方式等等。可以参考 apache优化 2 :更换轻量级服务器。采用nginx 或者lighthttpd等更轻量的服务器。传说中Nginx大法负载均衡和高并发略胜一筹，决定实践一把。 apache替换为nginx 1： 停掉apache sudo service httpd stop 注意：以防万一，最好不好提前卸掉。 2：安装nginx yum install nginx 3：启动nginx sudo nginx 安装成功之后，启动成功如下图 4：简单配置nginx主要是简单修改下log【方便追查问题】 和 web_root 对应文件【快速启用网站】 5：重启nginx [root@iZ25xlozdf2Z nginx]# nginx -s quit [root@iZ25xlozdf2Z nginx]# nginx 如下图，配置web目录成功！ 6：添加php 支持安装php-fpm yum install php-fpm nginx.conf设置 location ~ .php$ { root /var/www/html; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /var/www/html$fastcgi_script_name; include fastcgi_params; } 7：重新启动服务，网站回复。 8：耗存简单对比 如下图：基本上节省了200M，虽然这个可能是运行初期数据；但是，还是确实轻了不少，每个服务占存基本上1/4，线程也少了不少。内存占用方面表现，感觉尚可，接下就看性能了 后续初次接触nginx，整体感觉还不错。后续，进行基本的防攻击，多端口设置，和性能配置。 个人小站原文链接]]></content>
+      <tags>
+        <tag>apache</tag>
+        <tag>nginx</tag>
+        <tag>php</tag>
       </tags>
   </entry>
 </search>
