@@ -34,7 +34,7 @@
         <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
         <div id="container" style="display:none"></div>
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script src=""></script>
         <script>
         const myTheme = {
           render(state, instance) {

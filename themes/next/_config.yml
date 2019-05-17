@@ -310,7 +310,7 @@ baidu_analytics:
 # more info please open https://valine.js.org
 
 valine:
-  enable: false
+  enable: true
   appid:  iE7N63O9zgzx0uEfvjf9zjvc-gzGzoHsz
   appkey:  8tHCueQDE7VSeDSDqywhCFwf
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
@@ -530,7 +530,7 @@ baidusitemap:
   path: baidusitemap.xml
 
 gitment:
-  enable: true
+  enable: false
   mint: true 		# RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true       # Show comments count in post meta area
   cleanly: true
