@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7791c4b0-adb7-4031-9c0d-88e8523e34bb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/国际化货币那些事儿.md" afterPath="$PROJECT_DIR$/source/_posts/国际化货币那些事儿.md" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,16 +43,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.swig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/head.swig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.swig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/next/layout/index.swig">
           <provider selected="true" editor-type-id="text-editor">
@@ -66,8 +57,8 @@
         <entry file="file://$PROJECT_DIR$/source/_posts/国际化货币那些事儿.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="42">
-                <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <first_editor relative-caret-position="480">
+                <caret line="235" column="41" lean-forward="false" selection-start-line="235" selection-start-column="41" selection-end-line="235" selection-end-column="41" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -540,12 +531,12 @@
       <workItem from="1557973728018" duration="7589000" />
       <workItem from="1558064062491" duration="2648000" />
       <workItem from="1559200455364" duration="5000" />
-      <workItem from="1567088398070" duration="5378000" />
+      <workItem from="1567088398070" duration="7195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40208000" />
+    <option name="totallyTimeSpent" value="42025000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -570,7 +561,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32471728" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32471728" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687023" sideWeight="0.503231" order="5" side_tool="true" content_ui="tabs" />
@@ -624,13 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/财务系统专栏/在线系统设计和实现/结算模块/1.1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/财务系统专栏/在线系统设计和实现/记账模块/1.1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1000,11 +984,16 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/wp_content/new/IBT/currency_demo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/国际化货币那些事儿.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="42">
-            <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <first_editor relative-caret-position="480">
+            <caret line="235" column="41" lean-forward="false" selection-start-line="235" selection-start-column="41" selection-end-line="235" selection-end-column="41" />
             <folding />
           </first_editor>
           <second_editor />
