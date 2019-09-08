@@ -1,0 +1,1215 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="国际化,货币,项目推进," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="第一部分涨姿势，聊聊什么是货币和国际化的场景下货币遇到的问题；第二部分分享货币改造，聊聊货币改造是怎么玩的。期望大家通过本文了解到货币的一些小知识，货币处理的最佳实践，以及分享下个人在项目推进中的一些总结。
+
+一、聊聊货币在具体谈货币之前，先抛几个小问题1231、$1.000 是多少钱？是1美刀吗？还是1000哥伦比亚比索？2、哥伦比亚行程计价结果是：$666，用户能现金支付吗？3、发奖励兜底限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="国际化货币那些事儿">
+<meta property="og:url" content="http://cuihuan.net/2019/10/06/国际化货币那些事儿/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="第一部分涨姿势，聊聊什么是货币和国际化的场景下货币遇到的问题；第二部分分享货币改造，聊聊货币改造是怎么玩的。期望大家通过本文了解到货币的一些小知识，货币处理的最佳实践，以及分享下个人在项目推进中的一些总结。
+
+一、聊聊货币在具体谈货币之前，先抛几个小问题1231、$1.000 是多少钱？是1美刀吗？还是1000哥伦比亚比索？2、哥伦比亚行程计价结果是：$666，用户能现金支付吗？3、发奖励兜底限">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/IBT/currency_poor.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/IBT/currency_flow.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/IBT/currency_iso.png">
+<meta property="og:image" content="http://cuihuan.net/wp_content/new/IBT/currency_demo.png">
+<meta property="og:updated_time" content="2019-09-08T12:21:08.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="国际化货币那些事儿">
+<meta name="twitter:description" content="第一部分涨姿势，聊聊什么是货币和国际化的场景下货币遇到的问题；第二部分分享货币改造，聊聊货币改造是怎么玩的。期望大家通过本文了解到货币的一些小知识，货币处理的最佳实践，以及分享下个人在项目推进中的一些总结。
+
+一、聊聊货币在具体谈货币之前，先抛几个小问题1231、$1.000 是多少钱？是1美刀吗？还是1000哥伦比亚比索？2、哥伦比亚行程计价结果是：$666，用户能现金支付吗？3、发奖励兜底限">
+<meta name="twitter:image" content="http://cuihuan.net/wp_content/new/IBT/currency_poor.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2019/10/06/国际化货币那些事儿/"/>
+
+
+
+
+
+  <title>国际化货币那些事儿 | 靠谱崔小拽</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            DEMO
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2019/10/06/国际化货币那些事儿/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/cuihuan_title.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">国际化货币那些事儿</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-06T21:07:35+08:00">
+                2019-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+                <span class="post-comments-count">
+                  <span class="post-meta-divider">|</span>
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                  <a href="/2019/10/06/国际化货币那些事儿/#comments" itemprop="discussionUrl">
+                    <span class="post-comments-count valine-comment-count" data-xid="/2019/10/06/国际化货币那些事儿/" itemprop="commentCount"></span>
+                  </a>
+                </span>
+
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>第一部分涨姿势，聊聊什么是货币和国际化的场景下货币遇到的问题；<br>第二部分分享货币改造，聊聊货币改造是怎么玩的。<br>期望大家通过本文了解到货币的一些小知识，货币处理的最佳实践，以及分享下个人在项目推进中的一些总结。</p>
+</blockquote>
+<h3 id="一、聊聊货币"><a href="#一、聊聊货币" class="headerlink" title="一、聊聊货币"></a>一、聊聊货币</h3><p>在具体谈货币之前，先抛几个小问题<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、$<span class="number">1.000</span> 是多少钱？是<span class="number">1</span>美刀吗？还是<span class="number">1000</span>哥伦比亚比索？</span><br><span class="line"><span class="number">2</span>、哥伦比亚行程计价结果是：$<span class="number">666</span>，用户能现金支付吗？</span><br><span class="line"><span class="number">3</span>、发奖励兜底限额，来个<span class="number">888</span>万写死，够不够？</span><br></pre></td></tr></table></figure></p>
+<p>显然都不行，原因可以跳转下面货币小知识。</p>
+<p>那么问题来了，货币到底是什么？<br>货币在经济学的解释是：<a href="https://wiki.mbalib.com/wiki/%E8%B4%A7%E5%B8%81" target="_blank" rel="external">货币</a> ，百科的描述是：<a href="https://baike.baidu.com/item/%E8%B4%A7%E5%B8%81/85299" target="_blank" rel="external">货币</a></p>
+<p>作为世界经济体系的核心，到底是个啥，身为一名底层码农，咱也不懂，咱也不敢问，咱也不敢讲。</p>
+<p>但作为工程师角度，货币无非就是我们系统中录入，存储，传递，展现的一组变量。如何规范，准确，本地化的处理这组变量就是IBT货币改造的主要内容。</p>
+<blockquote>
+<p>货币小知识<br>问题一：$1.000 具体是多少钱，要看具体的语言和国家，比如在语言美国(US)和英语（en-US）的情况下，$1.000标示1美元；但是在<code>哥伦比亚(COL)西语(es-CO)的情况下，$1.000就表示1000哥伦比亚比索，西语的千分位都是&#39;.&#39;，小数点是&#39;,&#39;</code>，吃不吃惊，腻不腻害！</p>
+</blockquote>
+<blockquote>
+<p>问题二：$666在哥伦比亚无法用现金支付，因为<code>哥伦比亚现存的最小现金是50</code>，所以在哥伦比亚的现金支付需要抹零，而且要符合法律规定的抹零。同时，<code>还有很多国家是没有分的，例如日本的最小货币单位就是日元，没有日分</code>（-_-）</p>
+</blockquote>
+<blockquote>
+<p>问题三：888万看似很大，其实不然，例如<code>哥伦比亚的汇率和人民币差不多1:500，也就是说不到888万，也就1w多</code>。同时，<code>由于int32最多存储2147483647，21亿如果是哥伦比亚按照分存储也就4.2万</code>[21亿/100(分)/500(汇率)]，所以<code>存储和传递一定都要用长整形</code>。</p>
+</blockquote>
+<hr>
+<p>分割线：科普到此结束，下面会重点分享下，货币改造的实践和项目总结；</p>
+<h3 id="二、广告插入"><a href="#二、广告插入" class="headerlink" title="二、广告插入^_^"></a>二、广告插入^_^</h3><p>前方高能预警</p>
+<p>货币涨见识，时间度量衡更涨见识，多国环境下的架构抽象那才叫酸爽，各位架构师要不要来感受下？<br>请戳国际化出行平台工程师/架构师  <a href="https://m.zhipin.com/mpa/html/weijd/weijd-job/523fce0edb37f50e0nd-092-E1c~?aid=07b5df7e131fbe2e1w~~&amp;sid=wxs_self_jd" target="_blank" rel="external">投递链接</a><a href="http://recruit.didichuxing.com/neitui/recommend/13381" target="_blank" rel="external">内推链接</a> <a href="http://recruit.didichuxing.com/huoshui/position/13381" target="_blank" rel="external">活水链接</a></p>
+<p>3亿+请求一天够不够玩？不够，那如果是牵涉资金和交易的流量呢？敢不敢来？<br>PHP/Go研发工程师（国际化支付）<a href="https://m.zhipin.com/mpa/html/weijd/weijd-job/84844ae1920380560nd-09m0FlM~?aid=07b5df7e131fbe2e1w~~&amp;ka=wjdv2-job-otherjob" target="_blank" rel="external">投递链接</a> <a href="http://recruit.didichuxing.com/neitui/recommend/13387" target="_blank" rel="external">内推链接</a> <a href="http://recruit.didichuxing.com/huoshui/position/13387" target="_blank" rel="external">活水链接</a><br>Java研发工程师/专家（国际支付）<a href="https://m.zhipin.com/mpa/html/weijd/weijd-job/23037ec67863a0e00nd-09u4Fls~?aid=07b5df7e131fbe2e1w~~&amp;ka=wjdv2-boss-otherjob23037ec67863a0e00nd-09u4Fls~" target="_blank" rel="external">投递链接</a> <a href="http://recruit.didichuxing.com/neitui/recommend/13386" target="_blank" rel="external">内推链接</a> <a href="http://recruit.didichuxing.com/huoshui/position/13386" target="_blank" rel="external">活水链接</a></p>
+<h3 id="三、货币怎么玩"><a href="#三、货币怎么玩" class="headerlink" title="三、货币怎么玩"></a>三、货币怎么玩</h3><p>货币的重要性毋庸置疑，毕竟牵涉到<strong>钱</strong>。<br>在我滴国际化土匪猛进的时候，货币问题在开发和线上频繁发生，给用户和业务造成了很坏的影响。举几个栗子<br><a href="http://cuihuan.net/wp_content/new/IBT/currency_poor.png"><img src="http://cuihuan.net/wp_content/new/IBT/currency_poor.png" alt="currency_pro"></a></p>
+<blockquote>
+<p>除了货币展现不一致的情况，通过上面的讲解你可能已经知道了，西语情况下2.5有可能被理解为（2500）</p>
+</blockquote>
+<p>再一再二不能在再三，为了从根本上解决货币相关的问题，IBT启动了货币改造专项行动。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">项目简介：</span><br><span class="line">货币改造专项主要为了解决了货币本地化处理和展示的问题，</span><br><span class="line">主要抓手是标准化货币处理流程，军规和Elvish SDK，</span><br><span class="line">整体耗时<span class="number">2</span>个多月，涉及IBT，普惠，业务中台等<span class="number">5</span>个大部门，<span class="number">45</span>个模块，<span class="number">138</span>个的终端</span><br></pre></td></tr></table></figure>
+<p>项目未启动，挑战先来：通过上面描述，可以看出来，整个项目本身牵涉<strong>细节多，工程量大</strong>，同时，在<strong>紧排期情况下，40多个关联模块升级的稳定性风险很高</strong>，后期还会牵涉<strong>大联调和级联上线</strong>的问题。<br>那么IBT的货币改造具体是怎么玩的？有哪些经验可以在后续项目中沉淀？</p>
+<p>作者本人也是第一次驾驭横向项目，总结了下货币改造一期的在实践中六个步骤，如下图。</p>
+<p><a href="http://cuihuan.net/wp_content/new/IBT/currency_flow.png"><img src="http://cuihuan.net/wp_content/new/IBT/currency_flow.png" alt="currency_flow"></a></p>
+<p>总的来说是：<code>【六步走】先梳理=》出方案=》对细节=》助落地=》控质量=》查遗漏</code><br>下面分阶段具体剖析</p>
+<h4 id="2-1-问题现状梳理"><a href="#2-1-问题现状梳理" class="headerlink" title="2.1 问题现状梳理"></a>2.1 问题现状梳理</h4><p><strong>核心工作</strong>：梳理现状，分析问题，<strong>定位重点和难点</strong>。<br>结合货币使用场景，梳理了IBT全量货币的存储、展现、传递现状；调研了限额、溢出、失精度等问题；初步梳理后<br>重点落在：<code>用户感知最明显的，终端展现不标准，服务端格式化不统一，以及高风险溢出字段改造</code>；<br>难点落在：<code>模块间错综复杂调用关系，字段梳理和兼容性改造落地</code>。</p>
+<p>贴一些梳理阶段的示例：</p>
+<ul>
+<li><a href="http://cooper.didichuxing.com/docs/sheet/25229624" target="_blank" rel="external">货币现状问题和现状梳理</a></li>
+<li><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221783188" target="_blank" rel="external">终端货币页面数据</a></li>
+<li><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=218121106" target="_blank" rel="external">当前货币问题梳理</a></li>
+<li><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=241807482" target="_blank" rel="external">组件接入现状梳理</a></li>
+<li><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=212995958" target="_blank" rel="external">组件性能调研</a></li>
+<li><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=212995958" target="_blank" rel="external">货币push梳理</a></li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">总结：问题现状梳理的核心贵在一个<span class="string">"细"</span>字，处于六部曲的第一环，一定要梳理尽可能细致、细致、细致的梳理，否则后面问题会被层层放大。但回头来看，问题梳理阶段还是有些遗漏，给后面实践过程造成了很大的影响，例如：券的页面归属，某些情况下司机端周流水页面等等。</span><br><span class="line">这个阶段核心一个字 “细”。</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-标准制定发布"><a href="#2-2-标准制定发布" class="headerlink" title="2.2 标准制定发布"></a>2.2 标准制定发布</h4><p><strong>核心工作</strong>：针对调研现状和目标进行问题拆解，<strong>制定权威标准和落地可行最佳实践</strong><br>本阶段在货币改造中：按照货币的存在的<code>全生命周期（录入，传递，处理，存储，展现）</code>进行了过程拆解，草拟各个阶段处理货币的可落地标准，抽象落地最佳实践。</p>
+<p>毕竟是标准和最佳实践，所以着重考虑了两个方便：</p>
+<ul>
+<li>一是权威：保证标准的可信度。在货币的展现问题上，<code>专门成立个货币标准小组，和前线运营，产品确认当地的习惯</code>。</li>
+<li>二是可行：保证方案的可行。在货币的展示问题上，针对目前系统的图表展示等，对货币原值保留了标准保留。</li>
+</ul>
+<blockquote>
+<p>IBT的第一批标准和军规<br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=218125167" target="_blank" rel="external"><code>货币处理标准</code></a><br><a href="http://cooper.didichuxing.com/docs/sheet/26916987" target="_blank" rel="external"><code>货币格式标准</code></a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=222683972" target="_blank" rel="external"><code>货币处理最佳实践</code></a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=223929596" target="_blank" rel="external"><code>国际化货币处理军规</code></a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">总结：指定标准和最佳实践本质上是一个可落地的方案，在权威的基础上一定要注意可行性。</span><br></pre></td></tr></table></figure>
+<p>格式标准举例<br><a href="http://cuihuan.net/wp_content/new/IBT/currency_iso.png"><img src="http://cuihuan.net/wp_content/new/IBT/currency_iso.png" alt="currency_iso"></a></p>
+<p>处理标准举例<br><a href="http://cuihuan.net/wp_content/new/IBT/currency_demo.png"><img src="http://cuihuan.net/wp_content/new/IBT/currency_demo.png" alt="currency_demo"></a></p>
+<h4 id="2-3-方案排期拉齐"><a href="#2-3-方案排期拉齐" class="headerlink" title="2.3 方案排期拉齐"></a>2.3 方案排期拉齐</h4><p><strong>核心工作</strong>：方案同步（涵盖标准/最佳实践/军规），评估各方实现成本，指定整体排期。<br>货币改造在这个阶段做的最重要的事情就是和<strong>15+团队单独沟通</strong>，结合模块现状，同步标准的细节，产出团队在业务快速迭代的情况下的方案和排期。</p>
+<p>沟通的主要目的是两个<br>一是：同步标准。发布并不代表大家理解，还是<br>二是：产出排期。家家有本难念的经，本身各模块的状况不一样，所以一定要结合模块的现状产出排期。</p>
+<p>这个阶段的产出<br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221794674" target="_blank" rel="external">货币改造排期</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221794674" target="_blank" rel="external">货币迁移方案</a><br><a href="http://10.179.88.174:8901/manual/api/currency/formatByCountry.html" target="_blank" rel="external">货币组件接口</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221048696" target="_blank" rel="external">团队沟通纪要</a></p>
+<h4 id="2-4-整体改造落地"><a href="#2-4-整体改造落地" class="headerlink" title="2.4 整体改造落地"></a>2.4 整体改造落地</h4><p><strong>核心工作</strong>：按照排期，协助业务改造，工具支持，推进问题，同步风险。<br>货币改造在这个阶段基本进入了业务的开发过程中，也是问题集中爆发的阶段。</p>
+<p>针对开发中的问题，横向技术主要采取以下几个方式<br>一、开发工具提效。这个阶段针对兼容展现等方面协助开发工具。<br>二、横向问题推进。类似于PMO的角色，针对这个阶段的跨团队技术问题的解决，推进，甚至亲自上手（作者在这个过程中对于很多确实工作量大和排期紧的项目也是被迫自己上）。<br>三、风险同步。这里面的风险包括排期风险和业务隐藏风险，本次改造过程中，两次全量排期风险同步，一次SDK风险同步。</p>
+<h4 id="2-5-交付质量把控"><a href="#2-5-交付质量把控" class="headerlink" title="2.5 交付质量把控"></a>2.5 交付质量把控</h4><p><strong>核心工作</strong>：交付质量是重中之重，从测试+检查项两个维度为抓手。<br>这也是货币改造过程中，个人认为最难也是最黑暗的时候<br>整体改造接近尾声，几十个模块要提测，需要部署联调环境；初期的任何信息同步和设计遗漏，在此时都会彰显，比如没有做兼容，遗漏页面，遗漏接口，负数情况等等。</p>
+<p>这个阶段主要有两个抓手：<br>一是：针对开发的自检项，具体到每一点，是否执行到位。<br>二是：QA，质量把控者从每一个细节去确认，同时从用户角度来把控</p>
+<p>这个阶段特别要感谢QA同学：连续两个周末加班支持。也制定了详细的测试case。<br>也贡献了整体货币质量保障，后续的项目也可以参考借鉴<br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=224746489" target="_blank" rel="external">货币质量保障</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225339786" target="_blank" rel="external">改造检查项</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225336230" target="_blank" rel="external">共性case列表</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225336237" target="_blank" rel="external">测试流程规范</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=228180887" target="_blank" rel="external">测试进度排期</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225336340" target="_blank" rel="external">各部分测试用例集</a></p>
+<h4 id="2-6-问题遗漏汇总"><a href="#2-6-问题遗漏汇总" class="headerlink" title="2.6 问题遗漏汇总"></a>2.6 问题遗漏汇总</h4><p><strong>核心工作</strong>：一方面查漏补缺，一方面需要总结。<br>阶段性的总结是为了更好，更低成本的去实现下一次跳跃。<br>本次货币改造在这个阶段重点做了两件事情</p>
+<p>查漏：梳理所有的遗留，遗留问题；针对问题复盘，针对这次货币改造内部复盘<br>总结：总结相关经验和成果</p>
+<p><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=234455917" target="_blank" rel="external">改造问题收集</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=236364108" target="_blank" rel="external">组件潜在风险公告</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=235807253" target="_blank" rel="external">负号问题彻查</a></p>
+<p>核心遗留问题<br><strong>文案货币</strong>：反作弊，智能奖励，拉新系统，DMS，麦哲伦等系统文案是运营手工录入。<br><strong>货币取整抹零</strong>：针对哥伦比亚，智利等国家按照当地使用习惯取整和抹零问题。<br><strong>存储溢出</strong>：一期只是针对高优的可能存在溢出风险接口进行处理，二期将会全面处理货币的存储和传递。<br><strong>数字录入组件</strong>：端上录入数字的本地化展示和处理。</p>
+<p>上面六步是货币改造的主要落地方式，整体落地完成的收益，在其他项目也可以借鉴</p>
+<blockquote>
+<p>做完之后总结了下国际提升的五个方面<br>• 货币处理:解决了货币本地化处理和展示的问题，新开国货币0开发成本。<br>• 标准积累:IBT的第一个标准和军规，货币处理标准、货币格式化标准、货币最佳实践&amp;货币军规落地。 • 组件覆盖:124+模块接入Elvish，为后续i18n时间，数字，日历，度量衡奠定了基础<br>• 问题修复:改造过程中发现并修复9个线上非货币问题。<br>• 架构优化:推进了仿真环境、测试账号，券页面归属等问题的完善</p>
+</blockquote>
+<h3 id="三、参考wiki"><a href="#三、参考wiki" class="headerlink" title="三、参考wiki"></a>三、参考wiki</h3><p><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=218125167" target="_blank" rel="external">货币处理标准</a><br><a href="http://cooper.didichuxing.com/docs/sheet/26916987" target="_blank" rel="external">货币格式标准</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=222683972" target="_blank" rel="external">货币处理最佳实践</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=223929596" target="_blank" rel="external">国际化货币处理军规</a></p>
+<p><a href="http://cooper.didichuxing.com/docs/sheet/25229624" target="_blank" rel="external">货币现状问题和现状梳理</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221783188" target="_blank" rel="external">终端货币页面数据</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=218121106" target="_blank" rel="external">当前货币问题梳理</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=241807482" target="_blank" rel="external">组件接入现状梳理</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=212995958" target="_blank" rel="external">组件性能调研</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=212995958" target="_blank" rel="external">货币push梳理</a></p>
+<p><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221794674" target="_blank" rel="external">货币改造排期</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221794674" target="_blank" rel="external">货币迁移方案</a><br><a href="http://10.179.88.174:8901/manual/api/currency/formatByCountry.html" target="_blank" rel="external">货币组件接口</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=221048696" target="_blank" rel="external">团队沟通纪要</a></p>
+<p><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=224746489" target="_blank" rel="external">货币质量保障</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225339786" target="_blank" rel="external">改造检查项</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225336230" target="_blank" rel="external">共性case列表</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225336237" target="_blank" rel="external">测试流程规范</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=228180887" target="_blank" rel="external">测试进度排期</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=225336340" target="_blank" rel="external">各部分测试用例集</a></p>
+<p><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=234455917" target="_blank" rel="external">改造问题收集</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=236364108" target="_blank" rel="external">组件潜在风险公告</a><br><a href="http://wiki.intra.xiaojukeji.com/pages/viewpage.action?pageId=235807253" target="_blank" rel="external">负号问题彻查</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者:</strong>
+      崔小拽
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接:</strong>
+      <a href="http://cuihuan.net/2019/10/06/国际化货币那些事儿/" title="国际化货币那些事儿">http://cuihuan.net/2019/10/06/国际化货币那些事儿/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明: </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/国际化/" rel="tag"># 国际化</a>
+          
+            <a href="/tags/货币/" rel="tag"># 货币</a>
+          
+            <a href="/tags/项目推进/" rel="tag"># 项目推进</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/12/字符编码那些事儿/" rel="next" title="字符编码那些事儿">
+                <i class="fa fa-chevron-left"></i> 字符编码那些事儿
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div class="comments" id="comments">
+        </div>
+      
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/cuihuan_title.jpg"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cuihuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、聊聊货币"><span class="nav-number">1.</span> <span class="nav-text">一、聊聊货币</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、广告插入"><span class="nav-number">2.</span> <span class="nav-text">二、广告插入^_^</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、货币怎么玩"><span class="nav-number">3.</span> <span class="nav-text">三、货币怎么玩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-问题现状梳理"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 问题现状梳理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-标准制定发布"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 标准制定发布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-方案排期拉齐"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 方案排期拉齐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-整体改造落地"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 整体改造落地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-交付质量把控"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 交付质量把控</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-问题遗漏汇总"><span class="nav-number">3.6.</span> <span class="nav-text">2.6 问题遗漏汇总</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、参考wiki"><span class="nav-number">4.</span> <span class="nav-text">三、参考wiki</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'iE7N63O9zgzx0uEfvjf9zjvc-gzGzoHsz',
+        appKey: '8tHCueQDE7VSeDSDqywhCFwf',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === '') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
