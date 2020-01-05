@@ -68,17 +68,21 @@
 
 
 <meta name="description" content="先说背景：wordpress个人网站，整体性能挺不错；但是，由于采用php动态获取数据，构成页面的方式，势必会影响页面加载速度。对于一些最常用的页面[例如首页]等等，完全可以采用生成伪静态页面缓存的方式加载。
+
+
 针对现有的缓存方式调研了一下：本文使用wp super cache进行了优化，提升加载速度200%以上。
 
-无图无真想，先看效果针对相同页面在chrome下做了个加载时间，大小的对比，如下">
+无图无真想，先看效果针对相同页面在chrome下做了个加载时间，大小的对比，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【wordpress优化】压缩和使用静态缓存">
 <meta property="og:url" content="http://cuihuan.net/2015/12/06/【wordpress优化】压缩和使用静态缓存/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
 <meta property="og:description" content="先说背景：wordpress个人网站，整体性能挺不错；但是，由于采用php动态获取数据，构成页面的方式，势必会影响页面加载速度。对于一些最常用的页面[例如首页]等等，完全可以采用生成伪静态页面缓存的方式加载。
+
+
 针对现有的缓存方式调研了一下：本文使用wp super cache进行了优化，提升加载速度200%以上。
 
-无图无真想，先看效果针对相同页面在chrome下做了个加载时间，大小的对比，如下">
+无图无真想，先看效果针对相同页面在chrome下做了个加载时间，大小的对比，">
 <meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/12/E6B50C39-73D4-4397-9A79-794C58FC8A6A-1024x490.png">
 <meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/12/1FDB64C3-369A-47E4-8CF7-FE2E7676FC4C1-1024x482.png">
 <meta property="og:image" content="http://cuihuan.net/wp-content/uploads/2015/12/BEA1E968-7B4D-4CED-AC56-8E3F4A5A6F2C-1024x546.png">
@@ -86,9 +90,11 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【wordpress优化】压缩和使用静态缓存">
 <meta name="twitter:description" content="先说背景：wordpress个人网站，整体性能挺不错；但是，由于采用php动态获取数据，构成页面的方式，势必会影响页面加载速度。对于一些最常用的页面[例如首页]等等，完全可以采用生成伪静态页面缓存的方式加载。
+
+
 针对现有的缓存方式调研了一下：本文使用wp super cache进行了优化，提升加载速度200%以上。
 
-无图无真想，先看效果针对相同页面在chrome下做了个加载时间，大小的对比，如下">
+无图无真想，先看效果针对相同页面在chrome下做了个加载时间，大小的对比，">
 <meta name="twitter:image" content="http://cuihuan.net/wp-content/uploads/2015/12/E6B50C39-73D4-4397-9A79-794C58FC8A6A-1024x490.png">
 
 
@@ -378,6 +384,8 @@
       
         <blockquote>
 <p>先说背景：wordpress个人网站，整体性能挺不错；但是，由于采用php动态获取数据，构成页面的方式，势必会影响页面加载速度。对于一些最常用的页面[例如首页]等等，完全可以采用生成伪静态页面缓存的方式加载。</p>
+</blockquote>
+<blockquote>
 <p>针对现有的缓存方式调研了一下：本文使用<code>wp super cache</code>进行了优化，提升加载速度200%以上。</p>
 </blockquote>
 <h2 id="无图无真想，先看效果"><a href="#无图无真想，先看效果" class="headerlink" title="无图无真想，先看效果"></a>无图无真想，先看效果</h2><p>针对相同页面在chrome下做了个加载时间，大小的对比，如下图</p>
@@ -392,7 +400,7 @@
 <h2 id="配置-wp-super-cache"><a href="#配置-wp-super-cache" class="headerlink" title="配置 wp super cache"></a>配置 wp super cache</h2><p>安装成功后的简单个人推荐设置。</p>
 <p>通用-》启用cache：开启<br>高级-》启用缓存：开启<br>高级-》模式选择：推荐mode_rewrite 这个需要apache或者nginx进行相关设置，这个速度最快；如果不想设置，可以选择php缓存模式。<br>高级-》压缩页面：必选。<br>高级-》页面更新清除，评论更新清楚：推荐。作用是更新文章，评论之后触发缓存更新。<br>高级-》移动支持：推荐。<br>其他一些设置根据个人需求增加。</p>
 <p>配置，更新之后，进入网站cache目录下会出现缓存的html文件和gzip的压缩文件（前提是设置了giz压缩）。</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@cuixiaohuan cuihuan.<span class="keyword">net</span>]# <span class="keyword">pwd</span></div><div class="line">xxx/wp-content/cache/supercache/cuihuan.<span class="keyword">net</span></div><div class="line">[root@cuixiaohuan cuihuan.<span class="keyword">net</span>]# <span class="keyword">ls</span> -lh</div><div class="line"><span class="keyword">total</span> 52K</div><div class="line">-rw-r--r-- 1 apache apache 40K <span class="keyword">Dec</span> 5 11:33 index.html</div><div class="line">-rw-r--r-- 1 apache apache 9.5K <span class="keyword">Dec</span> 5 11:33 index.html.gz</div></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@cuixiaohuan cuihuan.<span class="keyword">net</span>]# <span class="keyword">pwd</span></span><br><span class="line">xxx/wp-content/cache/supercache/cuihuan.<span class="keyword">net</span></span><br><span class="line">[root@cuixiaohuan cuihuan.<span class="keyword">net</span>]# <span class="keyword">ls</span> -lh</span><br><span class="line"><span class="keyword">total</span> 52K</span><br><span class="line">-rw-r--r-- 1 apache apache 40K <span class="keyword">Dec</span> 5 11:33 index.html</span><br><span class="line">-rw-r--r-- 1 apache apache 9.5K <span class="keyword">Dec</span> 5 11:33 index.html.gz</span><br></pre></td></tr></table></figure>
 <h2 id="效果分析"><a href="#效果分析" class="headerlink" title="效果分析"></a>效果分析</h2><p>优化前数据：23ms感知页面；3.62s加载完成；页面大小：419k；请求个数：25个；<br>优化后数据：106ms感知页面；<code>1.81s</code>加载完成；页面大小<code>13.9k</code>；请求个数24个；</p>
 <p>感知页面变慢：原因在于，原始php页面相对较小，传输也相对较快，传输基本框架之后，才进行页面dom绘制，js渲染，数据获取和再次渲染，所以感知时间原始的快。但是对于750ms以下的对于用户几乎都是无感知。</p>
 <p>加载完成变快：最主要达到的效果，节省最多的时间在于数据库获取数据的时间。</p>

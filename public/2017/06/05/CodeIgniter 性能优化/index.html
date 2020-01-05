@@ -422,7 +422,7 @@
 <h3 id="2-2-问题追查"><a href="#2-2-问题追查" class="headerlink" title="2.2 问题追查"></a>2.2 问题追查</h3><p>沿着ci的路由顺序追查，从index入，一步一步卡时间。[<code>括号内为运行到的总计数</code>]</p>
 <p>-》index.php [<code>1ms</code>]<br>-》core/CodeIgniter.php<br>-》加载常量[<code>1ms</code>]<br>-》加载common(包括log，show，error,is_https等)[1ms]load hooks [<code>2ms</code>]<br>-》加载autoload 方法<br>-》加载benchmark<br>-》实例化hooks<br>-》实例化pre_controller<br>-》实例化post_controller_constructor<br>-》实例化post_controller<br>-》实例化post_system<br>-》加载config [<code>3ms</code>]<br>-》加载扩展mbstring,iconv,hash,stardard<br>-》load 组件utf8，uri<br>-》load router [<code>4ms</code>]<br>-》load output，input，lang[<code>5ms</code>]<br>-》autoload package,cinfig,helper,language,driver,lib,model,db,cache<br>-》404 &amp;empty$…handle [<code>31ms</code>]<br>-》controller remap（测试性能写了个remap）[<code>35ms</code>]<br>-》controller 业务逻辑 [<code>35ms</code>]</p>
 <p>这个ci的加载过程之后，基本一幕了然，在autoload里面耗时25ms。然后对autoload里面8个组件一个一个分析。</p>
-<h3 id="2-3-问题原因"><a href="#2-3-问题原因" class="headerlink" title="2.3 问题原因"></a>2.3 问题原因</h3><p>分析完之后，处理特别简单，下面这行代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$autoload[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="2-3-问题原因"><a href="#2-3-问题原因" class="headerlink" title="2.3 问题原因"></a>2.3 问题原因</h3><p>分析完之后，处理特别简单，下面这行代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$autoload[<span class="string">'libraries'</span>] = <span class="keyword">array</span>(<span class="string">'database'</span>);</span><br></pre></td></tr></table></figure></p>
 <p>ci 出于单例和复用角度考虑，选择<code>默认加载database</code>，也就是mysql在框架初始化的过程中默认初始化了。<br>mysql链接在并发情况下，init基本上要耗费10-30ms。直接干掉。<br>干掉之后，压测基本上在10ms左右。</p>
 <h2 id="三、从10ms到5ms-细看代码"><a href="#三、从10ms到5ms-细看代码" class="headerlink" title="三、从10ms到5ms [细看代码]"></a>三、从10ms到5ms [细看代码]</h2><h3 id="3-1-优化目标"><a href="#3-1-优化目标" class="headerlink" title="3.1 优化目标"></a>3.1 优化目标</h3><p>优化了配置等之后，ci在高并发下依然有10ms左右的加载时间，需要结合自身逻辑优化下，删减掉部分不需要的功能和组件。</p>
 <h3 id="3-2-代码分析"><a href="#3-2-代码分析" class="headerlink" title="3.2 代码分析"></a>3.2 代码分析</h3><p>之前在追查问题的过程中，粗读了一遍代码的流程。<br>而需要进一步优化，就需要细看每个模块函数的功能，干掉不需要的，逐步优化。</p>
@@ -444,7 +444,7 @@
 <p>-》composer autoload func<br>-》加载benchmark </p>
 <ul>
 <li>作用：benchmark性能追查工具，设置了全局的开始和结束时间</li>
-<li>优化：<code>直接干掉</code>，全局处理。但是性能需要卡，就在index中初始化了一个入库的timer<figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义全局开始追查</span></div><div class="line"><span class="built_in">list</span>($msec, $sec) = explode(<span class="string">' '</span>, microtime());</div><div class="line"><span class="class"><span class="keyword">define</span></span>(<span class="string">'START_TIME'</span>, (float)sprintf(<span class="string">'%.0f'</span>, (floatval($msec) + floatval($sec)) * <span class="number">1000</span>));</div><div class="line"><span class="comment">// 定义全局uuid</span></div><div class="line"><span class="class"><span class="keyword">define</span></span>(<span class="string">'UUID'</span>, uniqid(<span class="string">'xxx'</span>, <span class="literal">true</span>));</div></pre></td></tr></table></figure>
+<li>优化：<code>直接干掉</code>，全局处理。但是性能需要卡，就在index中初始化了一个入库的timer<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义全局开始追查</span></span><br><span class="line"><span class="built_in">list</span>($msec, $sec) = explode(<span class="string">' '</span>, microtime());</span><br><span class="line"><span class="class"><span class="keyword">define</span></span>(<span class="string">'START_TIME'</span>, (float)sprintf(<span class="string">'%.0f'</span>, (floatval($msec) + floatval($sec)) * <span class="number">1000</span>));</span><br><span class="line"><span class="comment">// 定义全局uuid</span></span><br><span class="line"><span class="class"><span class="keyword">define</span></span>(<span class="string">'UUID'</span>, uniqid(<span class="string">'xxx'</span>, <span class="literal">true</span>));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>-》实例化hooks和预变量 </p>
@@ -501,7 +501,7 @@
 <h3 id="4-3-无限发压"><a href="#4-3-无限发压" class="headerlink" title="4.3 无限发压"></a>4.3 无限发压</h3><p>nginx + php 均值：17ms<br>框架部分的均值：9ms 也基本上满足需求<br><a href="http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/nginx_time.png" alt="nginx_time"></a></p>
 <h2 id="五、汇总"><a href="#五、汇总" class="headerlink" title="五、汇总"></a>五、汇总</h2><p>ci 是一个比较优秀的轻量级MVC框架，可以用来，业能否支撑1000-2000pqs的业务接口。</p>
 <p>最后来一张ci的路由图<br><a href="http://cuihuan.net/wp_content/new/codeIgniter/all.png"><img src="http://cuihuan.net/wp_content/new/codeIgniter/all.png" alt="all"></a></p>
-<p>```</p>
+<p><code>`</code></p>
 
       
     </div>

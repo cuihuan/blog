@@ -385,7 +385,7 @@
 cuihuan:phpredis cuixiaohuan$ make install
 </code></pre><p>##四 问题修复<br>【已修复，但是原因可能不太准确】<br>make编译报错<br>    .libs/redis_cluster.o(.data.rel.local+0x0): In function <code>ht_free_seed&#39;:
     /home/work/thirdparty/php5/php5/phpredis/redis_cluster.c:226:     multiple definition of</code>arginfo_scan’<br>    .libs/redis.o(.data.rel.local+0xe0):/home/work/thirdparty/php5/php5/p hpredis/redis.c:452: first defined here<br>    /usr/bin/ld: Warning: size of symbol <code>arginfo_scan&#39; changed from 160 in .libs/redis.o to 200 in .libs/redis_cluster.o
-    .libs/redis_cluster.o(.data.rel.local+0xe0): In function</code>create_cluster_context’:<br>    /home/work/thirdparty/php5/php5/phpredis/redis_cluster.c:276:     multiple definition of `arginfo_kscan’<br>    .libs/redis.o(.data.rel.local+0x0):/home/work/thirdparty/php5/php5/phpredis/redis.c:364: first defined here<br>    collect2: ld returned 1 exit status<br>    make: <em>*</em> [redis.la] Error 1</p>
+    .libs/redis_cluster.o(.data.rel.local+0xe0): In function</code>create_cluster_context’:<br>    /home/work/thirdparty/php5/php5/phpredis/redis_cluster.c:276:     multiple definition of `arginfo_kscan’<br>    .libs/redis.o(.data.rel.local+0x0):/home/work/thirdparty/php5/php5/phpredis/redis.c:364: first defined here<br>    collect2: ld returned 1 exit status<br>    make: *** [redis.la] Error 1</p>
 <p>最初以为是php多个版本生成install问题，采用./configure 指定php版本，指定php位置。<br>但是效果还是有问题。<br>最终通过修改redis_cluester.c 中，注释掉了这两个重复的<br>      40 </p>
 <pre><code>41 /* Argument info for HSCAN, SSCAN, HSCAN */
 

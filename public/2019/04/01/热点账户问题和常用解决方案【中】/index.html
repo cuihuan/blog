@@ -443,7 +443,7 @@
 <h3 id="4-4-解决方案总结"><a href="#4-4-解决方案总结" class="headerlink" title="4.4 解决方案总结"></a>4.4 解决方案总结</h3><p>总的来说，归结了七种优化方式（哈哈，上篇写的八种优化，当时总结的，现在愣是想不到还有啥了^_^）。其中请求和回调的伪同步方式，是在架构层面优化，这个在多数的财务系统和财务系统的内部数据流中都会用到；而读写和计算阶段的优化，可以跟进实际业务情况进行选型处理。</p>
 <h2 id="五、事故复盘"><a href="#五、事故复盘" class="headerlink" title="五、事故复盘"></a>五、事故复盘</h2><p>面对各种优化方案，需要结合实际情况做出取舍，有的是长期方案，有的是快速方案，<code>但一定需要想清楚了再开搞</code>，过程中有一个对小拽之后影响很大的事故，引以为戒。</p>
 <p>翻车过程：当时觉的读-&gt;计算-&gt;写这个过程，<code>两次读DB操作，下沉计算过程到DB后，通过DB计算，可以减少一次数据库请求</code>。于是<code>合并了一个大SQL，也就是所谓的insert ( field computer from select)</code>，觉的写了个狂赚酷炫吊炸天的SQL，一上线，库锁死了！幸好有前置的redo flag，全量redo数据恢复，要不然估计直接祭天了！</p>
-<p>对于这个复杂大SQL事故，小拽总结了三个方面<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">莫炫技：没啥好说的，解决问题的成就感要远大于炫技！</div><div class="line">简单设计：简单的设计通常意味着可依赖；复杂的设计要尽可能的拆解，想清楚，队友都理解不了的设计，那就别上线了，可能真的需要再思考拆解下</div><div class="line">尊重线上：核心服务基本上线流程一定要遵守，测试，监控和回滚方案缺一不可</div></pre></td></tr></table></figure></p>
+<p>对于这个复杂大SQL事故，小拽总结了三个方面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">莫炫技：没啥好说的，解决问题的成就感要远大于炫技！</span><br><span class="line">简单设计：简单的设计通常意味着可依赖；复杂的设计要尽可能的拆解，想清楚，队友都理解不了的设计，那就别上线了，可能真的需要再思考拆解下</span><br><span class="line">尊重线上：核心服务基本上线流程一定要遵守，测试，监控和回滚方案缺一不可</span><br></pre></td></tr></table></figure></p>
 <h2 id="六、小结"><a href="#六、小结" class="headerlink" title="六、小结"></a>六、小结</h2><p>本篇主要针对热点账户问题提出了七种常用的解决方案，下篇将继续引申探索下，各种解决方案在不规则高并发场景，例如双十一，微博热点事件中如何套用</p>
 <p>预知后事如何，下回再聊！</p>
 
