@@ -284,6 +284,138 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2016/08/08/phpredis单例模式封装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/cuihuan_title.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/08/phpredis单例模式封装/" itemprop="url">phpredis单例模式封装</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-08T17:21:35+08:00">
+                2016-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+                <span class="post-comments-count">
+                  <span class="post-meta-divider">|</span>
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                  <a href="/2016/08/08/phpredis单例模式封装/#comments" itemprop="discussionUrl">
+                    <span class="post-comments-count valine-comment-count" data-xid="/2016/08/08/phpredis单例模式封装/" itemprop="commentCount"></span>
+                  </a>
+                </span>
+
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+通过单例模式实现对phpredis连接的封装。
+
+直接上代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;?php/** * Class 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/08/phpredis单例模式封装/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2016/08/07/page_monitor_second/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1472,138 +1604,6 @@ ip属于白
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2016/01/03/检验mysql主从备份，读写分离/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="崔小拽">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/wp_content/base/cuihuan_title.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="靠谱崔小拽">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/01/03/检验mysql主从备份，读写分离/" itemprop="url">检验mysql主从备份，读写分离</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-03T17:21:35+08:00">
-                2016-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-                <span class="post-comments-count">
-                  <span class="post-meta-divider">|</span>
-                  <span class="post-meta-item-icon">
-                    <i class="fa fa-comment-o"></i>
-                  </span>
-                  <a href="/2016/01/03/检验mysql主从备份，读写分离/#comments" itemprop="discussionUrl">
-                    <span class="post-comments-count valine-comment-count" data-xid="/2016/01/03/检验mysql主从备份，读写分离/" itemprop="commentCount"></span>
-                  </a>
-                </span>
-
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-先说背景：mysql的主从部署，读写分离，负载均衡之后；需要简单测试和校验一下，在实践中写了个简单的php脚本和校验过程，mark一下，方便再次部署校验。
-
-数据库部署和实践数据库在实践中，往往需要进行多机主从备份保证安全，这个毋庸置疑；进行读写分离和负载均衡可以极大的提升mysql的读写性能。作
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/01/03/检验mysql主从备份，读写分离/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1653,7 +1653,7 @@ ip属于白
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1666,7 +1666,7 @@ ip属于白
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">84</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
