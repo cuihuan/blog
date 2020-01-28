@@ -223,7 +223,7 @@
                             confirm.push(chartData[i].confirmed);
                         }
 
-                        var title = "全国数据";
+                        var title = "全国确诊数据";
                         initDetailChart(date, confirm, title);
                         return;
                     }
@@ -249,7 +249,7 @@
                             confirm.push(chartData[i].confirmedCount);
                         }
 
-                        var title = chartData[0].country + " - " + chartData[0].provinceShortName;
+                        var title = "确诊("+chartData[0].country + " - " + chartData[0].provinceShortName+")";
                         initDetailChart(date, confirm, title);
                         return;
                     }
@@ -265,8 +265,6 @@
                 text: '加载中...',
                 effect: 'whirling'
             });
-
-
 
 
             echartsOption  = {
