@@ -51,7 +51,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="《图解区块链》,2020读书,读书笔记," />
+  <meta name="keywords" content="2020读书,《图解区块链》,读书笔记," />
 
 
 
@@ -78,7 +78,7 @@
 
 引言庚子春节注定与众不同，新冠肆虐，小拽积极响应国家号召，不恐慌，不传谣，躺在家里给">
 <meta property="og:image" content="http://cuihuan.net/wp_content/new/book/tujiequkuailian.jpeg">
-<meta property="og:updated_time" content="2020-01-26T12:51:15.648Z">
+<meta property="og:updated_time" content="2020-01-26T13:07:11.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="公信力-《图解区块链》读书笔记">
 <meta name="twitter:description" content="智人之所以能够以劣势的生理特性横扫五大洲，成为唯一存活下来的人类，并且主导了地球进化的方向，其原因在于其通过独有的语言和文字创造了虚构的概念。人类通过对这些&amp;quot;虚构的概念共识&amp;quot;实现了大规模合作的可能，从而创造了人类辉煌。 ——《人类简史》利用可信程序获取公信力，区块链可能成为这种虚构的力量。
@@ -225,6 +225,16 @@
               <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
             
             DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ncov">
+          <a href="http://cuihuan.net/wuhan/news.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            menu.nCoV
           </a>
         </li>
       
@@ -392,19 +402,14 @@
 <li><strong>可靠运行</strong>需要提供分布式存储，异常容灾，可扩展等架构能力，来保证稳定的运行，不会被攻击，出异常。例如比特币目前来看分布式存储，选举机制，容量也是可以从1M扩展到8M(国际扩展到20M)。</li>
 </ul>
 <p>而最终达到的目标是大家认可，也就是具有了所谓的“公信力”。<strong>信任本就贵，公信价更高</strong>。而公信力的获取和维持成本极高，例如银行要维持自己的公信力，花大量资金拿牌照（找背书），在核心区建网点（提面子），还要有准备金，审计等等；而国家甚至要考军队来维持公信力。</p>
-<p>简而言之<strong>区块链就是一个不能被篡改的，灰常靠谱的一种链式数据记录方式！</strong></p>
+<p>简而言之<strong>区块链就是一个不能被篡改的，大家都觉的​灰常靠谱的数据记录方式！</strong></p>
 <h3 id="二、如何用？"><a href="#二、如何用？" class="headerlink" title="二、如何用？"></a>二、如何用？</h3><p>区块链的关键意义在于<strong>利用可信程序获取公信力</strong>，那么如何应用？仁者见仁智者见智，小拽列举一些小的思考。</p>
 <ul>
-<li><p><strong>可信记录</strong>：比如电子病例、电子学历、电子合同、电子护照等。一旦通过区块链记录下来，就不能被以任何手段篡改，可以降低机构的公信成本。那么问题来了，写错了怎么办？答案是只能写一个新的，就像财务系统一样，钱记录错了，是不能擦掉的，只能后面新入一笔账。</p>
-</li>
-<li><p><strong>保险行业</strong>：保险行业接近三分之一的成本用于管理费用，那么如果区块链可以解决公信力，那么互助险是否可以利用区块链记录分摊过程来降低管理成本？</p>
-</li>
-<li><p><strong>股权交易</strong>：这个本身就是完全靠公信力来支撑的运营方式，</p>
-</li>
-<li><p><strong>电子商务</strong>：有了区块链的公信力，是否还需要“支付宝”，是否可以有更可靠的预付款和信用链？</p>
-</li>
-<li><p><strong>物联网</strong>：每个物联网设备的“数字化身份”、“验证”、“记录”，链式不可篡改的结构是否解决这块问题？</p>
-</li>
+<li><strong>可信记录</strong>：比如电子病例、电子学历、电子合同、电子护照等。一旦通过区块链记录下来，就不能被以任何手段篡改，可以降低机构的公信成本。那么问题来了，写错了怎么办？答案是只能写一个新的，就像财务系统一样，钱记录错了，是不能擦掉的，只能后面新入一笔账。</li>
+<li><strong>保险行业</strong>：保险行业接近三分之一的成本用于管理费用，那么如果区块链可以解决公信力，那么互助险是否可以利用区块链记录分摊过程来降低管理成本？</li>
+<li><strong>股权交易</strong>：这个本身就是完全靠公信力来支撑的运营方式，</li>
+<li><strong>电子商务</strong>：有了区块链的公信力，是否还需要“支付宝”，是否可以有更可靠的预付款和信用链？</li>
+<li><strong>物联网</strong>：每个物联网设备的“数字化身份”、“验证”、“记录”，链式不可篡改的结构是否解决这块问题？</li>
 <li><strong>反洗钱</strong>：所以记录至少是公开透明，不可篡改的，是否可以更利于追查？</li>
 </ul>
 <h3 id="三、Golang实现一个简单的区块链"><a href="#三、Golang实现一个简单的区块链" class="headerlink" title="三、Golang实现一个简单的区块链"></a>三、Golang实现一个简单的区块链</h3><p>具体看代码，入门golang写的一个小栗子，核心是信息加密和链<br>实际应用中有一个经典的链式结构参考：《热点账户设计》</p>
@@ -423,6 +428,7 @@
 <p>P19：R3的核心职能是指定银行业区块链技术开发的行业标准。目的是要做一个全球的去中心化的实时银行间清结算系统。</p>
 <p>P43：中国对比特币是绝对禁止，但是对区块链“是一项可选的技术”<br>（15年对于区块链已经是认可的，但比特别明令禁止，和目前差异不大）</p>
 <p>P111：2016年2月，央行明确表示发行数字货币的战略目标，争取早日退出央行的数字货币。</p>
+<p><br></p>
 <p>20200126 于西山林语</p>
 
       
@@ -473,9 +479,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/《图解区块链》/" rel="tag"># 《图解区块链》</a>
-          
             <a href="/tags/2020读书/" rel="tag"># 2020读书</a>
+          
+            <a href="/tags/《图解区块链》/" rel="tag"># 《图解区块链》</a>
           
             <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
           
@@ -586,7 +592,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">87</span>
+                <span class="site-state-item-count">85</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
