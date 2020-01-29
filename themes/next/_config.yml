@@ -45,6 +45,7 @@ menu:
   commonweal: /404.html
 #  old: http://cuihuan.net:8222
   demo: http://cuihuan.net:1015
+  nCoV: http://cuihuan.net/wuhan/news.html
 
 
 
@@ -65,6 +66,7 @@ menu_icons:
   sitemap: sitemap
   commonweal: heartbeat
   old: camera-retro
+  nCoV:  ofthermometer-quarter
   demo: cubes
 
 
