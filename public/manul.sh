@@ -1,8 +1,8 @@
-cd ./wuhan
+cd ./manual
 rm -rf ./*
 echo "rm succ"
 
-cp -rf /Users/cuixiaohuan/Desktop/workspace/didijs/2020_wuhan/* ./
+cp -rf /Users/cuixiaohuan/Desktop/workspace/didibook/manual/* ./
 echo "cp succ"
 
 git add ./*

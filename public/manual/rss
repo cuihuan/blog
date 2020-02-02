@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[国际化最佳实践]]></title>
+        <description><![CDATA[国际化最佳实践主要借鉴滴滴国际化的相关实战经验，抽象一套可复制的企业级出海解决方案！]]></description>
+        <link>https://cuihuan.net/rss</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 01 Feb 2020 12:38:16 GMT</lastBuildDate>
+        <atom:link href="https://cuihuan.net/rss" rel="self" type="application/rss+xml"/>
+        <managingEditor><![CDATA[grubbych@126.com]]></managingEditor>
+        <webMaster><![CDATA[grubbych@126.com]]></webMaster>
+        <category><![CDATA[cuihuan]]></category>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[国际化最佳实践主要借鉴滴滴国际化的相关实战经验，期望探索一套可复制的企业级出海技术解决方案，帮助企业突破瓶颈，走向世界！]]></description>
+            <link>https://cuihuan.net/rss</link>
+            <guid isPermaLink="true">https://cuihuan.net/rss</guid>
+        </item>
+    </channel>
+</rss>
