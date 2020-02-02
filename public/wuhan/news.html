@@ -65,11 +65,10 @@
     <div class="chart" id="trend-chart" style="height: 25rem">
 
     </div>
-    <hr/>
-    <!--<div class="chart" id="add-chart" style="height: 25rem">-->
+    <div class="chart" id="add-chart" style="height: 25rem">
 
-    <!--</div>-->
-    <!--<hr/>-->
+    </div>
+    <hr/>
 
     <div class="cities" style="height: 100%;">
         <table class="table table-striped">
@@ -118,7 +117,7 @@
         initChosen();
         initNews('湖北省');
         initCoreData('湖北省');
-        initTrendChart('湖北省');
+        initChart('湖北省');
         initAddChart('湖北省');
     });
 
@@ -188,7 +187,7 @@
                         var province = $('select.chosen-select').val();
                         initNews(province);
                         initCoreData(province);
-                        initTrendChart(province);
+                        initChart(province);
                     });
 
                     return;
@@ -265,21 +264,23 @@
 
     };
 
-    var initTrendChart = function (province) {
+    var initChart = function (province) {
         $.ajax({
             url: dataUrl + 'api/area?latest=0&province=' + province,
             type: 'get',
             success: function (res) {
                 if (res.success === true) {
                     var chartData = res.results;
-                    var date = [];
+                    var dateTrend = [];
+                    var dateAdd = [];
                     var confirm = [];
+                    var confirmAdd = [];
                     var datalist = [];
 
                     for (var i in chartData) {
                         var dataTime = new Date(chartData[i].updateTime);
                         var showTime = [dataTime.getFullYear(), dataTime.getMonth() + 1, dataTime.getDate()].join('/');
-                        if (date.includes(showTime)) {
+                        if (dateTrend.includes(showTime)) {
                             continue;
                         }
                         if (!datalist[showTime] || datalist[showTime] < chartData[i].confirmedCount) {
@@ -296,13 +297,28 @@
 
                     // use data
                     for (var i in dataListOrdered) {
-                        date.push(i);
+                        dateTrend.push(i);
                         confirm.push(dataListOrdered[i]);
+
+                        var t = new Date(i);
+                        t.setDate(t.getDate() - 1);
+                        // var dataTime = new Date(chartData[i].updateTime);
+                        var yesterday = [t.getFullYear(), t.getMonth() + 1, t.getDate()].join('/');
+                        if (!dataListOrdered[yesterday]) {
+                            continue;
+                        }
+
+                        dateAdd.push(i);
+                        confirmAdd.push(dataListOrdered[i] - dataListOrdered[yesterday]);
+
+
                     }
 
+                    var title = "确诊总量(" + chartData[0].country + "-" + chartData[0].provinceShortName + ")";
+                    initTrendChart(dateTrend, confirm, title);
 
-                    var title = "确诊(" + chartData[0].country + " - " + chartData[0].provinceShortName + ")";
-                    initDetailChart(date, confirm, title);
+                    title = "确诊增量(" + chartData[0].country + "-" + chartData[0].provinceShortName + ")";
+                    initAddChart(dateAdd, confirmAdd, title);
                     return;
                 }
                 alert("获取数据失败");
@@ -315,8 +331,186 @@
         });
 
 
-        var initDetailChart = function (date, confirm, title) {
+        var initTrendChart = function (date, confirm, title) {
             var orderTraceContainer = echarts.init(document.getElementById('trend-chart'));
+            orderTraceContainer.showLoading({
+                text: '加载中...',
+                effect: 'whirling'
+            });
+
+
+            echartsOption = {
+                backgroundColor: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#c86589'
+                },
+                    {
+                        offset: 1,
+                        color: '#06a7ff'
+                    }
+                ], false),
+                title: {
+                    text: title,
+                    left: "center",
+                    bottom: "2%",
+                    textStyle: {
+                        color: "#fff",
+                        fontSize: 16
+                    }
+                },
+                grid: {
+                    top: '20%',
+                    left: '5%',
+                    right: '1%',
+                    bottom: '15%',
+                    containLabel: true,
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    // 时间
+                    data: date,
+                    axisLabel: {
+                        margin: 30,
+                        color: '#ffffff63'
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: true,
+                        length: 25,
+                        lineStyle: {
+                            color: "#ffffff1f"
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#ffffff1f'
+                        }
+                    }
+                },
+                yAxis: [{
+                    type: 'value',
+                    position: 'right',
+                    axisLabel: {
+                        margin: 20,
+                        color: '#ffffff63'
+                    },
+
+                    axisTick: {
+                        show: true,
+                        length: 15,
+                        lineStyle: {
+                            color: "#ffffff1f",
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#ffffff1f'
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff',
+                            width: 2
+                        }
+                    }
+                }],
+                series: [
+                    {
+                        name: '总数量',
+                        type: 'line',
+                        smooth: true, //是否平滑曲线显示
+                        showAllSymbol: true,
+                        symbol: 'circle',
+                        symbolSize: 6,
+                        lineStyle: {
+                            normal: {
+                                color: "#fff", // 线条颜色
+                            },
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            textStyle: {
+                                color: '#fff',
+                            }
+                        },
+                        itemStyle: {
+                            color: "red",
+                            borderColor: "#fff",
+                            borderWidth: 3
+                        },
+                        tooltip: {
+                            show: false
+                        },
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#eb64fb'
+                                },
+                                    {
+                                        offset: 1,
+                                        color: '#3fbbff0d'
+                                    }
+                                ], false),
+                            }
+                        },
+                        data: confirm
+                    }
+                    // {
+                    //     name: '总数量',
+                    //     type: 'line',
+                    //     smooth: true, //是否平滑曲线显示
+                    //     showAllSymbol: true,
+                    //     symbol: 'circle',
+                    //     symbolSize: 6,
+                    //     lineStyle: {
+                    //         normal: {
+                    //             color: "#fff", // 线条颜色
+                    //         },
+                    //     },
+                    //     label: {
+                    //         show: true,
+                    //         position: 'top',
+                    //         textStyle: {
+                    //             color: '#fff',
+                    //         }
+                    //     },
+                    //     itemStyle: {
+                    //         color: "red",
+                    //         borderColor: "#fff",
+                    //         borderWidth: 3
+                    //     },
+                    //     tooltip: {
+                    //         show: false
+                    //     },
+                    //     areaStyle: {
+                    //         normal: {
+                    //             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    //                     offset: 0,
+                    //                     color: '#eb64fb'
+                    //                 },
+                    //                 {
+                    //                     offset: 1,
+                    //                     color: '#3fbbff0d'
+                    //                 }
+                    //             ], false),
+                    //         }
+                    //     },
+                    //     data: [693, 338, 185, 331, 389, 324, 487, 1400, 1100, 1200]
+                    // }
+                ]
+            };
+            orderTraceContainer.hideLoading();
+            orderTraceContainer.setOption(echartsOption);
+        }
+        var initAddChart = function (date, confirm, title) {
+            var orderTraceContainer = echarts.init(document.getElementById('add-chart'));
             orderTraceContainer.showLoading({
                 text: '加载中...',
                 effect: 'whirling'
@@ -496,262 +690,6 @@
 
     };
 
-    var initAddChart = function (province) {
-        $.ajax({
-            url: dataUrl + 'api/area?latest=0&province=' + province,
-            type: 'get',
-            success: function (res) {
-                if (res.success === true) {
-                    var chartData = res.results;
-                    var date = [];
-                    var dataNCoV = [];
-                    var confirmedNCoV = [];
-                    var suspectedNCoV = [];
-                    var curedNCoV = [];
-                    var deadNCoV = [];
-
-                    for (var i in chartData) {
-                        var dataTime = new Date(chartData[i].updateTime);
-                        var showTime = [dataTime.getFullYear(), dataTime.getMonth() + 1, dataTime.getDate()].join('/');
-                        var confirmedCount = chartData[i].confirmedCount ? chartData[i].confirmedCount : chartData[i].confirmed;
-                        var suspectedCount = chartData[i].suspectedCount ? chartData[i].suspectedCount : chartData[i].suspectedCount;
-                        var curedCount = chartData[i].curedCount ? chartData[i].curedCount : chartData[i].curedCount;
-                        var deadCount = chartData[i].deadCount ? chartData[i].deadCount : chartData[i].deadCount;
-
-                        if (!dataNCoV[showTime] || dataNCoV[showTime]['confirm'] < confirmedCount) {
-                            dataNCoV[showTime] = [];
-                            dataNCoV[showTime]['confirm'] = confirmedCount;
-                            dataNCoV[showTime]['suspect'] = suspectedCount;
-                            dataNCoV[showTime]['cure'] = curedCount;
-                            dataNCoV[showTime]['dead'] = deadCount;
-                        }
-
-                    }
-
-                    // 时间排序
-                    const dataNCoVOrdered = {};
-                    Object.keys(dataNCoV).sort().forEach(function (key) {
-                        dataNCoVOrdered[key] = dataNCoV[key];
-                    });
-
-
-                    // use data
-                    for (var i in dataNCoVOrdered) {
-
-                        var t = new Date(i);
-                        t.setDate(t.getDate() - 1);
-                        // var dataTime = new Date(chartData[i].updateTime);
-                        var yesterday = [t.getFullYear(), t.getMonth() + 1, t.getDate()].join('/');
-                        if (!dataNCoVOrdered[yesterday]) {
-                            continue;
-                        }
-
-                        date.push(i);
-                        confirmedNCoV.push(dataNCoVOrdered[i]['confirm'] - dataNCoVOrdered[yesterday]['confirm']);
-                        suspectedNCoV.push(dataNCoVOrdered[i]['suspect'] - dataNCoVOrdered[yesterday]['suspect']);
-                        curedNCoV.push(dataNCoVOrdered[i]['cure'] - dataNCoVOrdered[yesterday]['cure']);
-                        deadNCoV.push(dataNCoVOrdered[i]['dead'] - dataNCoVOrdered[yesterday]['dead']);
-                    }
-
-                    initDetailChart(date, confirmedNCoV, suspectedNCoV,curedNCoV,deadNCoV);
-                    return;
-                }
-                alert("获取数据失败");
-            }, error: function (res) {
-                if (res.state() === "rejected" && !this.url.includes(dataUrlBackup)) {
-                    this.url = this.url.replace(dataUrl,dataUrlBackup);
-                    $.ajax(this);
-                }
-            }
-        });
-
-        var initDetailChart = function (date, confirmedNCoV, suspectedNCoV,curedNCoV,deadNCoV) {
-            var orderTraceContainer = echarts.init(document.getElementById('add-chart'));
-            orderTraceContainer.showLoading({
-                text: '加载中...',
-                effect: 'whirling'
-            });
-
-
-            echartsOption  = {
-                backgroundColor: '#394056',
-                title: {
-                    text: '全国NCoV新增量',
-                    textStyle: {
-                        fontWeight: 'normal',
-                        fontSize: 12,
-                        color: '#ebffa1'
-                    },
-                    left: '2%'
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        lineStyle: {
-                            color: '#57617B'
-                        }
-                    }
-                },
-                legend: {
-                    icon: 'rect',
-                    itemWidth: 14,
-                    itemHeight: 5,
-                    itemGap: 1,
-                    data: ['确诊', '死亡', '治愈','疑似'],
-                    right: '2%',
-                    textStyle: {
-                        fontSize: 12,
-                        color: '#F1F1F3'
-                    }
-                },
-                grid: {
-                    left: '2%',
-                    right: '2%',
-                    bottom: '2%',
-                    containLabel: true
-                },
-                xAxis: [{
-                    type: 'category',
-                    boundaryGap: false,
-                    axisLine: {
-                        lineStyle: {
-                            color: '#57617B'
-                        }
-                    },
-                    data: date
-                }
-                ],
-                yAxis: [{
-                    type: 'value',
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        lineStyle: {
-                            color: '#57617B'
-                        }
-                    },
-                    axisLabel: {
-                        margin: 4,
-                        textStyle: {
-                            fontSize: 8
-                        }
-                    },
-                    splitLine: {
-                        lineStyle: {
-                            color: '#57617B'
-                        }
-                    }
-                }],
-                series: [{
-                    name: '确诊',
-                    type: 'line',
-                    smooth: true,
-                    symbol: 'circle',
-                    symbolSize: 5,
-                    showSymbol: false,
-                    lineStyle: {
-                        normal: {
-                            width: 1
-                        }
-                    },
-                    areaStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(137, 189, 27, 0.3)'
-                            }, {
-                                offset: 0.8,
-                                color: 'rgba(137, 189, 27, 0)'
-                            }], false),
-                            shadowColor: 'rgba(0, 0, 0, 0.1)',
-                            shadowBlur: 10
-                        }
-                    },
-                    itemStyle: {
-                        normal: {
-                            color: 'rgb(137,189,27)',
-                            borderColor: 'rgba(137,189,2,0.27)',
-                            borderWidth: 12
-
-                        }
-                    },
-                    data: confirmedNCoV
-                }, {
-                    name: '死亡',
-                    type: 'line',
-                    smooth: true,
-                    symbol: 'circle',
-                    symbolSize: 5,
-                    showSymbol: false,
-                    lineStyle: {
-                        normal: {
-                            width: 1
-                        }
-                    },
-                    areaStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(0, 136, 212, 0.3)'
-                            }, {
-                                offset: 0.8,
-                                color: 'rgba(0, 136, 212, 0)'
-                            }], false),
-                            shadowColor: 'rgba(0, 0, 0, 0.1)',
-                            shadowBlur: 10
-                        }
-                    },
-                    itemStyle: {
-                        normal: {
-                            color: 'rgb(0,136,212)',
-                            borderColor: 'rgba(0,136,212,0.2)',
-                            borderWidth: 12
-
-                        }
-                    },
-                    data: deadNCoV
-                }, {
-                    name: '治愈',
-                    type: 'line',
-                    smooth: true,
-                    symbol: 'circle',
-                    symbolSize: 5,
-                    showSymbol: false,
-                    lineStyle: {
-                        normal: {
-                            width: 1
-                        }
-                    },
-                    areaStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(0, 136, 212, 0.3)'
-                            }, {
-                                offset: 0.8,
-                                color: 'rgba(0, 136, 212, 0)'
-                            }], false),
-                            shadowColor: 'rgba(0, 0, 0, 0.1)',
-                            shadowBlur: 10
-                        }
-                    },
-                    itemStyle: {
-                        normal: {
-                            color: 'rgb(177,136,212)',
-                            borderColor: 'rgba(0,136,212,0.2)',
-                            borderWidth: 12
-
-                        }
-                    },
-                    data: curedNCoV
-                }
-                ]
-            };
-            orderTraceContainer.hideLoading();
-            orderTraceContainer.setOption(echartsOption);
-        }
-    };
 
     // 增加访问统计，确认流量
     var _hmt = _hmt || [];
