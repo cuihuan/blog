@@ -1,0 +1,1194 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="重读代码,uuid,go,jsoniter," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Rob Pike曾说“复杂性是以乘积方式增长的”。 当我们在快速发布的压力之下，不断的增加系统功能、选项、以及配置，一点点的将系统的某个部分变的更加复杂，难以理解，最终变的不可维护！
+因此，为了尽可能的前期少留坑，周末做了两件小事儿，收获挺多，整理分享！1、重读一周的代码，完善README2、重读《Go程序设计语言》
+
+一、重读代码coding了一周，疲于沟通，联调和开发。太多的战略和趋势的高谈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重读一周代码（一）">
+<meta property="og:url" content="http://cuihuan.net/2020/02/16/重读一周代码（一）/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="Rob Pike曾说“复杂性是以乘积方式增长的”。 当我们在快速发布的压力之下，不断的增加系统功能、选项、以及配置，一点点的将系统的某个部分变的更加复杂，难以理解，最终变的不可维护！
+因此，为了尽可能的前期少留坑，周末做了两件小事儿，收获挺多，整理分享！1、重读一周的代码，完善README2、重读《Go程序设计语言》
+
+一、重读代码coding了一周，疲于沟通，联调和开发。太多的战略和趋势的高谈">
+<meta property="og:updated_time" content="2020-02-16T11:22:16.291Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重读一周代码（一）">
+<meta name="twitter:description" content="Rob Pike曾说“复杂性是以乘积方式增长的”。 当我们在快速发布的压力之下，不断的增加系统功能、选项、以及配置，一点点的将系统的某个部分变的更加复杂，难以理解，最终变的不可维护！
+因此，为了尽可能的前期少留坑，周末做了两件小事儿，收获挺多，整理分享！1、重读一周的代码，完善README2、重读《Go程序设计语言》
+
+一、重读代码coding了一周，疲于沟通，联调和开发。太多的战略和趋势的高谈">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2020/02/16/重读一周代码（一）/"/>
+
+
+
+
+
+  <title>重读一周代码（一） | 靠谱崔小拽</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ncov">
+          <a href="http://cuihuan.net/wuhan/news.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            menu.nCoV
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2020/02/16/重读一周代码（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/cuihuan_title.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">重读一周代码（一）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T20:21:35+08:00">
+                2020-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+                <span class="post-comments-count">
+                  <span class="post-meta-divider">|</span>
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                  <a href="/2020/02/16/重读一周代码（一）/#comments" itemprop="discussionUrl">
+                    <span class="post-comments-count valine-comment-count" data-xid="/2020/02/16/重读一周代码（一）/" itemprop="commentCount"></span>
+                  </a>
+                </span>
+
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Rob Pike曾说“复杂性是以乘积方式增长的”。 当我们在快速发布的压力之下，不断的增加系统功能、选项、以及配置，一点点的将系统的某个部分变的更加复杂，难以理解，最终变的不可维护！</p>
+<p>因此，为了尽可能的前期少留坑，周末做了两件小事儿，收获挺多，整理分享！<br>1、重读一周的代码，完善README<br>2、重读《Go程序设计语言》</p>
+</blockquote>
+<h2 id="一、重读代码"><a href="#一、重读代码" class="headerlink" title="一、重读代码"></a>一、重读代码</h2><p>coding了一周，疲于沟通，联调和开发。太多的战略和趋势的高谈阔论，总觉的越来越缺少，<code>冷静下来，对关键细节深度思考</code>！</p>
+<p>趁着周末，好好回顾了一下自己这一周开发的项目！</p>
+<h3 id="1-1-关于几个选型"><a href="#1-1-关于几个选型" class="headerlink" title="1.1 关于几个选型"></a>1.1 关于几个选型</h3><h4 id="1-1-1-uuid选型"><a href="#1-1-1-uuid选型" class="headerlink" title="1.1.1 uuid选型"></a>1.1.1 uuid选型</h4><p>项目中用到了唯一健，用了公司的ice，那么ice做的怎么样？选型是否有坑？</p>
+<blockquote>
+<p>先贴结论：整体来看，目前ice完全够用，针对时钟回拨和趋势递增问题也可以简单封装解决，但在细节问题的实现上，不如百度的UidGenerator和美团的leaf！</p>
+</blockquote>
+<p>uuid有四种通用解决方案（mysql自增、、伪随机本地hash、GUID/UUID方案、类snowflake方案）</p>
+<p>具体细节就不做介绍了，都或多或少有些小问题。那么公司的ice是否解决了相关问题？</p>
+<ul>
+<li><strong>实现方案</strong>：mysql自增+cache批量预取</li>
+<li><strong>高可用方案</strong>：多IDC部署 + 超长预加载容灾+ 时间戳算法降级兜底 + 异地多活。</li>
+<li><strong>性能问题</strong>：增加了预取，RPC提供（项目中不是瓶颈，实测在ms级别，可以自己加个预取cache提升）</li>
+<li><strong>水平扩展</strong>：proxy负载均衡提供扩展能力。</li>
+<li><strong>趋势递增问题解决</strong>：未解决（<code>如果担心泄露信息，那就必须业务封装打乱位置</code>）</li>
+<li><strong>时钟回拨问题解决</strong>：时钟回拨目前看也没有解决。（<code>不确认是否有启动时钟检查，但是预取去重能部分解决</code>)</li>
+<li><strong>跨机房重复问题</strong>：机房前缀解决。</li>
+</ul>
+<h4 id="1-1-2-json解析的选型"><a href="#1-1-2-json解析的选型" class="headerlink" title="1.1.2 json解析的选型"></a>1.1.2 json解析的选型</h4><p>go的json解析历来被认诟病，目前采用github.com/json-iterator/go，压测下。</p>
+<blockquote>
+<p>先贴结论：json-iterator针对实际业务中的长json，性能在30us左右，短json在1us左右，完全满足要求。<br>但是：目前<code>采用go 1.13.5 官方库的实际压测结果由于jsoniter</code>，不折腾，切官方库！</p>
+</blockquote>
+<p>jsoniter的一些优化点：<br>1、流式读取到内存，降低GC压力。<br>2、按照schema解析，减少if-else判断和反射消耗。<br>3、int直接解析，无需两遍处理。</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">实际数据：</span><br><span class="line"><span class="comment">// 采用long json [实际json]</span></span><br><span class="line"><span class="number">40162</span>	     <span class="number">33572</span> ns/op	   <span class="number">10627</span> B/op	     <span class="number">197</span> allocs/op</span><br><span class="line"><span class="comment">// 采用long json fuzzy情况下 [实际json]</span></span><br><span class="line"><span class="number">28250</span>	     <span class="number">50821</span> ns/op	   <span class="number">10627</span> B/op	     <span class="number">197</span> allocs/op</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 采用短json</span></span><br><span class="line"><span class="number">714550</span>      <span class="number">1689</span> ns/op	     <span class="number">720</span> B/op	      <span class="number">16</span> allocs/op</span><br><span class="line"><span class="comment">// 采用短json fizzy</span></span><br><span class="line"><span class="number">515376</span>	    <span class="number">2438</span> ns/op	     <span class="number">720</span> B/op	      <span class="number">16</span> allocs/op</span><br><span class="line"></span><br><span class="line"><span class="comment">// 官方库long json</span></span><br><span class="line"><span class="number">41347</span>	     <span class="number">28630</span> ns/op	    <span class="number">8242</span> B/op	     <span class="number">152</span> allocs/op</span><br></pre></td></tr></table></figure>
+<h4 id="1-1-3-go-mod和glide"><a href="#1-1-3-go-mod和glide" class="headerlink" title="1.1.3 go mod和glide"></a>1.1.3 go mod和glide</h4><p>glide挺好，从使用上看有两个小问题。</p>
+<ul>
+<li><strong>位置强指定</strong>：非标准库必须位于GOPATH指定的src下。</li>
+<li><strong>偶尔bug</strong>：例如，出现几次glide update 不能更新的问题，需要强制glide cc。</li>
+</ul>
+<p>既然用了1.13.5，那最好选用根红苗正的go mod。<br>从实际使用上看和IDE结合的很棒，开启GO111MODULE=on之后，<code>基本上包管理完全无感知</code>，所以到现在也不会几个go mod命令￣□￣｜｜！</p>
+<p>关于包管理的一些设计可以参考：<a href="https://en.wikipedia.org/wiki/Package_manager" target="_blank" rel="external">package manager</a></p>
+<h3 id="1-2-关于项目的一些约定整理"><a href="#1-2-关于项目的一些约定整理" class="headerlink" title="1.2 关于项目的一些约定整理"></a>1.2 关于项目的一些约定整理</h3><blockquote>
+<p>只是最近这两周用到的一些内容的梳理，补充readme</p>
+</blockquote>
+<h4 id="1-2-1-common和util却别"><a href="#1-2-1-common和util却别" class="headerlink" title="1.2.1 common和util却别"></a>1.2.1 common和util却别</h4><p>项目中util和common两个文件如何使用？</p>
+<p><strong>utils</strong> 放通用的工具类，和<code>业务没有任何关系</code>，可以独立迁移，比如：time,json,math,hash等<br><strong>common</strong> 放和业务可能有关系的通用类，比如：errors,log,request,conf,cache,db等，含有业务的局部配置信息！</p>
+<h4 id="1-2-2-关于变量-常量位置"><a href="#1-2-2-关于变量-常量位置" class="headerlink" title="1.2.2 关于变量/常量位置"></a>1.2.2 关于变量/常量位置</h4><p><strong>系统级别的变量</strong>：写在conf，通过conf读取放入内存<br><strong>请求级别的变量</strong>：写入context，随context value流转，同时，传输给下游时候，注意清理！</p>
+<p><strong>系统级常量</strong>：放common.consts<br><strong>服务级常量</strong>：放对应的dao（否则整体的consts会很乱）</p>
+<h4 id="1-2-3-关于接口是否独立文件和单测"><a href="#1-2-3-关于接口是否独立文件和单测" class="headerlink" title="1.2.3 关于接口是否独立文件和单测"></a>1.2.3 关于接口是否独立文件和单测</h4><p><code>推荐每个接口一个独立文件</code>，每个大类放在一个包里，清晰明了！<br>比如：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xxModel</span><br><span class="line">├── getXX.go</span><br><span class="line">├── setXX.go</span><br><span class="line">├── deleteXX.go</span><br><span class="line">└── xxx_test.go</span><br></pre></td></tr></table></figure></p>
+<h4 id="1-2-4-状态位约定"><a href="#1-2-4-状态位约定" class="headerlink" title="1.2.4 状态位约定"></a>1.2.4 状态位约定</h4><p>没啥，<code>必须采用int16，int4的1、2、3连续的状态位存在扩展风险</code>，遇到过坑！<br>Exception和DONE 状态置高危，比如8XX,9xx</p>
+<h4 id="1-2-5-关于一些封装的约定"><a href="#1-2-5-关于一些封装的约定" class="headerlink" title="1.2.5 关于一些封装的约定"></a>1.2.5 关于一些封装的约定</h4><p>涵盖但不限于request，mysql,redis，http请求，httpserv,response的简单封装，不要过度，必须标明封装背景，比如<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//GetReqBody 读取body体封装</span></span><br><span class="line"><span class="comment">//解决：body体很大时，需要多次内存扩容，耗费cpu，增加gc压力，而且最后可能还会浪费一半的内存空间的问题</span></span><br><span class="line">func GetReqBody(ctx *context<span class="selector-class">.Context</span>,r *http.Request) ([]byte, error) &#123;</span><br><span class="line">	<span class="selector-tag">var</span> <span class="selector-tag">b</span> []byte</span><br><span class="line">	<span class="selector-tag">var</span> err error</span><br><span class="line"></span><br><span class="line">	cLen := r.ContentLength</span><br><span class="line">	<span class="keyword">if</span> cLen &gt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="selector-tag">b</span> = make([]byte, cLen, cLen)</span><br><span class="line">		_, err = io.ReadFull(r<span class="selector-class">.Body</span>, b)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="selector-tag">b</span>, err = ioutil.ReadAll(r.Body)</span><br><span class="line">	&#125;</span><br><span class="line">	_ = r<span class="selector-class">.Body</span><span class="selector-class">.Close</span>()</span><br><span class="line"></span><br><span class="line">	<span class="comment">// set request 2 context</span></span><br><span class="line">	*ctx = context.WithValue(*ctx,consts<span class="selector-class">.CtxReqBytes</span>,b)</span><br><span class="line">	return <span class="selector-tag">b</span>, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、重读《GO程序设计语言》"><a href="#二、重读《GO程序设计语言》" class="headerlink" title="二、重读《GO程序设计语言》"></a>二、重读《GO程序设计语言》</h2><p>每次读程序设计语言感觉都不一样，周末又翻了翻，还没翻完！<br>可能最近写博客的原因，整体更侧重于整体的设计布局，分层逻辑和重要细节！<br>暂时未写完，下周续上</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者:</strong>
+      崔小拽
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接:</strong>
+      <a href="http://cuihuan.net/2020/02/16/重读一周代码（一）/" title="重读一周代码（一）">http://cuihuan.net/2020/02/16/重读一周代码（一）/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明: </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/重读代码/" rel="tag"># 重读代码</a>
+          
+            <a href="/tags/uuid/" rel="tag"># uuid</a>
+          
+            <a href="/tags/go/" rel="tag"># go</a>
+          
+            <a href="/tags/jsoniter/" rel="tag"># jsoniter</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/02/颠覆发展-读《极简欧洲史》/" rel="next" title="颠覆发展-读《极简欧洲史》">
+                <i class="fa fa-chevron-left"></i> 颠覆发展-读《极简欧洲史》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div class="comments" id="comments">
+        </div>
+      
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/cuihuan_title.jpg"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cuihuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、重读代码"><span class="nav-number">1.</span> <span class="nav-text">一、重读代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-关于几个选型"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 关于几个选型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-uuid选型"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 uuid选型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-json解析的选型"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 json解析的选型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3-go-mod和glide"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.1.3 go mod和glide</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-关于项目的一些约定整理"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 关于项目的一些约定整理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-common和util却别"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 common和util却别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-关于变量-常量位置"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2 关于变量/常量位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-关于接口是否独立文件和单测"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3 关于接口是否独立文件和单测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-状态位约定"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.4 状态位约定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-5-关于一些封装的约定"><span class="nav-number">1.2.5.</span> <span class="nav-text">1.2.5 关于一些封装的约定</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、重读《GO程序设计语言》"><span class="nav-number">2.</span> <span class="nav-text">二、重读《GO程序设计语言》</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'iE7N63O9zgzx0uEfvjf9zjvc-gzGzoHsz',
+        appKey: '8tHCueQDE7VSeDSDqywhCFwf',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === '') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
