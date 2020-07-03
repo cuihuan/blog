@@ -1,0 +1,1224 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="国际化,合规,那些事儿," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="整体分为上下两篇上篇：简单聊聊什么是合规？出海企业在合规问题上遇到的挑战和思考下篇，总结下LGPD项目具体做了什么？怎么玩的？遇到哪些坑，有哪些积累经验？
+期望通过本文，总结下最近一段时间在国际化合规方向的探索，也让大家对国际化合规有个简单了解
+
+上篇、聊聊合规软件出海一定会面临两大问题
+
+第一：软件如何让本地人能看懂。也就是所谓的本地化，包含i18n、翻译等等问题
+第二：软件如何满足当地的法规">
+<meta property="og:type" content="article">
+<meta property="og:title" content="国际化合规那些事儿[上]">
+<meta property="og:url" content="http://cuihuan.net/2020/06/21/国际化合规那些事儿[上]/index.html">
+<meta property="og:site_name" content="靠谱崔小拽">
+<meta property="og:description" content="整体分为上下两篇上篇：简单聊聊什么是合规？出海企业在合规问题上遇到的挑战和思考下篇，总结下LGPD项目具体做了什么？怎么玩的？遇到哪些坑，有哪些积累经验？
+期望通过本文，总结下最近一段时间在国际化合规方向的探索，也让大家对国际化合规有个简单了解
+
+上篇、聊聊合规软件出海一定会面临两大问题
+
+第一：软件如何让本地人能看懂。也就是所谓的本地化，包含i18n、翻译等等问题
+第二：软件如何满足当地的法规">
+<meta property="og:image" content="https://gitee.com/grubbych/image/raw/master/uPic/%202020_07_03WqZ3K0%20.png">
+<meta property="og:updated_time" content="2020-07-03T07:40:14.479Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="国际化合规那些事儿[上]">
+<meta name="twitter:description" content="整体分为上下两篇上篇：简单聊聊什么是合规？出海企业在合规问题上遇到的挑战和思考下篇，总结下LGPD项目具体做了什么？怎么玩的？遇到哪些坑，有哪些积累经验？
+期望通过本文，总结下最近一段时间在国际化合规方向的探索，也让大家对国际化合规有个简单了解
+
+上篇、聊聊合规软件出海一定会面临两大问题
+
+第一：软件如何让本地人能看懂。也就是所谓的本地化，包含i18n、翻译等等问题
+第二：软件如何满足当地的法规">
+<meta name="twitter:image" content="https://gitee.com/grubbych/image/raw/master/uPic/%202020_07_03WqZ3K0%20.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '小拽'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuihuan.net/2020/06/21/国际化合规那些事儿[上]/"/>
+
+
+
+
+
+  <title>国际化合规那些事儿[上] | 靠谱崔小拽</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15d3caeed62b266d96dd734894786f13";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">靠谱崔小拽</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">享受技术和生活带来的乐趣</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demo">
+          <a href="http://cuihuan.net:1015" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cubes"></i> <br />
+            
+            DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-ncov">
+          <a href="http://cuihuan.net/wuhan/news.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            menu.nCoV
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cuihuan.net/2020/06/21/国际化合规那些事儿[上]/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="崔小拽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/wp_content/base/cuihuan_title.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="靠谱崔小拽">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">国际化合规那些事儿[上]</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-21T23:21:35+08:00">
+                2020-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+                <span class="post-comments-count">
+                  <span class="post-meta-divider">|</span>
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                  <a href="/2020/06/21/国际化合规那些事儿[上]/#comments" itemprop="discussionUrl">
+                    <span class="post-comments-count valine-comment-count" data-xid="/2020/06/21/国际化合规那些事儿[上]/" itemprop="commentCount"></span>
+                  </a>
+                </span>
+
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>整体分为上下两篇<br>上篇：简单聊聊什么是合规？出海企业在合规问题上遇到的挑战和思考<br>下篇，总结下LGPD项目具体做了什么？怎么玩的？遇到哪些坑，有哪些积累经验？</p>
+<p>期望通过本文，总结下最近一段时间在国际化合规方向的探索，也让大家对国际化合规有个简单了解</p>
+</blockquote>
+<h2 id="上篇、聊聊合规"><a href="#上篇、聊聊合规" class="headerlink" title="上篇、聊聊合规"></a>上篇、聊聊合规</h2><p>软件出海一定会面临两大问题</p>
+<ul>
+<li>第一：软件如何<strong>让本地人能看懂</strong>。也就是所谓的<code>本地化</code>，包含i18n、翻译等等问题</li>
+<li>第二：软件如何<strong>满足当地的法规</strong>，也就是今天聊的的国际化<code>合规</code>。</li>
+</ul>
+<h3 id="一、什么是合规？"><a href="#一、什么是合规？" class="headerlink" title="一、什么是合规？"></a>一、什么是合规？</h3><p>先来看下合规的官方定义</p>
+<blockquote>
+<p><strong>合规</strong>：指公司或机构需采取措施确保其行为（包括员工的行为）遵守相关的法律、法规，经营活动与法律、规则和准则相一致。其中“法律、规则和准则”是指“适用于银行业经营活动的法律、行政法规、部门规章及其他规范性档、经营规则、自律性组织的行业准则、行为守则和职业操守。</p>
+</blockquote>
+<p>简而言之就是：<strong>公司和软件的运转都需要满足当地法规</strong></p>
+<blockquote>
+<p>个人思考：合规的价值到底是什么，下面是小拽的一点思考。<br>商业的本质都是建立一个<strong>生态环境</strong>，让所有人都可以<strong>更好、更长远</strong>的做好这个游戏，按照游戏规则，取得自己的盈利。<br>而<code>合规就是这个游戏规则</code>，来维系这个生态的平衡，既要防止出现巨型猛兽，也要防止过度开垦，让生态能够长效发展。</p>
+</blockquote>
+<hr>
+<h3 id="二、有哪些法规？"><a href="#二、有哪些法规？" class="headerlink" title="二、有哪些法规？"></a>二、有哪些法规？</h3><p><img src="https://gitee.com/grubbych/image/raw/master/uPic/%202020_07_03WqZ3K0%20.png" alt="合规法规"></p>
+<p>如上图所示，画红线的是我滴已经面临或者马上面临的游戏规则。相对于如此纷繁错乱的法规，此处不做展开，大家可以参考小拽的博文<a href>《国际化隐私法规体系学习》</a></p>
+<p>归结来说分两层</p>
+<ul>
+<li>1、基础层：就是ISO提出一些法规的最佳实践，比如ISO27001规定了信息安全，ISO27017规定了云安全等等。（类似于设计模式）</li>
+<li>2、落地层：各国结合自特色，落地ISO的最佳实践，比如欧盟的GDPR，巴西的LGPD，美国的CCAP，中国的网安法等。（类似于设计模式在各个语言落地）</li>
+</ul>
+<p>与设计模式不同的是，由于落地层的实事准则，也会反向推动基础层的迭代。目前认可度比较高，也是比较严的法规是欧盟的GDPR，类似于实事准则</p>
+<blockquote>
+<p>除了通用法规，还有一些相关制度，有兴趣的小伙伴可以自行搜索，也欢迎交流。比如：安全港制度、隐私盾制度、长臂管辖制度等等</p>
+</blockquote>
+<hr>
+<h3 id="三、必须要做吗？"><a href="#三、必须要做吗？" class="headerlink" title="三、必须要做吗？"></a>三、必须要做吗？</h3><p>思路很简单：就看罚款多不多？罚款多的话，再看执行严不严？￣□￣｜｜</p>
+<p><strong>罚款规定</strong>：从实际法律规定上看，欧盟的统一数据法案（GDPR）规定最高罚款可达<code>营业额的4%</code>，而滴滴目前最大的海外市场巴西的LGPD规定罚款最高可达<code>营业额的2%</code>，那么第一个问题显而易见，<strong>罚款还是比较重的</strong></p>
+<p><strong>罚款执行</strong>：2019年，facebook由于隐私问题，被罚款50亿美元，而facebook Q1的净利仅仅20多亿（😝好吧，我飘了）。<br>搜索巨头google由于不能满足中国的合规要求，被迫退出了中国市场。</p>
+<p>实际上，我滴在北美就曾经因为不太合规，被下架。</p>
+<p>综上来看，国外真的<strong><code>罚的狠，执行严</code></strong>。因此，合规是出海企业做强做大的过程中，必须要面临和解决的一个问题。</p>
+<hr>
+<h3 id="四、价值思考？"><a href="#四、价值思考？" class="headerlink" title="四、价值思考？"></a>四、价值思考？</h3><p>在考虑真正落地前，小拽一直在思考一个问题，</p>
+<blockquote>
+<p><strong><code>作为一个负向收益的项目（也就是说，除了降低罚款，本身很难直接带动利润增长），最核心的价值是什么？该如何控制成本？做到什么程度才是价值平衡点</code></strong>？</p>
+</blockquote>
+<p>既然不能直接带来收益，满足需求情况下，如果成本尽可能的低，就是他的价值。经过无数个辗转反侧之后^_^，小拽总结了一句自相矛盾的话，来作为合规开发和设计的第一原则</p>
+<p><strong>落地原则：尽可能低成本，满足法规的最底线要求；同时，保证服务的扩展性。</strong></p>
+<p>看似矛盾的一句话，实则考虑了两个阶段<br>核心都是低成本落地。</p>
+<ul>
+<li><strong>短期来看</strong>，考虑满足法规的最低限要求，同时，在法律生效前落地即可，保证短期成本最小化、</li>
+<li><strong>长期来看</strong>，预留合理的扩展性，法规层面快速的做到兼容GDPR、CCAP等，产品层面可以兼容外卖等，保证了可视范围内的成本最小化。</li>
+</ul>
+<hr>
+<h3 id="五、三大块内容-四阶段落地"><a href="#五、三大块内容-四阶段落地" class="headerlink" title="五、三大块内容+四阶段落地"></a>五、三大块内容+四阶段落地</h3><p>那么接下来就是如何落地？<br>饭是一口一口吃，路是一步一步走，结合LGPD 202008生效的实际情况，按照最小化落地总体原则，抽象了合规的三大块内容和四阶段落地的规划。</p>
+<blockquote>
+<p>三大块内容<br><strong>产品侧合规</strong>：用户的相关隐私权利在产品侧落地，比如删除权[用户注销]，携带权[用户下载]，变更权[隐私开关]等等。<br><strong>数据侧合规</strong>：用户的数据从生成、传递、存储、使用合规，比如数据跨境，PCI数据中心，PII匿名化等等。<br><strong>流程侧合规</strong>：运转机制高效合规，涵盖信息安全管理，合规事故响应、处理、上报机制，开国合规管理等等。</p>
+</blockquote>
+<blockquote>
+<p>四阶段落地</p>
+<ul>
+<li><strong>阶段一</strong>：19-06到19-12 <strong>临时处理阶段</strong>。有合规问题，高优处理，暂时不做系统性的简史</li>
+<li><strong>阶段二</strong>：19-12到20-02 <strong>MVP阶段</strong>。目标拉齐uber，做到敌有我有。</li>
+<li><strong>阶段三</strong>：20-02到20-07 <strong>LGPD阶段</strong>。目标LGPD生效前，完成合规建设，过德勤审核。</li>
+<li><strong>阶段四</strong>：20-08到20-12 <strong>合规中台阶段</strong>。前端组件化，服务中台化。法规上可以高扩展支持GDPR、CCAP等，产品上可以快速支持外卖等。</li>
+</ul>
+</blockquote>
+<p>此处暂不详表，预知落地如何，且看下回实战</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/wp_content/base/qrcode.jpg" alt="崔小拽 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅小拽的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者:</strong>
+      崔小拽
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接:</strong>
+      <a href="http://cuihuan.net/2020/06/21/国际化合规那些事儿[上]/" title="国际化合规那些事儿[上]">http://cuihuan.net/2020/06/21/国际化合规那些事儿[上]/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明: </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/国际化/" rel="tag"># 国际化</a>
+          
+            <a href="/tags/合规/" rel="tag"># 合规</a>
+          
+            <a href="/tags/那些事儿/" rel="tag"># 那些事儿</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/16/重读一周代码（一）/" rel="next" title="重读一周代码-uuid&gojson&gomod">
+                <i class="fa fa-chevron-left"></i> 重读一周代码-uuid&gojson&gomod
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/02/2020上半年投资回顾/" rel="prev" title="2020上半年投资总结">
+                2020上半年投资总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        <div class="comments" id="comments">
+        </div>
+      
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/wp_content/base/cuihuan_title.jpg"
+               alt="崔小拽" />
+          <p class="site-author-name" itemprop="name">崔小拽</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cuihuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上篇、聊聊合规"><span class="nav-number">1.</span> <span class="nav-text">上篇、聊聊合规</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是合规？"><span class="nav-number">1.1.</span> <span class="nav-text">一、什么是合规？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、有哪些法规？"><span class="nav-number">1.2.</span> <span class="nav-text">二、有哪些法规？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、必须要做吗？"><span class="nav-number">1.3.</span> <span class="nav-text">三、必须要做吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、价值思考？"><span class="nav-number">1.4.</span> <span class="nav-text">四、价值思考？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、三大块内容-四阶段落地"><span class="nav-number">1.5.</span> <span class="nav-text">五、三大块内容+四阶段落地</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔小拽</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'iE7N63O9zgzx0uEfvjf9zjvc-gzGzoHsz',
+        appKey: '8tHCueQDE7VSeDSDqywhCFwf',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === '') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

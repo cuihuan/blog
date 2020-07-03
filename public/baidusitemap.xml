@@ -4,11 +4,53 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2020/02/16/%E9%87%8D%E8%AF%BB%E4%B8%80%E5%91%A8%E4%BB%A3%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2020-02-16T11:22:16.291Z</lastmod>
+    <loc>http://cuihuan.net/2020/07/02/2020%E4%B8%8A%E5%8D%8A%E5%B9%B4%E6%8A%95%E8%B5%84%E5%9B%9E%E9%A1%BE/</loc>
+    <lastmod>2020-07-03T08:32:44.307Z</lastmod>
     <data>
         <display>
-        <title>重读一周代码（一）</title>
+        <title>2020上半年投资总结</title>
+        <pubTime>2020-07-02T15:21:35.000Z</pubTime>
+        
+        <tag>投资</tag>
+         
+        <tag>总结</tag>
+         
+        <tag>2020</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2020/06/21/%E5%9B%BD%E9%99%85%E5%8C%96%E5%90%88%E8%A7%84%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%5B%E4%B8%8A%5D/</loc>
+    <lastmod>2020-07-03T07:40:14.479Z</lastmod>
+    <data>
+        <display>
+        <title>国际化合规那些事儿[上]</title>
+        <pubTime>2020-06-21T15:21:35.000Z</pubTime>
+        
+        <tag>国际化</tag>
+         
+        <tag>合规</tag>
+         
+        <tag>那些事儿</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2020/02/16/%E9%87%8D%E8%AF%BB%E4%B8%80%E5%91%A8%E4%BB%A3%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2020-02-16T11:25:53.432Z</lastmod>
+    <data>
+        <display>
+        <title>重读一周代码-uuid&gojson&gomod</title>
         <pubTime>2020-02-16T12:21:35.000Z</pubTime>
         
         <tag>重读代码</tag>
