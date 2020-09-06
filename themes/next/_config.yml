@@ -39,13 +39,13 @@ menu:
   home: /
 #  categories: /categories
   tags: /tags
-#  about: /about
+  shuoshuo: /shuoshuo
 #  archives: /archives
 #  sitemap: /sitemap.xml
   commonweal: /404.html
 #  old: http://cuihuan.net:8222
   demo: http://cuihuan.net:1015
-  nCoV: http://cuihuan.net/wuhan/news.html
+#  nCoV: http://cuihuan.net/wuhan/news.html
 
 
 
@@ -59,6 +59,7 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
+  shuoshuo: heartbeat
   categories: th
   schedule: calendar
   tags: tags

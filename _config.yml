@@ -23,6 +23,7 @@ permalink_defaults: /404.html
 # Directory
 source_dir: source
 public_dir: public
+shuoshuo: source/shuoshuo
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
