@@ -67,22 +67,25 @@
 
 
 
-<meta name="description" content="var img = &quot;http://cuihuan.net/wp_content/base/cuihuan_title.jpg&quot;; //说说旁边显示的头像
-        var appID = &quot;hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI&quot;;
-        var appKEY = &quot;8xkrUFtdVeLl8UTegNhD">
+<meta name="description" content="new Artitalk({
+    appId: &apos;hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI&apos;,
+    appKey: &apos;8xkrUFtdVeLl8UTegNhDiQs0&apos;,
+})">
 <meta property="og:type" content="website">
 <meta property="og:title" content="靠谱崔小拽">
 <meta property="og:url" content="http://cuihuan.net/shuoshuo/index.html">
 <meta property="og:site_name" content="靠谱崔小拽">
-<meta property="og:description" content="var img = &quot;http://cuihuan.net/wp_content/base/cuihuan_title.jpg&quot;; //说说旁边显示的头像
-        var appID = &quot;hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI&quot;;
-        var appKEY = &quot;8xkrUFtdVeLl8UTegNhD">
-<meta property="og:updated_time" content="2020-09-07T14:22:30.729Z">
+<meta property="og:description" content="new Artitalk({
+    appId: &apos;hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI&apos;,
+    appKey: &apos;8xkrUFtdVeLl8UTegNhDiQs0&apos;,
+})">
+<meta property="og:updated_time" content="2020-09-07T14:27:21.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="靠谱崔小拽">
-<meta name="twitter:description" content="var img = &quot;http://cuihuan.net/wp_content/base/cuihuan_title.jpg&quot;; //说说旁边显示的头像
-        var appID = &quot;hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI&quot;;
-        var appKEY = &quot;8xkrUFtdVeLl8UTegNhD">
+<meta name="twitter:description" content="new Artitalk({
+    appId: &apos;hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI&apos;,
+    appKey: &apos;8xkrUFtdVeLl8UTegNhDiQs0&apos;,
+})">
 
 
 
@@ -300,26 +303,14 @@
 
     
     
-      <head>
-  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-</head>
-  <body>
-      <script>
-        var img = "http://cuihuan.net/wp_content/base/cuihuan_title.jpg"; //说说旁边显示的头像
-        var appID = "hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI";
-        var appKEY = "8xkrUFtdVeLl8UTegNhDiQs0";
-        var per = "20"; //每页显示说说的数量
-        var username = "崔小拽"; //Leancloud中设置的用户名
-        var placeholder1="只有崔小拽才能评论哦"; //在编辑说说的输入框中的占位符
-        var placeholder2="没有密码，不能评论！";  //在编辑密码的输入框中的占位符
-        var lazy = 1; //是否开启懒加载动画
-        // var bgimg = "https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich16.gif"; //背景动画
-      </script>
-      <div id="lazy"></div>
-      <div id="artitalk"></div>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/drew233/artitalk/source/v1.0.0/artitalk.js"></script>
-  </body>
-
+      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+<div id="artitalk_main"></div>
+<script>
+new Artitalk({
+    appId: 'hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI',
+    appKey: '8xkrUFtdVeLl8UTegNhDiQs0',
+})
+</script>
     
   </div>
 
