@@ -59,7 +59,7 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
-  shuoshuo: heartbeat
+  shuoshuo: book
   categories: th
   schedule: calendar
   tags: tags
@@ -461,7 +461,7 @@ use_motion: true
 fancybox: true
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
