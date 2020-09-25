@@ -6,7 +6,7 @@ tags:
 - 说说
 - 每天思考一点点
 ---
-<script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+<script type="text/javascript" src="http://cuihuan.net/js/src/artitalk.js"></script>
 <div id="artitalk_main"></div>
 <script>
 new Artitalk({
