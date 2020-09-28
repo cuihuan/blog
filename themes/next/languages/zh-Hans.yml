@@ -7,8 +7,9 @@ title:
 author: 小拽
 
 menu:
-  home: 首页
+  home: 博客
   archives: 归档
+  history: 时光机
   categories: 分类
   schedule: 日程
   tags: 标签
@@ -17,7 +18,7 @@ menu:
   shuoshuo: 说说
   nCov: nCov
   old: 旧版
-  demo: DEMO
+  demo: demo
   commonweal: 公益
 
 

@@ -38,11 +38,12 @@ seo: true
 menu:
   home: /
 #  categories: /categories
-  tags: /tags
   shuoshuo: /shuoshuo
+  history: /history
 #  archives: /archives
 #  sitemap: /sitemap.xml
   commonweal: /404.html
+  tags: /tags
 #  old: http://cuihuan.net:8222
   demo: http://cuihuan.net:1015
 #  nCoV: http://cuihuan.net/wuhan/news.html
@@ -51,7 +52,7 @@ menu:
 
 # Enable/Disable menu icons.
 # Icon Mapping:
-#   Map a menu item to a specific FontAwesome icon name.
+#   Map a menu item to aecific FontAwesome icon name.
 #   Key is the name of menu item and value is the name of FontAwsome icon. Key is case-senstive.
 #   When an question mask icon presenting up means that the item has no mapping icon.
 menu_icons:
@@ -59,6 +60,7 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
+  history: camera
   shuoshuo: book
   categories: th
   schedule: calendar
@@ -67,7 +69,7 @@ menu_icons:
   sitemap: sitemap
   commonweal: heartbeat
   old: camera-retro
-  demo: cubes
+  demo: fighter-jet
   nCoV: info
 
 

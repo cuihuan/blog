@@ -1,16 +1,31 @@
 ---
-title: 崔小拽的说说
-date: 2021-09-02 23:21:35
+title: 崔小拽的时光机
+date: 2021-09-28 23:21:35
 comments: false
 tags: 
-- 说说
-- 每天思考一点点
+- 时光
+- 铭记
+- 未来
 ---
-<script type="text/javascript" src="http://cuihuan.net/js/src/artitalk.js"></script>
-<div id="artitalk_main"></div>
-<script>
-new Artitalk({
-    appId: 'hMlAohT6GQcBEFbly6zNaXKV-MdYXbMMI',
-    appKey: '8xkrUFtdVeLl8UTegNhDiQs0',
-})
-</script>
+
+> 起因是一张二战老兵的照片，老兵们每年都会在这里留念，今年只剩`最后一位`了。
+> 虽无声，却敬畏。
+> 
+> 站在时间的角度去看待问题。
+> 很多跌宕起伏的大事儿，显的那么微不足道
+> 很多普普通通的小事儿，却显的历久弥新
+
+<img src="http://cuihuan.net:8008/uPic/2020_09_28Ov5fe8.png" alt="老兵不死" width="500" />
+
+
+## 一、生活的时光机 - 每年的那一天
+
+【爱情】[岁月很长，一起慢慢走](./岁月很长，一起慢慢走.html)
+【亲情】每逢佳节倍思亲
+
+
+## 二、工作的时光机 - 每年的那些事儿
+
+【同事】欲买桂花同载酒，终不似，少年游
+【说说】百川东到海，何时复西归
+
