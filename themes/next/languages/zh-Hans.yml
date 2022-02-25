@@ -47,7 +47,7 @@ page:
   tags: 标签
 
 footer:
-  powered: "由 %s 强力驱动"
+  powered: "备案号： %s "
   theme: 主题
 
 

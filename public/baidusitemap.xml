@@ -3,10 +3,28 @@
 
 
     
+  <url>
+    <loc>http://cuihuan.net/2020/12/27/2020%E6%80%BB%E7%BB%93-%E6%8A%95%E8%B5%84/</loc>
+    <lastmod>2020-12-27T14:26:55.585Z</lastmod>
+    <data>
+        <display>
+        <title>2020总结-投资篇</title>
+        <pubTime>2020-12-27T15:30:30.000Z</pubTime>
+        
+        <tag>投资</tag>
+         
+        <tag>年度总结</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://cuihuan.net/2020/12/13/2020%E6%80%BB%E7%BB%93-%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2020-12-14T08:24:20.795Z</lastmod>
+    <lastmod>2020-12-14T08:46:21.082Z</lastmod>
     <data>
         <display>
         <title>2020总结-工作</title>
@@ -22,6 +40,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://cuihuan.net/2020/10/13/%E5%9B%BD%E9%99%85%E5%8C%96%E5%90%88%E8%A7%84%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E4%B8%8B/</loc>
@@ -73,9 +92,9 @@
         <title>国际化合规那些事儿[上]</title>
         <pubTime>2020-06-21T15:21:35.000Z</pubTime>
         
-        <tag>国际化</tag>
-         
         <tag>合规</tag>
+         
+        <tag>国际化</tag>
          
         <tag>那些事儿</tag>
          
@@ -486,18 +505,18 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
+    <loc>http://cuihuan.net/2016/01/10/YII2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
-        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
+        <title>YII2数据库查询实践</title>
+        <pubTime>2016-01-10T09:21:35.000Z</pubTime>
         
-        <tag>chrome-extension</tag>
+        <tag>db</tag>
          
-        <tag>chrome</tag>
+        <tag>active record</tag>
          
-        <tag>javascript</tag>
+        <tag>yii2</tag>
          
          
            
@@ -514,11 +533,11 @@
         <title>canvas 生成和合并图片</title>
         <pubTime>2015-11-23T09:21:35.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
         <tag>合成图片</tag>
          
         <tag>canvas</tag>
+         
+        <tag>javascript</tag>
          
          
            
@@ -528,22 +547,18 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2017/01/20/charactor/</loc>
+    <loc>http://cuihuan.net/2016/04/26/chrome_1/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>php爬虫：知乎用户数据爬取和分析</title>
-        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
+        <title>【chrome 插件一】开发一个简单chrome浏览器插件</title>
+        <pubTime>2016-04-26T09:21:35.000Z</pubTime>
         
-        <tag>php</tag>
-         
         <tag>javascript</tag>
          
-        <tag>网页爬虫</tag>
+        <tag>chrome-extension</tag>
          
-        <tag>shell</tag>
-         
-        <tag>css</tag>
+        <tag>chrome</tag>
          
          
            
@@ -560,11 +575,11 @@
         <title>【chrome 插件二】添加菜单和添加消息提醒</title>
         <pubTime>2016-04-20T09:21:35.000Z</pubTime>
         
+        <tag>javascript</tag>
+         
         <tag>chrome-extension</tag>
          
         <tag>chrome</tag>
-         
-        <tag>javascript</tag>
          
          
            
@@ -612,6 +627,31 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2017/01/20/charactor/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>php爬虫：知乎用户数据爬取和分析</title>
+        <pubTime>2017-01-20T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>javascript</tag>
+         
+        <tag>网页爬虫</tag>
+         
+        <tag>shell</tag>
+         
+        <tag>css</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2015/12/06/echarts%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E5%AE%9E%E4%BE%8B/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -628,6 +668,42 @@
         <tag>pho</tag>
          
         <tag>echarts</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/03/08/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%BA%93%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>mysql数据导库常用操作</title>
+        <pubTime>2016-03-08T09:21:35.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2015/12/11/mysql%20%E7%AE%80%E5%8D%95%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD%E5%92%8C%E5%BF%AB%E9%80%9F%E6%81%A2%E5%A4%8D/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>mysql 简单全量备份和快速恢复</title>
+        <pubTime>2015-12-11T09:21:35.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+        <tag>备份</tag>
          
          
            
@@ -654,33 +730,20 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2015/12/11/mysql%20%E7%AE%80%E5%8D%95%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD%E5%92%8C%E5%BF%AB%E9%80%9F%E6%81%A2%E5%A4%8D/</loc>
+    <loc>http://cuihuan.net/2015/12/02/jsonp%20+%20php%20%E8%B7%A8%E5%9F%9F%E5%AE%9E%E4%BE%8B/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>mysql 简单全量备份和快速恢复</title>
-        <pubTime>2015-12-11T09:21:35.000Z</pubTime>
+        <title>jsonp + php 跨域实例</title>
+        <pubTime>2015-12-02T09:21:35.000Z</pubTime>
         
-        <tag>备份</tag>
+        <tag>javascript</tag>
          
-        <tag>mysql</tag>
+        <tag>cors</tag>
          
+        <tag>跨域</tag>
          
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2016/03/08/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%BA%93%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>mysql数据导库常用操作</title>
-        <pubTime>2016-03-08T09:21:35.000Z</pubTime>
-        
-        <tag>mysql</tag>
+        <tag>jsonp</tag>
          
          
            
@@ -768,73 +831,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/01/10/YII2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>YII2数据库查询实践</title>
-        <pubTime>2016-01-10T09:21:35.000Z</pubTime>
-        
-        <tag>db</tag>
-         
-        <tag>active record</tag>
-         
-        <tag>yii2</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2015/12/02/jsonp%20+%20php%20%E8%B7%A8%E5%9F%9F%E5%AE%9E%E4%BE%8B/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>jsonp + php 跨域实例</title>
-        <pubTime>2015-12-02T09:21:35.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>cors</tag>
-         
-        <tag>跨域</tag>
-         
-        <tag>jsonp</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2016/08/08/phpredis%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%B0%81%E8%A3%85/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>phpredis单例模式封装</title>
-        <pubTime>2016-08-08T09:21:35.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>redis</tag>
-         
-        <tag>单例模式</tag>
-         
-        <tag>设计模式</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/11/28/phpUnit%20%E5%AE%89%E8%A3%85%EF%BC%8C%E5%AE%9E%E4%BE%8B%E5%92%8C%E7%AE%80%E5%8D%95%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -877,6 +873,48 @@
 
     
   <url>
+    <loc>http://cuihuan.net/2016/08/08/phpredis%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E5%B0%81%E8%A3%85/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>phpredis单例模式封装</title>
+        <pubTime>2016-08-08T09:21:35.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>redis</tag>
+         
+        <tag>单例模式</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【page-monitor 前端自动化 上篇】初步调研</title>
+        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>自动化测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://cuihuan.net/2016/02/29/postMessage%E5%A4%84%E7%90%86iframe%20%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -893,6 +931,27 @@
         <tag>iframe</tag>
          
         <tag>html5</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/08/20/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8B%E7%AF%87%E3%80%91%20%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>【page-monitor 前端自动化 下篇】 实践应用</title>
+        <pubTime>2016-08-20T09:21:35.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>自动化测试</tag>
          
          
            
@@ -925,16 +984,14 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/07/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8A%E7%AF%87%E3%80%91%E5%88%9D%E6%AD%A5%E8%B0%83%E7%A0%94%20/</loc>
+    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
         <display>
-        <title>【page-monitor 前端自动化 上篇】初步调研</title>
-        <pubTime>2016-08-07T09:21:35.000Z</pubTime>
+        <title>【redis学习一】基本概念和基本操作</title>
+        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
-        <tag>自动化测试</tag>
+        <tag>redis</tag>
          
          
            
@@ -965,27 +1022,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/08/20/%E3%80%90page-monitor%20%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%20%E4%B8%8B%E7%AF%87%E3%80%91%20%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【page-monitor 前端自动化 下篇】 实践应用</title>
-        <pubTime>2016-08-20T09:21:35.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>前端</tag>
-         
-        <tag>自动化测试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2015/12/06/%E3%80%90wordpress%E4%BC%98%E5%8C%96%E3%80%91%E5%8E%8B%E7%BC%A9%E5%92%8C%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E7%BC%93%E5%AD%98/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -998,23 +1034,6 @@
         <tag>缓存</tag>
          
         <tag>wordpress</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://cuihuan.net/2015/11/28/%E3%80%90redis%E5%AD%A6%E4%B9%A0%E4%B8%80%E3%80%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>【redis学习一】基本概念和基本操作</title>
-        <pubTime>2015-11-28T09:21:35.000Z</pubTime>
-        
-        <tag>redis</tag>
          
          
            
@@ -1070,27 +1089,6 @@
 
     
   <url>
-    <loc>http://cuihuan.net/2016/01/03/%E6%A3%80%E9%AA%8Cmysql%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD%EF%BC%8C%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/</loc>
-    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>检验mysql主从备份，读写分离</title>
-        <pubTime>2016-01-03T09:21:35.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-        <tag>读写分离</tag>
-         
-        <tag>主从备份</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://cuihuan.net/2016/01/07/%E6%9C%BA%E5%99%A8%E5%A4%9A%E6%AC%A1%E6%81%B6%E6%84%8F%E6%8F%90%E4%BA%A4%E6%94%BB%E5%87%BB/</loc>
     <lastmod>2017-06-20T09:13:32.000Z</lastmod>
     <data>
@@ -1103,6 +1101,27 @@
         <tag>ip</tag>
          
         <tag>恶意攻击</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://cuihuan.net/2016/01/03/%E6%A3%80%E9%AA%8Cmysql%E4%B8%BB%E4%BB%8E%E5%A4%87%E4%BB%BD%EF%BC%8C%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/</loc>
+    <lastmod>2017-06-20T09:13:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>检验mysql主从备份，读写分离</title>
+        <pubTime>2016-01-03T09:21:35.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+        <tag>读写分离</tag>
+         
+        <tag>主从备份</tag>
          
          
            
